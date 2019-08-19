@@ -1,0 +1,27 @@
+/* m_inline-search */
+
+@import "../base/_variables.scss";
+@import "../base/_mixins-and-extensions.scss";
+.mol_inline-search {
+    @include clearfix;
+    float: right;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    margin-bottom: 0.5rem;
+    .inputfieldcontainer {
+        flex: 1 1 auto;
+        padding-right: 0.3rem;
+    }
+    .buttoncontainer {
+        flex: 0 0 auto;
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .mol_inline-search {
+        width: $one-col-content;
+        float: right;
+    }
+}

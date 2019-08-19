@@ -1,0 +1,80 @@
+.m_document-teasers {
+    list-style: none;
+    padding: 0;
+    margin: .5rem 0;
+
+    li {
+        margin: .5rem 0 0;
+
+        &.with-image {
+            margin-top: 4.5rem;
+
+            & + .text-only {
+                margin-top: 2.5rem;
+            }
+        }
+    }
+
+    a {
+        @extend h3;
+        display: inline-block;
+        margin: .25rem 0;
+
+        &:not([class]) { // Because some ms-override thing is messing this up.
+            &:visited {
+                color: $blue!important;
+            }
+
+            &:hover, &:active {
+                color: $blue-md!important;
+            }
+        }
+    }
+
+    .date {
+        color: $grey-md-dk;
+        font-size: $font-s;
+    }
+
+    p {
+        color: $grey-dk;
+        margin-bottom: 0;
+    }
+
+    .image {
+        margin-bottom: .5rem;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .m_document-teasers {
+
+        li {
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            margin-bottom: .5rem;
+        }
+
+        .image, .teaser {
+            flex: 1;
+        }
+
+        .image {
+            padding-left: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+    .m_document-teasers {
+        .teaser {
+            flex: 2;
+        }
+    }
+}

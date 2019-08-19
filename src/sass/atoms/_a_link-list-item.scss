@@ -1,0 +1,19 @@
+.a_link-list-item {
+    display: table;
+    margin: .75rem 0;
+
+    // For all list items but the last
+    & + & {
+        margin-bottom: 0;
+    }
+
+    // For items directly underneath the list
+    & + :not(.a_link-list-item) {
+        margin-top: 1.25rem;
+    }
+}
+
+// For the first list item.
+:not(.a_link-list-item) + .a_link-list-item {
+    margin-top: 1.25rem;
+}

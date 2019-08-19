@@ -1,0 +1,57 @@
+.m_pictureCarousel {
+    @media screen and (max-width: 600px){       
+        width: 95vw !important;
+    }
+    .thumbs {
+        text-align: center;
+    }
+    .carousel .slide img {
+        max-width: 480px;
+    }
+    .carousel .slide {
+        background: none !important;
+    }   
+    .carousel .control-prev.control-arrow:before {
+        border-right-color: black;
+    }
+    .carousel .control-next.control-arrow:before {
+        border-left-color: black;
+    }
+    .carousel .slide .figCaption {        
+        position: relative;
+        top: -50px;
+        display: flex;
+        justify-content: center;
+    }
+    .carousel .slide .figCaption .figSpan {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white; 
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 13px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .carousel .slide.selected figure {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .carousel .control-dots {
+        position: relative;
+        padding: 0;
+    }
+    .carousel .control-dots .dot {
+        background: black;
+    }
+    .carousel.carousel-slider .control-arrow {
+        bottom: 42px;
+    }
+    .carousel .carousel-status {        
+        text-shadow: none;
+        color: black;
+        bottom: 16px;
+        top: unset;
+    }
+}

@@ -1,0 +1,135 @@
+.empty .o_horizontal-section, .empty.o_horizontal-section {
+    margin: 0;
+}
+
+// For the first expander on the page
+main > .o_horizontal-section {
+    &:first-of-type.expand {
+        margin-top: 2.5rem;
+    }
+}
+
+.o_horizontal-section {
+
+    &:not(.js-responsive-expand) {
+        margin-bottom: 2rem;
+    }
+    // Fixes the collapsing margin issue in 1-col view, e.g. Avdelinger
+    & > .o_search-block {
+        margin-top: 0;
+    }   
+
+    // This deals with situations where a horizontal section does not have an expandable heading.
+    &:not(.js-responsive-expand) > .row > .col-lg-9 {
+        margin-top: 3rem;
+    }
+
+    // Deals with double bottom margins on nested horizontal sections
+    .o_horizontal-section {
+        margin-bottom: 0;
+    }
+
+    // Only for the 1-col expandable state
+    &.expand {
+        position: relative;
+        border: 0 solid $grey-lt;
+        border-width: .25rem 0;
+        z-index: 0;
+        margin-top: -.25rem;
+
+        &:hover, &:focus, &.focused {
+            border-color: $blue;
+            z-index: 1;
+
+            .expander:not(.expandable .expander) {
+                outline: 0;
+
+                &::after {
+                    transition: transform .3s ease 0s;
+                }
+            }
+        }
+
+        .a_ruled-heading.expander {
+            color: $blue;
+            font-size: $font-xl;
+
+            min-height: 1.5em;
+            font-weight: 400;
+            display: block;
+            padding: 1rem 3rem 1rem 0;
+            overflow: hidden;
+            margin: 0;
+            text-align: left;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: auto;
+                right: 0;
+                top: 0;
+                width: 1em;
+                height: 100%;
+                background: url($chevron-grey-lt) center / contain no-repeat;
+                transform: scaleY(-1);
+                transition: transform .3s;
+                border: 0;
+            }
+
+            &:hover, &:focus {
+                &::after {
+                    background-image: url($chevron-blue);
+                }
+            }
+        }
+
+        & > .expandable {
+            padding: .5rem 0 0;
+        }
+
+        .expandable {
+            .m_obs {
+                .container {
+                    padding-bottom: 0;
+                }
+            }
+            .container {
+                padding-bottom: 2.5rem;
+            }
+
+            & > .m_page-list:last-child {
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        &.collapsed {
+            .a_ruled-heading.expander::after {
+                transform: scaleY(1);
+            }
+
+            > .expandable {
+                padding: 0;
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_horizontal-section {
+        margin-top: 2rem;
+        margin-bottom: 4.5rem;
+
+        .o_horizontal-section {
+            margin-top: 0;
+        }
+
+        &:not(.js-responsive-expand) > .row > .col-lg-9 {
+            margin-top: 0;
+        }
+
+    }
+
+}

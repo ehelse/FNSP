@@ -1,0 +1,150 @@
+.o_promoted-content {
+    margin: 3rem 0;
+
+    &.highlighted {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .content {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    .title {
+        @extend .a_underline-heading;
+        margin-top: .5rem;
+        font-size: $font-xl;
+    }
+
+    .text {
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .link {
+        margin-top: .5rem;
+
+        a {
+            @extend .a_promoted-link;
+        }
+    }
+
+    figure {
+        &.hover {
+            cursor: pointer;
+        }
+    }
+
+    figcaption {
+        position: relative;
+        margin-top: 0;
+
+        .attribution {
+            font-size: $font-s;
+            color: white;
+            text-shadow: 0 0 4px #000;
+            padding: .25rem .25rem .125rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 5rem;
+            line-height: 8rem;
+            vertical-align: baseline;
+
+            /* stylelint-disable */
+            background: linear-gradient(
+                            to bottom,
+                            rgba(0, 0, 0, 0) 0%,
+                            rgba(0, 0, 0, 0) 25%,
+                            rgba(0, 0, 0, .25) 90%,
+                            rgba(0, 0, 0, .25) 100%);
+            /* stylelint-enable */
+        }
+    }
+
+    .no-image {
+        .content {
+            display: block;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_promoted-content {
+        margin: 4rem 0 3rem;
+
+        &.highlighted {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+}
+
+/******************************************************************** */
+/* Narrow desktops and landscape-oriented tablets.  Three columns. */
+@media only screen and (min-width: $two-to-three-col) {
+
+    .o_promoted-content {
+        .container {
+            display: flex;
+        }
+
+        .content {
+            flex-flow: column wrap;
+        }
+
+        .a_underline-heading {
+            margin-top: 0;
+        }
+
+        .text {
+            flex-grow: 1;
+        }
+
+        figure, .content {
+            width: 50%;
+        }
+
+        &.image-left {
+            .container {
+                justify-content: flex-end;
+            }
+
+            figure {
+                padding-right: 1rem;
+                order: 1;
+                margin: 0;
+            }
+
+            .content {
+                order: 2;
+                padding-left: 1rem;
+            }
+        }
+
+        &.image-right {
+            figure {
+                padding-left: 1rem;
+                order: 2;
+                margin: 0;
+            }
+
+            .content {
+                order: 1;
+                padding-right: 1rem;
+            }
+        }
+
+        &.no-image {
+            .content {
+                width: 70%;
+            }
+        }
+    }
+}

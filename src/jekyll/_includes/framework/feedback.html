@@ -1,0 +1,46 @@
+<div>
+    <div>
+        <a name="takk-for-tilbakemelding"></a>
+        <div class="m_feedback noindex">
+            <div class="container">
+                <div id="ctl00_PlaceHolderMain_ctl12_ctl00_FeedbackPanel">
+                    <fieldset>
+                        <legend>
+                            Fant du det du lette etter?
+                        </legend>
+                        <div class="ingress" id="feedback-disclaimer">Vi kan ikke svare deg på tilbakemeldingen. Ikke send oss personlig informasjon, for eksempel navn, e-post, telefonnummer eller fødselsnummer.
+                            <style>
+                            .m_feedback {
+                            margin-top:6.5rem;
+                            }
+                            </style>
+                        </div>
+                        <label for="FeedbackIsPositiveChoice" id="ctl00_PlaceHolderMain_ctl12_ctl00_PositiveChoiceLabel" class="visuallyhidden">Ja</label>
+                        <input value="Ja" name="ctl00$PlaceHolderMain$ctl12$ctl00$feedback" type="radio" id="FeedbackIsPositiveChoice">
+                        <button title="Ja" type="button" id="FeedbackIsPositive">Ja</button>
+                        <label for="FeedbackIsNegativeChoice" id="ctl00_PlaceHolderMain_ctl12_ctl00_NegativeChoiceLabel" class="visuallyhidden">Nei</label>
+                        <input value="Nei" name="ctl00$PlaceHolderMain$ctl12$ctl00$feedback" type="radio" id="FeedbackIsNegativeChoice">
+                        <button title="Nei" type="button" id="FeedbackIsNegative">Nei</button>
+                        <div class="feedbackformcontrols hidden visuallyhidden">
+                            <span id="error-message" class="hidden">Vennligst skriv en tilbakemelding.</span>
+                            <p class="error" aria-live="polite"></p>
+                                <label id="FeedbackLabel" for="FeedbackMessage"></label>
+                                <textarea maxlength="255" name="FeedbackMessage" id="FeedbackMessage" aria-describedby="feedback-disclaimer"></textarea>
+                                <p>Gjenstående tegn: <span id="feedbackcounter">255</span></p>
+                                <label class="skjultfelt" for="FirstToPhoneyField">Skal ikke fylles ut</label>
+                                <input class="skjultfelt" id="FirstToPhoneyField" title="Skal ikke fylles ut" name="FirstToPhoneyField" type="text" autocomplete="off">
+                                <button type="button" id="SubmitFeedbackButton" title="Send" onclick="FNSP.SubmitFeedBack();">Send</button>
+                            
+                        </div>
+                        <div class="visuallyhidden hidden">
+                            <span class="feedback-module-options" id="feedback_IsPositive">Så bra. Fortell oss gjerne hva du var fornøyd med.</span>
+                            <span class="feedback-module-options" id="feedback_IsNegative">Hva kan vi gjøre for å bli bedre?</span>
+                        </div>
+                    </fieldset>
+                    <p aria-live="polite" class="feedbackresponse hidden"></p>
+                    <input type="hidden" name="ctl00$PlaceHolderMain$ctl12$ctl00$NumberOfCols" id="NumberOfCols">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

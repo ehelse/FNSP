@@ -1,0 +1,23 @@
+<ul class="o_tile-group events vertical">
+
+    {% for item in include.data offset:include.offset limit:include.limit %}
+    <li class="tile {{include.class}} ">
+        {%if item.time %}
+
+        <div class="item-date">
+            <span class="date">{{ item.time }}</span>
+            <span class="day">{{ item.day}}</span>
+        </div>
+
+        {%endif %}
+
+        <a href="{{item.url}}">{{item.heading}}</a>
+
+        {% if item.text %}
+        <p>{{item.text}}</p>
+        {% endif %}
+
+    </li>
+    {% endfor %}
+
+</ul>

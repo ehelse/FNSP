@@ -1,0 +1,42 @@
+<div class="js-pulldown-expand o_pulldown container">
+    <div class="js-pulldown-expandable">
+        <ul class="o_tile-group">
+            {% for item in include.data offset:include.offset limit:include.limit %}
+            <li class="tile js-pulldown-tile ">
+
+                {% if item.image-url %}
+                <img src="{{item.image-url}}" alt="{{image.alt}}" />
+                </figure>
+                {% endif %}
+
+                {% if include.with-date %}
+                <div class="item-date">{{item.date}}</div>
+                {% endif %}
+
+                <a href="{{item.url}}">{{item.title}}</a>
+
+                {% if item.ingress %}
+                <p>{{item.ingress}}</p>
+                {% endif %}
+
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% if include.text-link %}
+        <a href="" class="text-link">Text link to another page</a>
+        {% endif %}
+
+    </div>
+
+    <div class="footer js-pulldown-footer">
+        {% if include.pulldown %}
+        <a role="button" class="js-pulldown-expander button-toggle"><span data-show-text="Vis flere" data-hide-text="Få de vekk!" data-hidden-tiles=""></span></a>
+        {% endif %}
+
+        {% if include.button-link %}
+        <a href="" class="button-link">Button-looking link to another page</a>
+        {% endif %}
+    </div>
+
+</div>

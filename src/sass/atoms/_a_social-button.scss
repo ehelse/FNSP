@@ -1,0 +1,32 @@
+.a_social-button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 2rem;
+    height: 0;
+    padding: 1.25rem .5rem 0;
+    overflow: hidden;
+
+    background: center top / contain no-repeat;
+
+    &.facebook {
+        background-image: url($facebook);
+    }
+
+    &.twitter {
+        background-image: url($twitter);
+        background-size: 1.5rem;
+        background-position: .4rem center;
+
+    }
+
+    &.rss {
+        background-image: url($rss);
+        background-size: 1.1rem;
+    }
+
+    &.mail {
+        background-image: url($envelope-white);
+        background-size: 1.45rem;
+        background-position: .4rem center;
+    }
+}

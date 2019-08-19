@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Fremgangsmåte for koloskopi",
+        "timeSpan": "30 - 60",
+        "timeUnit": "timer",
+        "timeDescription": "Varighet på undersøkelse",
+        "content": 
+                "<p>Undersøkelsen gjøres med et koloskop. Koloskopet er et ca. 1,3 m langt, fingertykt, styrbart og bøyelig instrument.</p>
+                 <p>Først ligger du på venstre side på undersøkelsesbenken, deretter oftest på ryggen. Før eller under koloskopien kan du ved behov få en avslappende sprøyte.</p>
+                 <p>Etter at legen har undersøkt endetarmsåpningen med en finger, føres koloskopet gjennom endetarm og tykktarm og eventuelt også inn i nedre del av tynntarmen, men det er avgjørende for å utføre en teknisk god undersøkelse, at tømningsinstruksen er blitt fulgt! Noen ganger må tarminnhold suges eller spyles ut, og andre ganger kan det være nødvendig å sette inn litt luft for å få tilstrekkelig oversikt. En koloskopi tar vanligvis 30-60 minutter, avhengig av teknisk fremdrift, om man er godt tømt, om det skal tas vevsprøver og ev. fjerning av polypper.</p>"
+    },
+    {
+        "title": "Fremgangsmåte for biopsi",
+        "content": 
+        "<p>En biopsi er en vevsprøve som kan stamme fra alle typer vev i kroppen. En biopsi tas fordi man vil undersøke et bestemt vevs mikroskopiske sammensetning. Normalt kreves det bare noen små prøver for å kunne analysere et bestemt vev. Ved tykktarmsundersøkelse kan en biopsi tas via en endoskopitang gjennom endoskopet.</p>"
+    }
+]

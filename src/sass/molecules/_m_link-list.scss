@@ -1,0 +1,78 @@
+.m_link-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1rem 0;
+
+    li {
+        margin: .75rem 0;
+    }
+
+    a {
+        display: inline-block;
+
+        &:visited {
+            color: $blue !important; // Some ms-overide stuff is messing this up.
+        }
+    }
+
+    &.promoted {
+        li {
+            margin: 1.25rem 0;
+        }
+    }
+
+}
+
+.m_link-list, .a_link-list-item {
+
+    &.simple {
+        &:not(ul), a {
+            &[href*="//"] {
+                @include simple-arrow(diagonal, small, before);
+            }
+
+            &:not([href*="//"]) {
+                @include simple-arrow(right, small, before);
+            }
+        }
+    }
+
+    &.locations {
+        li {
+            font-weight: 600;
+        }
+
+        a {
+            font-weight: normal;
+            @include simple-arrow(right, small, after);
+        }
+    }
+
+    &.promoted {
+        font-weight: 600;
+
+        &:not(ul), a {
+            &[href*="//"] {
+                @include circle-with-arrow(diagonal, small, before, arrow);
+            }
+
+            &:not([href*="//"]) {
+                @include circle-with-arrow(right, small, before, arrow);
+            }
+        }
+    }
+
+}
+
+.a_link-list-item {
+    &.simple, &.promoted {
+        a {
+            padding-left: 0!important;
+
+            &::before {
+                display: none !important;
+            }
+        }
+
+    }
+}

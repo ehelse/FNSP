@@ -1,0 +1,104 @@
+@import '../../sass/base/_variables.scss';
+.org_kliniskestudier {
+    .org_filters-v2__wrapper {
+        padding: 1.85rem 1rem;
+    }
+    .org_filters-v2 {
+        .org_filters-v2__heading {
+            margin-top: 0;
+        }
+        .org_filters-v2__dropdown--checkbox {
+            margin-bottom: 1rem;
+            width: calc(100% - 1.25rem);
+            max-width: calc(100% - 1.25rem);
+        }
+        .mol_inline-search {
+            width: 100%;
+            .inputfieldcontainer {
+                padding-right: 0;
+            }
+        }
+        .atom_secondarybutton.search {
+            margin: 0;
+            width: 4.688rem;
+            &:after {
+                margin-left: 0;
+                content: '';
+                background: url('../../FNSP/Images/Theme/search-white.svg') no-repeat center;
+                background-size: contain;
+                height: 1.4rem;
+                width: 1.4rem;
+            }
+        }
+        .mol_dropdown {
+            flex: 1 0 auto;
+            &.org_filters-v2__filter--checkbox label {
+                word-break: break-word;
+            }
+        }
+    }
+}
+
+.org_kliniskestudier__paging {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: block;
+    button {
+        color: $blue-dk;
+        border: none;
+        background: none;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            color: $color-base-7;
+        }
+    }
+    li {
+        display: inline-block;
+        padding: 1px 6px;
+        &:not(.active):not(.nextToActive):not(:first-child):not(:last-child) {
+            display: none;
+        }
+        &.first {
+            &:after {
+                content: '...';
+                padding-left: 0.5rem;
+            }
+        }
+        &.last {
+            &:before {
+                content: '...';
+                padding-right: 0.5rem;
+            }
+        }
+        &.nextToActive:before+&.last:before {
+            content: none;
+            padding-right: 0;
+        }
+        &.active {
+            color: $color-base-7;
+            padding: 1px 12px;
+        }
+    }
+    .active:before+.nextToActive:before+.last:before {
+        content: none;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (min-width: $three-to-four-col) {
+    .org_kliniskestudier {
+        .org_filters-v2 {
+            .mol_inline-search {
+                .inputfieldcontainer {
+                    max-width: 20.75rem;
+                }
+            }
+            .mol_dropdown {
+                flex: none;
+                width: calc(50% - 1.2rem);
+            }
+        }
+    }
+}

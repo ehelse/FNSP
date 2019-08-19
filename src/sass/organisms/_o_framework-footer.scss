@@ -1,0 +1,130 @@
+.o_framework-footer {
+    margin-top: 4.5rem;
+
+    a {
+        text-decoration: none;
+    }
+
+    .o_tile-group.navigation.menu {
+        .tile {
+            .subnav-title {
+                font-size: $font-m;
+            }
+        }
+    }
+
+    .orginfo {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-top: 3rem;
+    }
+
+    .ansvarlig {
+        background-color: #22282b;
+        color: #fff;
+        padding: 3rem 0;
+
+        a {
+            color: white;
+            text-decoration: underline;
+            text-decoration-skip: ink;
+
+            &:hover {
+                color: $blue-lt;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            padding-bottom: 2rem;
+        }
+
+        .university {
+            padding-top: 2rem;
+            padding-bottom: 0;
+
+            img {
+                padding-top: 1.5rem;
+                display: block;
+                width: 100px;
+            }
+        }
+
+        .phone, .mail {
+            padding: .5rem 0 2rem 0;
+            span {
+                display: block;
+            }
+        }
+
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_framework-footer {
+        .o_tile-group.navigation.menu {
+            background-color: #fff;
+
+            .tile {
+                .subnav-title {
+                    color: $grey-dk;
+                }
+
+                .subnav {
+                    li {
+                        @include thickening-underline($grey-dk, $grey-md-lt, $blue-md, $blue-md);
+                    }
+                }
+            }
+        }
+
+        .ansvarlig {
+            text-align: center;
+
+            .university {
+                img {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Three columns */
+@media only screen and (min-width: $two-to-three-col) {
+
+    .o_framework-footer {
+        .ansvarlig {
+            div {
+                padding: .2rem 0;
+            }
+
+            .footer-contact-info {
+
+                .phone, .mail {
+                    padding: .2rem 0;
+                    span {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        display: inline-block;
+                    }
+                }
+                .phone {
+                    .center {
+                        border-left: 1px solid;
+                        border-right: 1px solid;
+                    }
+                }
+                .mail {
+                    .center {
+                        border-left: 1px solid;
+                    }
+                }
+            }
+        }
+    }
+}

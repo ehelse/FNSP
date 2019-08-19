@@ -1,0 +1,92 @@
+//Fix for modal dialogs
+.ms-dlgTitle {
+    padding: 13px 30px 18px 19px;
+    h1{
+        overflow: initial;
+    }
+}
+// Removes fixed height on heading area so the menu looks correct.
+#s4-titlerow {
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+}
+
+#s4-bodyContainer {
+    padding-bottom: 0;
+}
+
+// Fixes the positioning of SP editing tools.
+#suiteBar, #s4-ribbonrow, #notificationArea, #DeltaPageStatusBar {
+    * {
+        box-sizing: initial;
+    }
+}
+// Fix to avoid issue with text color in ribbon from the rule above
+#s4-ribbonrow a {
+    color: initial;
+}
+
+.ms-webpartzone-cell {
+    margin: 0;
+}
+.ms-webpart-menuLink {
+    zoom: 2;
+    padding: 0;
+}
+
+.ms-rteTable-default, .ms-rteTable-default > tbody > tr > td, .ms-rteTable-default > tbody > tr > th, td.ms-rteTable-default, th.ms-rteTable-default {
+    border: 0;
+}
+
+.ms-rteTable-default, .ms-rteTable-default > tbody > tr > td, .ms-rteTable-default > tbody > tr > th, td.ms-rteTable-default, th.ms-rteTable-default {
+    padding: .75rem 1rem;
+}
+
+.ms-rtestate-field,
+.ms-rte-stylePreviewBox {
+    h2, h3, h4 {
+        color: $grey-dk;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: $font-xl;
+        margin-top: 1rem;
+        margin-bottom: .25rem;
+    }
+
+    h3 {
+        font-size: $font-l;
+        margin-top: 1.75rem;
+        margin-bottom: .5rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    h4 {
+        font-size: $font-m;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    span[id*='RichImageField_ImageFieldDisplay'] {
+        > img {
+            width: 100%;
+        }
+    }
+}
+
+a.ms-core-menu-link, a.ms-core-menu-link:hover {
+    padding: 6px 8px !important;
+    border-bottom: none !important;
+}
+
+//Fix size of input fields in edit mode
+.ms-formfieldvaluecontainer {
+    input.ms-input {
+        width: 100%;
+    }
+}

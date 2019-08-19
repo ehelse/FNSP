@@ -1,0 +1,46 @@
+.m_document-list {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid $grey-md;
+    margin: 1rem 0 2.5rem;
+
+    a {
+        display: block;
+    }
+
+    li {
+        border-bottom: 1px solid $grey-md;
+        padding: .75rem 1rem;
+        margin: 0;
+
+        a:link {
+            border-bottom: 1px solid transparent;
+            padding-bottom: 0;
+
+            &:hover, &:focus {
+                color: $blue;
+            }
+        }
+
+        &:nth-child(odd) {
+            background-color: $grey-lt;
+        }
+
+        &:hover, &:nth-child(odd):hover {
+            background-color: $blue-grey;
+            transition: background-color .1s ease;
+
+            a {
+                &:hover, &:focus {
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    .additional-info {
+        color: $grey-dk;
+    }
+
+}
+

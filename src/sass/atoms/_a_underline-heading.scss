@@ -1,0 +1,5 @@
+/*  Headings with a blue underline that gets wider on hover. */
+
+.a_underline-heading {
+    @include widening-underline();
+}

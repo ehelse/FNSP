@@ -1,0 +1,62 @@
+.m_front-page-menu {
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background-color: $grey-lt;
+    margin-top: 0;
+    border-top: solid white 3px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .row {
+        margin-top: -3.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .link-button {
+        display: inline-block;
+        width: 100%;
+        height: 3rem;
+        margin: 0 auto .5rem;
+        z-index: 101;
+        position: relative;
+
+        border: solid white 3px;
+        border-radius: 3rem;
+        background-color: $blue;
+        color: white;
+        line-height: 2.75rem;
+        font-size: $font-m;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $blue-md;
+            text-decoration: none;
+        }
+    }
+
+    .see-all-link {
+        @include circle-with-arrow(right, large, after, arrow);
+        display: inline-block;
+        font-size: $font-l;
+        font-weight: 400;
+        position: relative;
+        padding: 0 0 2rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &::after {
+            position: absolute;
+            left: 50%;
+            margin-left: -1.5rem;
+            top: auto;
+            bottom: -1.5rem;
+            background-color: #fff;
+        }
+    }
+}

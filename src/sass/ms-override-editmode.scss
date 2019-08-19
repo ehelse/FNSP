@@ -1,0 +1,318 @@
+@import "base/variables";
+@import "base/svgdata";
+@import "base/mixins-and-extensions";
+@import "editmode/ms-overrides";
+@import "editmode/pnp-taxpicker";
+@import "editmode/settings-panel";
+
+//ms-override and edit mode styles
+
+body {
+    font-size: inherit;
+}
+
+// Hides the sticky page menu since it covers the ribbon.
+.m_page-menu.sticky {
+    display: none;
+}
+
+.m_site-settings {
+    input[type="button"], input[type="reset"], input[type="submit"], button {
+        margin-left: 0;
+        min-width: auto;
+        vertical-align: initial;        
+    }
+}
+
+.rollupingress {
+    width: 100%;
+    font-size: initial;
+}
+
+.m_search-box {
+    display: block;
+    [type="button"] {
+        min-width: 0 !important;
+    }
+}
+
+
+h1, h2, h3, h4, h5 {
+    color: inherit;
+    font-family: "Open Sans", Helvetica, sans-serif !important;
+}
+
+.ms-formfieldlabelcontainer.fnsp-helptext {
+    margin-bottom: 4rem;
+}
+
+
+.o_promoted-content .a_underline-heading {
+    margin-left: 0;
+    margin-right: 0;
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+.ms-taxonomy-fieldeditor.ms-taxonomy-fieldeditor-standard {
+    width: 94% !important;
+}
+
+.menu-button-container {
+    button.expander {
+        min-width: 2rem !important;
+    }
+}
+
+.language {
+    input, select, label, textarea, button, option {
+        vertical-align: inherit;
+    }
+}
+
+.image-alt-warning-overlay {
+    margin-top: -2rem;
+    h4 {
+        color: black;
+        margin-left: .5rem;
+        span {
+            background-color: #FFF1AC;
+            padding: 0 1rem;
+            border: 1px solid #d7d889;
+        }
+    }
+}
+
+.missing-alttext {
+    border: 1px solid red !important;
+}
+
+figure {
+    .attribution {
+        span {
+            background: none !important;
+            position: static !important;
+            line-height: 1rem !important;
+            text-shadow: none !important;
+        }
+    }
+}
+
+.col-md-6 .ms-webpart-zone {
+    display: block;
+}
+
+.image-alt-warning-overlay {
+    display: inline-block !important;
+}
+
+.ms-cui-ctl-largelabel, .ms-cui-ctl-mediumlabel {
+    color: initial !important;
+}
+
+.stop-expandable {
+    &:before {
+        content: "Ekspanderbart innhold vil stoppe her";
+        background-color: white;
+        padding: 0 .75em;
+        margin: 0 1em;
+        color: green;
+    }
+    &:after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid green;
+        margin-top: -.75em;
+        margin-bottom: 1.75em;
+    }
+}
+
+//Fix for expandable treatments
+.m_page-list {
+    transform: translateX(0);
+}
+
+.o_promoted-content .title {
+    margin-left: 0;
+}
+
+.vueWebPart {
+    .vueEditorPanel {
+        input {
+            font-size: $font-m;
+
+            &:disabled + label {
+                color: #ccc;
+            }
+        }
+        
+        h3 {
+            margin-top: 0;
+        }
+
+        button, input[type=submit], submit {
+            cursor: pointer;
+            padding: 0.1rem 0.3rem 0.1rem .3rem;
+            min-width: 0;
+            margin: 0 0rem 0 0.15rem;
+
+            &::before {
+                height: 16px;
+                width: 16px;
+                display: inline-block;
+                background: url(/Images/spcommon.png) 0 0;
+                position: relative;
+                content: '';
+                background-repeat: no-repeat;
+            }
+
+            &.EditButton {
+                &::before {
+                    background-position: -216px -64px;
+                }
+            }
+
+            &.DeleteButton {
+                &::before {
+                    background-position: -197px -118px;
+                }
+            }
+
+            &.NewButton {
+                &::before {
+                    background-position: -200px -83px;
+                }
+            }
+
+            &.UpButton {
+                &::before {
+                    background-position: -197px -134px;
+                }
+            }
+
+            &.DownButton {
+                &::before {
+                    background-position: -197px -140px;
+                    transform: rotate(-180deg);
+                }
+            }
+
+            &.SaveButton {                
+                &::before {
+                    background-position: -107px -194px;                
+                }
+            }
+            &.SaveWPSettingsButton, &.webpart-save-button {
+                width: 80px;
+                height: 40px;
+                &::before {                    
+                    background: none;
+                    width: 0px;
+                    height: 0px;
+                }
+            }
+
+            &.AssetPicker {
+                &::before {
+                    background-position: 0 -233px;
+                }
+            }
+        }
+
+        .TimeLinePanel {
+            padding-left: 2rem;
+
+            .editItem {
+                margin-top: 1rem;
+
+                input {
+                    width: 90%;
+                    margin-bottom: .5rem;
+                    height: 2rem;
+
+                    &.full-width-input {
+                        width: 100%;
+                    }
+                }
+
+                textarea {
+                    height: 7rem;
+                    width: 100%;
+                    margin-bottom: .5rem;
+                }
+
+                button {
+                    &.AssetPicker {
+                        margin: 0 0 .5rem .5rem;
+                    }
+                }
+            }
+
+            p {
+                &.center {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .txt-error,.invalid {
+        color: red;
+    }
+
+    #gjentakende-panel {
+        ul {
+            min-height: 250px;
+        }
+    }
+
+    #gjentakende-egenskaper {
+        background-color: #f4f4f2;
+        padding: 25px;
+        min-width: 250px;
+        margin-left: -18px;
+    }
+
+    .o_tile-group {
+        .subnav {
+            li {
+                clear: both;
+            }
+
+            span, li {
+                &::after {
+                    &:hover {
+                        background-color: transparent !important;
+                    }
+
+                    background-color: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+//Styles for webpart edit panels
+input[type="button"],
+input[type="submit"],
+button {
+    font-size: 1rem;
+    margin: 0;
+    padding: 2px;
+    min-width: 0;
+}
+
+.ReactWebpartEditMode {
+    
+    input[type="text"] {
+        border: none;
+        padding: 0 12px;
+    }
+
+    button:hover {
+        border-color: transparent;
+    }
+
+}

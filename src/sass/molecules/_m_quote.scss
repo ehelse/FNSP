@@ -1,0 +1,27 @@
+.m_quote {
+    margin: 2rem 0;
+    padding-left: 3rem;
+    color: $mauve-dk;
+    font-weight: 300;
+    font-size: $font-xl;
+    font-style: italic;
+    background: url($quote-grey-md-lt) left top/2rem no-repeat;
+
+    cite {
+        display: block;
+        color: $grey-md-dk;
+        margin-top: .75rem;
+        font-size: .9rem;
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+
+    .m_quote {
+        margin-left: 2rem;
+        padding: 1rem 0 0 5rem;
+        background-size: 4rem;
+        float: right;
+        font-size: $font-2xl;
+    }
+}

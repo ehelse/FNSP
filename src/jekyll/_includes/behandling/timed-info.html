@@ -1,0 +1,72 @@
+{% for item in include.data offset:include.offset limit:include.limit %}
+{% assign index = forloop.index %}
+<div class="subsection">
+
+    <div class="container">
+        {% if item.title %}
+        {% if include.heading-level %}
+        {% assign h=include.heading-level %}
+        {% else %}
+        {% assign h="h3" %}
+        {% endif %}
+
+        <{{h}} class="a_subtle-heading {% if index == 1 %}subhead{% endif %}">{{ item.title }}</{{h}}>
+    {% endif %}
+
+    {% if item.item.timeDescription or item.timeSpan or item.timeUnit %}
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-md-push-8 col-lg-push-9">
+            <aside class="m_simple-treatment-statistics">
+                <div class="m_statistic">
+                    <div class="description">{{ item.timeDescription }}</div>
+                    <span class="number"> {{ item.timeSpan }}</span>
+                    <span class="unit">{{ item.timeUnit }}</span>
+                </div>
+            </aside>
+        </div>
+
+        {% if item.content %}
+        <div class="col-lg-9 col-md-8 col-md-pull-4 col-lg-pull-3">
+            {{ item.content }}
+        </div>
+        {% endif %}
+    </div>
+    {% else %}
+
+    {% if item.content %}
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            {{ item.content }}
+        </div>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% if item.accordion == "forberedende-undersoekelser" %}
+    {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-forberedende-undersoekelser %}
+
+    {% elsif item.accordion == "forberedende-tilleggsbehandling" %}
+    {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-forberedende-tilleggsbehandling %}
+
+    {% elsif item.accordion == "tilleggsbehandling" %}
+    {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-tilleggsbehandling %}
+
+    {% elsif item.accordion == "paa-sykehuset" %}
+    {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-paa-sykehuset %}
+
+    {% elsif item.accordion == "kurs-og-opplaering" %}
+    {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-kurs-og-opplaering %}
+
+    {% elsif item.accordion == "psykisk-helsevern" %}
+    {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-psykisk-helsevern %}
+
+    {% endif %}
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+{% if item.expander == "henvisning" %}
+{% include generic/expander-sections/promoted.html data=site.data.hf.behandling.generic.promoted-expander-henvisning %}
+{% elsif item.expander == "utskrivning" %}
+{% include generic/expander-sections/promoted.html data=site.data.hf.behandling.generic.promoted-expander-utskrivning %}
+{% endif %}
+
+{% endfor %}

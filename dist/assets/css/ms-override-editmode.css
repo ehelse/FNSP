@@ -1,0 +1,805 @@
+/* Base colours from HN, used in clinical studies filter */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(0 0 0 0);
+}
+
+.ms-dlgTitle {
+  padding: 13px 30px 18px 19px;
+}
+
+.ms-dlgTitle h1 {
+  overflow: initial;
+}
+
+#s4-titlerow {
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+}
+
+#s4-bodyContainer {
+  padding-bottom: 0;
+}
+
+#suiteBar *, #s4-ribbonrow *, #notificationArea *, #DeltaPageStatusBar * {
+  box-sizing: initial;
+}
+
+#s4-ribbonrow a {
+  color: initial;
+}
+
+.ms-webpartzone-cell {
+  margin: 0;
+}
+
+.ms-webpart-menuLink {
+  zoom: 2;
+  padding: 0;
+}
+
+.ms-rteTable-default, .ms-rteTable-default > tbody > tr > td, .ms-rteTable-default > tbody > tr > th, td.ms-rteTable-default, th.ms-rteTable-default {
+  border: 0;
+}
+
+.ms-rteTable-default, .ms-rteTable-default > tbody > tr > td, .ms-rteTable-default > tbody > tr > th, td.ms-rteTable-default, th.ms-rteTable-default {
+  padding: .75rem 1rem;
+}
+
+.ms-rtestate-field h2, .ms-rtestate-field h3, .ms-rtestate-field h4,
+.ms-rte-stylePreviewBox h2,
+.ms-rte-stylePreviewBox h3,
+.ms-rte-stylePreviewBox h4 {
+  color: #252525;
+  font-weight: 600;
+}
+
+.ms-rtestate-field h2,
+.ms-rte-stylePreviewBox h2 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: .25rem;
+}
+
+.ms-rtestate-field h3,
+.ms-rte-stylePreviewBox h3 {
+  font-size: 1.25rem;
+  margin-top: 1.75rem;
+  margin-bottom: .5rem;
+}
+
+.ms-rtestate-field h3:first-child,
+.ms-rte-stylePreviewBox h3:first-child {
+  margin-top: 0;
+}
+
+.ms-rtestate-field h4,
+.ms-rte-stylePreviewBox h4 {
+  font-size: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.ms-rtestate-field span[id*='RichImageField_ImageFieldDisplay'] > img,
+.ms-rte-stylePreviewBox span[id*='RichImageField_ImageFieldDisplay'] > img {
+  width: 100%;
+}
+
+a.ms-core-menu-link, a.ms-core-menu-link:hover {
+  padding: 6px 8px !important;
+  border-bottom: none !important;
+}
+
+.ms-formfieldvaluecontainer input.ms-input {
+  width: 100%;
+}
+
+/*Taxonomy picker styling*/
+.cam-taxpicker {
+  width: 386px;
+  overflow: hidden;
+  border-spacing: 0px;
+  position: relative;
+}
+
+.cam-taxpicker-editor {
+  border: 1px solid #99b0c1;
+  cursor: text;
+  word-break: break-all;
+  word-wrap: break-word;
+  outline: none medium invert;
+  padding: 2px;
+  width: 360px;
+  float: left;
+  min-height: 19px;
+}
+
+.cam-taxpicker-editor:focus {
+  border: 2px solid #2a8dd4;
+}
+
+.cam-taxpicker-clear-terms-button {
+  position: absolute;
+  right: 30px;
+  top: 3px;
+  line-height: 1rem;
+}
+
+.cam-taxpicker-editor-readonly {
+  border: 1px solid #99b0c1;
+  cursor: text;
+  color: #818187;
+  word-break: break-all;
+  word-wrap: break-word;
+  outline: none medium invert;
+  padding: 2px;
+  width: 360px;
+  float: left;
+  min-height: 19px;
+}
+
+.cam-taxpicker-button {
+  margin: 6px 0 0 4px !important;
+  background: url(/Images/EMMCopyTerm.png) no-repeat;
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+
+.cam-taxpicker-button:hover {
+  cursor: pointer;
+}
+
+.cam-taxpicker-dialog-overlay {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  background-color: #999;
+  opacity: 0.4;
+  z-index: 1500;
+}
+
+.cam-taxpicker-dialog-content {
+  position: fixed;
+  width: 820px;
+  height: 650px;
+  left: 50%;
+  top: 50%;
+  margin-left: -410px;
+  margin-top: -325px;
+  border: 1px solid #C4D0D7;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.47);
+  background: #fff;
+  z-index: 1505;
+}
+
+.cam-taxpicker-dialog-content-header {
+  padding: 13px 19px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cam-taxpicker-dialog-content-header-title {
+  width: 735px;
+  font-size: 1.46em;
+  font-weight: 200;
+  float: left;
+}
+
+.cam-taxpicker-dialog-content-close {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.cam-taxpicker-dialog-content-subheader {
+  width: 780px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  float: left;
+  font-size: 17px;
+}
+
+.cam-taxpicker-dialog-content-subheader-img {
+  margin-right: 20px;
+  float: left;
+}
+
+.cam-taxpicker-dialog-content-subheader-title {
+  padding-top: 4px;
+  float: left;
+}
+
+.cam-taxpicker-dialog-content-subheader-addnew {
+  padding-top: 4px;
+  float: left;
+}
+
+.cam-taxpicker-dialog-tree-container {
+  width: 780px;
+  height: 380px;
+  border: 1px solid #898989;
+  overflow-x: auto;
+  margin: 20px;
+  float: left;
+}
+
+.cam-taxpicker-dialog-selection-container {
+  width: 760px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cam-taxpicker-dialog-selection-container button {
+  width: 150px;
+}
+
+.cam-taxpicker-dialog-selection-editor {
+  border: 1px solid #5c7b93;
+  background-color: rgba(255, 255, 255, 0.84);
+  outline: medium none invert;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: visible;
+  width: 490px;
+  float: right;
+  min-height: 1em;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.cam-taxpicker-suggestion-container {
+  min-width: 384px;
+  position: absolute;
+  padding-bottom: 15px;
+  border: thin ridge currentColor;
+  z-index: 1;
+  display: none;
+  max-height: 300px;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+
+.cam-taxpicker-suggestion-title {
+  background-color: #ebf3ff;
+  color: #818187;
+  border: medium none #222222;
+  font-weight: bold;
+  font-size: 8pt;
+  padding-bottom: 2px;
+  padding-left: 7px;
+  padding-right: 0px;
+  padding-top: 2px;
+}
+
+.cam-taxpicker-suggestion-item {
+  color: #000;
+  font-size: 13px;
+  margin: 0px 0px 0px 0px;
+  padding-left: 16px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cam-taxpicker-suggestion-item.selected,
+.cam-taxpicker-suggestion-item:hover {
+  background-color: #fdeedb;
+}
+
+.cam-taxpicker-term-selected {
+  text-decoration: underline;
+}
+
+.cam-taxpicker-term-invalid {
+  color: red;
+  border-bottom: 1px dotted red;
+}
+
+.cam-taxpicker-treenode-ul {
+  margin: 0px;
+  padding-left: 0px;
+  display: none;
+  margin-left: 15px;
+}
+
+.root.cam-taxpicker-treenode-ul {
+  display: block;
+  margin-left: 0px;
+}
+
+.cam-taxpicker-treenode-li {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+.cam-taxpicker-treenode {
+  width: 200px;
+  white-space: nowrap;
+}
+
+.cam-taxpicker-treenode img {
+  margin: 2px 0px 2px 4px;
+  vertical-align: middle;
+}
+
+.cam-taxpicker-expander {
+  float: left;
+  width: 15px;
+  height: 20px;
+}
+
+.expanded.cam-taxpicker-expander {
+  background: url(/Images/MDNExpanded.png) no-repeat;
+}
+
+.collapsed.cam-taxpicker-expander {
+  background: url(/Images/MDNCollapsed.png) no-repeat;
+}
+
+.cam-taxpicker-treenode-title {
+  margin: 0px 0px 0px 4px;
+  display: inline-block;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.cam-taxpicker-treenode-title:hover {
+  border: 1px solid #ff9933;
+}
+
+.selected.cam-taxpicker-treenode-title {
+  background-image: url(/Images/menubuttonhover.gif?rev=23);
+  background-repeat: repeat-x;
+  border: 1px solid #FF9933;
+  margin: 0px 0px 0px 4px;
+  display: inline-block;
+}
+
+.root.cam-taxpicker-treenode-title:hover {
+  cursor: default;
+}
+
+.root.cam-taxpicker-treenode-title:hover {
+  border: 1px solid transparent;
+}
+
+.cam-taxpicker-treenode-newnode {
+  margin: 0px 0px 0px 4px;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 3px;
+  padding-right: 3px;
+  min-width: 100px;
+  border: 1px solid #ff9933;
+  background: url(/Images/menubuttonhover.gif) repeat-x;
+  min-height: 19px;
+}
+
+.cam-taxpicker-dialog-button-container {
+  width: 780px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.cam-taxpicker-dialog-button-container button {
+  height: 40px;
+  width: 80px;
+  margin: 5px;
+}
+
+.cam-taxpicker-waiting-overlay {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #999;
+  opacity: 0.4;
+  z-index: 1500;
+}
+
+.cam-taxpicker-waiting-dlg {
+  position: absolute;
+  width: 368px;
+  height: 146px;
+  left: 50%;
+  top: 50%;
+  margin-left: -184px;
+  margin-top: -73px;
+  border: 1px solid #C4D0D7;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.47);
+  background: #fff;
+  z-index: 1505;
+}
+
+.cam-taxpicker-waiting-dlg-inner {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.settings-panel .border-1px {
+  border: 1px solid #CDCDCD !important;
+  margin-bottom: 7px;
+}
+
+.settings-panel .input-row {
+  display: block;
+  margin-bottom: 7px;
+  margin-left: 10px;
+}
+
+.settings-panel .input-row .text-cell {
+  display: block;
+}
+
+.settings-panel .input-row .label-subtext {
+  font-size: 10px;
+}
+
+.settings-panel .input-rtefield {
+  margin: 7px;
+}
+
+.settings-panel input[type=text]:focus,
+.settings-panel div[role=textbox]:focus,
+.settings-panel texarea:focus {
+  border: 2px solid #2a8dd4;
+}
+
+.settings-panel .ms-rtestate-write.ms-rtestate-field {
+  border: 2px solid #CDCDCD;
+}
+
+.settings-panel .ms-rtestate-write.ms-rtestate-field:focus {
+  border: 2px solid #2a8dd4;
+}
+
+.settings-panel .label-row {
+  margin: 7px 0 4px 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.settings-panel .fnsp-formfieldlabelcontainer {
+  font-family: Tahoma;
+  font-size: 8pt;
+  font-weight: normal;
+  text-align: left;
+  color: #777;
+}
+
+.settings-panel .ms-dtinput {
+  padding-left: 0;
+}
+
+.settings-panel #UpdateSuccess, .settings-panel .UpdateSuccess {
+  display: none;
+  color: forestgreen;
+}
+
+.settings-panel #CatalogWarning {
+  display: none;
+  color: #FFC107;
+}
+
+.settings-panel .UpdateFail, .settings-panel #UpdateFail {
+  display: none;
+  color: darkred;
+}
+
+.settings-panel .webpart-save-button {
+  width: 80px;
+  height: 40px;
+}
+
+.settings-panel .webpart-save-button::before {
+  background: none;
+  width: 0px;
+  height: 0px;
+}
+
+body {
+  font-size: inherit;
+}
+
+.m_page-menu.sticky {
+  display: none;
+}
+
+.m_site-settings input[type="button"], .m_site-settings input[type="reset"], .m_site-settings input[type="submit"], .m_site-settings button {
+  margin-left: 0;
+  min-width: auto;
+  vertical-align: initial;
+}
+
+.rollupingress {
+  width: 100%;
+  font-size: initial;
+}
+
+.m_search-box {
+  display: block;
+}
+
+.m_search-box [type="button"] {
+  min-width: 0 !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: inherit;
+  font-family: "Open Sans", Helvetica, sans-serif !important;
+}
+
+.ms-formfieldlabelcontainer.fnsp-helptext {
+  margin-bottom: 4rem;
+}
+
+.o_promoted-content .a_underline-heading {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.o_promoted-content .a_underline-heading:hover, .o_promoted-content .a_underline-heading:focus {
+  text-decoration: none;
+}
+
+.ms-taxonomy-fieldeditor.ms-taxonomy-fieldeditor-standard {
+  width: 94% !important;
+}
+
+.menu-button-container button.expander {
+  min-width: 2rem !important;
+}
+
+.language input, .language select, .language label, .language textarea, .language button, .language option {
+  vertical-align: inherit;
+}
+
+.image-alt-warning-overlay {
+  margin-top: -2rem;
+}
+
+.image-alt-warning-overlay h4 {
+  color: black;
+  margin-left: .5rem;
+}
+
+.image-alt-warning-overlay h4 span {
+  background-color: #FFF1AC;
+  padding: 0 1rem;
+  border: 1px solid #d7d889;
+}
+
+.missing-alttext {
+  border: 1px solid red !important;
+}
+
+figure .attribution span {
+  background: none !important;
+  position: static !important;
+  line-height: 1rem !important;
+  text-shadow: none !important;
+}
+
+.col-md-6 .ms-webpart-zone {
+  display: block;
+}
+
+.image-alt-warning-overlay {
+  display: inline-block !important;
+}
+
+.ms-cui-ctl-largelabel, .ms-cui-ctl-mediumlabel {
+  color: initial !important;
+}
+
+.stop-expandable:before {
+  content: "Ekspanderbart innhold vil stoppe her";
+  background-color: white;
+  padding: 0 .75em;
+  margin: 0 1em;
+  color: green;
+}
+
+.stop-expandable:after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid green;
+  margin-top: -.75em;
+  margin-bottom: 1.75em;
+}
+
+.m_page-list {
+  transform: translateX(0);
+}
+
+.o_promoted-content .title {
+  margin-left: 0;
+}
+
+.vueWebPart .vueEditorPanel input {
+  font-size: 1rem;
+}
+
+.vueWebPart .vueEditorPanel input:disabled + label {
+  color: #ccc;
+}
+
+.vueWebPart .vueEditorPanel h3 {
+  margin-top: 0;
+}
+
+.vueWebPart .vueEditorPanel button, .vueWebPart .vueEditorPanel input[type=submit], .vueWebPart .vueEditorPanel submit {
+  cursor: pointer;
+  padding: 0.1rem 0.3rem 0.1rem .3rem;
+  min-width: 0;
+  margin: 0 0rem 0 0.15rem;
+}
+
+.vueWebPart .vueEditorPanel button::before, .vueWebPart .vueEditorPanel input[type=submit]::before, .vueWebPart .vueEditorPanel submit::before {
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  background: url(/Images/spcommon.png) 0 0;
+  position: relative;
+  content: '';
+  background-repeat: no-repeat;
+}
+
+.vueWebPart .vueEditorPanel button.EditButton::before, .vueWebPart .vueEditorPanel input[type=submit].EditButton::before, .vueWebPart .vueEditorPanel submit.EditButton::before {
+  background-position: -216px -64px;
+}
+
+.vueWebPart .vueEditorPanel button.DeleteButton::before, .vueWebPart .vueEditorPanel input[type=submit].DeleteButton::before, .vueWebPart .vueEditorPanel submit.DeleteButton::before {
+  background-position: -197px -118px;
+}
+
+.vueWebPart .vueEditorPanel button.NewButton::before, .vueWebPart .vueEditorPanel input[type=submit].NewButton::before, .vueWebPart .vueEditorPanel submit.NewButton::before {
+  background-position: -200px -83px;
+}
+
+.vueWebPart .vueEditorPanel button.UpButton::before, .vueWebPart .vueEditorPanel input[type=submit].UpButton::before, .vueWebPart .vueEditorPanel submit.UpButton::before {
+  background-position: -197px -134px;
+}
+
+.vueWebPart .vueEditorPanel button.DownButton::before, .vueWebPart .vueEditorPanel input[type=submit].DownButton::before, .vueWebPart .vueEditorPanel submit.DownButton::before {
+  background-position: -197px -140px;
+  transform: rotate(-180deg);
+}
+
+.vueWebPart .vueEditorPanel button.SaveButton::before, .vueWebPart .vueEditorPanel input[type=submit].SaveButton::before, .vueWebPart .vueEditorPanel submit.SaveButton::before {
+  background-position: -107px -194px;
+}
+
+.vueWebPart .vueEditorPanel button.SaveWPSettingsButton, .vueWebPart .vueEditorPanel button.webpart-save-button, .vueWebPart .vueEditorPanel input[type=submit].SaveWPSettingsButton, .vueWebPart .vueEditorPanel input[type=submit].webpart-save-button, .vueWebPart .vueEditorPanel submit.SaveWPSettingsButton, .vueWebPart .vueEditorPanel submit.webpart-save-button {
+  width: 80px;
+  height: 40px;
+}
+
+.vueWebPart .vueEditorPanel button.SaveWPSettingsButton::before, .vueWebPart .vueEditorPanel button.webpart-save-button::before, .vueWebPart .vueEditorPanel input[type=submit].SaveWPSettingsButton::before, .vueWebPart .vueEditorPanel input[type=submit].webpart-save-button::before, .vueWebPart .vueEditorPanel submit.SaveWPSettingsButton::before, .vueWebPart .vueEditorPanel submit.webpart-save-button::before {
+  background: none;
+  width: 0px;
+  height: 0px;
+}
+
+.vueWebPart .vueEditorPanel button.AssetPicker::before, .vueWebPart .vueEditorPanel input[type=submit].AssetPicker::before, .vueWebPart .vueEditorPanel submit.AssetPicker::before {
+  background-position: 0 -233px;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel {
+  padding-left: 2rem;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel .editItem {
+  margin-top: 1rem;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel .editItem input {
+  width: 90%;
+  margin-bottom: .5rem;
+  height: 2rem;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel .editItem input.full-width-input {
+  width: 100%;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel .editItem textarea {
+  height: 7rem;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel .editItem button.AssetPicker {
+  margin: 0 0 .5rem .5rem;
+}
+
+.vueWebPart .vueEditorPanel .TimeLinePanel p.center {
+  text-align: center;
+}
+
+.vueWebPart .txt-error, .vueWebPart .invalid {
+  color: red;
+}
+
+.vueWebPart #gjentakende-panel ul {
+  min-height: 250px;
+}
+
+.vueWebPart #gjentakende-egenskaper {
+  background-color: #f4f4f2;
+  padding: 25px;
+  min-width: 250px;
+  margin-left: -18px;
+}
+
+.vueWebPart .o_tile-group .subnav li {
+  clear: both;
+}
+
+.vueWebPart .o_tile-group .subnav span::after, .vueWebPart .o_tile-group .subnav li::after {
+  background-color: transparent !important;
+}
+
+.vueWebPart .o_tile-group .subnav span::after:hover, .vueWebPart .o_tile-group .subnav li::after:hover {
+  background-color: transparent !important;
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+  font-size: 1rem;
+  margin: 0;
+  padding: 2px;
+  min-width: 0;
+}
+
+.ReactWebpartEditMode input[type="text"] {
+  border: none;
+  padding: 0 12px;
+}
+
+.ReactWebpartEditMode button:hover {
+  border-color: transparent;
+}
+
+/*# sourceMappingURL=maps/ms-override-editmode.css.map */

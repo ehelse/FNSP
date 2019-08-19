@@ -1,0 +1,21 @@
+#suiteBarLeft {
+  background-color: #a52a2a;
+}
+
+.o_framework-header .menu-button-container button, .o_framework-header .menu-button-container button:hover, .o_framework-header .menu-button-container button:active, .o_framework-header .menu-button-container button:focus {
+  background-color: #a52a2a;
+}
+
+.m_status-panel .task-list .tasks li {
+  background-color: #a52a2a;
+}
+
+.m_status-panel .task-list .tasks li.disabled {
+  background-color: #e5b9b5;
+}
+
+.m_status-panel .version-info {
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=maps/fellesinnhold.css.map */

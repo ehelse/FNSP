@@ -1,0 +1,160 @@
+.m_factbox {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+
+    .title {
+        @extend h3;
+        padding: 1rem;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .expand {
+        position: relative;
+
+        // Border when open
+        &::after {
+            content: "";
+            width: 100%;
+            bottom: 3.5rem;
+            top: 0;
+            position: absolute;
+            border: 2px solid $grey-md-lt;
+            z-index: -1;
+        }
+
+        .expandable {
+            padding: 0 1rem;
+            transition: none;
+
+            // Gradient.  Not shown when open.
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -1rem;
+                right: -1rem;
+                z-index: -1;
+            }
+
+        }
+
+        &.collapsed {
+
+            // Border when closed
+            &::after {
+                z-index: 1;
+            }
+
+            .expandable {
+                min-height: 1.5em;
+                opacity: 1;
+                visibility: visible;
+                position: relative;
+                transition: none;
+
+                // Gradient when collapsed
+                &::after {
+                    background: linear-gradient(to top, white, rgba(255, 255, 255, 0));
+                    z-index: 0;
+                }
+            }
+        }
+    }
+
+    .footer {
+        text-align: center;
+        height: 5.825rem;
+        padding-top: .5rem
+    }
+
+    .button-toggle {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        border: 0;
+        padding: 0;
+        margin-top: 4rem;
+        font-weight: 600;
+        color: $blue;
+        background-color: white;
+        z-index: 2;
+        overflow: visible;
+
+        &, &::after {
+            transition: .2s;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+
+            border-radius: 3.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            top: -4rem;
+            left: 50%;
+
+            margin-left: -1.75rem;
+            box-shadow: 1rem 0 0 #fff, -1rem 0 0 #fff;
+
+            background-color: $blue;
+            background-repeat: no-repeat;
+            background-image: url($chevron-white);
+            background-position: center 1.5rem;
+            background-size: 1.25rem;
+
+        }
+
+        &:hover, &:focus {
+            color: $blue-md;
+
+            // The button
+            &::after {
+                background-color: $blue-md;
+                background-position: center 1.65rem;
+            }
+        }
+
+        span {
+            &::after {
+                content: attr(data-show-text);
+            }
+        }
+    }
+
+    .expanded {
+
+        .footer {
+            padding-top: 0;
+            height: 5.375rem;
+        }
+
+        .button-toggle {
+
+            span {
+                &::after {
+                    content: attr(data-hide-text);
+                }
+            }
+
+            &::after {
+                transform: scaleY(-1);
+                background-position: center 1.5rem;
+            }
+
+            &:hover {
+                &::after {
+                    background-position: center 1.65rem;
+                }
+            }
+        }
+    }
+}

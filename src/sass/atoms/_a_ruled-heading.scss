@@ -1,0 +1,45 @@
+.a_ruled-heading {
+    position: relative;
+    text-transform: uppercase;
+    line-height: 1.25;
+    font-size: $font-2xl;
+    font-weight: 700;
+    display: table;
+    overflow: hidden;
+    text-align: center;
+    margin: 2.5rem 0;
+
+    &:before, &:after {
+        transform: translateY(50%);
+        width: 47%;
+        border-top: 3px solid $grey-dk;
+        content: "";
+        display: table-cell;
+        position: relative;
+    }
+
+    &:before {
+        right: 2rem;
+    }
+
+    &:after {
+        left: 2rem;
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .a_ruled-heading {
+        white-space: nowrap;
+    }
+
+    .col-md-6 {
+        .a_ruled-heading {
+            white-space: normal;
+        }
+    }
+}
+
+/**********************************************************************/

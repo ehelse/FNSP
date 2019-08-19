@@ -1,0 +1,55 @@
+<nav class="js-header-sticky m_page-menu">
+    <div class="container">
+        <ul>
+            <li class="to-top-button">
+                <a href="#">Til toppen</a>
+            </li>
+
+            {% if page.type == "sammensatt" %}
+
+            <li class="main-link">
+                <a href="#utredning" class="nav-item">
+                    <span class="section-headline">Utredning</span>
+                </a>
+            </li>
+
+            <li class="main-link">
+                <a href="#behandling" class="nav-item">
+                    <span class="section-headline">Behandling</span>
+                </a>
+            </li>
+
+            <li class="main-link">
+                <a href="#oppføelging" class="nav-item">
+                    <span class="section-headline">Oppfølging</span>
+                </a>
+            </li>
+
+            {% else %}
+
+            <li class="main-link">
+                <a href="#foer" class="nav-item">
+                    <span class="section-headline">Før</span>
+                </a>
+            </li>
+            <li class="main-link">
+                <a href="#under" class="nav-item">
+                    <span class="section-headline">Under</span>
+                </a>
+            </li>
+            <li class="main-link">
+                <a href="#etter" class="nav-item">
+                    <span class="section-headline">Etter</span>
+                </a>
+            </li>
+
+            {% endif %}
+
+            <li class="contact">
+                <a href="#kontakt" class="contact-link">
+                    <span class="section-headline">Kontakt</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

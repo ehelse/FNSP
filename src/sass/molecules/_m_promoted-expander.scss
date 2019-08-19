@@ -1,0 +1,93 @@
+.m_promoted-expander {
+    @include expander-arrow($chevron-white, $chevron-white);
+    font-size: $font-l;
+    margin-bottom: 5.5rem;
+    margin-top: 1rem;
+
+    & > .container > .expander {
+        @include text-button();
+
+        position: relative;
+        padding-right: 1.5em;
+        width: 100%;
+        text-align: left;
+        text-transform: none;
+        z-index: 10;
+        box-shadow: 0 0 0 .25em #fff;
+        font-size: $font-l;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 1.5em;
+            top: 0;
+            width: 1em;
+            height: 100%;
+            background: url($chevron-white) center / contain no-repeat;
+            transform: scaleY(-1);
+            transition: .3s;
+        }
+
+        &:hover, &:focus {
+            &::before {
+                background-image: url($chevron-white);
+            }
+        }
+
+        .dash, .subtitle {
+            display: none;
+        }
+    }
+
+    &.collapsed {
+        & > .container > .expander {
+            &::before {
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    & > .expandable {
+        margin-top: -2.75em;
+        background-color: $grey-lt;
+
+        .container {
+            font-size: $font-m;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .subtitle {
+            font-size: $font-l;
+            margin-top: 1.5rem;
+
+            &:first-letter {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+/******************************************************************** */
+/* Narrow desktops and landscape-oriented tablets.  Three columns. */
+@media only screen and (min-width: $two-to-three-col) {
+
+    .m_promoted-expander {
+        & > .container > .expander {
+            .dash, .subtitle {
+                display: inline;
+                font-size: $font-m;
+            }
+        }
+
+        & > .expandable {
+            .container {
+                padding-top: 4rem;
+            }
+
+            .subtitle {
+                display: none;
+            }
+        }
+    }
+}

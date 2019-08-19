@@ -1,0 +1,17 @@
+.nojs {
+    .instructions, .o_framework-header .menu-button-circle::after  {
+        display: none;
+    }
+
+    .o_framework-header .menu-button-circle::before {
+        top: 35%;
+    }
+
+    .menu-button-circle {
+        cursor: default;
+    }
+
+    .text-size:hover .instructions {
+        display: block;
+    }
+}

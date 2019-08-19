@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <nav class="m_location-picker">
+                <div>Hvor skal du behandles?</div>
+                <ul class="m_link-list locations">
+                    <li>
+                        {% if page.location-picker == "selected"%}
+
+                        Levanger
+
+                        {% else %}
+
+                        <a href="Treatment-multiple-locations-location-selected.html">Levanger</a>
+
+                        {% endif %}
+
+                    </li>
+                    <li><a href="">Namsos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

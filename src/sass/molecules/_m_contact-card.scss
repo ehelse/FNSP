@@ -1,0 +1,154 @@
+.m_contact-card {
+    position: relative;
+    margin-bottom: .5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    dl {
+        &.col-md-6 {
+            margin-top: 0;
+        }
+
+        & > dt {
+            margin-top: 1rem;
+        }
+
+        & > dd:last-child {
+            margin-bottom: 3rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    dt {
+        font-weight: 700;
+        margin: 1rem 0 .25rem;
+    }
+
+    .hours {
+        border-collapse: collapse;
+        margin-bottom: 1.25rem;
+
+        thead {
+            @extend .visuallyhidden;
+        }
+
+        tr {
+            display: block;
+        }
+
+        td {
+            display: block;
+
+            &:last-child {
+                padding-bottom: .5rem;
+            }
+        }
+
+        tbody {
+            td {
+                &:first-child {
+                    white-space: nowrap;
+
+                    &::after {
+                        content: ":";
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-map {
+        display: none;
+        margin-bottom: 2.5rem;
+        margin-top: 2.5rem;
+        height: 400px;
+        width: 400px;
+    }
+
+    label {
+        font-weight: normal;
+    }
+
+    .location {
+        @extend h3;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    dd .location {
+        margin-top: 2.5rem;
+    }
+
+    .col-md-6 {
+        > a {
+            &.location {
+                margin-top: 0!important;
+            }
+        }
+    }
+
+    .google-map {
+        max-width: 100%;
+        height: 100%;
+
+        span {
+            display: none;
+        }
+
+        a {
+            display: none;
+        }
+    }
+
+    .gmnoprint {
+        display: none;
+    }
+}
+
+/**********************************************************************/
+@media only screen and (min-width: $one-to-two-col) {
+    .m_contact-card {
+
+        dl:last-child {
+            margin-bottom: 2.5rem;
+        }
+
+        .hours {
+
+            tr {
+                display: table-row;
+            }
+
+            td {
+                display: table-cell;
+
+                &:first-child {
+                    padding-right: 1rem;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+
+        }
+    }
+}
+
+/**********************************************************************/
+@media only screen and (min-width: $two-to-three-col) {
+    .m_contact-card {
+
+        dl > dd:last-child {
+            margin-bottom: 0;
+        }
+        .contact-map {
+            margin-top: 0;
+        }
+    }
+}

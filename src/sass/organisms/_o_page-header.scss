@@ -1,0 +1,558 @@
+// These are the same as the SP image renditions
+$rendition-1-height: 318px;
+$rendition-2-height: 371px;
+$rendition-3-height: 424px; // Also for rendition 4
+
+// Fix for issue in articles
+.article .o_page-header {
+    margin-bottom: 2rem;
+}
+
+// Fix for search center
+.search {
+    .o_page-header {
+        margin-bottom: 0;
+
+        h1 {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.o_page-header {
+
+    .supertitle {
+        font-size: 1.125rem;
+        margin-top: 1.5rem;
+
+        + h1 {
+            margin-top: 0;
+        }
+    }
+
+    &.highlighted {
+        padding-bottom: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &.container, .container {
+        position: relative;
+    }
+
+    h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.1;
+        font-size: $font-2xl;
+        font-weight: 300;
+        // padding-bottom: 1rem;
+    }
+
+
+    #page-subtitle {
+        margin-top: 0;
+        font-weight: 400;
+        font-size: $font-xl;
+    }
+
+    .m_page-ingress {
+        font-size: $font-l;
+        margin: 1.5rem 0;
+
+        .subtitle {
+            @extend h2;
+        }
+
+        h2, .subtitle {
+            margin-top: 0;
+        }
+
+        p, .note-ingress {
+            margin-bottom: 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+    }
+
+    .m_page-metadata {
+        margin-bottom: 1.5rem;
+    }
+
+    .m_related-info {
+        margin: 0;
+
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    figure {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .ms-rtestate-field p {
+        margin-bottom: 0;
+    }
+
+    .col-md-6:first-child {
+        margin-top: 1rem;
+    }
+
+    .m_printdialog {
+        display: none;
+    }
+
+    .content-list-link {
+        font-size: $font-l;
+        color: #fff;
+        font-weight: 300;
+        border-bottom-color: #fff;
+        padding-bottom: .25rem;
+    }
+
+    .page-header-content {
+        position: relative;
+        z-index: 100;
+    }
+
+    & + .container .row > div {
+        & > h2, & > h3 {
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// For page headers with full-bleed images
+.image-fb {
+    .o_page-header {
+        margin-bottom: 0;
+
+        .image-band,
+        .image-band::before,
+        .page-header-content {
+            height: $rendition-1-height;
+        }
+
+        .image-band {
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                z-index: 1;
+                width: 100%;
+                position: absolute;
+            }
+        }
+
+        .image-container {
+            position: relative;
+            text-align: center;
+
+            img {
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        .page-header-content {
+            &::after {
+                font-size: $font-s;
+                content: attr(data-attribution-text) attr(data-image-attribution);
+                position: absolute;
+                bottom: .25rem;
+                right: 1rem;
+            }
+        }
+
+        &.with-ingress {
+
+            .page-header-content, .image-band {
+                height: auto;
+            }
+
+            .image-container, .image-band::before, .image-band::after, .page-header-content::after {
+                display: none;
+            }
+
+            .page-header-content-container {
+                padding-bottom: 2.5rem;
+            }
+        }
+
+        &:not(.with-ingress) {
+            &:not(.invertcolor) {
+                .image-band {
+
+                    .print-icon {
+                        background-image: url($print-icon-white);
+                    }
+
+                    &, a, :not(.expanded) .print-icon::after, li.current {
+                        text-shadow: 0 0 2px #000;
+                        color: #fff !important;
+                    }
+
+                    &::before {
+                        background: linear-gradient(to right, rgba(30, 30, 30, .7), transparent), linear-gradient(to bottom, rgba(30, 30, 30, .5) 0%, transparent 70%);
+                    }
+                }
+
+                .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                    background-image: url($chevron-white);
+                }
+
+                .m_printdialog {
+                    :not(.expanded) .print-icon {
+                        background-image: url($print-icon-white);
+                    }
+                }
+
+            }
+
+            &.invertcolor {
+                .image-band {
+                    &, a, :not(.expanded) .print-icon::after {
+                        color: #000 !important;
+                        text-shadow: 0 0 2px #fff;
+                    }
+
+                    &::before {
+                        background: linear-gradient(to right, rgba(255, 255, 255, .7), transparent), linear-gradient(to bottom, rgba(255, 255, 255, .5) 0%, transparent 70%);
+                    }
+                }
+
+                .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                    background-image: url($chevron-grey-dk);
+                }
+
+                .m_printdialog {
+                    :not(.expanded) .print-icon {
+                        background-image: url($print-icon-black);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For the front page.
+.WelcomePage {
+    .o_page-header {
+
+        .page-header-content {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .content-list-link {
+            align-self: flex-start;
+        }
+
+        h1 {
+            margin: 0;
+            position: relative;
+            font-size: $font-3xl;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -10rem;
+                height: 100%;
+                width: 8rem;
+            }
+        }
+    }
+
+    &:not(.nasjonal) {
+        .o_page-header {
+
+            h1 {
+                @extend .visuallyhidden;
+            }
+
+            .image-band,
+            .image-band::before,
+            .page-header-content {
+                height: 150px;
+            }
+            
+            .image-container {
+                display: none;
+                img {
+                    top: -9px;
+                }
+            }
+
+            .m_search-box {
+                border: none;
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_page-header {
+
+        .m_highlighted-expander {
+            margin-top: 1rem;
+        }
+
+        // For page headers with two images
+        .col-md-6 + .col-md-6 {
+            margin-bottom: 0;
+        }
+
+        .col-md-6:first-child {
+            margin-top: 0;
+        }
+
+        h1 {
+            margin-top: 2.5rem;
+            font-size: $font-3xl;
+        }
+
+        .m_breadcrumbs {
+            display: block;
+            padding-right: 7rem;
+        }
+
+        .m_printdialog {
+            display: block;
+
+            &.expanded {
+                text-shadow: none !important;
+            }
+        }
+    }
+
+    .image-fb {
+        .o_page-header {
+
+            .image-band,
+            .image-band:before,
+            .image-band:after,
+            .page-header-content {
+                height: $rendition-2-height;
+            }
+          
+            h1 {
+                font-size: $font-4xl;
+            }
+
+            &.with-ingress {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    // For the front page.
+    .WelcomePage {
+        .o_page-header {
+            h1 {
+                font-size: $font-3xl;
+            }
+        }
+
+        &:not(.nasjonal) {
+            .o_page-header {
+
+                .image-band,
+                .image-band::before,
+                .page-header-content {
+                    height: 300px;
+                }
+
+                .image-container {
+                    display: block;
+                    img {
+                        top: -36px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/******************************************************************** */
+/* Narrow desktops and landscape-oriented tablets.  Three columns. */
+@media only screen and (min-width: $two-to-three-col) {
+
+    // For full-bleed images
+    .image-fb {
+        .o_page-header {
+
+            &.with-ingress {
+                margin-bottom: 0;
+
+                .image-container,
+                .image-band::before,
+                .image-band::after,
+                .page-header-content::after {
+                    display: block;
+                }
+
+                &:not(.invertcolor) {
+                    .image-band {
+                        &, a, :not(.expanded) .print-icon::after, .m_breadcrumbs li.current {
+                            color: #fff !important;
+                            text-shadow: 0 0 2px #000;
+                        }
+
+                        &::before {
+                            background: linear-gradient(to right, rgba(30, 30, 30, .7), transparent), linear-gradient(to bottom, rgba(30, 30, 30, .5) 0%, transparent 70%);
+                        }
+                    }
+                    .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                        background-image: url($chevron-white);
+                    }
+
+                    .m_printdialog {
+                        &:not(.expanded) .print-icon {
+                            background-image: url($print-icon-white);
+
+                            &::after {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                &.invertcolor {
+                    .image-band {
+                        &, a, :not(.expanded) .print-icon::after, li {
+                            color: #000 !important;
+                            text-shadow: 0 0 2px #fff;
+                        }
+
+                        &::before {
+                            background: linear-gradient(to right, rgba(255, 255, 255, .7), transparent), linear-gradient(to bottom, rgba(255, 255, 255, .5) 0%, transparent 70%);
+                        }
+                    }
+                    .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                        background-image: url($chevron-grey-dk);
+                    }
+
+                    .m_printdialog {
+                        &:not(.expanded) .print-icon {
+                            background-image: url($print-icon-black);
+
+                            &::after {
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .page-header-content {
+                &.text-content-bottom {
+                    display: flex;
+                    flex-direction: column;
+
+                    .m_breadcrumbs {
+                        margin-bottom: auto;
+                    }
+
+                    h1 {
+                        margin-left: 0;
+                        margin-bottom: 1rem;
+                    }
+    
+                    .m_page-ingress {
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .image-band,
+            .image-band:before,
+            .page-header-content,
+            &.with-ingress .page-header-content,
+            &.with-ingress .image-band {
+                height: $rendition-3-height;
+            }
+            
+        }
+    }
+
+    // For the front page.
+    .WelcomePage {
+        .o_page-header {
+            h1 {
+                font-size: $font-4xl;
+            }
+        }
+
+        &:not(.nasjonal) {
+            .o_page-header {
+                .image-container {
+                    img {
+                        top: -62px;
+                    }
+                }
+
+                .m_search-box {
+                    width: $two-col-content;
+                }
+            }
+        }
+    }
+
+    .o_page-header {
+        .m_related-info {
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+/*********************************************************************/
+/* Typical desktops. Four columns. */
+@media only screen and (min-width: $three-to-four-col) {
+
+    // For full-bleed images
+    .image-fb {
+        .o_page-header {
+            .m_page-ingress {
+                width: $three-col-content;
+            }
+        }
+    }
+
+    // For the front page.
+    .WelcomePage {
+        .o_page-header {
+            .page-header-content {
+                padding-right: $one-col;
+            }
+        }
+    }
+
+}
+
+//Fix for large screens images
+@media only screen and (min-width: 1920px) {
+    .image-fb {
+        .o_page-header {
+            .image-container {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/*********************************************************************/

@@ -1,0 +1,12 @@
+<section class="o_horizontal-section">
+
+    {% include generic/ruled-heading.html text="Arrangementer" %}
+
+    <div class="js-responsive-expandable">
+
+        {% include generic/arrangementer/horizontal-list.html data=site.data.st_olav.arrangement.arrangement-pulldown.kommende class="one-time" pulldown=true text-link=true %}
+
+        {% include generic/arrangementer/horizontal-list.html data=site.data.st_olav.arrangement.arrangement-pulldown.faste class="recurring" pulldown=true limit=3 %}
+
+    </div>
+</section>

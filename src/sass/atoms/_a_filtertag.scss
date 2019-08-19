@@ -1,0 +1,84 @@
+/* _atom_filterflag */
+
+/* 
+<ul class="filter-container-keywords">
+  	<li>
+    	<button type="button" class="close-one atom_inline-btn close labelleft">
+    		<span>2014</span>
+    	</button>
+    </li>
+    <li class="filter-item">
+    	<button type="button" class="remove-filters atom_secondarybutton sub transparent">
+    		<span>Fjern alle filtre</span>
+    	</button>
+	</li> 
+  </ul>
+*/
+
+@import "../base/_variables.scss";
+.atom_filtertag {
+    max-width: 100%;
+    margin: 0.25rem 0.75rem 0.25rem 0.25rem;
+    display: inline-block;
+    position: relative;
+    border: none;
+    border-radius: 0.4rem 1rem 1rem 0.4rem;
+    /* yes, this needs to be here for ::hover and ::focus */
+    background: none;
+    cursor: pointer;
+    overflow: visible;
+    padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+    font-family: $basefont;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: none;
+    vertical-align: baseline;
+    min-width: 1.725rem;
+    min-height: 1.725rem;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0.125rem;
+        right: 0.125rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 0.125rem solid rgba(0, 0, 0, 0.17);
+        /* simulerer #d3d3d3 mot hvitt */
+        border-radius: 1.5rem;
+        background: url('../../FNSP/Images/Theme/nav-inline-close.svg');
+        background-size: 1.275rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    &:hover {
+        box-shadow: $hover-box-shadow;
+        &::after {
+            border: 0.125rem solid #0f748d;
+        }
+        span {
+            color: #0f748d;
+        }
+    }
+    &:focus {
+        outline: none;
+        box-shadow: $focus-box-shadow;
+    }
+    span {
+        overflow: hidden;
+        padding-right: 2.0625rem;
+        position: relative;
+        display: block;
+        line-height: 1.65rem;
+        color: #333;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+@media screen and (min-width: $two-to-three-col) {
+    .atom_filtertag {
+        font-weight: 400;
+        font-size: 1.125rem;
+    }
+}

@@ -1,0 +1,207 @@
+/* atom_secondarybutton */
+
+/* <button class="atom_secondarybutton" type="button">This is a button</button> */
+
+/* <button class="atom_secondarybutton sub" type="button">This is a button with inverted outline (less prominent)</button> */
+
+/* <button class="atom_secondarybutton disabled" disabled type="button">This is a disabled button (must also set propery "disabled" to prevent tab-navigation to the button)</button> */
+
+/* <button class="atom_secondarybutton red" type="button">This is a red button</button> */
+
+/* <button class="atom_secondarybutton spinner-right" type="button">This is a button with a spinner to the right</button> */
+@import "../base/_variables.scss";
+a.atom_secondarybutton:link,
+a.atom_secondarybutton:visited,
+.atom_secondarybutton {
+    position: relative;
+    display: block;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+    background-color: $blue-dk;
+    color: #fff;
+    box-shadow: 0 1px 0 0 $blue;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    letter-spacing: normal;
+    padding: 0.5rem 1rem;
+    line-height: 1.25rem;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    appearance: none;
+    min-width: 5.875rem;
+    font-size: 1.125rem;
+    &:hover,
+    &:focus {
+        color: auto;
+        background-color: $blue;
+        box-shadow: $hover-box-shadow;
+    }
+    &:focus {
+        color: auto;
+        outline: none;
+    }
+    &.centered {
+        margin: 0 auto;
+    }
+    &.inline {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+    /* need to target both property and class to stop pointer-events in IE and all other browsers, respectively */
+    &:disabled,
+    &.disabled,
+    &.spinner-right,
+    &.spinner-left,
+    &.spinner-inside {
+        pointer-events: none;
+        background-color: $color-base-4-2-5;
+        box-shadow: 0 1px 0 0 $color-base-4;
+    }
+    &.atom_secondarybutton--sub,
+    &.sub,
+    &.transparent {
+        background: transparent;
+        color: $blue-dk;
+        border: 2px solid $blue-dk;
+        box-shadow: none;
+        &:hover,
+        &:focus {
+            box-shadow: $hover-box-shadow;
+        }
+        &:focus {
+            background: rgba($blue-dk, 0.1);
+        }
+        &:disabled,
+        &.disabled,
+        &.spinner-right {
+            border: 2px solid $color-base-4-2-5;
+            color: $color-base-4;
+        }
+    }
+    &.login {
+        &:before {
+            margin-right: 0.75rem;
+            display: inline-block;
+            height: 1.3rem;
+            width: 1rem;
+            content: '';
+            background: url('../../FNSP/Images/Theme/icon_padlock_white.svg') no-repeat center;
+            background-size: cover;
+            vertical-align: bottom;
+        }
+    }
+    &.message {
+        width: 100%;
+        text-align: left;
+        &:before {
+            margin-right: 0.75rem;
+            display: inline-block;
+            height: 1.8rem;
+            width: 1.8rem;
+            content: '';
+            background: url('../../FNSP/Images/Theme/icon_message.svg') no-repeat center;
+            background-size: cover;
+            vertical-align: middle;
+        }
+        &:after {
+            position: absolute;
+            right: 0.75rem;
+            top: calc(50% - 0.5rem);
+            margin-left: 0.75rem;
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            content: '';
+            background: url('../../FNSP/Images/Theme/nav_arrow_right.svg') no-repeat center;
+            background-size: cover;
+            vertical-align: middle;
+        }
+    }
+    &.search {
+        &:after {
+            margin-left: 0.75rem;
+            display: inline-block;
+            height: 1.4rem;
+            width: 1.35rem;
+            content: '';
+            background: url('../../FNSP/Images/Theme/search-white.svg') no-repeat center;
+            background-size: cover;
+            vertical-align: bottom;
+        }
+    }
+    &.no-outline {
+        border: none;
+        box-shadow: none;
+    }
+    &.red {
+        background-color: #d0021b;
+        border: 1px solid #b30117;
+        /* darker border */
+        box-shadow: none;
+    }
+    &.spinner-right {
+        overflow: visible; //need to set this for IE which has default overflow: hidden on <button>
+        &:after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 1rem);
+            right: -3rem;
+            width: 2rem;
+            height: 2rem;
+            background: url('/images/endless-spinner-32-black-128-dither.GIF') center center no-repeat;
+        }
+    }
+    &.spinner-left {
+        overflow: visible; //need to set this for IE which has default overflow: hidden on <button>
+        &:after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 1rem);
+            left: -3rem;
+            width: 2rem;
+            height: 2rem;
+            background: url('/images/endless-spinner-32-black-128-dither.GIF') center center no-repeat;
+        }
+    }
+    &.spinner-inside {
+        color: $color-base-4-2-5;
+        &:after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 1rem);
+            left: calc(50% - 1rem);
+            width: 2rem;
+            height: 2rem;
+            background: url('/images/endless-spinner-32-black-128-dither.GIF') center center no-repeat;
+        }
+    }
+}
+
+@media screen and (min-width: $one-to-two-col) {
+    .atom_secondarybutton {
+        &.message {
+            width: auto;
+            &:after {
+                position: static;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $two-to-three-col) {
+    .atom_secondarybutton {
+        &--hide-desktop {
+            display: none;
+        }
+    }
+}
+
+@media print {
+    a.atom_secondarybutton:link,
+    a.atom_secondarybutton:visited,
+    .atom_secondarybutton {
+        display: none;
+    }
+}

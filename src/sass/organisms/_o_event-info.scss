@@ -1,0 +1,31 @@
+.o_event-info {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    background-color: $grey-lt;
+
+    dl {
+        margin-bottom: 0;
+    }
+
+    dt, dd {
+        margin: .5rem 0;
+    }
+
+    dt {
+        font-weight: 600;
+        text-align: right;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        dt {
+            text-align: left;
+        }
+    }
+    @media only screen and (min-width:$screen-xs-max) and (max-width:$screen-sm-max) {
+        .container{
+            width: auto;
+        }   
+    } 
+}

@@ -1,0 +1,78 @@
+@import "../base/_variables.scss";
+.atom_inline-btn {
+    display: inline-block;
+    position: relative;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    overflow: visible;
+    padding: 0;
+    font-family: $basefont;
+    font-weight: 400;
+    text-transform: none;
+    vertical-align: baseline;
+    min-width: 1.725rem;
+    min-height: 1.725rem;
+    text-align: left;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        /* simulerer #d3d3d3 mot hvitt */
+    }
+    &:hover {
+        &::after {
+            box-shadow: $hover-box-shadow;
+        }
+    }
+    &:focus {
+        outline: none;
+        &::after {
+            box-shadow: $focus-box-shadow;
+        }
+    }
+    &.resetfilters:after {
+        background-image: url('../../FNSP/Images/Theme/icon_reset-filter.svg');
+        background-size: 1.25rem;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    span {
+        margin-left: 2.0625rem;
+        position: relative;
+        display: block;
+        line-height: 1.65rem;
+        color: #333;
+    }
+}
+
+@media screen and (min-width: $one-to-two-col) {
+    .atom_inline-btn.hide-text:after {
+        top: 0.75rem;
+    }
+}
+
+@media screen and (min-width: $one-to-two-col) {
+    .atom_inline-btn {
+        min-width: 2.3rem;
+        min-height: 2.3rem;
+        &:after {
+            width: 2rem;
+            height: 2rem;
+        }
+        span {
+            margin-left: 2.75rem;
+            line-height: 2.2rem;
+        }
+    }
+}
+
+@media print {
+    .atom_inline-btn:after {
+        content: initial;
+    }
+}

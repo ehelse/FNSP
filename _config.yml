@@ -1,0 +1,13 @@
+name: "[Helseforetakets navn]"
+encoding: UTF-8
+category-list: [Previous releases, Current release]
+customer-list: [HF, RHF, IKT, Felleskomponenter]
+
+source: 'src/jekyll'
+destination: dist/
+keep_files: [assets/js, assets/css, maps]
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - node_modules
+    - gulpfile.js

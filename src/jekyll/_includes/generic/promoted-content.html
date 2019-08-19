@@ -1,0 +1,23 @@
+{% for item in include.data limit:include.limit offset:include.offset %}
+<div class="o_promoted-content{% if item.highlighted == 'yes' %} highlighted{% endif %} {{item.layout}}">
+        <section class="container">
+            <figure>
+                <img src="{{ item.image-url }}" alt="{{ item.img-alt }}"/>
+                <figcaption>
+                    <span class="attribution">Attribution</span>
+                </figcaption>
+            </figure>
+            <div class="content">
+
+                <a href="{{ item.url }}" class="a_underline-heading">
+                    {{ item.title }}
+                </a>
+
+                <p>{{ item.ingress }}</p>
+
+                <a class="a_promoted-link" href="{{ item.url }}">{{ item.link-text}}</a>
+
+            </div>
+        </section>
+</div>
+{% endfor %}

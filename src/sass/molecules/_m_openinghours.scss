@@ -1,0 +1,22 @@
+.m_openinghours {
+    h2 {
+        position: relative;
+        float: left;
+        &::after {
+            content: ' ';
+            position: absolute;
+            right: -2rem;
+            top: 0;
+            width: 1em;
+            height: 100%;
+            background: url($clock-blue) center/1em no-repeat;
+        }
+    }
+    > div {
+        clear: both;
+    }
+}
+
+.openingtimes-external-url-input {
+    min-width: 50rem;
+}

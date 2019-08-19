@@ -1,0 +1,36 @@
+<header class="o_page-header">
+    <div class="container">
+
+        {% include generic/page-header/breadcrumbs.html %}
+        {% include generic/page-header/printdialog.html %}
+
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+                <h1 id="page-title" tabindex="-1">{{ page.title }}</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+
+                <div class="m_page-ingress">
+                    <h2>{{ page.ingress-title }}</h2>
+                    <p>{{ page.ingress }}</p>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-lg-4">
+                {% include generic/page-metadata.html %}
+            </div>
+
+            <div class="col-md-10 col-lg-8">
+                {% if page.images %}
+                {% assign image=site.data.hf.image-blocks[2] %}
+                {% include generic/image-block.html data=image %}
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+</header>

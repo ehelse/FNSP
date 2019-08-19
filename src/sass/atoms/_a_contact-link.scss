@@ -1,0 +1,14 @@
+.a_contact-link {
+    display: inline-block;
+    padding-left: 1.35em;
+    background: left .05em / .9em no-repeat;
+    background-image: url($map-pin-blue), url($map-pin-blue-md), url($map-pin-white);
+
+    &:hover {
+        background-image: url($map-pin-blue-md);
+    }
+
+    &:focus {
+        background-image: url($map-pin-white);
+    }
+}

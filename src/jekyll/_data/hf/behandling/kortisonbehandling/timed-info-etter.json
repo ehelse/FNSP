@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Hjemreise",
+        "timeSpan": "0 - 6",
+        "timeUnit": "timer",
+        "timeDescription": "Ventetid før hjemreise",
+        "content":
+        "<p>Tykktarmskreft er den vanligste betegnelsen på ondartet svulst i tykktarmen (cancer coli). Den primære behandlingen av tarmkreft er kirurgi, enten åpen eller ved kikkehullsteknikk. Cellegift brukes som tilleggsbehandling hvis sykdommen har spredt seg til lokale lymfeknuter.</p>
+        <p>Etter undersøkelsen kan du reise hjem. Hvis det er gitt avslappende kan du ikke kjøre bil før det har gått minst 6 timer.</p>"
+    },
+    {
+        "title": "Resultat av undersøkelse",
+        "timeSpan": "2",
+        "timeUnit": "dager",
+        "timeDescription": "Ventetid før prøvesvar",
+        "expander": "utskrivning",
+        "content":
+        "<p>Du vil rett etter undersøkelsen få beskjed av legen om resultatet.</p>
+        <p>Resultatet fra vevsprøven (biopsien) kommer to arbeidsdager senere.</p>"
+    }
+]

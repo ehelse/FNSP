@@ -1,0 +1,13 @@
+.m_contact-column{
+    .contact-person{
+        padding-top: 1.2rem;
+        font-weight: 700;
+        span{
+            display: table-row;
+
+            &.mail{
+                color: $blue;
+            }
+        }
+    }
+}

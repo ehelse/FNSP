@@ -1,0 +1,38 @@
+<article>
+
+    <!-- Page header -->
+    {% include generic/page-header/simple.html %}
+
+    <!-- Expanding info in header -->
+    {% if page.highlighted-expander %}
+    {% include generic/expander-sections/highlighted.html data=site.data.hf.behandling.tykktarmskreft.highlighted-expander %}
+    {% endif %}
+
+    <!-- Location picker -->
+    {% if page.location-picker %}
+    {% include behandling/location-picker.html %}
+    {% endif %}
+
+    <!-- Statistics at top of page -->
+    {% if page.statistics %}
+    {% include behandling/treatment-statistics.html data=site.data.hf.behandling.generic.header-statistics %}
+    {% else %}
+    <aside class="o_treatment-statistics container"></aside>
+    {% endif %}
+
+    <!-- Scrolling page menu -->
+
+    <!-- {% if page.location-picker == "selected" || !page.location-picker %} -->
+    {% include generic/page-menu.html %}
+    <!-- {% endif %} -->
+
+    <!-- Content -->
+    {{ content }}
+
+    <!-- Metadata in footer -->
+    {% if page.location-picker == "selected" || !page.location-picker %}
+    {% include generic/page-footer.html %}
+    {% endif %}
+
+
+</article>

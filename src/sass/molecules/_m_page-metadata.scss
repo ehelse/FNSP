@@ -1,0 +1,40 @@
+.m_page-metadata {
+    border-top: 1px solid $grey-md;
+    padding-top: .25rem;
+    margin-top: 1.5rem;
+    &.side {
+        span{
+            display: block;
+        }
+    }
+    .updated {
+        + .author {
+            border-left: 1px solid $grey-md;
+            padding-left: .5rem;
+            margin-left: .35rem;
+        }
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .m_page-metadata {
+        border-top: 1px solid $grey-md;
+        padding-top: .25rem;
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+    .m_page-metadata {
+        &.side {
+            border: none;
+            padding-top: 0;
+        
+            .author {
+                font-weight: 600;
+                border: none;
+                padding-left: 0;
+                margin-left: 0;
+            }
+        }
+    }
+}

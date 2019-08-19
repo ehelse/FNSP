@@ -1,0 +1,97 @@
+.a_button-toggle {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    border: 0;
+    padding: 0;
+    margin-top: 4rem;
+    overflow: visible;
+    @extend %hover-underline;
+    font-weight: 600;
+    color: $blue;
+    background-color: white !important;
+
+    &, &::before, &::after {
+        transition: .2s;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    // The button
+    &::after {
+        content: "";
+        position: absolute;
+
+        border-radius: 3.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        top: -4rem;
+        left: 50%;
+
+        margin-left: -1.75rem;
+        box-shadow: 1rem 0 0 #fff, -1rem 0 0 #fff;
+
+        background-color: $blue;
+        background-repeat: no-repeat;
+    }
+
+    // The lines
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2.4rem;
+        width: 24rem;
+        left: 50%;
+        margin-left: -12rem;
+        height: 0;
+        border-top: 2px solid $grey-lt;
+    }
+
+    &:hover, &:focus {
+        color: $blue-md;
+
+        // The button
+        &::after {
+            background-color: $blue-md;
+        }
+    }
+    span {
+        &::after {
+            content: attr(data-show-text) " (" attr(data-hidden-tiles) ")";
+        }
+    }
+
+    &::after {
+        background-image: url($chevron-white);
+        background-position: center 1.5rem;
+        background-size: 1.25rem;
+    }
+
+    &:hover {
+        &::after {
+            background-position: center 1.65rem;
+        }
+    }
+
+    &[aria-expanded=true] {
+
+        span {
+            &::after {
+                content: attr(data-hide-text);
+            }
+        }
+
+        &::after {
+            transform: scaleY(-1);
+            background-position: center 1.5rem;
+        }
+
+        &:hover {
+            &::after {
+                background-position: center 1.65rem;
+            }
+        }
+    }
+}

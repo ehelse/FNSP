@@ -1,0 +1,118 @@
+.o_pulldown {
+    text-align: center;
+
+    & + .o_pulldown {
+        margin-top: 4rem;
+    }
+
+    &.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .tile {
+
+        a {
+            @include widening-underline();
+        }
+
+        &.focused {
+            position: relative;
+            overflow: visible;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                bottom: -8px;
+                left: -8px;
+                z-index: -1;
+                outline: 4px solid $grey-md-lt;
+            }
+        }
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .button-link {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        border: 0;
+        padding: 0;
+        margin-top: 4rem;
+        overflow: visible;
+        @extend %hover-underline;
+
+        font-weight: 600;
+        color: $blue;
+        background-color: white;
+
+        &, &::before, &::after {
+            transition: .2s;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        // The button
+        &::after {
+            background-image: url($arrow-white);
+            background-position: center;
+            background-size: 1.5rem;
+            content: "";
+            position: absolute;
+
+            border-radius: 3.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            top: -4rem;
+            left: 50%;
+
+            margin-left: -1.75rem;
+            box-shadow: 1rem 0 0 #fff, -1rem 0 0 #fff;
+
+            background-color: $blue;
+            background-repeat: no-repeat;
+        }
+
+        // The lines
+        &::before {
+            content: "";
+            position: absolute;
+            top: -2.4rem;
+            width: 24rem;
+            left: 50%;
+            margin-left: -12rem;
+            height: 0;
+            border-top: 2px solid $grey-lt;
+        }
+
+        &:hover, &:focus {
+            color: $blue-md;
+
+            // The button
+            &::after {
+                background-color: $blue-md;
+            }
+        }
+    }
+  
+    // A plain text link to see more on another page
+    .text-link {
+        border: 0;
+        padding: 0;
+        display: inline-block;
+        margin: 0 0 1.5rem;
+        font-weight: 600;
+        @include simple-arrow(right, small, after);
+    }
+
+    .expandable .o_tile-group {
+        margin-top: 1rem;
+    }
+}

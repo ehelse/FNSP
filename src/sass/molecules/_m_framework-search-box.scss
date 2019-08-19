@@ -1,0 +1,17 @@
+// For the framework header
+
+.m_framework-search-box {
+
+    @extend .m_search-box;
+
+    input {
+        height: 2.5rem;
+        border: 0;
+
+        &[type="search"] {
+            padding: .5rem 1.5rem;
+            border-radius: 2rem;
+        }
+    }
+
+}

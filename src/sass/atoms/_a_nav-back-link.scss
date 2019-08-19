@@ -1,0 +1,20 @@
+.a_nav-back-link {
+    @include simple-arrow(left, small, before);
+    left: 2rem;
+    padding-left: 0;
+
+    &::before {
+        left: -2rem;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+    }
+
+    &:focus {
+        outline: 0;
+        color: #fff;
+        background-color: $blue-md;
+    }
+}

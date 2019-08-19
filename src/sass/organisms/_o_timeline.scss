@@ -1,0 +1,203 @@
+.o_timeline {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+
+    & > ol {
+        padding-left: 0;
+        list-style: none;
+        position: relative;
+
+        // The horizontal line at the bottom of the timeline
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: .75rem;
+            width: 1.25rem;
+            border-top: .25rem solid white;
+            border-bottom: 1px solid $blue-md;
+            margin-left: 1px;
+            z-index: 1;
+        }
+
+        & > li {
+            position: relative;
+
+            &:last-child {
+                padding-bottom: 2.5rem;
+            }
+        }
+    }
+
+    .title, & > ol > li {
+        padding: 0 0 3.5rem 4rem;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        // The line
+        &::before {
+            content: "";
+            position: absolute;
+            top: .125rem;
+            bottom: -.125rem;
+            left: 1.5rem;
+            margin-left: -1px;
+            width: 1px;
+            background-color: $blue-md;
+        }
+    }
+
+    .title, .step-title {
+        position: relative;
+
+        // The circle
+        &::after {
+            content: "";
+            position: absolute;
+            top: .125rem;
+        }
+    }
+
+    .title {
+        font-size: 1.75rem;
+        min-height: 3rem;
+        padding-top: .4rem;
+
+        &::before {
+            top: 3.325rem;
+        }
+
+        // The circle
+        &::after {
+            width: 3rem;
+            height: 3rem;
+            left: 0;
+            border-radius: 3rem;
+            background-clip: padding-box; // Gets rid of IE shadow mess
+            border: 1rem solid $blue-md;
+            background-color: #fff;
+        }
+    }
+
+    .step-title {
+        font-size: $font-l;
+        min-height: 2rem;
+        margin-top: 0;
+        margin-bottom: .33rem;
+
+        // The circle
+        &::after {
+            width: 1.5rem;
+            height: 1.5rem;
+            left: -3.25rem;
+            border-radius: .75rem;
+            border: .25rem solid #fff;
+            background-color: $blue-md;
+        }
+    }
+
+    .expand {
+        @include expander-arrow($chevron-blue, $chevron-blue-md, "small");
+
+        .expander {
+            @extend .button-style-reset;
+            color: $blue;
+
+            &:hover, &:focus {
+                color: $blue-md;
+                text-decoration: underline;
+                text-decoration-skip: ink;
+            }
+        }
+
+        .expandable {
+            padding-top: .5rem;
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_timeline {
+
+        .title, & > ol > li {
+            padding: 0 0 3.5rem 5rem;
+        }
+
+        .title {
+            padding-top: .4rem;
+        }
+
+        .step-title {
+            // The circle
+            &::after {
+                left: -4.25rem;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: $three-to-four-col) {
+    .o_timeline {
+
+        // The horizontal line at the bottom of the timeline
+        & > ol {
+            &::after {
+                left: 50%;
+                margin-left: -.75rem;
+            }
+        }
+
+        // Title and even list items:
+        // Content on the right side
+        .title, & > ol > li:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 4rem;
+
+            // The line
+            &::before {
+                left: 0;
+            }
+        }
+
+        // The circle
+        .title {
+            &::after {
+                left: -1.5rem;
+            }
+        }
+
+        // The circle
+        & > ol > li:nth-child(even) {
+
+            .step-title {
+                &::after {
+                    left: -4.75rem;
+                }
+            }
+        }
+
+        //Odd list items:
+        //Content on the left side
+        & > ol > li:nth-child(odd) {
+            padding: 0 4rem 3.5rem 0;
+            margin-right: 50%;
+
+            // The line
+            &::before {
+                left: auto;
+                right: 0;
+            }
+
+            .step-title {
+                &::after {
+                    left: auto;
+                    right: -4.75rem;
+                }
+            }
+        }
+    }
+}

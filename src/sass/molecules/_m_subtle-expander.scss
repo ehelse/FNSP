@@ -1,0 +1,97 @@
+// Have to add the :not to handle overriding the thing that selects the first expander
+h2, h3 {
+    & + .m_subtle-expander {
+        margin-top: 1.25rem;
+    }
+}
+.m_subtle-expander:first-child {
+    margin-top: 1.5rem;
+}
+:not(.m_subtle-expander) + .m_subtle-expander {
+    margin-top: 1.5rem;
+}
+
+.m_subtle-expander {
+    position: relative;
+    z-index: 0;
+    min-height: 3em;
+    border: 0 solid $grey-md;
+    border-width: 1px 0;
+    margin-top: -1px;
+    @include expander-arrow();
+
+    & + :not(.m_subtle-expander) {
+        margin-top: 2rem;
+    }
+
+    & + h2, & + h3 {
+        &:not(.m_subtle-expander) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1;
+        top: -1;
+        border: 0 solid transparent;
+        border-width: 1px 0;
+        z-index: -1;
+        transition: .1s;
+    }
+
+    &:hover, &.focused {
+        border-color: $blue-md;
+        z-index: 1;
+
+        &::after {
+            border-color: $blue-md;
+        }
+
+        & > .expander {
+            border-top-color: $blue-md;
+        }
+    }
+
+    h1, & > .expander { // Including h1 to avoid FOUC
+        color: $blue;
+        border-top: 1px solid transparent;
+        font-size: $font-m;
+        min-height: 1.5em;
+        margin: 0;
+        padding: .75em 3em .75em 0;
+        line-height: 1.5em;
+        font-weight: 600;
+
+        &:hover, &:focus {
+            outline: 0;
+            color: $blue-md;
+        }
+    }
+
+    & > .expandable {
+        padding: .5em 0 1em;
+    }
+
+    &.collapsed {
+        & > .expandable {
+            padding: 0;
+        }
+    }
+
+    .item-title, .dash, .item-subtitle {
+        display: inline-block;
+    }
+
+    .dash {
+        padding: 0 .25em;
+    }
+
+    img {
+        width: 100%;
+    }
+
+}

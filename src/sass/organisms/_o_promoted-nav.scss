@@ -1,0 +1,150 @@
+.o_promoted-nav {
+    margin-top: 2.5rem;
+    margin-bottom: 4.5rem;
+
+    &.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    h2 {
+        font-size: $font-l;
+        display: inline-block;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    li, div.all {
+        padding: .5em 0;
+    }
+
+    li {
+        @include thickening-underline();
+    }
+
+    .all {
+        display: inline-block;
+        margin-top: 1.25rem;
+        @include thickening-underline($blue, $blue, $blue, $blue);
+
+        a {
+            margin-top: 1.75rem;
+        }
+    }
+
+    #finn-frem {
+        padding-bottom: .5rem;
+    }
+
+    .m_search-box {
+        margin: 1.5rem 0 0;
+        font-size: $font-m;
+    }
+
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_promoted-nav {
+        margin-top: 4.5rem;
+        margin-bottom: 0;
+        font-size: $font-l;
+
+        &.with-icon .tile {
+            background: 1rem top no-repeat;
+
+            &#finn-frem {
+                background-image: url($map-pin-blue);
+                flex-basis: $two-col-content;
+            }
+
+            &#om-oss {
+                background-image: url($doctors);
+            }
+
+            &#helsefaglig {
+                background-image: url($microscope-blue);
+            }
+
+            h2 {
+                padding-top: 8rem;
+            }
+        }
+
+        h2 {
+            font-size: $font-xl;
+        }
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+
+    .o_promoted-nav {
+
+        .o_tile-group {
+            .tile {
+                margin-bottom: 0;
+            }
+        }
+
+        &.without-search {
+            .o_tile-group .tile {
+                width: 11.75rem;
+                max-width: 11.75rem;
+                overflow: visible;
+            }
+        }
+
+        &.with-icon .tile {
+
+            &#finn-frem {
+                flex-basis: ($one-col-content)-1px;
+            }
+
+            &#om-oss {
+                background-image: url($doctors);
+            }
+
+            &#helsefaglig {
+                background-image: url($microscope-blue);
+            }
+
+            h2 {
+                padding-top: 7rem;
+            }
+
+        }
+    }
+
+}
+
+@media only screen and (min-width: $three-to-four-col) {
+
+    .o_promoted-nav {
+
+        .o_tile-group {
+            > div:last-child {
+                flex-basis: ($one-col-content)-1px;
+            }
+        }
+
+        &.with-icon .tile {
+            &#finn-frem {
+                flex-basis: ($two-col-content)-1px;
+            }
+        }
+
+        &.without-search {
+            .o_tile-group .tile {
+                width: $one-col-content;
+                max-width: $one-col-content;
+            }
+        }
+    }
+
+}

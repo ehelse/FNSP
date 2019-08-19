@@ -1,0 +1,76 @@
+/* m_dropdown 
+Container class for dropdown menus  
+
+Used with react component dropdown
+
+The width of the dropdown can be set in two different ways:
+  1. Respect button width
+      - No need to set any width. The content has width of 100%
+        button width. .mol_dropdown must inherit some width.
+  2. Respect content width
+      - Calculate width of button before opening dropdown. Set
+        the width explicitly as inline style on button. 
+
+Markup (stuff within [] is optional / state):
+  <div class="mol_dropdown [open]">
+    <button [style="width: calculatedWith"] class="atom_dropdown-button arrow-down">
+      Filtername
+    </button>
+    <div class="container">
+      <div class="content">
+        
+      </div>
+    </div>
+  </div>
+*/
+
+@import "../base/_variables.scss";
+.mol_dropdown {
+    padding: 4px;
+    display: inline-block;
+    position: relative;
+    .container {
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    .atom_dropdown-button {
+        width: 100%;
+    }
+    &.mol_dropdown--focused .content:before {
+        background: #dde6e8;
+    }
+    .content {
+        opacity: 0;
+        width: calc(100% - 8px);
+        position: relative;
+        z-index: 9999;
+        background: #fff;
+        padding: 0.1rem 1.25rem 1.25rem;
+        box-shadow: 0 0 0 4px $color-base-3-5, 0 2px 8px 5px rgba(0, 0, 0, 0.25);
+        word-break: break-all;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 8px;
+            background: #fff;
+        }
+    }
+    &.open {
+        .container {
+            visibility: visible;
+        }
+        .content {
+            opacity: 1;
+            transition: opacity 150ms ease;
+            position: absolute;
+        }
+    }
+    .mol_datetimepicker {
+        width: auto;
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "author": "teamfnsp",
+  "name": "helseboksen",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "child_process": "^1.0.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "path": "^0.12.7",
+    "webpack": "^4.37.0",
+    "webpack-stream": "^5.2.1",
+    "win-spawn": "^2.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+{% for item in include.data %}
+<section class="m_promoted-expander js-expand">
+    <div class="container">
+        <h1 class="js-expander">
+            {{item.title}}
+            <span class="dash">-</span>
+            <span class="subtitle">{{item.subtitle}}</span>
+        </h1>
+    </div>
+    <div class="js-expandable">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="subtitle">{{item.subtitle}}</h2>
+
+
+                    <section class="js-expand m_subtle-expander">
+                        <h1 class="js-expander">
+                            <span class="item-title">Transport Øya</span>
+                        </h1>
+                        <div class="js-expandable">
+                            Example text
+                        </div>
+                    </section>
+
+                    <section class="js-expand m_subtle-expander">
+                        <h1 class="js-expander">
+                            <span class="item-title">Transport Øya</span>
+                        </h1>
+                        <div class="js-expandable">
+                            Example text
+                        </div>
+                    </section>
+
+                    <section class="js-expand m_subtle-expander">
+                        <h1 class="js-expander">
+                            <span class="item-title">Transport Øya</span>
+                        </h1>
+                        <div class="js-expandable">
+                            Example text
+                        </div>
+                    </section>
+
+                    {{ item.content }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}

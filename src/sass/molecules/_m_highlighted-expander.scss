@@ -1,0 +1,104 @@
+.m_highlighted-expander {
+    margin: 2rem 0;
+
+    & > .container > .expander {
+        @include circle-with-arrow(right, large, before, chevron);
+
+        font-size: $font-xl;
+        font-weight: 400;
+        transition: transform .3s;
+        z-index: 1;
+
+        &::before {
+            background-color: #fff;
+        }
+
+        &:hover, &:focus {
+            .title {
+                text-decoration: underline;
+                text-decoration-skip: ink;
+            }
+        }
+    }
+
+    .title {
+        transition: opacity .2s;
+    }
+
+    .subtitle {
+        font-weight: 400;
+        font-size: $font-m;
+        color: $grey-dk;
+    }
+
+    & > .expandable {
+        top: -2.5rem; // Need to make this general, only works for single-line titles
+
+        position: relative;
+        z-index: 0;
+
+        .container {
+            padding-top: 3.5rem;
+            padding-bottom: 3.5rem;
+        }
+
+    }
+
+    &.expanded {
+
+        & > .container > .expander {
+            transform: scaleY(-1);
+        }
+
+        .title {
+            opacity: 0;
+        }
+
+        & > .expandable {
+            overflow: hidden;
+        }
+    }
+
+    &.collapsed {
+        & > .expandable {
+            padding: 0;
+        }
+
+        .title {
+            opacity: 1;
+        }
+    }
+
+    // Inside the expanable content
+    h1 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: $font-xl;
+        font-weight: 600;
+    }
+
+}
+
+.m_highlighted-expander {
+
+    &.expanded {
+        & > .expandable {
+            margin-bottom: -5.5rem;
+        }
+    }
+
+    .m_subtle-expander:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .m_highlighted-expander {
+        &.expanded {
+            & > .expandable {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

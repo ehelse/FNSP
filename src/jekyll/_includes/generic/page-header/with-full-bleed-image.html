@@ -1,0 +1,48 @@
+<header class="o_page-header
+    {% if page.invertcolor %} invertcolor{% endif %}
+    {% if page.sp-layout == 'WelcomePage' and page.customer == 'HF' or page.customer == 'Felleskomponenter' %} hf{% endif %}
+    {% if page.ingress or page.ingress-title %} with-ingress{% endif %}
+">
+
+    <div class="image-band js-image-renditions">
+
+        <div class="image-container">
+
+            {% if page.image-fb %}
+
+            <img src="" data-imgsrc="{{ page.image-fb }}" alt="…">
+
+            {% else %}
+
+            <img src="" data-imgsrc="{{ relative }}images/rhf/helse-nord.jpg" alt="…">
+
+            {% endif %}
+
+        </div>
+
+        <div class="page-header-content container" data-image-attribution="Image attribution" data-attribution-text="Foto: ">
+
+            {% if page.sp-layout != "WelcomePage" %}
+            {% include generic/page-header/breadcrumbs.html %}
+            {% include generic/page-header/printdialog.html %}
+            {% endif %}
+
+            <h1 id="page-title" tabindex="-1">{{ page.heading }}</h1>
+
+            {% if page.sp-layout == "WelcomePage" and page.customer == "HF" or page.customer == "Felleskomponenter" %}
+
+            <div class="m_search-box" role="search">
+                <input type="search" id="search-input" name="search-input">
+                <label for="search-input">Søk</label>
+                <input type="button" value="Søk">
+            </div>
+
+            {% endif %}
+
+            {% if page.ingress or page.ingress-title %}
+            {% include generic/page-header/ingress.html %}
+            {% endif %}
+
+        </div>
+    </div>
+</header>

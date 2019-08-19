@@ -1,0 +1,81 @@
+<header id="innledning" class="o_page-header js-scrollto">
+
+    <div class="container">
+        {% include generic/page-header/breadcrumbs.html %}
+        {% include generic/page-header/printdialog.html %}
+
+        {% if page.term-used-by %}
+        <div class="m_expander-list term-used-by js-expand">
+            <div class="js-expander">Vevsprøve (biopsi) brukes av 15 foretak</div>
+            <ul class="js-expandable">
+                <li>
+                    <span class="site-title">Akershus universitetssykehus</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title disabled">Finnmarkssykehuset</span></li>
+                <li>
+                    <span class="site-title">Haraldsplass Diakonale Sykehus</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title disabled">Helgelandssykehuset</span></li>
+                <li><span class="site-title disabled">Helse Bergen</span></li>
+                <li><span class="site-title">Helse Fonna</span><span class="content-language">Nynorsk</span></li>
+                <li><span class="site-title">Helse Førde</span><span class="content-language">Nynorsk</span></li>
+                <li><span class="site-title">Helse Møre og Romsdal</span><span
+                class="content-language">Nynorsk</span></li>
+                <li><span class="site-title">Helse Nord-Trøndelag</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title">Helse Stavanger</span><span class="content-language">Bokmål</span></li>
+                <li><span class="site-title">Nordlandssykehuset</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title">Oslo universitetssykehus</span><span
+                class="content-language">Bokmål</span></li>
+                <li><span class="site-title disabled">St. Olavs Hospital</span></li>
+                <li><span class="site-title disabled">Sunnaas sykehus</span></li>
+                <li><span class="site-title">Sykehuset i Vestfold</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title">Sykehuset Innlandet</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title">Sykehuset Telemark</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title">Sykehuset Østfold</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title disabled">Sørlandet sykehus</span></li>
+                <li>
+                    <span class="site-title">Universitetssykehuset Nord-Norge</span><span class="content-language">Bokmål</span>
+                </li>
+                <li><span class="site-title">Vestre Viken</span><span class="content-language">Bokmål</span></li>
+            </ul>
+        </div>
+        {% endif %}
+
+        <h1 id="page-title" tabindex="-1">{{ page.title }}</h1>
+        <p id="page-subtitle">{{ page.subtitle }}</p>
+        <!-- Ingress -->
+        {% include generic/page-header/ingress.html %}
+
+        {% if page.images %}
+        <div class="row">
+            <div class="col-xs-12 col-lg-9">
+                <!-- One header image -->
+                {% if page.images == 1 %}
+                {% assign image=site.data.hf.image-blocks[2] %}
+                {% include generic/image-block.html data=image %}
+                {% endif %}
+            </div>
+
+            <!-- Two header images -->
+            {% if page.images == 2 %}
+            <div class="col-xs-12 col-md-6">
+                {% assign image=site.data.hf.image-blocks[5] %}
+                {% include generic/image-block.html data=image %}
+            </div>
+            <div class="col-xs-12 col-md-6">
+                {% assign image=site.data.hf.image-blocks[6] %}
+                {% include generic/image-block.html data=image %}
+            </div>
+            {% endif %}
+
+        </div>
+        {% endif %}
+    </div>
+
+</header>

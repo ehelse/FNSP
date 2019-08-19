@@ -1,0 +1,51 @@
+.a_promoted-link {
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+    padding-left: 4rem;
+    padding-right: 0 !important;
+    margin: 1rem 0;
+
+    &:focus {
+        background-color: transparent;
+    }
+
+    &.hover {
+        text-decoration: underline;
+
+        &::before {
+            border-color: $blue !important;
+        }
+    }
+
+    &:not([href*="//"]) {
+        @include circle-with-arrow(right, large, before, arrow);
+    }
+
+    &[href*="//"] {
+        @include circle-with-arrow(diagonal, large, before, arrow);
+    }
+
+    strong {
+        padding-right: .5rem;
+        font-weight: 600;
+    }
+
+    + * {
+        margin-top: 1rem;
+    }
+}
+
+.highlighted {
+    .a_promoted-link {
+        &::before {
+            border-color: $grey-on-grey;
+        }
+
+        &:hover, &:focus, &.hover {
+            &::before {
+                border-color: $blue;
+            }
+        }
+    }
+}

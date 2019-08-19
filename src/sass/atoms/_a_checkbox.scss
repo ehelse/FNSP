@@ -1,0 +1,116 @@
+/* atom_checkboxbutton */
+
+/* HTML structure
+
+<input type="checkbox" name="navn" id="check1">
+<label for="check1">Velg meg</label>
+<span class="checkbox-comment">Blablabla</span>
+
+*/
+
+@import "../base/_variables.scss";
+.atom_checkbox input[type='checkbox'] {
+    @extend .visuallyhidden;
+    margin-top: 18px;
+    margin-left: 9px;
+    &+label {
+        cursor: pointer;
+        display: block;
+        padding: 0.9rem;
+        padding-left: 2.6rem;
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        word-break: break-word;
+        hyphens: auto;
+        background-image: url('../../FNSP/Images/Theme/atom_checkbox_unselected.svg');
+        background-repeat: no-repeat;
+        background-position-y: 0.95rem;
+        background-position-x: left;
+        background-size: 1.75rem 1.75rem;
+        @include breakpoint($two-to-three-col) {
+            padding: 0.5rem;
+            padding-left: 2.6rem;
+            background-position-y: 0.55rem;
+        }
+    }
+    &:hover+label,
+    &:focus+label {
+        background-image: url('../../FNSP/Images/Theme/atom_checkbox_unselected_hover.svg');
+    }
+    &:checked {
+        &+label {
+            font-weight: 500;
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected.svg');
+        }
+        &:hover+label,
+        &:focus+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected_hover.svg');
+        }
+    }
+    &:disabled {
+        &+label {
+            cursor: default;
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_unselected_disabled.svg');
+        }
+        &:checked+label {
+            font-weight: 500;
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected_disabled.svg');
+        }
+    }
+}
+
+.checkbox-comment {
+    display: block;
+    margin-left: 1.7rem;
+    font-size: 1.125rem;
+}
+
+.atom_checkbox {
+    &.atom_checkbox--boxed input {
+        &+label {
+            background-color: $color-base-0;
+            box-shadow: 0 0 0 2px $color-base-4-5;
+            padding: 0.7rem 1rem;
+            padding-left: 3.8rem;
+            font-size: 18px;
+            background-position-y: 0.55rem;
+            background-position-x: 1rem;
+        }
+        &:hover+label,
+        &:focus+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_unselected_filter_hover.svg');
+        }
+        &:hover+label,
+        &:hover:checked+label {
+            background-color: $color-base-4-5;
+        }
+        &:checked+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected_filter.svg');
+        }
+        &:hover:checked+label,
+        &:focus:checked+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected_filter_hover.svg');
+        }
+        &:hover:checked+label {
+            box-shadow: 0 0 0 4px $blue-dk;
+        }
+        &:checked+label {
+            box-shadow: 0 0 0 2px $blue-dk;
+            background-color: $grey-md;
+        }
+    }
+    &.atom_checkbox--nested input {
+        &:checked+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected_filter.svg');
+        }
+        &:hover+label,
+        &:focus+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_unselected_filter_hover.svg');
+        }
+        &:hover:checked+label,
+        &:focus:checked+label {
+            background-image: url('../../FNSP/Images/Theme/atom_checkbox_selected_filter_hover.svg');
+        }
+    }
+}

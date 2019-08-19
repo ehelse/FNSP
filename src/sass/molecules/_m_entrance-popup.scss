@@ -1,0 +1,153 @@
+﻿.m_entrance-popup {
+    position: fixed;
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(7, 7, 7, .8);
+    z-index: 10000;
+    overflow-y: scroll;
+    font-size: .875rem;
+
+    nav {
+        min-height: 100vh;
+        height: 100vh; //https://stackoverflow.com/questions/43979702/display-flex-not-working-on-internet-explorer/43979973
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        max-width: 100%;
+    }
+
+    li {
+        margin: .75rem;
+        max-width: 22rem;
+        background-color: #fff;
+        position: relative;
+        padding: 7rem 1rem 1.5rem;
+        outline: .25rem solid transparent;
+        transition: outline-color .1s;
+
+        &.hover {
+            outline-color: $grey-md;
+
+            a, button {
+                text-decoration: underline;
+
+                &::after {
+                    border-color: $blue !important;
+                }
+            }
+        }
+    }
+
+    h2 {
+        @extend h4;
+        margin-top: 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6.25rem;
+            background: $grey-lt no-repeat center / auto 5rem;
+        }
+    }
+
+    .resident h2::before {
+        background-image: url($pasientreiser-entrance-icon-resident);
+    }
+
+    .professional h2::before {
+        background-image: url($pasientreiser-entrance-icon-professional);
+    }
+
+    p {
+        margin: .5rem 0 1rem;
+    }
+
+    a:focus {
+        outline: none;
+
+    }
+
+    button {
+        @extend .button-style-reset;
+        overflow: visible;
+    }
+
+    a, button {
+        text-align: right;
+        font-weight: 600;
+        position: relative;
+        @include circle-with-arrow(right, small, after, arrow);
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .m_entrance-popup {
+        font-size: $font-m;
+        
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin: 0 1rem;
+        }
+
+        li {
+            width: 22rem;
+            margin: 1rem;
+            padding: 10rem 1.5rem 2rem;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font-size: $font-l;
+
+            &::before {
+                height: 9rem;
+                background-size: auto 7rem;
+            }
+        }
+
+        p {
+            margin: .5rem 0 1.5rem;
+            flex-grow: 1;
+        }
+
+        a, button {
+            @include circle-with-arrow(right, large, after, arrow);
+            align-self: center;
+        }
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+    .m_entrance-popup {
+        li {
+            margin: 1rem 2.5rem;
+            padding-top: 13.5rem;
+            padding-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: $font-xl;
+
+            &::before {
+                height: 12rem;
+                background-size: auto 9rem;
+            }
+        }
+    }
+}

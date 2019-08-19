@@ -1,0 +1,55 @@
+---
+resource: true
+layout: meta
+template: meta
+title: FNSP-prototype
+---
+<nav id="toc" class="container">
+    {% for category in site.category-list %}
+    {% if category == "Current release"%}
+
+    <h2>{{category}}</h2>
+
+    <ol>
+        {% assign sketches = site.pages | sort: 'toc-title' %}
+        {% for page in sketches %}
+        {% if page.resource == true %}
+        {% for pc in page.category %}
+        {% if pc == category %}
+        <li data-customer="{{customer}}" class="current">
+            <a href="{{ page.url }}">{{ page.toc-title }}</a>
+            <br>
+            {% if page.toc-title %}<em>{{ page.title }}</em>{% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+    </ol>
+
+    {% elsif category == "Previous releases"%}
+
+    <section class="m_subtle-expander js-expand">
+        <h2 class="js-expander">{{category}}</h2>
+        <div class="js-expandable">
+            <ol>
+                {% assign sketches = site.pages | sort: 'toc-title' %}
+                {% for page in sketches %}
+                {% if page.resource == true %}
+                {% for pc in page.category %}
+                {% if pc == category %}
+                <li data-customer="{{customer}}" class="current">
+                    <a href="{{ page.url }}">{{ page.toc-title }}</a>
+                    <br>
+                    {% if page.toc-title %}<em>{{ page.title }}</em>{% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+    </section>
+    {% endif %}
+    {% endfor %}
+</nav>

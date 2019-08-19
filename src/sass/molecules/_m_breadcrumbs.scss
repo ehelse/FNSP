@@ -1,0 +1,153 @@
+.m_breadcrumbs {
+    margin: 0 0 1rem;
+
+    h2 {
+        @extend %visuallyhidden;
+    }
+
+    .path { // ul
+        list-style: none;
+        padding: 1rem 0;
+        margin: 0;
+
+        li {
+            display: none;
+            margin: 0 1em 0 0;
+            padding-right: 1em;
+            position: relative;
+
+            &::after {
+                display: none;
+            }
+
+            &:nth-last-child(2) {
+                display: inline-block;
+                a {
+                    @include simple-arrow(left, small, before);
+                }
+            }
+
+            &.current {
+                font-weight: 600;
+                padding-right: 0;
+                color: $grey-dk;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        a {
+            @extend %hover-underline;
+            &, &:visited, &:hover, &:active {
+                color: $blue;
+            }
+        }
+    }
+
+    .treatment-nav {
+        &:not(.expand) {
+            a {
+                @extend %hover-underline;
+            }
+        }
+    }
+}
+
+// For page headers with full-bleed images
+.image-fb {
+    .o_page-header {
+        &:not(.with-ingress) {
+            &:not(.invertcolor) {
+                .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                    background-image: url($chevron-white);
+                }
+            }
+
+            &.invertcolor {
+                .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                    background-image: url($chevron-grey-dk);
+                }
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .m_breadcrumbs {  
+        margin: 2rem 0 1rem;
+        
+        .path {
+            padding: 0;
+
+            li {
+                display: inline-block;
+                &::after {
+                    display: block;
+                    content: "";
+                    background: url($chevron-grey-on-grey) center bottom / contain no-repeat;
+                    transform: rotate(270deg);
+                    top: 0;
+                    right: 0;
+                    width: .75em;
+                    bottom: 0;
+                    position: absolute;
+                }
+                &:nth-last-child(2) {
+                    a {
+                        padding: 0;
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+                &.current {
+                    color: $grey-dk;
+                }
+            }
+
+            a {
+                &, &:visited, &:hover, &:active {
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+/******************************************************************** */
+/* Narrow desktops and landscape-oriented tablets.  Three columns. */
+@media only screen and (min-width: $two-to-three-col) {
+
+    .image-fb {
+        .o_page-header {
+            &.with-ingress {
+                &:not(.invertcolor) {
+                    .image-band {
+                        &, a, :not(.expanded) .print-icon::after, .m_breadcrumbs li.current {
+                            color: #fff !important;
+                            text-shadow: 0 0 2px #000;
+                        }
+
+                        &::before {
+                            background: linear-gradient(to right, rgba(30, 30, 30, .7), transparent), linear-gradient(to bottom, rgba(30, 30, 30, .5) 0%, transparent 70%);
+                        }
+                    }
+                    .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                        background-image: url($chevron-white);
+                    }
+
+                }
+
+                &.invertcolor {
+                    .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
+                        background-image: url($chevron-grey-dk);
+                    }
+                }
+            }
+        }
+    }
+}

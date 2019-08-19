@@ -1,0 +1,33 @@
+<nav class="m_breadcrumbs">
+
+    <h2>Du står her:</h2>
+    <ul class="path">
+        <li><a href="">Forside</a></li>
+        <li><a href="">Om oss</a></li>
+        <li><a href="">Nyheter</a></li>
+        <li class="current">{{ page.title }}</li>
+    </ul>
+
+    {% if page.back-button %}
+    <div class="treatment-nav">
+        <a class="a_nav-back-link" href="">Tilbake til {{page.back-button}}</a>
+    </div>
+    {% endif %}
+
+    {% if page.used-one-place %}
+    <div class="treatment-nav">
+        <a href="">Inngår i behandlingsprogrammet Psykose, Sykehuset Levanger</a>
+    </div>
+    {% endif %}
+
+    {% if page.used-many-places %}
+    <div class="treatment-nav m_expander-list js-expand">
+        <div class="js-expander">Inngår i 2 behandlingsprogrammer</div>
+        <ul class="js-expandable">
+            <li><a href="">Behandlingsprogram 1</a></li>
+            <li><a href="">Treatment program with a very long title, and here's the place the treatment is done</a></li>
+        </ul>
+    </div>
+    {% endif %}
+
+</nav>

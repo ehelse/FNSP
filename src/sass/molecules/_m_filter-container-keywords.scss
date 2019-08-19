@@ -1,0 +1,51 @@
+/* m_filter-container-keywords */
+
+@import "../base/_variables.scss";
+.mol_filter-container-keywords {
+    margin: 0.5rem 1rem 0.25rem 0;
+    /* stylelint-disable-line declaration-block-no-ignored-properties */
+    padding: 0;
+    display: inline;
+    li {
+        max-width: 100%;
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        vertical-align: middle;
+        margin: 0;
+        .atom_inline-btn {
+            min-height: 1.725rem;
+            span {
+                margin-right: 2.0625rem;
+                line-height: 1.65rem;
+            }
+        }
+        .atom_inline-btn:after {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .atom_inline-btn.close:after {
+            background-size: 1.275rem;
+        }
+        .remove-filters {
+            margin: 0 0 0 1rem;
+        }
+        .atom_filtertag {
+            margin-right: 0.9rem;
+            margin-left: 0;
+            padding-left: 0;
+            vertical-align: middle;
+        }
+    }
+}
+
+@media screen and (min-width: $two-to-three-col) {
+    .mol_filter-container-keywords {
+        width: auto;
+        .atom_filtertag {
+            margin-right: 0.25rem;
+            margin-left: 0.25rem;
+            padding-left: 0.4rem;
+        }
+    }
+}

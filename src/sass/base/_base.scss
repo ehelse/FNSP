@@ -1,0 +1,473 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+*:empty {
+    margin: 0;
+    padding: 0;
+}
+
+.focus-test-case {
+    border: solid 1px red;
+}
+
+.overlay-background {
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    background-color: #fff;
+    color: $grey-dk;
+    line-height: 1.4;
+}
+
+a {
+    transition: .1s color, .1s background-color, .1s border;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+
+    &:hover, &:focus, &:active {
+        color: $blue-md;
+    }
+    &.phonenumber[href^='tel']{
+        white-space: nowrap;
+    }
+}
+
+main {
+    border-top: .25rem solid $grey-lt;
+    display: block;
+
+    a {
+        color: $blue;
+
+        &:visited {
+            color: $blue;
+        }
+
+        &:hover, &:focus, &:active {
+            color: $blue-md;
+        }
+
+        &.external, &[href*="//"] {
+            span:not([id*="ms-rterangecursor"]) {
+                @include simple-arrow(diagonal, small, before);
+                padding-left: 1.5em;
+                font-weight: 400;
+                margin-left: .5rem;
+            }
+            &:hover, &:focus {
+                span:not([id*="ms-rterangecursor"]) {
+                    &::before {
+                        background: url($arrow-blue-md) center/contain no-repeat;
+                    }
+                }
+            }
+        }
+
+        &.contact {
+            display: inline-block;
+            padding-left: 1.25em;
+            background: left center / contain no-repeat;
+            background-image: url($map-pin-blue), url($map-pin-blue-md);
+
+            &:hover, &:focus {
+                background-image: url($map-pin-blue-md);
+            }
+        }
+    }
+}
+
+figure {
+    margin: 0 0 1rem;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .attribution {
+        display: block;
+        margin-top: .25rem;
+        font-size: $font-s;
+        color: $grey-md-dk-dk;
+    }
+
+}
+
+h1 {
+    line-height: 1.1;
+    font-size: $font-2xl;
+    font-weight: 400;
+}
+
+h2, h3, h4 {
+    font-weight: 600;
+}
+
+h2 {
+    font-size: $font-l;
+    margin-top: 1rem;
+    margin-bottom: .25rem;
+}
+
+h3 {
+    font-size: 1.125rem;
+    margin-top: 1.75rem;
+    margin-bottom: .5rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+h4 {
+    font-size: $font-m;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+li, dt, dd {
+    margin: .5rem 0;
+}
+
+ul + p, ol + p, dl + p {
+    margin-bottom: .5rem;
+}
+
+p, ul, ol, dl,
+li, dt, dd {
+    margin-top: 0;
+}
+
+input {
+    font-family: "Open Sans", Helvetica, sans-serif !important;
+
+    &[type="button"] {
+        border: 0;
+        cursor: pointer;
+        font-size: $font-m;
+    }
+}
+
+button {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: $font-m;
+}
+
+iframe {
+    border: 0;
+}
+
+table.ms-rteTable-default {
+    border-collapse: collapse;
+    text-rendering: optimizeLegibility;
+    margin: 1.5rem 0 2.5rem;
+    width: 100%;
+
+    caption {
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        border-style: solid;
+        border-color: $grey-md;
+        border-width: 1px 0;
+
+        &:nth-child(even) {
+            background-color: $grey-lt;
+        }
+
+        &, &:nth-child(even) {
+            &:hover {
+                transition: background-color .1s;
+                background-color: $blue-grey;
+            }
+        }
+    }
+    th {
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td, th {
+        display: block;
+        padding: .75rem .5rem;
+
+        &:first-child {
+            padding-top: .75rem;
+        }
+
+        &:before {
+            content: attr(data-label);
+            font-weight: 600;
+            display: block;
+        }
+    }
+
+}
+
+table.ms-rteTable-4 {
+    border-collapse: collapse;
+    text-rendering: optimizeLegibility;
+    margin: 1.5rem 0 2.5rem;
+    width: 100%;
+    border: 0;
+
+    caption {
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+    thead {
+        display: none;
+    }
+
+    tr {
+        border-style: solid;
+        border-color: #005594;
+        border-width: 1px 0;
+    }
+
+
+    th {
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td, th {
+        display: block;
+        border: 0;
+        padding: .75rem .5rem;
+
+        &:first-child {
+            padding-top: .75rem;
+        }
+
+        &:before {
+            content: attr(data-label);
+            font-weight: 600;
+            display: block;
+        }
+    }
+}
+
+
+.tab-focus:focus {
+    box-shadow: none;
+}
+
+*:focus:not(a) {
+    outline: 0;
+}
+
+/* Other generic styles */
+
+.highlighted, .grey {
+    background-color: $grey-lt;
+}
+
+.white {
+    background-color: #fff;
+}
+
+.expanderlink {
+    cursor: pointer;
+}
+
+.pseudo-link {
+    cursor: pointer;
+}
+
+.button-style-reset {
+    display: inline;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: none;
+    appearance: none;
+
+    button:hover,
+    button:focus {
+        background: transparent;
+    }
+
+    button:focus {
+        //outline: 1px solid #fff;
+        //outline-offset: -4px;
+        outline: none;
+        outline-offset: 0;
+    }
+
+    button:active {
+        transform: scale(0.99);
+    }
+
+}
+
+// Expandable Block with transitions ==================================================
+.expand {
+    transition-property: background-color, border-color;
+    transition-duration: .5s, .1s;
+
+    &.initial.collapsed {
+        transition: none;
+        .expandable {
+            transition: none;
+        }
+    }
+
+    // Expander links =================
+
+    .expander {
+        cursor: pointer;
+    }
+
+    // Expandable Content =================
+    .expandable {
+        max-height: 20000px;
+        overflow: hidden;
+        transition-property: max-height, opacity, padding, margin;
+        transition-duration: .3s, .3s, .1s, .1s;
+        opacity: 1;
+    }
+
+    // Collapsed Expandable Block ==================================================
+    &.collapsed {
+        .expandable {
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition-property: max-height, opacity, visibility, padding, margin;
+            transition-duration: .3s, .9s, 0s, .3s, .3s;
+            transition-delay: 0s, 0s, .3s, .3s, 0s;
+        }
+    }
+}
+
+// TODO: Correct markup for these!
+#kontakt.expand {
+    &.collapsed {
+        background-color: white;
+    }
+}
+
+// Vet ikke hva dette er. Noe med IE, kanskje?
+//.o_horizontal-section:not(.highlighted) .expand:not(.js-expand) {
+//    background-color: white;
+//}
+
+.js-responsive-expand .js-responsive-expandable #ctl00_ctl44_Tjenester {
+    margin-top: 4rem;
+}
+
+// End Expandable block with transitions =================================================================
+
+/********************************************************************************************************************************* */
+/* Hack to fix issue with iPhone auto-zoom on input fields. Mobile. */
+@media only screen and (max-width: $two-to-three-col) and (-webkit-min-device-pixel-ratio: 0) {
+    #main, header {
+        input[type="search"], input[type="search"]:focus {
+            font-size: $font-m !important;
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    h2 {
+        font-size: $font-xl;
+    }
+
+    h3 {
+        font-size: $font-l;
+    }
+
+    table.ms-rteTable-default {
+        thead {
+            display: table-header-group;
+        }
+
+        tr {
+            border-color: $grey-md;
+            &:first-child {
+                border: 0;
+            }
+        }
+
+        td, th {
+            display: table-cell;
+            padding: .75rem 1rem;
+            &::before {
+                display: none;
+            }
+        }
+
+        th {
+            text-align: left;
+            font-weight: 600;
+            background-color: $grey-md-dk;
+            color: #fff;
+        }
+
+        td {
+            border: 0;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+    table.ms-rteTable-4 {
+        border: 1px solid $blue;
+        thead {
+            display: table-header-group;
+        }
+
+
+        td, th {
+            padding: 7px 5px 6px;
+            border: 1px solid $blue;
+
+            display: table-cell;
+            &::before {
+                display: none;
+            }
+        }
+
+        th {
+            text-align: left;
+            font-weight: 600;
+            background-color: #005594;
+            color: #fff;
+        }
+    }
+}
+//Hiding Styles from the table styles dropdown
+#Ribbon\.Table\.Design\.Styles\.TableStyles\.Menu\.TableStyles {
+    a:not(#TableStyle0-Menu):not(#TableStyle6-Menu){
+        display: none;
+    }
+}

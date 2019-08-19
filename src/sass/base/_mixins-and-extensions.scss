@@ -1,0 +1,480 @@
+//  DEPRECATION WARNING:
+//    @extending an outer selector from within @media is deprecated.
+// You may only @extend selectors within the same directive.
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@mixin expander-arrow($inactive: $chevron-grey-md, $active: $chevron-blue-md, $size:"medium") {
+
+    $width: 1em;
+
+    @if ($size == "small") {
+        $width: .9em;
+    }
+
+    & > .expander {
+        position: relative;
+        padding-right: 1.5em;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1em;
+            height: 100%;
+            background: url($inactive) center / $width no-repeat;
+            transform: scaleY(-1);
+            transition: .3s;
+        }
+
+        &:hover, &:focus {
+            &::before {
+                background-image: url($active);
+            }
+        }
+    }
+
+    &.collapsed {
+        & > .expander {
+            &::before {
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    &.focused {
+        & > .expander {
+            &::before {
+                background-image: url($active);
+            }
+        }
+    }
+}
+
+// For buttons with text and rounded sides
+@mixin text-button($design:"solid-blue") {
+    appearance: none;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 2.75em;
+    height: 3em;
+    border-radius: 3em;
+    padding: 0 1.5em;
+    display: inline-block;
+
+    border: 3px solid;
+
+    transition: border .2s, background-color .2s, color .2s;
+
+    &:focus {
+        outline: 0;
+    }
+
+    @if ($design == "solid-blue") {
+        color: #fff;
+        background-color: $blue;
+        border-color: transparent;
+
+        &:hover, &:focus {
+            background-color: $blue-md;
+        }
+    }
+
+    @if ($design == "light-blue-border") {
+        color: $blue;
+        background-color: transparent;
+        border-color: $blue-grey;
+
+        &:hover, &:focus {
+            border-color: $blue;
+        }
+    }
+
+    @if ($design == "on-grey") {
+        color: $blue-lt;
+        background-color: transparent;
+        border-color: $blue-md;
+
+        &:hover, &:focus {
+            border-color: $blue-lt;
+        }
+    }
+}
+
+@mixin widening-underline($color:$blue, $hover-color:$blue) {
+    @extend h3;
+    display: block;
+    margin-top: 0;
+    line-height: 1.25;
+    color: $color;
+    border-bottom: 0;
+    padding-bottom: .625em;
+    margin-bottom: .5em;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        width: 3.5em;
+        display: block;
+        margin-top: .5em;
+        border-top: .125em solid $color;
+        transition: .3s;
+    }
+
+    &:hover, &:focus, &.hover  {
+        color: $hover-color;
+        background-color: transparent;
+        border-bottom: 0;
+        padding-bottom: .625em;
+
+        &::after {
+            width: 5.3em;
+            border-color: $hover-color;
+        }
+    }
+
+    a {
+        &:hover, &:focus, &:active {
+            color: $hover-color;
+        }
+    }
+}
+
+@mixin thickening-underline($link-color:$grey-dk, $border-color:$grey-md-lt, $link-hover-color:$blue-md,  $border-hover-color:$blue-md, $background-hover-color: $grey-lt) {
+    position: relative;
+    margin: 0;
+
+    input[type=checkbox]:focus + label {
+        &::after {
+            z-index: 101;
+            height: 2px;
+            background-color: $border-hover-color;
+        }
+    }
+
+    & > {
+        a, span, label {
+            border-bottom: 0;
+            color: $link-color;
+            text-decoration: none;
+            display: inline-block;
+            transition: .1s;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                width: 100%;
+                transition: .1s;
+                background-color: $border-color;
+            }
+
+            &:hover, &:focus {
+                color: $link-hover-color;
+                transition: .1s;
+
+                &::after {
+                    z-index: 101;
+                    height: 2px;
+                    background-color: $border-hover-color;
+                }
+            }
+        }
+    }
+
+}
+
+// For circles and chevrons before or after links
+@mixin circle-with-arrow($direction:"right", $size: "large", $position:"before", $type:"arrow") {
+    color: $blue;
+    text-decoration: none;
+    position: relative;
+
+    &:hover, &.hover, &:focus {
+        text-decoration: underline;
+        text-decoration-skip: ink;
+    }
+
+    $diameter: 3rem;
+    $background-size: 1.25rem;
+    $border-width: 3px;
+    $background-image: $arrow-blue;
+
+    @if $type == "chevron" {
+        $background-image: $chevron-blue;
+    }
+
+    @if $size == "small" {
+        $diameter: 2rem;
+        $background-size: 1rem;
+        $border-width: 2px;
+    }
+
+    @if $position == "before" {
+        padding-left: $diameter * 1.4;
+
+        &::before {
+            @include circle-with-arrow-style($diameter, $border-width, $background-image, $background-size, $direction);
+            left: 0;
+        }
+
+        &::after {
+            display: none;
+        }
+
+        &:hover, &.hover, &:focus {
+            color: $blue;
+
+            &::before {
+                border-color: $blue;
+            }
+        }
+    }
+
+    @if $position == "after" {
+        padding-right: $diameter * 1.4;
+
+        &::after {
+            @include circle-with-arrow-style($diameter, $border-width, $background-image, $background-size, $direction);
+            right: 0;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        &:hover, &.hover, &:focus {
+            color: $blue;
+
+            &::after {
+                border-color: $blue;
+            }
+        }
+    }
+}
+
+@mixin circle-with-arrow-style($diameter, $border-width, $background-image, $background-size, $direction) {
+    content: "";
+    width: $diameter;
+    min-width: $diameter;
+    height: $diameter;
+    border: $border-width solid $blue-grey;
+    border-radius: $diameter;
+    transition: .1s;
+    background: url($background-image) center / $background-size no-repeat;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -$diameter / 2;
+
+    $rotate: 0;
+
+    @if $direction == "diagonal" {
+        $rotate: -45deg;
+    } @else if $direction == "left" {
+        $rotate: 180deg;
+    } @else if $direction == "up" {
+        $rotate: -90deg;
+    }
+
+    transform: rotate($rotate);
+
+}
+
+// For arrow-only icons before or after links
+@mixin simple-arrow($direction:"right", $size: "small", $position: "before") {
+    position: relative;
+
+    @if $position == "before" {
+        padding-left: 2em;
+
+        &::before {
+            @include simple-arrow-style($direction, $size);
+            left: 0;
+        }
+
+        &:hover, &:focus {
+            &::before {
+                background-image: url($arrow-blue-md);
+            }
+        }
+    }
+
+    @if $position == "after" {
+        padding-right: 1.75em;
+
+        &::after {
+            @include simple-arrow-style($direction, $size);
+            right: 0;
+        }
+
+        &:hover, &:focus {
+            &::after {
+                background-image: url($arrow-blue-md);
+            }
+        }
+    }
+}
+
+@mixin simple-arrow-style($direction:"right", $size: "small") {
+    content: "";
+    position: absolute;
+    $background-size: contain;
+    transition: .3s;
+
+    // Arrow rotation
+    @if $direction == "diagonal" {
+        transform: rotate(-45deg);
+    } @else if $direction == "left" {
+        transform: rotate(180deg);
+    } @else { // right
+        // No transform
+    }
+
+    // Arrow size
+    @if $size == "large" {
+        @if $direction == "diagonal" {
+            $background-size: 3.5rem;
+            $background-top-position: top;
+        } @else { // right and left
+            $background-size: 3.5rem;
+            $background-top-position: top;
+        }
+    } @else if $size == "medium" {
+        @if $direction == "diagonal" {
+            $background-size: 2.5rem;
+            $background-top-position: top;
+        } @else { // right and left
+            $background-size: 2.5rem;
+            $background-top-position: top;
+        }
+    } @else { // small
+        width: 1.25em;
+        height: 1.4em;
+    }
+
+    background: center / $background-size no-repeat;
+    background-image: url($arrow-blue), url($arrow-blue-md);
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+  
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin focused-outline(){
+    position: relative;
+    overflow: visible;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        bottom: -0.5rem;
+        left: -0.5rem;
+        z-index: -1;
+        outline: 0.25rem solid $grey-md-lt;
+    }
+}
+
+.clearfix, %clearfix {
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%unset-visuallyhidden {
+    position: static;
+    overflow: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    clip: auto;
+}
+
+%visuallyhidden, .visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    clip: rect(0 0 0 0);
+}
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin breakpoint($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+%border-hover-transition {
+    transition: border-color .2s ease;
+}
+
+%border-hover-lengthen {
+    &:after {
+        content: "";
+        width: 33%;
+        height: 0;
+        display: block;
+        position: relative;
+        border-top: 3px solid $blue;
+        bottom: -.5rem;
+        transition: width .3s ease;
+    }
+
+    &:hover {
+        &:after {
+            width: 50%;
+        }
+    }
+
+}
+
+%hover-underline {
+    text-decoration: none;
+
+    &:hover, &.hover, &:focus {
+        text-decoration: underline;
+        text-decoration-skip: ink;
+    }
+}

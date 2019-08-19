@@ -1,0 +1,330 @@
+.m_page-list { // The list of letter categories
+
+    &, ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .letter-category {
+        margin-bottom: 2.5rem;
+    }
+
+    .letter {
+        @extend h3;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .links-column {
+        display: flex;
+        flex-flow: column nowrap; // for column view
+        margin: 0 -1rem 2.5rem;
+        align-items: stretch;
+
+        & > li {
+            padding: 0 1rem;
+            margin-bottom: 0;
+            position: relative;
+
+            &.focused {
+                position: relative;
+                overflow: visible;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    bottom: -8px;
+                    left: -8px;
+                    z-index: -1;
+                    outline: 4px solid $grey-md-lt;
+                }
+                .link {
+                    &::after {
+                        border-top: 0.125em solid $blue;
+                        width: 5.3em;
+                    }
+                }
+            }
+        }
+        .summary {
+            pointer-events: none;
+            padding-bottom: 1rem;
+            font-size: 16px;
+
+            &:hover, &:focus {
+                color: #252525;
+            }
+        }
+
+        .link, .expand {
+            padding: .125rem 0;
+            position: relative;
+            overflow: hidden;
+            transition: .2s;
+            @include widening-underline();
+
+            &:hover, &:focus {
+                color: $blue-md;
+            }
+
+            .expander, a {
+                text-decoration: none;
+                display: block;
+                padding: .75rem 0;
+
+                
+
+                &:hover, &:focus {
+                    outline: 0;
+                    // Eventually remove this when the new design is approved
+                    background-color: transparent;
+                }
+            }
+
+            &.expand {
+                @include expander-arrow();
+                padding: 0;
+                margin-bottom: 0;
+                border-bottom: 1px solid $grey-md-lt;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 0;
+                    border-bottom: 1px solid transparent;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    &, &::after {
+                        border-bottom-color: $blue-md;
+                    }
+                }
+
+                .link {
+                    margin-left: 1rem;
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                }
+
+                ul {
+                    li:last-child {
+                        margin-bottom: 0;
+
+                        .link {
+                            padding-bottom: 0;
+                            margin-left: 0;
+                        }
+
+                        a {
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+
+                & {
+                    &, &::after {
+                        border-bottom-color: transparent;
+                        background-color: transparent;
+                    }
+                }
+
+            }
+
+            &.expanded {
+                &, &:hover {
+                    &, &::after {
+                        border-bottom-color: transparent;
+                        background-color: transparent;
+                    }
+                }
+
+                .expander {
+                    font-weight: 600;
+                }
+
+            }
+
+            &.collapsed {
+                border-bottom: 1px solid $grey-md-lt;
+
+                &:hover, &.focused {
+                    &, &::after {
+                        border-bottom-color: $blue-md;
+                    }
+                }
+            }
+        }
+    }
+
+    // The ul of links for each letter
+    .links {
+        display: flex;
+        flex-flow: column nowrap; // for column view
+        margin: 0 -1rem 0;
+        align-items: stretch;
+
+        & > li {
+            padding: 0 1rem;
+            margin-bottom: 0;
+            position: relative;
+
+        }
+
+        .link, .expand {
+            height: 100%;
+            padding: .125rem 0;
+            position: relative;
+            overflow: hidden;
+            transition: .2s;
+            @include thickening-underline();
+            
+            &:hover, &:focus {
+                color: $blue-md;
+            }
+
+            .expander, a {
+                text-decoration: none;
+                display: block;
+                padding: .75rem 0;
+
+                &:hover, &:focus {
+                    outline: 0;
+                    // Eventually remove this when the new design is approved
+                    background-color: transparent;
+                }
+            }
+
+            &.expand {
+                @include expander-arrow();
+                padding: 0;
+                margin-bottom: 0;
+                border-bottom: 1px solid $grey-md-lt;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 0;
+                    border-bottom: 1px solid transparent;
+                    z-index: -1;
+                }
+
+                &:hover {
+                    &, &::after {
+                        border-bottom-color: $blue-md;
+                    }
+                }
+
+                .link {
+                    margin-left: 1rem;
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                }
+
+                ul {
+                    li:last-child {
+                        margin-bottom: 0;
+
+                        .link {
+                            padding-bottom: 0;
+                            margin-left: 0;
+                        }
+
+                        a {
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+
+                & {
+                    &, &::after {
+                        border-bottom-color: transparent;
+                        background-color: transparent;
+                    }
+                }
+
+            }
+
+            &.expanded {
+                &, &:hover {
+                    &, &::after {
+                        border-bottom-color: transparent;
+                        background-color: transparent;
+                    }
+                }
+
+                .expander {
+                    font-weight: 600;
+                }
+
+            }
+
+            &.collapsed {
+                border-bottom: 1px solid $grey-md-lt;
+
+                &:hover, &.focused {
+                    &, &::after {
+                        border-bottom-color: $blue-md;
+                    }
+                }
+            }
+        }
+
+    }
+
+    a {
+        &.external {
+            padding-right: 1.75em !important;
+
+            &::before {
+                @include simple-arrow-style(diagonal, small);
+                background-image: url($arrow-blue);
+                right: 0;
+            }
+
+            &::after {
+                transform: none;
+            }
+
+            &:hover, &:focus {
+                &::before {
+                    background-image: url($arrow-blue-md);
+                }
+            }
+        }
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .m_page-list {
+        .links {
+            flex-flow: row wrap;
+            & > li {
+                margin-top: 1.5rem;
+                width: $one-col;
+            }
+        }
+        .links-column {
+            flex-flow: column wrap;
+            & > li {
+                margin-top: 1.5rem;
+                width: $two-col;
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.settings-panel {
+    
+    .border-1px {
+        border: 1px solid #CDCDCD !important;
+        margin-bottom: 7px;
+    }
+
+    .input-row {
+        display: block;
+        margin-bottom: 7px;
+        margin-left: 10px;
+
+        .text-cell {
+            display: block;
+        }
+
+        .label-subtext {
+            font-size: 10px;
+        }
+    }
+    
+    .input-rtefield {
+        margin: 7px;
+    }
+
+    input[type=text]:focus,
+    div[role=textbox]:focus,
+    texarea:focus{
+        border: 2px solid #2a8dd4;
+    }
+
+    .ms-rtestate-write.ms-rtestate-field {
+        border: 2px solid #CDCDCD;
+
+        &:focus {
+            border: 2px solid #2a8dd4;
+        }
+    }
+
+    .label-row {
+        margin: 7px 0 4px 10px;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .fnsp-formfieldlabelcontainer {
+        font-family: Tahoma;
+        font-size: 8pt;
+        font-weight: normal;
+        text-align: left;
+        color: #777;
+    }
+
+    .ms-dtinput {
+        padding-left: 0;
+    }
+
+    #UpdateSuccess, .UpdateSuccess {
+        display: none;
+        color: forestgreen;
+    }
+
+    #CatalogWarning {
+        display: none;
+        color: #FFC107;
+    }
+
+    .UpdateFail, #UpdateFail {
+        display: none;
+        color: darkred;
+    }
+    .webpart-save-button {
+        width: 80px;
+        height: 40px;
+
+        &::before {                    
+            background: none;
+            width: 0px;
+            height: 0px;
+        }
+    }
+}

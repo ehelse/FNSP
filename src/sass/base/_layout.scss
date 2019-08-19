@@ -1,0 +1,36 @@
+// Layout feeds to JS
+
+title {
+    position: relative;
+    z-index: 1;
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    title {
+        z-index: 2;
+    }
+}
+
+/**********************************************************************/
+/* Three columns */
+@media only screen and (min-width: $two-to-three-col) {
+
+    title {
+        z-index: 3;
+    }
+}
+
+//*********************************************************************/
+/* Typical desktops. Four columns. */
+@media only screen and (min-width: $three-to-four-col) {
+
+    title {
+        z-index: 4;
+    }
+
+}
+
+//*********************************************************************/

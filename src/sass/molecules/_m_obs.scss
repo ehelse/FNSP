@@ -1,0 +1,16 @@
+.m_obs {
+    margin-bottom: 3.5rem;
+    background-color: $yellow;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .container {
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) { 
+    .m_obs {
+        margin-top: 3.5rem;
+    }
+}

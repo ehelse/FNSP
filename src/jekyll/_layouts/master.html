@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nb-no">
+<head>
+    <title>{{page.title}} - {{site.name}}</title>
+    {% include framework/headlinks.html %}
+
+</head>
+<body class="nojs">
+{% include framework/framework-header.html with-fb-image=page.image-fb %}
+<main id="main" class='
+    {{page.customer}}
+    {{page.region}}
+    {% if page.image-fb%}image-fb{% endif %}
+    {% if page.sp-layout %}{{ page.sp-layout}}{% endif %}
+    {% if page.main-class %}{{page.main-class}}{% endif %}
+
+    '>
+
+    {% case page.sp-layout %}
+
+    {% when "ArrangementerLayout" %}
+    {% include sp-layout/ArrangementerLayout.html %}
+
+    {% when "ArrangementsideLayout" %}
+    {% include sp-layout/ArrangementsideLayout.html %}
+
+    {% when "ArtikkelsideLayout" %}
+    {% include sp-layout/ArtikkelsideLayout.html %}
+
+    {% when "CourseOfTreatmentLayout" %}
+    {% include sp-layout/CourseOfTreatmentLayout.html %}
+
+    {% when "DepartmentLayout" %}
+    {% include sp-layout/DepartmentLayout.html %}
+
+    {% when "DepartmentsOverviewLayout" %}
+    {% include sp-layout/DepartmentsOverviewLayout.html %}
+
+    {% when "FNSPSearch" %}
+    {% include sp-layout/FNSPSearch.html %}
+
+    {% when "FNSPSearchBase" %}
+    {% include sp-layout/FNSPSearchBase.html %}
+
+    {% when "KliniskStudieLayout" %}
+    {% include sp-layout/KliniskStudieLayout.html %}
+
+    {% when "Location1Layout" %}
+    {% include sp-layout/Location1Layout.html %}
+
+    {% when "Location2Layout" %}
+    {% include sp-layout/Location2Layout.html %}
+
+    {% when "NyhetssideLayout" %}
+    {% include sp-layout/NyhetssideLayout.html %}
+
+    {% when "SeksjonssideLayout" %}
+    {% include sp-layout/SeksjonssideLayout.html %}
+
+    {% when "SeksjonssideLayoutMedBilde" %}
+    {% include sp-layout/SeksjonssideLayoutMedBilde.html %}
+
+    {% when "TreatmentLayout" %}
+    {% include sp-layout/TreatmentLayout.html %}
+
+    {% when "TransportsideLayout" %}
+    {% include sp-layout/TransportsideLayout.html %}
+
+    {% when "WelcomePage" %}
+    {% include sp-layout/WelcomePage.html %}
+
+    {% endcase %}
+
+    {% include framework/feedback.html %}
+
+</main>
+
+
+{% include framework/footer.html %}
+</body>
+</html>

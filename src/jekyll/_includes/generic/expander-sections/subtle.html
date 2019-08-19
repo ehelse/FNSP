@@ -1,0 +1,38 @@
+{% if include.type == "subsection" %}
+<div class="container subsection">
+
+{% endif %}
+
+    {% if include.title%}
+    <h3 class="a_subtle-heading">{{include.title}}</h3>
+    {% endif %}
+
+    <!-- Accordion items -->
+    {% for item in include.data offset:include.offset limit:include.limit %}
+    <section class="js-expand m_subtle-expander">
+
+        <h1 class="js-expander">
+            <span class="item-title">{{ item.title }}</span>
+            {% if item.subtitle%}
+            <span class="dash">-</span>
+            <span class="item-subtitle">{{ item.subtitle }}</span>
+            {% endif %}
+        </h1>
+        <div class="js-expandable">
+            {{ item.content }}
+
+            {% if item.treatment %}
+            <div>
+                <a href="" class="a_promoted-link">Les mer om {{ item.treatment }}</a>
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+    {% endfor %}
+    <!-- End accordion items -->
+
+
+{% if include.type == "subsection" %}
+</div>
+{% endif %}

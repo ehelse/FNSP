@@ -1,0 +1,75 @@
+﻿.m_status-panel {
+    padding: 1rem 0;
+    margin-top: 2rem;
+    .inprogress {
+        background-color: #fff19d;
+        margin-right: -100%;
+        margin-left: -100%;
+    }
+
+    .statuses {
+        padding-bottom: 2.5rem;
+        padding-top: 1rem;
+    }
+
+    .task-list {
+        padding-bottom: 2rem;
+        &.fillout {
+            margin-right: -100%;
+            margin-left: -100%;
+        }
+        &.expanded {
+            background-color: #F4F4F0;
+        }
+        .tasks {
+            list-style-type: none;
+            color: #fff;
+            padding: 2rem 0;
+            margin-top: -3.2rem;
+            li {
+                float: left;
+                box-shadow: 0 0 0 0.2rem white;
+                cursor: pointer;
+                height: 2.5rem;
+                margin-right: 1rem;
+                background-color: $blue;
+                padding: .5rem;
+                border-radius: 3.75rem;
+                &.disabled {
+                    background-color: #bad2e8;
+                }
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    border-bottom: none;
+                }
+            }
+        }
+        .fields {
+            clear: both;
+            padding-bottom: 2rem;
+
+            label, textarea, table, select, input[type=submit] {
+                float: left;
+                clear: both;
+                margin-top: .5rem;
+            }
+
+            input[type=submit] {
+                margin-left: 0;
+            }
+            label {
+                font-weight: 600;
+            }
+            
+            table {
+                label {
+                    float: inherit;
+                }
+                input {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+}

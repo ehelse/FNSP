@@ -1,0 +1,42 @@
+/*  Site breadcrumbs
+
+    <a href="#" class="atom_scroll-to-top">Til toppen</a>
+
+*/
+
+.a_scroll-to-top {
+    display: none;
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .a_scroll-to-top {
+        position: fixed;
+        right: -4.5rem;
+        bottom: 0;
+        width: 12rem;
+        height: 3rem;
+        margin-bottom: 3rem;
+        padding: 0 0 0 4rem;
+
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: $font-m;
+        line-height: 3rem;
+
+        transform: rotate(90deg);
+        border-radius: 0 0 0 .5rem;
+        background-size: 2rem .85rem;
+
+        &:hover {
+            text-decoration: none;
+            background-color: blue;
+        }
+    }
+
+}
+
+/*********************************************************************/

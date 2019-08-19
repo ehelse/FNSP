@@ -1,0 +1,23 @@
+.m_related-info {
+    padding-top: 0;
+    margin: 2rem 0;
+
+    h2, h3 {
+        font-size: 1.125rem;
+        margin-bottom: .5rem;
+        font-weight: 600;
+        margin-top: 0;
+    }
+
+    a.external {
+        @include simple-arrow(diagonal, small, after);
+        padding-right: 1.5em;
+    }
+
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+    .m_related-info {
+        margin-top: 0;
+    }
+}

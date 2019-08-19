@@ -1,0 +1,198 @@
+@import '../base/_variables.scss';
+@import '../base/_mixins-and-extensions.scss';
+
+.o_framework-header {
+
+    // Top, always visible stuff
+    > .container {
+        width: 100%;
+        padding: 1.5rem 3rem;
+    }
+}
+
+.dashboardicon {        
+    width: 3rem;
+    height: 4rem;        
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    float: left;
+    margin-right: 2rem;
+
+    &.work{
+        background-image: url('../../svg/atom-work.svg');
+    }
+
+    &.board{
+        background-image: url('../../svg/atom-board.svg');
+    }
+
+    &.chain{
+        background-image: url('../../svg/atom-chain.svg');
+    }
+
+    &.eye{
+        background-image: url('../../svg/atom-eye.svg');
+    }
+
+    &.appup{
+        background-image: url('../../svg/atom-app-up.svg');
+    }
+
+    &.schedule{
+        background-image: url('../../svg/atom-schedule.svg');
+    }
+
+    &.read{
+        background-image: url('../../svg/atom-read.svg');
+    }&.add{  
+        background-image: url('../../svg/atom-add.svg');  
+        width: 46px;
+        height: 47px;
+        margin-left: 13px;
+    }
+    &.add:hover {
+        background-image: url('../../svg/atom-addR.svg');  
+    }
+    &.exit{  
+        background-image: url('../../svg/atom-exit.svg');  
+        min-width: 40px;
+        min-height: 40px;
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+        padding: 0;        
+        margin-top: -30px;
+        margin-right: -23px;
+        border-radius: 20px;
+    }
+    &.exit:hover {
+        background-image: url('../../svg/atom-exitR.svg');  
+    }
+    &.trash{  
+        background-image: url('../../svg/atom-trash.svg');  
+        min-width: 40px;
+        min-height: 40px;
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+        padding: 0;
+        margin-left: 16px;
+    }
+    &.trash:hover {
+        background-image: url('../../svg/atom-trashR.svg');  
+    }
+    &.expand{
+        background-image: url('../../svg/atom-expand.svg');
+        width: 23px;
+        height: 14px;
+        margin: 32px;
+    }
+    &.reports {
+        width: 34px;
+        margin: -2px 0px 0px 12px;
+        background-image: url('../../svg/atom-reports.svg');
+    }    
+    &.reportsW {
+        width: 34px;
+        margin: -2px 0px 0px 12px;   
+        background-image: url('../../svg/atom-reportsW.svg');
+    }
+    &.reportsR {
+        width: 54px;
+        margin: 20px 0px 0px 20px;
+        background-image: url('../../svg/atom-reportsR.svg');
+    }   
+    
+    &.myPage {
+        width: 33px;
+        margin: -4px 0px 0px 11px;
+        background-image: url('../../svg/atom-myPage.svg');
+    }
+    
+    &.myPageW {
+        width: 33px;
+        margin: -4px 0px 0px 11px;
+        background-image: url('../../svg/atom-myPageW.svg');
+    }
+   
+    &.commonContent {
+        width: 41px;
+        margin: -4px 0px 0px 7px;    
+        background-image: url('../../svg/atom-commonContent.svg');
+    }
+    
+    &.commonContentW {
+        width: 41px;
+        margin: -4px 0px 0px 7px;    
+        background-image: url('../../svg/atom-commonContentW.svg');
+    }
+    
+    &.local {        
+        width: 38px;
+        margin: -5px 0px 0px 8px;
+        background-image: url('../../svg/atom-local.svg');
+    }    
+    
+    &.localW {        
+        width: 38px;
+        margin: -5px 0px 0px 8px;
+        background-image: url('../../svg/atom-localW.svg');
+    }
+    
+    &.rightArrow {
+        background-image: url('../../svg/atom-right-arrow.svg');
+        float: right;
+        width: 17px;
+        cursor: pointer;
+    }
+    &.leftArrow {
+        background-image: url('../../svg/atom-left-arrow.svg');
+        float: right;
+        width: 17px;
+        cursor: pointer;
+    }    
+} 
+
+.tableitem-align-left{
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.o_framework-footer{
+    display: none;
+}
+
+#site-search {
+    display: none;
+}
+
+#menuButton, #header-search-toggle {
+    display: none;
+}
+
+.redaktordashboardcontainer {
+    width: 100%;
+    margin: 0 auto;
+    .redaktordashboard {
+
+        .expandercard {
+            padding: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 11.75rem; // skal matche kortet med størst høyde
+            height: 100%;
+
+            @media only screen and (min-width: 1280px) {
+                min-height: 18.5rem;
+            }
+            @media only screen and (min-width: 1334px) {
+                min-height: 16.25rem;
+            }
+            @media only screen and (min-width: 1553px) {
+                min-height: 14rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<section class="o_timeline js-expand-to-full-width">
+    <div class="container">
+        <h2>{{ include.title }}</h2>
+
+        <ol>
+            <li>
+                <h3>Non-expanding step with internal link</h3>
+
+                <p>Step content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec mi nec libero ullamcorper facilisis quis eget urna. Sed vulputate urna ac leo consequat, vel feugiat metus mattis.</p>
+
+                <a class="read-more" href="index.html">Link to a page on this site with more information</a>
+            </li>
+
+            <li>
+                <h3>Step with all content always visible.</h3>
+
+                <p>There's a limit to how much content can be shown at once before an expander is required. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="http://google.ru">Pellentesque nec mi nec</a> libero ullamcorper facilisis quis eget urna. Sed vulputate urna ac leo consequat, vel feugiat metus mattis.</p>
+
+                <figure>
+                    <img src="http://placekitten.com/500/250" alt="Placekitten"/>
+                    <figcaption>
+                        <span class="attribution">Here is a placekitten.</span>
+                    </figcaption>
+                </figure>
+
+                <p>Phasellus sollicitudin convallis dui ac consequat. Morbi sit amet leo non ligula <a href="http://google.com.af">condimentum</a> aliquet quis sed augue. Vivamus vehicula magna vitae dolor rutrum cursus.</p>
+
+            </li>
+
+            <li>
+                <h3>Expanding step</h3>
+
+                <p>Step content that will always be visible. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <div class="js-expand">
+                    <span class="js-expander">Les mer om steget</span>
+
+                    <div class="js-expandable">
+                        <h4>Her er utfyllende info.</h4>
+
+                        <figure>
+                            <img src="http://placekitten.com/250/150" alt="Placekitten"/>
+                            <figcaption>
+                                <span class="attribution">Here is a placekitten.</span>
+                            </figcaption>
+                        </figure>
+
+                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin placerat mollis quam sed fermentum.</p>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <h3>Non-expanding step with external link</h3>
+
+                <p>Step content. There's a limit to how much content can be shown here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec mi nec libero ullamcorper facilisis quis eget urna. Sed vulputate urna ac leo consequat, vel feugiat metus mattis.</p>
+
+                <a class="read-more external" href="index.html">Link to an external page with more information</a>
+            </li>
+
+        </ol>
+    </div>
+</section>

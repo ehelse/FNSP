@@ -1,0 +1,35 @@
+.o_link-list-with-summaries {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+}
+
+
+/******************************************************************** */
+/* Narrow desktops and landscape-oriented tablets.  Three columns. */
+@media only screen and (min-width: $two-to-three-col) {
+
+    .o_link-list-with-summaries {
+
+        li {
+
+            &:nth-child(even) {
+                float: right;
+            }
+
+            &:nth-child(odd) {
+                float: left;
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="nb-no">
+<head>
+    <title>Kortisonbehandling med tabletter - [Helseforetakets navn]</title>
+    
+
+
+<script class="js-hide-menu" type="text/javascript">
+    document.write('<style type="text/css" class="js-hide-menu">.js-expandable {display:none!important;}</style>');
+</script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700&amp;subset=latin-ext" rel="stylesheet" type="text/css">
+
+<link href="../assets/css/master.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/ms-override.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/png" href="../assets/images/favicon.ico">
+
+<!--<script src="//code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>-->
+<!--<script>window.jQuery || document.write('<script src="../assets/js/jquery/jquery-2.1.4.min.js">\x3C/script>')</script>-->
+<script src="../assets/js/jquery/jquery-2.1.4.min.js"></script>
+
+
+<script src="../assets/js/master.js"></script>
+
+
+<script src="../assets/js/jquery/jquery.stickyNavbar.js"></script>
+<script src="../assets/js/treatment.js"></script>
+<link href="../assets/css/treatment.css" rel="stylesheet" type="text/css"/>
+
+
+
+<!-- Not for implementation in SP! -->
+<style>
+    .int-link, .toc, .tfs-link {
+        position: fixed;
+        z-index: 9999999;
+        bottom: 0;
+        right: 0;
+        padding: 8px;
+        height: 36px;
+        line-height: 20px;
+        background: rgba(0, 0, 0, .65);
+        color: white;
+        font-size: 16px;
+        display: block;
+        box-sizing: border-box;
+        margin-bottom: 0;
+    }
+
+    .int-link {
+        bottom: 36px;
+    }
+
+    .tfs-link {
+        bottom: 72px;
+    }
+
+    .int-link a, .tfs-link a, .toc {
+        color: #fff!important;
+    }
+
+    .int-link::after, .tfs-link::after {
+        content: " >>";
+    }
+
+</style>
+
+</head>
+<body class="nojs">
+<a tabindex="1" class="a_skip-to-content" href="#page-title">Hopp til innholdet</a>
+<header class="o_framework-header js-expand">
+
+    <div class="container">
+
+        <div class="logo">
+            <a href="/site/hf/index.html">
+                <img src="/Style%20Library/Images/logo.svg" alt="Foretakets navn">
+                <!--<img src="http://stolav.hn1-02.int-hn.nhn.no/Style%20Library/Images/logo.svg" alt="Foretakets navn">-->
+                <!--<img src="https://haraldsplass.hn.test.nhn.no/Style%20Library/Images/logo.svg" alt="Foretakets navn">-->
+                <!--<img src="http://unn.hn1-02.int-hn.nhn.no/Style%20Library/Images/logo.svg" alt="Foretakets navn">-->
+            </a>
+        </div>
+
+        <div class="header-button-container">
+    <button type="button" id="header-search-toggle" class="search-toggle-button collapsed" aria-label="Søk" aria-owns="header-site-search" aria-expanded="false">
+        <span class="button-icon search"></span>
+        <span class="text open-text">Søk</span>
+        <span class="text closed-text">Lukk</span>
+    </button>
+    <div id="site-search" class="m_search-box js-site-search" role="search">
+        <div id="header-site-search">
+            <label for="header-search-input">Søk</label>
+            <input id="header-search-input" name="search" type="search" placeholder="Søk i alt innhold" aria-label="Søk i alt innhold">
+            <button id="header-search-button" class="header-search-icon" type="button" aria-label="Søk"></button>
+        </div>
+    </div>
+    <button type="button" id="menuButton" class="menu-toggle-button js-menu-button js-expander expander" aria-owns="header-site-menu" aria-expanded="false">
+        <span class="button-icon menu"></span>
+        <span class="text open-text">Meny</span>
+        <span class="text closed-text">Lukk</span>
+    </button>
+</div>
+    </div>
+
+    <div class="main-menu js-expandable">
+        <div class="site-functions">
+            <div class="container">
+                <div class="js-site-settings m_site-settings">
+                    <div class="text-size js-expand submenu">
+                        <button type="button" class="js-expander">Skriftstørrelse</button>
+                        <div class="js-expandable instructions">Hold inn Ctrl-tasten (Cmd-tasten på Mac). Trykk samtidig på + for å
+                            forstørre eller forminske teksten.
+                        </div>
+                    </div>
+                    <fieldset class="js-language language submenu">
+                        <legend class="visuallyhidden">Velg språk</legend>
+                        <ul>
+                            <li>
+                                <input type="submit" disabled value="Bokmål"/>
+                            </li>
+                            <li>
+                                <input type="submit" value="Nynorsk"/>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <nav class="container">
+            <ul class="o_tile-group menu navigation">
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title"
+                    href="/site/hf/behandling/index.html">Behandling</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/behandling/index.html" class="category-index">Alle behandlinger</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/behandling/opplaering.html">Opplæring</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/rettigheter/index.html">Rettigheter</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title"
+                    href="/site/hf/avdelinger/index.html">Avdeling</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/avdeling/index.html">Alle sykehus og avdelinger</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title"
+                    href="/site/hf/helsefaglig/index.html">Helsefaglig</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/helsefaglig/samarbeid.html">Samarbeid</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig/tjenester.html">Tjenester</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig/forskning.html">Forskning</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig/utdanning.html">Utdanning</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig" class="category-index">Alt helsefaglig</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title" href="/site/hf/om-oss/index.html">Om oss</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/om-oss/jobb/index.html">Ledige stillinger</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/om-oss/pressesenter.html">Pressesenter</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/om-oss/nyheter/index.html">Nyheter</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/om-oss/index.html">Alt om oss</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+            <div class="buttons">
+
+                <div>
+                    <a class="button" href="/site/rhf/category-index.html">
+                        Alt innhold A-Å
+                    </a>
+
+                    <div class="button-label">Logg inn på helsenorge.no</div>
+                </div>
+
+                <div>
+                    <a class="button external" href="">
+                        English
+                    </a>
+
+                    <div class="button-label">About the hospital</div>
+                </div>
+            </div>
+            <nav class="m_breadcrumbs">
+
+    <h2>Du står her:</h2>
+    <ul class="path">
+        <li><a href="">Forside</a></li>
+        <li><a href="">Om oss</a></li>
+        <li><a href="">Nyheter</a></li>
+        <li class="current">Kortisonbehandling med tabletter</li>
+    </ul>
+
+    
+
+    
+
+    
+
+</nav>
+        </nav>
+    </div>
+</header>
+<main id="main" class='
+    HF
+    
+    
+    TreatmentLayout
+    behandling
+
+    '>
+
+    
+    <article>
+
+    <!-- Page header -->
+    <header id="innledning" class="o_page-header js-scrollto">
+
+    <div class="container">
+        <nav class="m_breadcrumbs">
+
+    <h2>Du står her:</h2>
+    <ul class="path">
+        <li><a href="">Forside</a></li>
+        <li><a href="">Om oss</a></li>
+        <li><a href="">Nyheter</a></li>
+        <li class="current">Kortisonbehandling med tabletter</li>
+    </ul>
+
+    
+
+    
+
+    
+
+</nav>
+        <div>
+    <div id="ctl00_PlaceHolderMain_ctl00_PrintPanelWithExpand">
+
+        <div class="noindex js-expand m_printdialog" id="print-dialog">
+
+            <button class="js-expander print-icon" data-close-text="Lukk vindu" data-print-text="Utskrift">
+            </button>
+
+            <div class="js-expandable print-panel js-expand-to-full-width">
+
+                <div class="print-heading">
+                    <div class="container print-title">
+                        Skriv ut
+                        ADHD hos barn og unge
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>
+                        Velg utskrift fra denne siden
+                    </h3>
+
+                    <ul class="print-list">
+                        <li>
+                            <input type="checkbox" id="choseall" class="rootelement" name="chooseall" value="Velg alt">
+                            <label for="choseall">Velg alt</label>
+                        </li>
+                    </ul>
+
+                    <div class="print-footer">
+                        <div class="ms-rtePosition-1">
+                            Utskriftsdato
+                            <span id="ctl00_PlaceHolderMain_ctl00_PrintDateLabel">20.07.2017</span>
+                        </div>
+                        <div class="ms-rtePosition-2 print-button">
+                            <button onclick="window.print();">
+                                Skriv ut
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+        
+
+        <h1 id="page-title" tabindex="-1">Kortisonbehandling med tabletter</h1>
+        <p id="page-subtitle">Prednisolonbehandling</p>
+        <!-- Ingress -->
+        
+<div class="m_page-ingress">
+
+    <h2>Avdeling for revmatologi, hud- og infeksjonssykdommer</h2>
+
+    
+    <p>Prednisolon er et av de mest effektive betennelsesdempende midler vi kjenner, og effekten kommer allerede fra første dag. Prednisolon virker bra på revmatiske betennelsessykdommer. Dessverre påvirker den ikke selve årsaken til sykdommen og mange trenger andre medisiner i tillegg.</p>
+    
+
+</div>
+
+
+        
+    </div>
+
+</header>
+
+    <!-- Expanding info in header -->
+    
+    
+    
+
+    <!-- Location picker -->
+    
+
+    <!-- Statistics at top of page -->
+    
+    <aside class="o_treatment-statistics container">
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <p>Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. </p>
+
+            <a class="external" href="http://helsenorge.no/velg-behandlingssted">Se ventetider på Velg behandlingssted <span class="">helsenorge.no</span></a>
+        </div>
+    </div>
+</aside>
+    
+
+    <!-- Scrolling page menu -->
+
+    <!--  -->
+
+    <!-- Content -->
+    <!-- Innledning************************************************************* -->
+<section id="innledning" class="o_horizontal-section">
+    
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h2 class="a_subtle-heading subhead">Innledning</h2>
+    
+
+    
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-md-push-8 col-lg-push-9">
+            <aside class="m_simple-treatment-statistics">
+                <div class="m_statistic">
+                    <div class="description">Antall utført i 2013</div>
+                    <span class="number"> 1248</span>
+                    <span class="unit">stk</span>
+                </div>
+            </aside>
+        </div>
+
+        
+        <div class="col-lg-9 col-md-8 col-md-pull-4 col-lg-pull-3">
+            <p>Undersøkelsen foretas vanligvis fordi symptomene gir legen mistanke om tarmsykdom, eller at man har økt forekomst av tarmsykdom i familien (arvelighet). Koloskopi brukes også i behandlingsmessig inngrep, f. eks. fjerning av polypper).</p>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h2 class="a_subtle-heading ">Henvisning og vurdering</h2>
+    
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>Det er fastlegen som henviser til behandling. Henvisningen vurderes av ansvarlig overlege ved avdelingen. Når henvisningen er vurdert får pasienten innkalling.</p>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+
+</section>
+
+
+
+<!-- Før ******************************************************************* -->
+<section id="foer" class="o_horizontal-section js-scrollto js-responsive-expand">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">1. Før</h2>
+</div>
+
+    <div class="js-responsive-expandable">
+
+        
+
+<div class="subsection">
+
+    <div class="container">
+        
+
+    
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-md-push-8 col-lg-push-9">
+            <aside class="m_simple-treatment-statistics">
+                <div class="m_statistic">
+                    <div class="description">Forberedelse</div>
+                    <span class="number"> 1</span>
+                    <span class="unit">dag</span>
+                </div>
+            </aside>
+        </div>
+
+        
+        <div class="col-lg-9 col-md-8 col-md-pull-4 col-lg-pull-3">
+            <p>I forkant av undersøkelsen skal du drikke en væske som heter Pico prep, som i løpet av en dag tømmer tarmen for avføring.</p> <p>Du kan ikke være på jobb denne dagen.</p> <h4>Program for forberedende dag</h4> <p>På forberedende dag på poliklinikken skal du:</p> <ul> <li>snakke med sykepleier</li> <li>ta blodprøver</li> <li>tas imot av lege</li> <li>ha samtale med operatør/overlege</li> <li>samtale med fysioterapeut</li> <li>ha samtale med anestesilege</li> </ul>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+    </div>
+
+</section>
+
+
+
+<!-- Under ***************************************************************** -->
+<section id="under" class="o_horizontal-section js-responsive-expand  js-scrollto">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">2. Under</h2>
+</div>
+
+    <div class="js-responsive-expandable">
+
+        
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h3 class="a_subtle-heading subhead">Fremgangsmåte for koloskopi</h3>
+    
+
+    
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-md-push-8 col-lg-push-9">
+            <aside class="m_simple-treatment-statistics">
+                <div class="m_statistic">
+                    <div class="description">Varighet på undersøkelse</div>
+                    <span class="number"> 30 - 60</span>
+                    <span class="unit">timer</span>
+                </div>
+            </aside>
+        </div>
+
+        
+        <div class="col-lg-9 col-md-8 col-md-pull-4 col-lg-pull-3">
+            <p>Undersøkelsen gjøres med et koloskop. Koloskopet er et ca. 1,3 m langt, fingertykt, styrbart og bøyelig instrument.</p> <p>Først ligger du på venstre side på undersøkelsesbenken, deretter oftest på ryggen. Før eller under koloskopien kan du ved behov få en avslappende sprøyte.</p> <p>Etter at legen har undersøkt endetarmsåpningen med en finger, føres koloskopet gjennom endetarm og tykktarm og eventuelt også inn i nedre del av tynntarmen, men det er avgjørende for å utføre en teknisk god undersøkelse, at tømningsinstruksen er blitt fulgt! Noen ganger må tarminnhold suges eller spyles ut, og andre ganger kan det være nødvendig å sette inn litt luft for å få tilstrekkelig oversikt. En koloskopi tar vanligvis 30-60 minutter, avhengig av teknisk fremdrift, om man er godt tømt, om det skal tas vevsprøver og ev. fjerning av polypper.</p>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h3 class="a_subtle-heading ">Fremgangsmåte for biopsi</h3>
+    
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>En biopsi er en vevsprøve som kan stamme fra alle typer vev i kroppen. En biopsi tas fordi man vil undersøke et bestemt vevs mikroskopiske sammensetning. Normalt kreves det bare noen små prøver for å kunne analysere et bestemt vev. Ved tykktarmsundersøkelse kan en biopsi tas via en endoskopitang gjennom endoskopet.</p>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+    </div>
+
+</section>
+
+
+
+<!-- Etter ***************************************************************** -->
+<section id="etter" class="o_horizontal-section js-scrollto js-responsive-expand">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">3. Etter</h2>
+</div>
+
+    <div class="js-responsive-expandable">
+
+        
+        
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h3 class="a_subtle-heading subhead">Hjemreise</h3>
+    
+
+    
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-md-push-8 col-lg-push-9">
+            <aside class="m_simple-treatment-statistics">
+                <div class="m_statistic">
+                    <div class="description">Ventetid før hjemreise</div>
+                    <span class="number"> 0 - 6</span>
+                    <span class="unit">timer</span>
+                </div>
+            </aside>
+        </div>
+
+        
+        <div class="col-lg-9 col-md-8 col-md-pull-4 col-lg-pull-3">
+            <p>Tykktarmskreft er den vanligste betegnelsen på ondartet svulst i tykktarmen (cancer coli). Den primære behandlingen av tarmkreft er kirurgi, enten åpen eller ved kikkehullsteknikk. Cellegift brukes som tilleggsbehandling hvis sykdommen har spredt seg til lokale lymfeknuter.</p> <p>Etter undersøkelsen kan du reise hjem. Hvis det er gitt avslappende kan du ikke kjøre bil før det har gått minst 6 timer.</p>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h3 class="a_subtle-heading ">Resultat av undersøkelse</h3>
+    
+
+    
+    <div class="row">
+        <div class="col-md-4 col-lg-3 col-md-push-8 col-lg-push-9">
+            <aside class="m_simple-treatment-statistics">
+                <div class="m_statistic">
+                    <div class="description">Ventetid før prøvesvar</div>
+                    <span class="number"> 2</span>
+                    <span class="unit">dager</span>
+                </div>
+            </aside>
+        </div>
+
+        
+        <div class="col-lg-9 col-md-8 col-md-pull-4 col-lg-pull-3">
+            <p>Du vil rett etter undersøkelsen få beskjed av legen om resultatet.</p> <p>Resultatet fra vevsprøven (biopsien) kommer to arbeidsdager senere.</p>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+
+
+        
+        
+<section class="m_obs">
+    <div class="container">
+        <h3>Risikoforhold og komplikasjoner</h3>
+        <p>Det er svært sjeldent med komplikasjoner under denne type undersøkelse (under 0,5%). I enkelte situasjoner kan risikoen være litt større, og du vil da få informasjon her både muntlig og skriftlig om forholdsregler ved hjemreise. </p> <p>Skulle du etter hjemkomsten få smerter i magen, oppkast, blødning/blodig avføring må du ta kontakt med lege.</p>
+    </div>
+</section>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- Kontakt *************************************************************** -->
+
+
+    <!-- Metadata in footer -->
+    
+
+
+</article>
+
+    
+
+    <div>
+    <div>
+        <a name="takk-for-tilbakemelding"></a>
+        <div class="m_feedback noindex">
+            <div class="container">
+                <div id="ctl00_PlaceHolderMain_ctl12_ctl00_FeedbackPanel">
+                    <fieldset>
+                        <legend>
+                            Fant du det du lette etter?
+                        </legend>
+                        <div class="ingress" id="feedback-disclaimer">Vi kan ikke svare deg på tilbakemeldingen. Ikke send oss personlig informasjon, for eksempel navn, e-post, telefonnummer eller fødselsnummer.
+                            <style>
+                            .m_feedback {
+                            margin-top:6.5rem;
+                            }
+                            </style>
+                        </div>
+                        <label for="FeedbackIsPositiveChoice" id="ctl00_PlaceHolderMain_ctl12_ctl00_PositiveChoiceLabel" class="visuallyhidden">Ja</label>
+                        <input value="Ja" name="ctl00$PlaceHolderMain$ctl12$ctl00$feedback" type="radio" id="FeedbackIsPositiveChoice">
+                        <button title="Ja" type="button" id="FeedbackIsPositive">Ja</button>
+                        <label for="FeedbackIsNegativeChoice" id="ctl00_PlaceHolderMain_ctl12_ctl00_NegativeChoiceLabel" class="visuallyhidden">Nei</label>
+                        <input value="Nei" name="ctl00$PlaceHolderMain$ctl12$ctl00$feedback" type="radio" id="FeedbackIsNegativeChoice">
+                        <button title="Nei" type="button" id="FeedbackIsNegative">Nei</button>
+                        <div class="feedbackformcontrols hidden visuallyhidden">
+                            <span id="error-message" class="hidden">Vennligst skriv en tilbakemelding.</span>
+                            <p class="error" aria-live="polite"></p>
+                                <label id="FeedbackLabel" for="FeedbackMessage"></label>
+                                <textarea maxlength="255" name="FeedbackMessage" id="FeedbackMessage" aria-describedby="feedback-disclaimer"></textarea>
+                                <p>Gjenstående tegn: <span id="feedbackcounter">255</span></p>
+                                <label class="skjultfelt" for="FirstToPhoneyField">Skal ikke fylles ut</label>
+                                <input class="skjultfelt" id="FirstToPhoneyField" title="Skal ikke fylles ut" name="FirstToPhoneyField" type="text" autocomplete="off">
+                                <button type="button" id="SubmitFeedbackButton" title="Send" onclick="FNSP.SubmitFeedBack();">Send</button>
+                            
+                        </div>
+                        <div class="visuallyhidden hidden">
+                            <span class="feedback-module-options" id="feedback_IsPositive">Så bra. Fortell oss gjerne hva du var fornøyd med.</span>
+                            <span class="feedback-module-options" id="feedback_IsNegative">Hva kan vi gjøre for å bli bedre?</span>
+                        </div>
+                    </fieldset>
+                    <p aria-live="polite" class="feedbackresponse hidden"></p>
+                    <input type="hidden" name="ctl00$PlaceHolderMain$ctl12$ctl00$NumberOfCols" id="NumberOfCols">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+<footer class="o_framework-footer">
+
+    <nav class="o_tile-group container menu navigation">
+
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Rettigheter
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="/site/hf/rettigheter/egenandel-og-frikort.html">Egenandel og frikort</a></li>
+                <li><a href="/site/hf/rettigheter/fritt-sykehusvalg.html">Fritt sykehusvalg</a></li>
+                <li><a href="/site/hf/rettigheter/behandlingsfrister.html">Behandlingsfrister</a></li>
+                <li><a href="/site/hf/rettigheter/klage-og-erstatning.html">Klage og erstatning</a></li>
+                <li><a href="/site/hf/rettigheter/index.html">Mer om rettigheter</a></li>
+            </ul>
+        </div>
+
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Sikkerhet og personvern
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="">Pasientsikkerhet</a></li>
+                <li><a href="">Taushetsplikt</a></li>
+                <li><a href="">Bruk av e-post</a></li>
+                <li><a href="">Om nettstedet</a></li>
+            </ul>
+        </div>
+
+        
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Kontaktinformasjon
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="">Øyeblikkelig hjelp</a></li>
+                <li><a href="">Pressekontakt</a></li>
+                <li><a href="">Nettredaksjon</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Last tile
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="">Øyeblikkelig hjelp</a></li>
+                <li><a href="">Pressekontakt</a></li>
+                <li><a href="">Nettredaksjon</a></li>
+            </ul>
+        </div>
+
+        <!--<div class="tile social">-->
+
+            <!--<div class="social-box">-->
+                <!--<div class="social-text">Nyhetsbrev</div>-->
+
+                <!--<div class="social-box-buttons">-->
+                    <!--<a href="https://twitter.com/" class="rss a_social-button">RSS</a>-->
+                    <!--<a href="https://www.facebook.com/" class="mail a_social-button">Mail</a>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<a href="">-->
+                <!--<div class="social-box">-->
+
+                    <!--<div class="social-text">Følg oss på</div>-->
+
+                    <!--<div class="social-box-buttons">-->
+                        <!--<div class="twitter a_social-button">Twitter</div>-->
+                        <!--<div class="facebook a_social-button">Facebook</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+
+    </nav>
+
+    <div class="ansvarlig">
+        <div class="container">
+            <img src="/site/images/hf/st-olavs/logo-negativ.png" class="logo" alt="St. Olavs Hospital" width="300"/>
+
+            <div>Organisasjonsnummer 997 005 562</div>
+
+            <div class="footer-contact-info">
+                <div class="phone">
+                    <span>Telefon 06800</span>
+                    <span class="center">Fra utlandet: +47 815 55 850</span>
+                    <span>Faks: 73 50 70 93</span>
+                </div>
+                <div class="mail">
+                    <span><a class="js-feedback" href="mailto:post.adm.dir@stolav.no">post.adm.dir@stolav.no</a></span>
+                    <span class="center">St. Olavs Hospital, Postboks 3250 Sluppen, 7006 Trondheim</span>
+                </div>
+            </div>
+            <div class="university">
+                I samarbeid med
+                <img src="/site/images/hf/st-olavs/logo_NTNU.png" class="logo" alt="NTNU"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Not for implementation in SP! -->
+<a class="toc" href="/index.html">&lt;&lt;&nbsp;&nbsp;Tilbake
+    til innholdsfortegnelse</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<aside class="o_treatment-statistics container">
+    <div class="row">
+        {% for item in include.data %}
+        <div class="m_statistic col-sm-6 col-md-4 col-lg-3">
+            <div class="description">{{ item.description }}</div>
+            <span class="number">{{ item.time }}</span>
+            <span class="unit">{{ item.timeunit }}</span>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <p>Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. </p>
+
+            <a class="external" href="http://helsenorge.no/velg-behandlingssted">Se ventetider på Velg behandlingssted <span class="">helsenorge.no</span></a>
+        </div>
+    </div>
+</aside>

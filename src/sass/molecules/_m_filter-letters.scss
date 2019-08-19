@@ -1,0 +1,72 @@
+.m_filter-letters {
+    padding: 0;
+    text-align: justify;
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+
+        &.disabled {
+            a, button {
+                color: $grey-md;
+                cursor: default;
+
+                &:hover, &:focus {
+                    background-color: #fff;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+    button {
+        color: $blue;
+        background-color: #fff;
+    }
+    a, button {
+        width: 2.5rem;
+        text-decoration: none;
+        height: 2.5rem;
+        border: 0;
+        border-radius: 2.5rem;
+        line-height: 2.5rem;
+        vertical-align: middle;
+        display: inline-block;
+        text-align: center;
+        transition: font-weight 0s .05s, background-color .2s, color .2s;
+
+        &:hover, &:focus {
+            color: $blue;
+            text-decoration: none;
+            border-color: $blue;
+            transition: .2s;
+            outline: none;
+            cursor: pointer;
+        }
+
+        &.active {
+            background-color: $blue;
+            color: white;
+        }
+
+        &.all {
+            padding: 0 1.25rem;
+            width: auto;
+        }
+
+        &:hover, &:focus {
+            background-color: $grey-lt;
+            color: $blue;
+            font-weight: 700;
+            border: 0;
+
+            &.active {
+                background-color: $blue;
+                color: white;
+                font-weight: normal;
+                &:focus {
+                    background-color: $blue-md;
+                }
+            }
+        }
+    }
+}

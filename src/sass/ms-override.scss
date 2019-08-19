@@ -1,0 +1,240 @@
+@import "base/variables";
+a * {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.ms-srch-sbLarge-fullWidth {
+    width: 100% !important;
+}
+
+// for when editors style promoted links via SP
+.a_promoted-link span {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: inherit !important;
+    &::before {
+        display: none !important;
+    }
+}
+
+// Adds the ruled style to heading elements in the WYSIWYG editor
+// Used to extend a_ruled heading, but for some reason this started giving an error.
+h2.ms-rteElement-H2 {
+    font-weight: 400;
+    font-size: $font-l;
+    text-transform: uppercase;
+    position: relative;
+    color: $blue;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    line-height: 1.2;
+    overflow: hidden;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a u {
+    text-decoration: none;
+}
+
+.ms-rtestate-field a:not([class]):visited {
+    color: $grey-md-dk;
+}
+
+.image-alt-warning-overlay {
+    display: none;
+}
+
+/**********************************************************************/
+
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+
+@media only screen and (min-width: $one-to-two-col) {
+    h2.ms-rteElement-H2 {
+        font-size: $font-xl;
+        line-height: 1.25;
+        display: table;
+        text-align: center;
+        color: $grey-dk;
+        font-weight: 700;
+        padding-bottom: 0;
+        margin-bottom: 2.5rem;
+        white-space: nowrap;
+        &:before,
+        &:after {
+            top: 1.2rem;
+            width: 47%;
+            border-top: 3px solid $grey-dk;
+            content: "";
+            display: table-cell;
+            position: relative;
+        }
+        &:before {
+            right: 2rem;
+        }
+        &:after {
+            left: 2rem;
+            transform: scaleY(1);
+            background-image: none;
+        }
+    }
+}
+
+/**********************************************************************/
+
+// Fixes the problem with the width of expand-to-full-width elements being too wide
+.ms-webpart-chrome-vertical,
+.ms-webpart-cell-vertical {
+    display: block;
+}
+
+// Ensures that web part zones are cleared when floating content above them would
+// otherwise mess up their layout.
+/*.ms-rte-wpbox {
+    float: left;
+    width: 100%;
+    clear: both;
+}*/
+
+.ms-rtestate-field p,
+p.ms-rteElement-P {
+    //line-height: initial;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.row .ms-ref-refiner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.ms-formfieldlabelcontainer.fnsp-helptext {
+    margin-bottom: .5rem
+}
+
+.ms-rtestate-field h4,
+h4.ms-rteElement-H4 {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: .25rem;
+}
+
+.ms-rtestate-field img[src$='?RenditionID=7'],
+.ms-rtestate-field img[src$='?RenditionID=6'] {
+    width: auto !important;
+}
+
+section[id*='Practical_Section'] {
+    img[src$='?RenditionID=7'] {
+        width: auto !important;
+    }
+}
+
+@media (max-width: 943px) {
+    .ms-rtestate-field img {
+        width: 100% !important;
+    }
+}
+
+// For images in RTE 
+.ms-rtestate-field figure {
+    display: table;
+    figcaption {
+        display: table-caption;
+        caption-side: bottom;
+    }
+}
+
+.ms-rtePosition-1 {
+    -ms-name: "Venstre";
+    float: left;
+    margin-right: 1rem;
+}
+
+.ms-rtePosition-2 {
+    -ms-name: "Høyre";
+    float: right;
+    margin-left: 1rem;
+}
+
+.ms-rtePosition-3 {
+    -ms-name: "Topp";
+    vertical-align: text-top;
+}
+
+.ms-rtePosition-4 {
+    -ms-name: "Middle";
+    vertical-align: middle;
+}
+
+.ms-rtePosition-5 {
+    -ms-name: "Bunn";
+    vertical-align: text-bottom;
+}
+
+.ms-promlink-button-image {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+}
+
+.ms-promlink-button-left {
+    left: -127px;
+    top: -232px;
+    position: absolute;
+}
+
+.ms-promlink-button-right {
+    left: -199px;
+    top: -228px;
+    position: absolute;
+}
+
+.ms-promlink-button-left-disabled {
+    left: -145px;
+    top: -232px;
+    position: absolute;
+}
+
+.ms-promlink-button-right-disabled {
+    left: -181px;
+    top: -228px;
+    position: absolute;
+}
+
+.ms-promlink-button-left-hover {
+    left: -217px;
+    top: -228px;
+    position: absolute;
+}
+
+.ms-promlink-button-right-hover {
+    left: -163px;
+    top: -232px;
+    position: absolute;
+}
+
+.ms-promlink-button-hidden {
+    display: none;
+}
+
+.ms-promlink-button-disabled {
+    /* [ReplaceColor(themeColor:"ButtonDisabledBorder")] */
+    border-color: #e1e1e1;
+    /* [ReplaceColor(themeColor:"BackgroundOverlay")] */
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.operation-result {
+    color: $green-check;
+    font-size: 18px;
+}
+
+.bottom-top-margin {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}

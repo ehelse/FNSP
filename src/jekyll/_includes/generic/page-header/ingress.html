@@ -1,0 +1,11 @@
+{% if page.ingress-title or page.ingress %}
+<div class="m_page-ingress">
+
+    <h2>{{ page.ingress-title }}</h2>
+
+    {% if page.ingress %}
+    <p>{{ page.ingress }}</p>
+    {% endif %}
+
+</div>
+{% endif %}

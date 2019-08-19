@@ -1,0 +1,72 @@
+﻿.m_expander-list {
+    @extend .clearfix;
+    @include expander-arrow();
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        float: left;
+        clear: both;
+    }
+
+    a {
+        color: $grey-dk;
+
+        &, &:hover, &:link, &:visited {
+            text-decoration: none;
+        }
+    }
+
+    .expander {
+        float: left;
+        @extend %hover-underline;
+        color: $blue;
+    }
+
+    li {
+        padding: .5rem 0;
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        @include thickening-underline();
+
+        span, a {
+            padding: .25rem 0;
+            text-decoration: none;
+            display: block;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+   
+        &.text-item {
+            & > {
+                span {
+                    &:hover, &:focus {
+                        color: inherit;
+
+                        &::after {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            span {
+                display: block;
+                border-bottom: 0;
+                text-decoration: none;
+
+                &.item-left {
+                    padding-right: 2rem;
+                }
+
+                &.disabled {
+                    color: $grey-md;
+                }
+            }
+        }
+    }
+}

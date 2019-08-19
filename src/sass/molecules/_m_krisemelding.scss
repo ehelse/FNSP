@@ -1,0 +1,21 @@
+.m_krisemelding {
+    background-color: $yellow;
+    padding-bottom: 2.5rem;
+
+    .a_promoted-link {
+
+        a {
+            color: $blue-on-yellow;
+        }
+
+        &::before {
+            border-color: $grey-md;
+        }
+
+        &:hover {
+            &::before {
+                border-color: $blue;
+            }
+        }
+    }
+}

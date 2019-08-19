@@ -1,0 +1,18 @@
+<ul class="m_document-list{% if include.type == 'text' %} js-read-more-text-button" data-button-text="{{include.text}}{% endif %}">
+    {% for item in include.data offset:include.offset limit:include.limit %}
+
+    <li>
+        <a href="">
+            {{ item.title }}
+
+            {% if item.additional-info%}
+                <div class="additional-info">
+                    {{ item.additional-info }}
+                </div>
+            {% endif %}
+            </a>
+    </li>
+
+    {% endfor %}
+
+</ul>

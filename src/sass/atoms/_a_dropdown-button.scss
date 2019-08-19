@@ -1,0 +1,65 @@
+/*
+* atom_dropdown-button
+* 
+* Use for dropdown menus (mol_dropdown) or "off-canvas dropdowns"
+* (iOS style menus that slide in from off screen) 
+* <button class="atom_dropdown-button [arrow-right, arrow-up, arrow-down]"></button>
+*/
+@import "../base/_variables.scss";
+$border-width: 2px;
+$box-shadow: 0 0 0 4px $color-base-4-2-5;
+.atom_dropdown-button {
+    border-width: 0;
+    color: $text-color;
+    background-color: #fff;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: left;
+    position: relative;
+    font-size: 18px;
+    box-shadow: 0 0 0 2px $color-base-4-5;
+    &--primary-5 {
+        color: $blue-dk;
+    }
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow;
+    }
+    &:focus {
+        background-color: rgba($blue-dk, 0.1);
+        outline: none;
+    }
+    &.selected {
+        box-shadow: 0 0 0 4px $color-base-3-5, 0 2px 8px 5px rgba(0, 0, 0, 0.25);
+    }
+    &.arrow-right,
+    &.arrow-up,
+    &.arrow-down {
+        padding-right: 2.5rem;
+        &:after {
+            position: absolute;
+            right: 1rem;
+            top: 33%;
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            content: '';
+        }
+    }
+    &.arrow-right:after {
+        background: url('../../FNSP/Images/Theme/nav_arrow_right_primary5.svg') no-repeat center;
+        background-size: contain;
+    }
+    &.arrow-down:after {
+        background: url($expand_hover) no-repeat center;
+        
+    }
+    &.arrow-up:after {
+        background: url($expanded_normal) no-repeat center;
+        
+    }
+    &--full-width {
+        width: 100%;
+    }
+}

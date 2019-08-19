@@ -1,0 +1,149 @@
+/* Language/text size functions */
+
+.m_site-settings {
+    font-size: 0;
+
+    input {
+        padding: 0;
+    }
+
+    input, button {
+        &:hover, &:focus {
+            text-decoration: underline;
+            text-decoration-skip: ink;
+        }
+    }
+
+    li {
+        display: inline-block;
+
+        &:after {
+            content: "";
+            margin: .5rem;
+            height: 1rem;
+            border-left: 1px solid #fff;
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    input[type="submit"], button {
+        border: 0;
+        outline: 0;
+        padding: 0;
+        background: none;
+        color: #fff;
+        cursor: pointer;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        position: relative;
+
+        &:hover, &:disabled, &:focus {
+            color: $blue-lt;
+        }
+
+        &:disabled {
+            cursor: default;
+        }
+    }
+
+    .language {
+        font-size: 0;
+        margin: 0;
+        border: 0;
+        padding: 0;
+
+        input[type="submit"], li:after {
+            font-size: $font-m;
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .m_site-settings {
+        .language {
+            input[type="submit"], li:after {
+                font-size: $font-m;
+            }
+        }
+
+        .text-size {
+
+            .text-size-btn {
+                font-size: 1rem;
+                color: $color-base-0;
+                cursor: pointer;
+    
+                &:hover {
+                    position: relative;
+                    overflow: visible;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -0.5rem;
+                        right: -0.5rem;
+                        bottom: -0.5rem;
+                        left: -0.5rem;
+                        z-index: 1;
+                        outline: 0.25rem solid $grey-md-lt;
+                    }
+                }
+                &:focus {
+                    position: relative;
+                    overflow: visible;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -0.5rem;
+                        right: -0.5rem;
+                        bottom: -0.5rem;
+                        left: -0.5rem;
+                        z-index: 1;
+                        outline: 0.25rem solid $grey-md-lt;
+                    }
+                }
+    
+                &:hover + .text-size-instructions {
+                    display: block;
+                }
+                &:focus + .text-size-instructions {
+                    display: block;
+                }
+            }
+    
+            .text-size-instructions {
+                display: none;
+            }
+
+            .instructions {
+                font-size: $font-3xl;
+                padding: 3rem;
+                z-index: 10000;
+                color: $grey-dk;
+                background-color: $yellow;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin-top: 2.25rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+
+    .m_site-settings {
+        .text-size {
+            .instructions {
+                margin-top: 1rem;
+            }
+        }
+    }
+}

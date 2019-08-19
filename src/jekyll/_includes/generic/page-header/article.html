@@ -1,0 +1,23 @@
+<header class="o_page-header">
+    <div class="container">
+
+        {% include generic/page-header/breadcrumbs.html %}
+        {% include generic/page-header/printdialog.html %}
+
+        <div class="row">
+            <div class="col-md-10 col-lg-8">
+                <h1 id="page-title" tabindex="-1">{{ page.title }}</h1>
+
+
+
+                {% include generic/page-header/ingress.html %}
+
+                {% if page.image %}
+                    {% assign image=site.data.hf.image-blocks[2] %}
+                    {% include generic/image-block.html data=image %}
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</header>

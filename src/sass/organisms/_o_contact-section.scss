@@ -1,0 +1,17 @@
+.o_contact-section {
+    padding-bottom: 3rem;
+    position: relative;
+    margin-bottom: 2rem;
+
+    .contact-person {
+        padding-top: 1.2rem;
+        font-weight: 700;
+        span {
+            display: table-row;
+
+            &.mail {
+                color: $blue;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{% if include.type == "contact-treatment" %}
+
+
+<ul class="m_link-list simple contact-treatment">
+    <li><a href="http://google.no">External link</a></li>
+    <li>
+        <a href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$PlaceHolderMain$ctl04$ctl02$ctl04", "", true, "", "/avdelinger/barn-og-familieklinikken/barne-og-ungdomspsykiatrisk-avdeling?sted=Sykehuset Namsos", false, true))'>Sykehuset Namsos</a>
+    </li>
+</ul>
+
+
+{% elsif include.type == "simple" %}
+
+<ul class="m_link-list simple">
+    <a href="http://vg.no" class="a_link-list-item simple">External link.</a>
+    <a href="/this/" class="a_link-list-item simple">Internal link</a>
+    <a href="/something/" class="a_link-list-item simple">Internal link. Internal link that might wrap. Internal
+        link that might wrap.
+        Internal link that might wrap.</a>
+    <a href="http://aftenposten.no" class="a_link-list-item simple">External link</a>
+</ul>
+
+{% elsif include.type == "promoted" %}
+
+<a href="http://vg.no" class="a_link-list-item promoted">External link.</a>
+<a href="/this/" class="a_link-list-item promoted">Internal link</a>
+<a href="/something/" class="a_link-list-item promoted">Internal link. Internal link that might wrap.
+    Internal link that might wrap.</a>
+<a href="http://aftenposten.no" class="a_link-list-item promoted">External link</a>
+{% else %}
+
+<ul class="m_link-list">
+    <li>
+        <a href="">
+            <strong>Link title</strong>
+            &ndash; Subtitle if external treatment site
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <strong>Link title that wraps. Title that wraps. Link title that wraps. Link title that wraps.</strong>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <strong>Link title</strong>
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <strong>Link title</strong>
+            &ndash; Subtitle if external treatment site, text that wraps.Subtitle if external treatment site, text that wraps.Subtitle if external treatment site, text that wraps.Subtitle if external treatment site, text that wraps.
+        </a>
+    </li>
+</ul>
+
+{% endif %}

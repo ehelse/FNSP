@@ -1,0 +1,223 @@
+.o_search-block {
+    margin-top: 1.5rem;
+
+    .m_search-box, .querygroup-shortcuts {
+        max-width: $three-col-content;
+    }
+
+    #lightbox-searchtips {
+        margin-top: 1rem;
+    }
+
+    .mobile-documents {
+        display: none !important;
+    }
+
+    &.grey {
+        margin-top: 0;
+        margin-bottom: 3em;
+    }
+
+    .m_search-box {
+        margin-bottom: 1.5rem;
+    }
+
+    .m_page-list, .m_filter-letters {
+        margin-bottom: 2.5rem;
+    }
+
+    .refinement-result-count {
+        margin: 1rem 0;
+        font-style: italic;
+    }
+
+    .resultCountQuery {
+        padding-top: 1rem;
+
+        > div {
+            max-width: $three-col-content;
+            display: flex;
+            width: 100%;
+        }
+
+        #count {
+            flex: 0 0 65%;
+            margin-bottom: 1rem;
+        }
+
+        #searchtips {
+            flex: 1;
+            text-align: right;
+
+            button {
+                border: 0;
+                background: none;
+                color: $blue;
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: underline;
+                cursor: pointer;
+                min-width: 3rem;
+
+                &:hover, &:focus {
+                    color: $blue-md;
+                }
+            }
+        }
+    }
+
+    .querygroup-shortcuts {
+        button {
+            @include text-button();
+            width: $one-col-content;
+            margin-bottom: 1rem;
+            line-height: 2.5em;
+            padding: 0;
+        }
+    }
+
+    .o_search-results {
+        margin-top: 1rem;
+
+        .search-result {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .visible-xs-block {
+        font-size: $font-m;
+        color: $grey-dk;
+    }
+
+    .a_read-more.text {
+        display: none;
+    }
+
+    h2 {
+        @extend .a_ruled-heading;
+
+        span {
+            text-transform: none;
+        }
+    }
+}
+
+/**********************************************************************/
+/* Mobile only to fix document search.                                */
+@media only screen and (max-width: $one-to-two-col) {
+    .o_search-block {
+        .o_horizontal-section {
+            &.mobile-documents {
+                display: block !important;
+                color: $blue;
+                font-size: $font-xl;
+                min-height: 1.5em;
+                font-weight: 400;
+                padding: 1rem 0 1rem 0;
+                overflow: hidden;
+                margin: 0;
+                text-align: left;
+                border: 0 solid $grey-lt;
+                border-width: .25rem 0;
+                margin-top: -.25rem;
+
+                &:hover, &:focus {
+                    border-color: $blue;
+                    z-index: 1;
+                }
+
+                h2 {
+                    color: $blue;
+                    font-size: 1.5rem;
+                    min-height: 1.5em;
+                    font-weight: 400;
+                    display: block;
+                    padding: .5rem 3rem .5rem 0;
+                    overflow: hidden;
+                    margin: 0;
+                    text-align: left;
+
+                    &:before {
+                        top: 1.2rem;
+                        width: 47%;
+                        border-top: 3px solid #252525;
+                        content: "";
+                        display: table-cell;
+                        position: relative;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: auto;
+                        right: 0;
+                        top: 0;
+                        width: 1em;
+                        height: 100%;
+                        background: url($chevron-grey-lt) center / contain no-repeat;
+                        transform: rotate(-90deg);
+                        transition: transform .3s;
+                        border: 0;
+                    }
+
+                    &:hover, &:focus {
+                        cursor: pointer;
+
+                        &::after {
+                            background-image: url($chevron-blue);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+
+    .o_search-block {
+
+        .o_horizontal-section {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .a_read-more.text {
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        #queryGroup-Treatments, #queryGroup-AllContent {
+            margin-right: 1.7rem;
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $two-to-three-col) {
+
+    .o_search-block {
+        .querygroup-shortcuts {
+            button {
+                width: $one-col-content * 3 / 4;
+                padding: 0;
+            }
+        }
+
+        #queryGroup-Treatments, #queryGroup-AllContent, #queryGroup-Departments {
+            margin-right: 1rem;
+        }
+    }
+}
+
+#lightbox-searchtips {
+    display: none;
+    margin: 1rem;
+}

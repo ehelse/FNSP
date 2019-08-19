@@ -1,0 +1,9 @@
+.a_read-more-link {
+    &:not([href*="//"]) {
+        @include simple-arrow(right, small, after);
+    }
+
+    &[href*="//"] {
+        @include simple-arrow(diagonal, small, after);
+    }
+}

@@ -1,0 +1,9 @@
+.a_scientific-title {
+    @extend p;
+    font-size: $font-m;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    letter-spacing: normal;
+}

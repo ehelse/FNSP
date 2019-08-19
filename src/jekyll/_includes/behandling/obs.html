@@ -1,0 +1,8 @@
+{% for item in include.data %}
+<section class="m_obs">
+    <div class="container">
+        <h3>{{ item.title }}</h3>
+        {{ item.content }}
+    </div>
+</section>
+{% endfor %}

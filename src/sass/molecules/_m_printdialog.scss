@@ -1,0 +1,274 @@
+.m_printdialog {
+    color: #fff;
+
+    .print-icon {
+        z-index: 1000;
+        min-width: auto;
+        position: absolute;
+        top: 2rem;
+        right: 1rem;
+        padding: 0 0 0 1.5rem;
+        background: transparent no-repeat left center / 16px;
+        background-image: url($print-icon-blue); // pre-loads the hover icon
+        height: 1.4rem;
+        border: 0;
+        box-sizing: content-box;
+        appearance: none;
+        font-size: inherit;
+        cursor: pointer;
+
+        &::after {
+            content: attr(data-print-text);
+            color: $blue;
+        }
+
+        &:hover, &:focus {
+            &::after {
+                text-decoration: underline;
+                text-decoration-skip: ink;
+            }
+        }
+    }
+
+    &.expanded {
+        .print-icon {
+            background: none !important;
+
+            &::after {
+                content: attr(data-close-text);
+                color: #fff;
+            }
+
+            &:hover, &:focus {
+                &::after {
+                    color: $blue-lt;
+                }
+            }
+        }
+    }
+
+    .print-panel {
+        background-color: $grey-dk;
+        position: absolute !important;
+        top: 0;
+        padding-bottom: 2.5rem;
+        z-index: 999;
+    }
+
+    .print-heading {
+        border-bottom: 1px solid $grey-md-dk-dk;
+        padding-bottom: 1rem;
+    }
+
+    .print-title {
+        line-height: 1.65;
+        padding: 2rem 8.5rem .5rem 1rem;
+    }
+
+    h3 {
+        margin: 2.5rem 0 1.25rem;
+    }
+
+    input {
+        &[type="checkbox"] {
+            height: 2rem;
+            width: 2rem;
+            line-height: 2rem;
+            margin-right: .2rem;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            display: inline-block;
+            appearance: none;
+            vertical-align: middle;
+
+            & + label {
+                vertical-align: middle;
+                cursor: pointer;
+                display: inline-block;
+                margin: 0 0 0 -2.2rem;
+                padding-left: 2.2rem;
+                min-height: 2rem;
+                line-height: 2rem;
+                background: $grey-dk url($checkbox-on-light-unchecked) left top no-repeat;
+                background-size: 1.8rem;
+                width: auto;
+                font-size: $font-m;
+                position: relative;
+                user-select: none;
+
+                &:hover, &:focus {
+                    background-image: url($checkbox-on-light-unchecked-hover);
+                }
+            }
+
+            &:checked + label {
+                background-image: url($checkbox-on-light-checked);
+
+                &:hover, &:focus {
+                    background-image: url($checkbox-on-light-checked-hover);
+                }
+            }
+
+            &:disabled + label {
+                &, &:hover {
+                    cursor: default;
+                    background-image: url($checkbox-on-light-unchecked-disabled);
+                    color: $grey-md;
+                }
+            }
+
+            &:disabled:checked + label {
+                &, &:hover {
+                    background-image: url($checkbox-on-light-checked-disabled);
+                    color: $grey-md;
+                }
+            }
+        }
+    }
+
+    .print-list {
+        column-count: 1;
+        column-gap: 2rem;
+        column-fill: balance;
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1rem;
+
+        li {
+            margin: 0;
+            /* stylelint-disable */
+            -webkit-column-break-inside: avoid;
+            /* stylelint-enable */
+            page-break-inside: avoid;
+            break-inside: avoid;
+            padding: .25rem 0;
+            //padding: .5rem 0;//@include thickening-underline(#fff, #fff, $blue-lt, $blue-lt);
+            font-size: 0; // To kill the space we get since the checkboxes and labels are inline block
+        }
+
+        .sub-elements {
+            padding-left: 1.25rem;
+            list-style-type: none;
+
+            li {
+                padding-left: 1rem;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .print-footer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            background-color: $grey-dk;
+            border: 2px solid $blue-md;
+            color: $blue-lt;
+            border-radius: 2.5rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 2.5rem;
+            text-transform: uppercase;
+            text-align: center;
+            width: $one-col-content;
+            cursor: pointer;
+
+            &:focus, &:hover {
+                border-color: $blue-lt;
+                font-weight: 600;
+            }
+
+            &:disabled {
+                color: gray;
+                border-color: gray;
+                cursor: not-allowed;
+
+                &:focus, &:hover {
+                    border-color: none;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    input {
+        &[type="checkbox"] {
+
+            & + label {
+                background-image: url($checkbox-on-dark-unchecked);
+
+                &:hover {
+                    background-image: url($checkbox-on-dark-unchecked-hover);
+                    color: $blue-lt;
+                    text-decoration: underline;
+                    text-decoration-skip: ink;
+                }
+            }
+
+            &:checked + label {
+                background-image: url($checkbox-on-dark-checked);
+
+                &:hover {
+                    background-image: url($checkbox-on-dark-checked-hover);
+                }
+            }
+
+            &:focus + label {
+                background-image: url($checkbox-on-dark-unchecked-hover);
+                color: $blue-lt;
+            }
+
+            &:checked:focus + label {
+                background-image: url($checkbox-on-dark-checked-hover);
+            }
+
+            &:disabled + label {
+                &, &:hover {
+                    background-image: url($checkbox-on-dark-unchecked-disabled);
+                }
+            }
+
+            &:disabled:checked + label {
+                &, &:hover {
+                    background-image: url($checkbox-on-dark-checked-disabled);
+                }
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+    .m_printdialog {
+        .print-list {
+            column-count: 2;
+        }
+    }
+}
+
+/******************************************************************** */
+/* Narrow desktops and landscape-oriented tablets.  Three columns. */
+@media only screen and (min-width: $two-to-three-col) {
+    .m_printdialog {
+        .print-list {
+            column-count: 3;
+        }
+    }
+}
+
+/*********************************************************************/
+/* Typical desktops. Four columns. */
+@media only screen and (min-width: $three-to-four-col) {
+    .m_printdialog {
+        .print-list {
+            column-count: 4;
+        }
+    }
+}
+
+/*********************************************************************/

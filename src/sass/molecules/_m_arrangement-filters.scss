@@ -1,0 +1,121 @@
+.m_arrangement-filters {
+    &.refinement-text {
+        color: $grey-md-dk;
+        font-weight: 400;
+
+        &.selected {
+            color: $grey-md-dk;
+            font-weight: 700;
+        }
+    }
+
+    .refiner-title {
+        font-weight: 600;
+        margin: .5rem 0;
+        font-size: $font-m;
+    }
+
+    .m_page-list {
+        column-count: 1;
+        column-gap: 2rem;
+        column-fill: balance;
+    
+        &, ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        li {
+            break-inside: avoid;
+            padding: .5rem 0;
+            position: relative;
+            overflow: hidden;
+            @include thickening-underline();
+           
+    
+            &:not(.element) {
+                margin: 0;
+                padding: 0;
+    
+                &::after {
+                    display: none;
+                }
+            }
+    
+            span, a {
+                padding: .25rem 0;
+                text-decoration: none;
+                display: block;
+    
+                &:focus {
+                    outline: 0;
+                }
+            }
+    
+            span {
+                &:hover, &:focus {
+                    color: $blue-md;
+                    transition: .2s;
+                }
+            }
+
+            a {
+                font-weight: 400;
+            }
+    
+            .counter {
+                display: inline;
+                padding-left: .125em;
+            }
+    
+            &.selected {
+                display: inline-block;
+                width: 100%;
+                color: $grey-dk;
+                text-decoration: none;
+                border-bottom: solid;
+                border-width: 1px;
+                border-color: $grey-md-lt;
+                padding: 0.75rem 0;
+                margin-bottom: .5rem;
+                overflow: visible;
+                white-space: normal;
+            }
+    
+            &.show-all {
+                a {
+                    color: $blue;
+                }
+            }
+        }
+    }
+
+    .row {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: $one-to-two-col) {
+    .m_arrangement-filters {
+        .m_page-list {
+            column-count: 2;
+        }
+    }
+}
+
+@media only screen and (min-width: $two-to-three-col) {
+    .m_arrangement-filters {
+        .m_page-list {
+            column-count: 3;
+        }
+    }
+}
+
+/* Typical desktops. Four columns. */
+@media only screen and (min-width: $three-to-four-col) {
+    .m_arrangement-filters {
+        .m_page-list {
+            column-count: 4;
+        }
+    }
+}

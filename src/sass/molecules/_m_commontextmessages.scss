@@ -1,0 +1,14 @@
+.m_commontextmessages {
+    padding: 1rem;
+    #messagecontrols {
+        margin-top: 1rem;
+    }
+    #editpanel {
+        margin-top: 1rem;
+        button {
+            &.submit {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

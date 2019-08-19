@@ -1,0 +1,13 @@
+<section class="o_horizontal-section js-responsive-expand">
+
+    {% if include.title %}
+        {% include generic/ruled-heading.html text=include.title %}
+    {% endif %}
+
+    <div class="js-responsive-expandable">
+        <div class="container">
+            {% include generic/expander-sections/subtle.html data=site.data.hf.sted.accordion-transport %}
+        </div>
+    </div>
+
+</section>

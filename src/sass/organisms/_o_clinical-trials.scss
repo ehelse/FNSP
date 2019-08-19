@@ -1,0 +1,43 @@
+.clinical-trial {
+    .o_page-header {
+        .grey {
+            padding-bottom : 1rem;
+        }
+    }
+    .scientific-title{
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+
+    .m_page-ingress {
+        h4 {
+            margin-top: 0;
+        }
+
+        .contact-side {
+            font-size: $font-m;
+
+            .contact {
+                flex-grow: 1;
+                margin-bottom: 1rem;
+
+                a {
+                    line-height: 3.5rem;
+                    height: 3.5rem;
+                    padding-left: 2.5rem;
+                    display: inline-block;
+                    background: left center / 1.75em no-repeat;
+                    background-image: url($map-pin-small), url($map-pin-blue-md);
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    &:hover, &:focus {
+                        background-image: url($map-pin-blue-md);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

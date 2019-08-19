@@ -1,0 +1,405 @@
+.o_tile-group {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    text-align: left;
+
+    a {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    .tile {
+        margin: 0 1rem 3rem;
+        overflow: hidden;
+    }
+
+    .item-date {
+        color: $grey-dk;
+        font-size: $font-s;
+        margin-bottom: .5rem;
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    &.events {
+        a {
+            @include widening-underline();
+        }
+
+        .tile {
+            &.focused {
+                @include focused-outline();
+            }
+        }
+
+        // This still uses Bootstrap classes to lay out the main sections (but not ot lay out the tiles)
+        &.vertical {
+            .tile {
+                margin-left: 0;
+                margin-right: 0;
+
+                .item-date {
+                    float: left;
+                    width: 6rem;
+                    margin-top: .125rem;
+
+                    .day, .date {
+                        display: block;
+                    }
+
+                    .day {
+                        font-variant: normal;
+                        text-transform: uppercase;
+                        font-size: $font-s;
+                    }
+                }
+
+                &:not(.recurring) {
+                    a, p {
+                        margin-left: 6rem;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &.navigation {
+        .tile {
+            .subnav {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+        }
+
+        &.menu {
+            background-color: $grey-dk;
+
+            .tile {
+                border-top: 1px solid $grey-md-dk-dk;
+                margin: 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                transition: border-color .1s;
+
+                &:last-child {
+                    border-bottom: 1px solid $grey-md-dk-dk;
+                }
+
+                a {
+                    color: #fff;
+
+                    &:hover, &:focus {
+                        color: $blue-lt;
+                        outline: none;
+                    }
+                }
+
+                .subnav-title {
+                    color: #fff;
+                    display: block;
+                    position: relative;
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    font-size: $font-l;
+                    font-weight: 600;
+                    padding: 1em 0;
+                }
+
+                .subnav {
+                    li {
+                        &:last-child {
+                            margin-bottom: 1.5rem;
+                        }
+                    }
+
+                    a {
+                        display: inline-block;
+                        padding: .25rem 0;
+
+                        &:hover, &:focus {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                &.expand {
+                    .subnav-title {
+                        margin-left: -1rem;
+                        padding-left: 1rem;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            right: -1rem;
+                            top: 0;
+                            height: 100%;
+                            width: 4rem;
+                            background: url($chevron-white) center / 1em no-repeat;
+                            transform: scaleY(1);
+                            transition: transform .3s;
+                        }
+                    }
+                }
+
+                &.expanded {
+                    .subnav-title {
+                        &::after {
+                            transform: scaleY(-1);
+                        }
+                    }
+                }
+
+                &:hover, &.focused {
+                    border-top-color: $blue-lt;
+
+                    &.expand {
+                        .subnav-title {
+                            color: $blue-lt;
+
+                            &::after {
+                                background-image: url($chevron-blue-lt);
+                            }
+                        }
+                    }
+
+                    & + .tile, &:first-child {
+                        border-top-color: $blue-lt;
+                    }
+
+                    &:last-child {
+                        border-bottom-color: $blue-lt;
+                    }
+                }
+            }
+        }
+
+        &.promoted {
+            margin-top: 2.5rem;
+
+            .tile {
+                .subnav-title {
+                    font-size: $font-xl;
+                    color: $blue;
+                    font-weight: 600;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: flex-end;
+                    margin-bottom: 1.5rem;
+
+                    &.with-icon {
+                        &::before {
+                            content: "";
+                            width: 3rem;
+                            height: 3rem;
+                            margin-right: .25rem;
+                            display: block;
+                            background: transparent bottom left / contain no-repeat;
+                            flex-shrink: 0;
+                        }
+
+                        &#finn-frem::before {
+                            background-image: url($map-pin-blue);
+                        }
+
+                        &#om-oss::before {
+                            background-image: url($doctors);
+                        }
+
+                        &#helsefaglig::before {
+                            background-image: url($microscope-blue);
+                            width: 2.75rem;
+                        }
+
+                        &#praktisk::before {
+                            background-image: url($praktisk);
+                            width: 2.75rem;
+                            margin-right: .75rem;
+                        }
+                    }
+                    
+                    a { // make link underlined with expanding transition                    
+                        &::after {
+                            content: "";
+                            width: 3.5em;
+                            display: block;
+                            margin-top: .5em;
+                            /*
+                             * To make the line not push subnavs down, thus maintaining the margin from the title to the subnav
+                             * inject a negativ margin to position the line correctly
+                             * must maintain the same margin for subnav-title with and without underline
+                            */
+                            margin-bottom: -.5em;
+                            border-top: .125em solid $blue;
+                            transition: .3s;
+                            pointer-events: none;
+                        }
+
+                        &:hover, &:focus {
+                            color: $blue;
+                            background-color: transparent;
+                            border-bottom: 0;
+                    
+                            &::after {
+                                width: 5.3em;
+                                border-color: $blue;
+                            }
+                        }
+                    }
+                    
+                }
+
+                .subnav {
+                    li {
+                        @include thickening-underline($grey-dk, $grey-md-lt, $blue-md, $blue-md);
+                        padding: .5em 0;
+                    }
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+    .o_tile-group {
+        display: flex;
+        flex-flow: row wrap;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .tile {
+            width: ($one-col-content)-1px;
+        }
+
+        &.navigation {
+            .tile {
+                .subnav-title {
+                    margin-top: 0;
+                    padding: 0;
+                }
+
+                .subnav {
+                    a {
+                        &:hover, &:focus {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            &.menu {
+                .tile {
+                    margin: 2.5rem 1rem;
+                    border-top: 0;
+                    padding: 0;
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+
+                    .subnav {
+                        li {
+                            @include thickening-underline(#fff, $grey-md-dk-dk, $blue-lt, $blue-lt);
+                            padding: .5em 0;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        a {
+                            &:hover, &:focus {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .subnav-title {
+                        padding: 0;
+                    }
+                }
+            }
+
+            &.promoted {
+                margin-top: 4.5rem;
+
+                .tile {
+                    .subnav {
+                        font-size: $font-l;
+                    }
+                }
+            }
+
+        }
+
+        &.horizontal, &.vertical {
+            .tile {
+                width: $two-col-content;
+            }
+        }
+    }
+}
+
+/**********************************************************************/
+/* Three columns */
+@media only screen and (min-width: $two-to-three-col) {
+    .o_tile-group {
+        &.horizontal, &.promoted.navigation {
+            .tile {
+                width: $three-col-content / 2 - 17;
+            }
+        }
+
+        &.navigation {
+            &.promoted {
+                .tile {
+                    .subnav {
+                        font-size: $font-l;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+//*********************************************************************/
+/* Typical desktops. Four columns. */
+@media only screen and (min-width: $three-to-four-col) {
+    .o_tile-group {
+        &.horizontal, &.promoted.navigation {
+            .tile {
+                width: $two-col-content;
+            }
+        }
+
+        &.promoted.navigation {
+            .tile {
+                width: $one-col-content;
+                &:last-child {
+                    width: ($one-col-content)-1px;
+                }
+            }
+        }
+    }
+}
+
+//*********************************************************************/

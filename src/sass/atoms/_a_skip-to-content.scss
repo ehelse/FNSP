@@ -1,0 +1,24 @@
+/*  "Skip to content" functionality for keyboard navigation.
+
+    <a class="atom_skip-to-content" href="#sidetittel">Hopp til innholdet</a>
+
+*/
+
+
+.a_skip-to-content {
+    @extend %visuallyhidden;
+
+    &:focus, &:active {
+        color: $blue;
+        position: static;
+        left: 0;
+        top: 0;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        padding: .5rem;
+        border: 1px solid $blue;
+        border-width: 0 1px 1px 0;
+        line-height: 2rem;
+    }
+}

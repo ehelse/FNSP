@@ -1,0 +1,43 @@
+<div class="js-pulldown-expand o_pulldown container">
+    <div class="js-pulldown-expandable">
+        <ul class="o_tile-group events horizontal">
+            {% for item in include.data offset:include.offset limit:include.limit %}
+
+            <li class="tile js-pulldown-tile {{include.class}}">
+                {%if item.time %}
+
+                <div class="item-date">
+                    <span class="date">{{ item.time }}</span>
+                    <span class="day">{{ item.day}}</span>
+                </div>
+
+                {%endif %}
+
+                <a href="{{item.url}}">{{item.heading}}</a>
+
+                {% if item.text %}
+                <p>{{item.text}}</p>
+                {% endif %}
+
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% if include.text-link %}
+        <a href="" class="text-link">Text link to another page</a>
+        {% endif %}
+
+    </div>
+
+    <div class="footer js-pulldown-footer">
+        {% if include.pulldown %}
+        <a role="button" class="js-pulldown-expander button-toggle"> <span data-show-text="Vis flere"
+                data-hide-text="Få de vekk!" data-hidden-tiles=""></span></a>
+        {% endif %}
+
+        {% if include.button-link %}BC button link
+        <a href="" class="button-link">Button-looking link to another page</a>
+        {% endif %}
+    </div>
+
+</div>

@@ -1,0 +1,548 @@
+@media print {
+
+    #suiteBar, #s4-ribbonrow, #notificationArea, #DeltaPageStatusBar, .should-not-print, #print-dialog,
+    nav,
+    .m_pagination,
+    .o_framework-footer,
+    .m_read-more-pulldown-button,
+    .pulldown-button-text,
+    .BDD-read-more-button-circle,
+    .read-more-text,
+    .o_promoted-nav,
+    .image-band,
+    .read-more-bottom-navigation,
+    .navigation-tabs,
+    .a_promoted-link::before, .js-expander .read-more-expander .expander-title,
+    .js-pulldown-expand .footer .js-pulldown-footer {
+        display: none !important;
+    }
+
+    // a {
+    //     &:not([href="/"]) {
+    //         display: none !important;
+
+    //         &.include-print-link {
+    //             display: initial !important;
+    
+    //             &.a_link-list-item {
+    //                 padding-left: 0 !important;
+    //             }
+    //         }
+    //     }
+        
+    // }
+
+    // Remove the "Les mer paa helsenorge.no" link
+    .js-expander .read-more-expander > div > span {
+        display: none;
+    }
+
+    .seksjonsside {
+        .image-band {
+            display: inline !important;
+        }
+    }
+
+    .treatment {
+        .m_page-ingress {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .collapsed .expandable {
+        max-height: 1000rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block;
+    }
+
+    .o_page-header {
+        h1 {
+            margin-top: 2rem;
+        }
+    }
+
+    :not(a) {
+        color: #000 !important;
+    }
+
+    // Show logo in portals
+    .o_framework-header {
+        border-top: 0.25rem solid #f4f4f2;
+
+        .logo {
+            display: block;
+
+            a {
+                img {
+                    height: 4rem;
+                    width: 25rem !important
+                }
+            }
+        }
+
+        > .js-expandable, .menu-button-container {
+            display: none !important;
+        }
+
+        #site-search, #menuButton, .header-button-container {
+            display: none !important;
+        }
+    }
+
+    main {
+        border-top: none;
+    }
+
+    .link {
+        .a_promoted-link {
+            margin: 0;
+        }
+    }
+    .a_promoted-link {
+        border-bottom: 1px solid #b6aea8 !important;
+        padding-bottom: 7px !important;
+        display: table;
+        &::before {
+            display: none;
+        }
+    }
+    .a_link-list-item {
+        padding-left: 0 !important;
+    }
+
+    .m_feedback {
+        display: none;
+    }
+
+    .m_highlighted-expander, .o_primary-treatment {
+        > .container {
+            > .expander {
+                .title {
+                    display: none;
+                }
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .m_highlighted-expander {
+
+        > .expandable .container {
+            padding: 0;
+        }
+    }
+
+    .o_primary-treatment {
+        &.js-primary-treatment {
+            .js-expander {
+                &.expander {
+                    display: none;
+                }
+            }
+        }
+
+        > .expandable .container {
+            padding: 0;
+        }
+
+        .o_timeline {
+            ul {
+                li {
+                    &::before {
+                        border-left: none;
+                        background-color: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    .o_horizontal-section {
+        &.expand {
+            .expandable {
+                .container {
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .a_link-list-item {
+        &.simple[href^="http"], &.promoted, &.promoted[href^="http"] {
+            padding-left: 0;
+            border-bottom: 1px solid #b6aea8;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    [href="/index.html"] {
+        display: none !important;
+    }
+
+    .o_tile-group {
+        height: auto !important;
+
+        h3 {
+            border: none !important;
+        }
+
+        a {
+            page-break-inside: avoid;
+            height: auto !important;
+        }
+
+        img {
+            width: 30%;
+            float: left;
+            margin-right: 2rem;
+        }
+
+        &.events {
+            .tile {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    h2, h3, p, li {
+        page-break-before: auto !important;
+        page-break-inside: avoid !important;
+        page-break-after: auto !important;
+    }
+
+    .m_contact-card {
+        dl {
+            page-break-inside: avoid !important;
+            dd {
+                page-break-inside: avoid !important;
+            }
+        }
+    }
+
+    /* Trying this to avoid issues with treatment programs
+    h2:not(:first-of-type) {
+        page-break-before: always;
+    }*/
+
+    h3, h4 {
+        page-break-after: avoid;
+    }
+
+    .m_statistic {
+
+        .description {
+            &::after {
+                display: inline !important;
+            }
+        }
+
+        .description, .number {
+            display: inline !important;
+        }
+
+        .number {
+            font-size: $font-m !important;
+        }
+    }
+
+    .a_ruled-heading:not(.expander) {
+        white-space: nowrap;
+    }
+
+    main {
+        a:not([class*=""]) {
+            border-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            text-decoration: underline;
+        }
+
+        *:not(.o_promoted-content) {
+
+            [class*="col"] {
+                width: 100% !important;
+                right: 0 !important;
+                left: 0 !important;
+                float: none !important;
+                padding: 0 !important;
+            }
+
+            .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .container {
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    .o_timeline {
+        li {
+            img {
+                width: unset;
+            }
+            &::before {
+                border-left: 1px solid #000;
+            }
+        }
+    }
+
+    .o_page-footer, .o_treatment-statistics {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .m_obs {
+        border: 0px solid black;
+        border-width: 1px 0;
+        padding: 1rem 0;
+    }
+
+    .should-print {
+        display: block;
+    }
+
+    .expander::after, .highlighted, .m_promoted-expander .expandable, .m_obs {
+        background: none !important;
+    }
+
+    .m_link-list.simple li, .m_link-list.promoted li, .m_subtle-expander {
+        border: 0 !important;
+    }
+
+    .o_event-info dt {
+        text-align: left;
+    }
+
+    :empty {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    // Primary treatment stuff
+
+    .js-primary-treatment-view-container {
+        height: auto !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 1rem 0 0 !important;
+        width: 100% !important;
+
+        h2 {
+            font-size: $font-l;
+        }
+    }
+
+    .js-treatment-heading {
+        margin-top: 1.75rem !important;
+
+        a {
+            color: #000 !important;
+        }
+    }
+
+    .js-primary-treatment-content {
+        display: block !important;
+    }
+
+    .js-section-container {
+        margin-bottom: 0 !important;
+    }
+
+    .ms-rtestate-field {
+        img {
+            width: auto !important;
+            height: auto !important;
+            max-width: 50% !important;
+            max-height: 50% !important;
+        }
+    }
+
+    section[id*='Practical_Section'] {
+        img {
+            max-width: 100% !important;
+        }
+
+    }
+
+    .o_primary-treatment {
+        left: 0 !important;
+        width: auto !important;
+        clear: both !important;
+        margin-bottom: 0 !important;
+    }
+
+    .o_timeline > ol {
+        list-style-type: decimal;
+    }
+
+    .o_timeline > ol > li {
+        &::before, &::after {
+            display: none;
+        }
+    }
+
+    .o_primary-treatment .m_obs, .a_promoted-link, .o_timeline > ol > li {
+        padding: 0 !important;
+    }
+
+    .a_promoted-link {
+        text-decoration: underline !important;
+    }
+
+    .o_promoted-content .a_underline-heading {
+        text-decoration: none !important;
+    }
+
+    .o_primary-treatment .expander {
+        display: none;
+    }
+
+    .o_framework-header {
+        border-top: 0;
+    }
+
+    section.o_horizontal-section {
+        page-break-before: auto !important;
+        page-break-after: auto !important;
+    }
+	
+	
+    h2.a_ruled-heading {
+        page-break-before: auto !important;
+        margin-bottom: .5rem;
+    }
+
+    div[data-printsection="Praktisk informasjon"] {
+        [data-printsubsection] {
+            page-break-inside: auto !important;
+            &:first-child {
+                margin-top: 0 !important;
+            }
+            margin-bottom: 1rem !important;
+        }
+    }
+
+    .m_promoted-expander {
+        .expander {
+            padding: 0 !important;
+            border: 0 !important;
+            background-color: #fff !important;
+            line-height: initial !important;
+            height: initial !important;
+            box-shadow: 0 !important;
+            span {
+                display: inline-block !important;
+                font-size: $font-l;
+                font-weight: 600;
+            }
+            &::before {
+                display: none;
+            }
+        }
+
+        .expandable {
+            .subtitle {
+                display: none;
+            }
+        }
+    }
+
+    a {
+        padding-left: 0 !important;
+        &::before {
+            display: none;
+        }
+        ::before {
+            display: none;
+        }
+    }
+
+
+    // Remove video from print
+    video,
+    .mediaPlayerContainer,
+    iframe[src*="youtube"] {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        line-height: 0pt !important;
+        white-space: nowrap;
+    }
+
+
+    // Max size for images and figures
+    img, figure {
+        max-width: 50%;
+    }
+    figure {
+        img {
+            max-width: initial;
+        }
+    }
+
+    // Attribution texts for figures in promoted content
+    .o_promoted-content figcaption .attribution {
+        color: white !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        background: transparent !important;
+    }
+
+
+    // Promoted content (promoboks)
+    .o_promoted-content {
+        page-break-inside: avoid !important;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        padding: 0 !important;
+        .container {
+            margin-bottom: 0;
+            figure {
+                display: none;
+            }
+            .content {
+                margin-bottom: 0;
+                h2 {
+                    font-size: 1.25rem !important;
+                    margin-bottom: .25rem;
+                    margin-top: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // Factbox
+    .m_factbox {
+        page-break-inside: avoid !important;
+        .collapsed .expandable {
+            &::after {
+                background: none !important;
+                z-index: initial !important;
+            }
+        }
+        .footer {
+            button {
+                display: none;
+            }
+        }
+    }
+
+
+}

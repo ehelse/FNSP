@@ -1,0 +1,75 @@
+
+/* Base colours from HN, used in clinical studies filter */
+$color-base-0: #fff;
+$color-base-2: #22282b;
+$color-base-3-5: #4e5355;
+$color-base-4: #7d8081;
+$color-base-4-2-5: #adadad;
+$color-base-4-5: #d3d3d3;
+$color-base-5: #e9eaec;
+$color-base-5-5: #e1e1e1;
+$color-base-6: #e9e9e9;
+$color-base-6-2: #f4f4f4;
+$color-base-7: #000;
+
+// FNSP colors
+$blue-grey: #cddbe8;
+$blue-lt: #78b1e0;
+$blue: #034584;
+$blue-md: #3871ab;
+$blue-dk: #01315e;
+
+$yellow: #fdfad3;
+$blue-on-yellow: #2268a8;
+$grey-on-grey: #d2d8da;
+
+$grey-lt: #f4f4f2;
+$grey-md-lt: #e6e5e1;
+$grey-md: #b6aea8;
+$grey-md-dk: #6e6e6e;
+$grey-md-dk-dk: #515151;
+$grey-dk: #252525;
+
+$mauve-dk: #714246;
+
+$green-check: #72a856;
+$red-error: #c10a0a;
+
+// HOVER
+$text-color: $color-base-7;
+$hover-box-shadow: 0 0 0 4px #adadad;
+
+// FOCUS
+$focus-box-shadow: 0 0 0 4px #adadad; //0,105,232,1  41 d4 df  65 212 223
+
+// Font stack ------ //  Size in px
+$font-s: .75rem;     //  12px
+$font-m: 1rem;       //  16px
+$font-l: 1.25rem;    //  20px
+$font-xl: 1.5rem;    //  24px
+$font-2xl: 2rem;     //  32px
+$font-3xl: 3rem;     //  48px
+$font-4xl: 4.25rem;  //  68px
+
+$basefont: Roboto, arial, helvetica, sans-serif;
+
+
+$default-spacing-amount: 1rem;
+$default-spacing-grid: 16px;
+
+$one-col: 304px;
+$two-col: $one-col * 2;
+$three-col: $one-col * 3;
+$four-col: $one-col * 4;
+
+
+// The width of the content inside the columns (without the padding.)
+$one-col-content: $one-col - 2*$default-spacing-grid;
+$two-col-content: $two-col - 2*$default-spacing-grid;
+$three-col-content: $three-col - 2*$default-spacing-grid;
+
+
+// Breakpoints
+$one-to-two-col: $two-col + 2*$default-spacing-grid;
+$two-to-three-col: $three-col + 2*$default-spacing-grid;
+$three-to-four-col: $four-col + 3*$default-spacing-grid;

@@ -1,0 +1,100 @@
+/* Stylesheet used for system pages in SP */
+@import "base/variables";
+@import "base/svgdata";
+@import "base/mixins-and-extensions";
+
+/* Wrapping all inside RTE class to ensure only RTE applies custom styles */
+.ms-rte-stylePreviewBox, .ms-rtestate-field {
+    @import "base/layout";
+    @import "base/base";
+
+    @import "grid/variables";
+    @import "grid/mixins/grid-framework";
+    @import "grid/mixins/grid";
+    @import "grid/grid";
+    @import "grid/responsive-visibility";
+    @import "grid/responsive-utilities";
+
+    @import "atoms/a_nav-back-link";
+    @import "atoms/a_promoted-link";
+    @import "atoms/a_scroll-to-top";
+    @import "atoms/a_skip-to-content";
+    @import "atoms/a_social-button";
+    @import "atoms/a_text-button";
+    @import "atoms/a_underline-heading";
+
+    @import "molecules/m_link-list";
+}
+
+/* Removing "Style" section of RTE */
+#Ribbon\.EditingTools\.CPEditTab\.Styles\.Styles\.Menu\.Styles {
+    display: none;
+}
+
+/*Heading Alternate (All) except Ekspanderernde overskrift*/
+#Ribbon\.EditingTools\.CPEditTab\.Paragraph\.ElementWithStyle\.Menu\.Styles\.Gallery tr + tr td:not(:last-child) {
+    display: none;
+}
+
+/* Heading 1 removed */
+#Ribbon\.EditingTools\.CPEditTab\.Styles\.RibbonStyle1-Large, #Ribbon\.EditingTools\.CPEditTab\.Paragraph\.ElementWithStyle\.Menu\.Styles\.Gallery tr:first-child > td:nth-child(2) {
+    display: none;
+}
+
+.ms-rte-stylePreviewBox, .ms-rtestate-field {
+    h2 {
+        font-size: $font-2xl;
+        line-height: 1.25;
+        color: $grey-dk;
+        font-weight: 700;
+        padding-bottom: 0;
+        margin-bottom: 2.5rem;
+        white-space: nowrap;
+    }
+
+    h3 {
+        font-size: $font-l;
+        margin-top: 1.75rem;
+        margin-bottom: .5rem;
+        font-weight: 600;
+        color: $grey-dk;
+    }
+
+    h4 {
+        font-size: $font-m;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        color: $grey-dk;
+    }
+}
+
+.ms-rteElement-expandable {
+    h2 {
+        -ms-name: "Ekspanderende overskrift";
+        color: $blue;
+        font-size: $font-m;
+        line-height: 1.5rem;
+        font-weight: bold;
+        border-top: 1px solid $blue;
+    }
+}
+
+.ms-reusableTextView {
+    border: none;
+}
+
+.ms-taxonomy .ms-taxonomy-control-holder .ms-taxonomy-fieldeditor {
+    width: 94% !important;
+}
+
+// Fix to avoid issue with IE11 and link styles
+.ms-rte-stylePreviewBox .simple.a_link-list-item, .ms-rte-stylePreviewBox .promoted.a_link-list-item, .ms-rtestate-field .simple.a_link-list-item, .ms-rtestate-field .promoted.a_link-list-item {
+    display: inline;
+}
+.ms-rte-stylePreviewBox .a_promoted-link, .ms-rtestate-field .a_promoted-link {
+    display: inline;
+
+    &:before {
+        display: inline-block;
+    }
+}

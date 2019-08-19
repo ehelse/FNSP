@@ -1,0 +1,28 @@
+.m_statistic {
+    .description {
+        &::after {
+            content: ":";
+        }
+    }
+
+    .number {
+        font-size: $font-2xl;
+        font-weight: 600;
+    }
+
+    .unit {
+        font-size: $font-l;
+    }
+    
+}
+
+/**********************************************************************/
+/* Landscape-oriented mobiles and portrait-oriented tablets. Two columns. */
+@media only screen and (min-width: $one-to-two-col) {
+    .m_statistic {
+        .unit, .description {
+            display: block;
+        }
+    }
+
+}

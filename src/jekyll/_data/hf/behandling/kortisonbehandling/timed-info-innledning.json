@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Innledning",
+        "timeSpan": "1248",
+        "timeUnit": "stk",
+        "timeDescription": "Antall utført i 2013",
+        "content":
+        "<p>Undersøkelsen foretas vanligvis fordi symptomene gir legen mistanke om tarmsykdom, eller at man har økt forekomst av tarmsykdom i familien (arvelighet). Koloskopi brukes også i behandlingsmessig inngrep, f. eks. fjerning av polypper).</p>"
+    },
+    {
+        "title": "Henvisning og vurdering",
+        "expander": "henvisning",
+        "content":
+        "<p>Det er fastlegen som henviser til behandling. Henvisningen vurderes av ansvarlig overlege ved avdelingen. Når henvisningen er vurdert får pasienten innkalling.</p>"
+    }
+]
