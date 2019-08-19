@@ -1,0 +1,15 @@
+# Bundle and build files
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata/
+node_modules/
+
+# Editor
+.vscode/
+.idea/
+
+# Misc
+*.log
+
+
+/src/jekyll/.jekyll-metadata
