@@ -157,27 +157,27 @@ main a.external span:not([id*="ms-rterangecursor"])::before, main a[href*="//"] 
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 main a.external span:not([id*="ms-rterangecursor"]):hover::before, main a.external span:not([id*="ms-rterangecursor"]):focus::before, main a[href*="//"] span:not([id*="ms-rterangecursor"]):hover::before, main a[href*="//"] span:not([id*="ms-rterangecursor"]):focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 main a.external:hover span:not([id*="ms-rterangecursor"])::before, main a.external:focus span:not([id*="ms-rterangecursor"])::before, main a[href*="//"]:hover span:not([id*="ms-rterangecursor"])::before, main a[href*="//"]:focus span:not([id*="ms-rterangecursor"])::before {
-  background: url("/Images/Theme/arrow-blue-md.svg") center/contain no-repeat;
+  background: url("../Images/Theme/arrow-blue-md.svg") center/contain no-repeat;
 }
 
 main a.contact {
   display: inline-block;
   padding-left: 1.25em;
   background: left center / contain no-repeat;
-  background-image: url("/Images/Theme/map-pin-blue.svg"), url("/Images/Theme/map-pin-blue-md.svg");
+  background-image: url("../Images/Theme/map-pin-blue.svg"), url("../Images/Theme/map-pin-blue-md.svg");
 }
 
 main a.contact:hover, main a.contact:focus {
-  background-image: url("/Images/Theme/map-pin-blue-md.svg");
+  background-image: url("../Images/Theme/map-pin-blue-md.svg");
 }
 
 figure {
@@ -1584,15 +1584,15 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   display: inline-block;
   padding-left: 1.35em;
   background: left .05em / .9em no-repeat;
-  background-image: url("/Images/Theme/map-pin-blue.svg"), url("/Images/Theme/map-pin-blue-md.svg"), url("/Images/Theme/map-pin-white.svg");
+  background-image: url("../Images/Theme/map-pin-blue.svg"), url("../Images/Theme/map-pin-blue-md.svg"), url("../Images/Theme/map-pin-white.svg");
 }
 
 .a_contact-link:hover {
-  background-image: url("/Images/Theme/map-pin-blue-md.svg");
+  background-image: url("../Images/Theme/map-pin-blue-md.svg");
 }
 
 .a_contact-link:focus {
-  background-image: url("/Images/Theme/map-pin-white.svg");
+  background-image: url("../Images/Theme/map-pin-white.svg");
 }
 
 .a_horizontal-section-heading {
@@ -1635,12 +1635,12 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .a_nav-back-link:hover::before, .a_nav-back-link:focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .a_nav-back-link::before {
@@ -1699,7 +1699,7 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -1739,7 +1739,7 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -1829,12 +1829,12 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .a_read-more-link:not([href*="//"]):hover::after, .a_read-more-link:not([href*="//"]):focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .a_read-more-link[href*="//"] {
@@ -1850,12 +1850,12 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .a_read-more-link[href*="//"]:hover::after, .a_read-more-link[href*="//"]:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .a_scientific-title {
@@ -1933,22 +1933,22 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
 }
 
 .a_social-button.facebook {
-  background-image: url("/Images/Theme/facebook.svg");
+  background-image: url("../Images/Theme/facebook.svg");
 }
 
 .a_social-button.twitter {
-  background-image: url("/Images/Theme/twitter.svg");
+  background-image: url("../Images/Theme/twitter.svg");
   background-size: 1.5rem;
   background-position: .4rem center;
 }
 
 .a_social-button.rss {
-  background-image: url("/Images/Theme/rss.svg");
+  background-image: url("../Images/Theme/rss.svg");
   background-size: 1.1rem;
 }
 
 .a_social-button.mail {
-  background-image: url("/Images/Theme/envelope-white.svg");
+  background-image: url("../Images/Theme/envelope-white.svg");
   background-size: 1.45rem;
   background-position: .4rem center;
 }
@@ -2382,11 +2382,11 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
 }
 
 .atom_dropdown-button.arrow-down:after {
-  background: url("/Images/Theme/expand_hover.svg") no-repeat center;
+  background: url("../Images/Theme/expand_hover.svg") no-repeat center;
 }
 
 .atom_dropdown-button.arrow-up:after {
-  background: url("/Images/Theme/expanded_normal.svg") no-repeat center;
+  background: url("../Images/Theme/expanded_normal.svg") no-repeat center;
 }
 
 .atom_dropdown-button--full-width {
@@ -2958,7 +2958,7 @@ a.atom_secondarybutton:visited.spinner-inside:after,
 }
 
 .a_button-toggle::after {
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
   background-position: center 1.5rem;
   background-size: 1.25rem;
 }
@@ -3165,12 +3165,12 @@ a.atom_secondarybutton:visited.spinner-inside:after,
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .m_breadcrumbs .path li:nth-last-child(2) a:hover::before, .m_breadcrumbs .path li:nth-last-child(2) a:focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .m_breadcrumbs .path li.current {
@@ -3188,11 +3188,11 @@ a.atom_secondarybutton:visited.spinner-inside:after,
 }
 
 .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
 }
 
 .image-fb .o_page-header:not(.with-ingress).invertcolor .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-  background-image: url("/Images/Theme/chevron-grey-dk.svg");
+  background-image: url("../Images/Theme/chevron-grey-dk.svg");
 }
 
 /**********************************************************************/
@@ -3210,7 +3210,7 @@ a.atom_secondarybutton:visited.spinner-inside:after,
   .m_breadcrumbs .path li::after {
     display: block;
     content: "";
-    background: url("/Images/Theme/chevron-grey-on-grey.svg") center bottom/contain no-repeat;
+    background: url("../Images/Theme/chevron-grey-on-grey.svg") center bottom/contain no-repeat;
     transform: rotate(270deg);
     top: 0;
     right: 0;
@@ -3243,10 +3243,10 @@ a.atom_secondarybutton:visited.spinner-inside:after,
     background: linear-gradient(to right, rgba(30, 30, 30, 0.7), transparent), linear-gradient(to bottom, rgba(30, 30, 30, 0.5) 0%, transparent 70%);
   }
   .image-fb .o_page-header.with-ingress:not(.invertcolor) .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-    background-image: url("/Images/Theme/chevron-white.svg");
+    background-image: url("../Images/Theme/chevron-white.svg");
   }
   .image-fb .o_page-header.with-ingress.invertcolor .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-    background-image: url("/Images/Theme/chevron-grey-dk.svg");
+    background-image: url("../Images/Theme/chevron-grey-dk.svg");
   }
 }
 
@@ -3666,11 +3666,11 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_entrance-popup .resident h2::before, .m_entrance-popup .resident .o_page-header .m_page-ingress .subtitle::before, .o_page-header .m_page-ingress .m_entrance-popup .resident .subtitle::before {
-  background-image: url("/Images/Theme/pasientreiser-entrance-icon-resident.svg");
+  background-image: url("../Images/Theme/pasientreiser-entrance-icon-resident.svg");
 }
 
 .m_entrance-popup .professional h2::before, .m_entrance-popup .professional .o_page-header .m_page-ingress .subtitle::before, .o_page-header .m_page-ingress .m_entrance-popup .professional .subtitle::before {
-  background-image: url("/Images/Theme/pasientreiser-entrance-icon-professional.svg");
+  background-image: url("../Images/Theme/pasientreiser-entrance-icon-professional.svg");
 }
 
 .m_entrance-popup p, .m_entrance-popup .a_scientific-title {
@@ -3708,7 +3708,7 @@ Markup (stuff within [] is optional / state):
   border: 2px solid #cddbe8;
   border-radius: 2rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1rem;
@@ -3776,7 +3776,7 @@ Markup (stuff within [] is optional / state):
     border: 3px solid #cddbe8;
     border-radius: 3rem;
     transition: .1s;
-    background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+    background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
     position: absolute;
     top: 50%;
     margin-top: -1.5rem;
@@ -3821,13 +3821,13 @@ Markup (stuff within [] is optional / state):
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
+  background: url("../Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .m_expander-list > .expander:hover::before, .m_expander-list > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_expander-list.collapsed > .expander::before {
@@ -3835,7 +3835,7 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_expander-list.focused > .expander::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_expander-list ul {
@@ -4036,7 +4036,7 @@ Markup (stuff within [] is optional / state):
   box-shadow: 1rem 0 0 #fff, -1rem 0 0 #fff;
   background-color: #034584;
   background-repeat: no-repeat;
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
   background-position: center 1.5rem;
   background-size: 1.25rem;
 }
@@ -4362,7 +4362,7 @@ Markup (stuff within [] is optional / state):
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -4423,7 +4423,7 @@ Markup (stuff within [] is optional / state):
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/chevron-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/chevron-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -4653,12 +4653,12 @@ Markup (stuff within [] is optional / state):
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .m_link-list.simple:not(ul)[href*="//"]:hover::before, .m_link-list.simple:not(ul)[href*="//"]:focus::before, .m_link-list.simple a[href*="//"]:hover::before, .m_link-list.simple a[href*="//"]:focus::before, .a_link-list-item.simple:not(ul)[href*="//"]:hover::before, .a_link-list-item.simple:not(ul)[href*="//"]:focus::before, .a_link-list-item.simple a[href*="//"]:hover::before, .a_link-list-item.simple a[href*="//"]:focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .m_link-list.simple:not(ul):not([href*="//"]), .m_link-list.simple a:not([href*="//"]), .a_link-list-item.simple:not(ul):not([href*="//"]), .a_link-list-item.simple a:not([href*="//"]) {
@@ -4673,12 +4673,12 @@ Markup (stuff within [] is optional / state):
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .m_link-list.simple:not(ul):not([href*="//"]):hover::before, .m_link-list.simple:not(ul):not([href*="//"]):focus::before, .m_link-list.simple a:not([href*="//"]):hover::before, .m_link-list.simple a:not([href*="//"]):focus::before, .a_link-list-item.simple:not(ul):not([href*="//"]):hover::before, .a_link-list-item.simple:not(ul):not([href*="//"]):focus::before, .a_link-list-item.simple a:not([href*="//"]):hover::before, .a_link-list-item.simple a:not([href*="//"]):focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .m_link-list.locations li, .a_link-list-item.locations li {
@@ -4698,12 +4698,12 @@ Markup (stuff within [] is optional / state):
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .m_link-list.locations a:hover::after, .m_link-list.locations a:focus::after, .a_link-list-item.locations a:hover::after, .a_link-list-item.locations a:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .m_link-list.promoted, .a_link-list-item.promoted {
@@ -4730,7 +4730,7 @@ Markup (stuff within [] is optional / state):
   border: 2px solid #cddbe8;
   border-radius: 2rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1rem;
@@ -4770,7 +4770,7 @@ Markup (stuff within [] is optional / state):
   border: 2px solid #cddbe8;
   border-radius: 2rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1rem;
@@ -4832,7 +4832,7 @@ Markup (stuff within [] is optional / state):
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/clock-blue.svg") center/1em no-repeat;
+  background: url("../Images/Theme/clock-blue.svg") center/1em no-repeat;
 }
 
 .m_openinghours > div {
@@ -5044,13 +5044,13 @@ Markup (stuff within [] is optional / state):
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
+  background: url("../Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .m_page-list .links-column .link.expand > .expander:hover::before, .m_page-list .links-column .link.expand > .expander:focus::before, .m_page-list .links-column .expand.expand > .expander:hover::before, .m_page-list .links-column .expand.expand > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_page-list .links-column .link.expand.collapsed > .expander::before, .m_page-list .links-column .expand.expand.collapsed > .expander::before {
@@ -5058,7 +5058,7 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_page-list .links-column .link.expand.focused > .expander::before, .m_page-list .links-column .expand.expand.focused > .expander::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_page-list .links-column .link.expand::after, .m_page-list .links-column .expand.expand::after {
@@ -5212,13 +5212,13 @@ Markup (stuff within [] is optional / state):
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
+  background: url("../Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .m_page-list .links .link.expand > .expander:hover::before, .m_page-list .links .link.expand > .expander:focus::before, .m_page-list .links .expand.expand > .expander:hover::before, .m_page-list .links .expand.expand > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_page-list .links .link.expand.collapsed > .expander::before, .m_page-list .links .expand.expand.collapsed > .expander::before {
@@ -5226,7 +5226,7 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_page-list .links .link.expand.focused > .expander::before, .m_page-list .links .expand.expand.focused > .expander::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_page-list .links .link.expand::after, .m_page-list .links .expand.expand::after {
@@ -5299,8 +5299,8 @@ Markup (stuff within [] is optional / state):
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
-  background-image: url("/Images/Theme/arrow-blue.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg");
   right: 0;
 }
 
@@ -5309,7 +5309,7 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_page-list a.external:hover::before, .m_page-list a.external:focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .m_page-list .footer {
@@ -5452,13 +5452,13 @@ Markup (stuff within [] is optional / state):
 .m_pagination .next-result-page, .m_pagination .prev-result-page {
   border-color: transparent;
   background: center / 1.5rem no-repeat;
-  background-image: url("/Images/Theme/chevron-blue-grey.svg"), url("/Images/Theme/chevron-blue.svg");
+  background-image: url("../Images/Theme/chevron-blue-grey.svg"), url("../Images/Theme/chevron-blue.svg");
   background-size: 1.5rem, 0;
   font-size: 0;
 }
 
 .m_pagination .next-result-page:hover, .m_pagination .prev-result-page:hover {
-  background-image: url("/Images/Theme/chevron-blue.svg");
+  background-image: url("../Images/Theme/chevron-blue.svg");
   background-size: 1.5rem;
 }
 
@@ -5490,7 +5490,7 @@ Markup (stuff within [] is optional / state):
   right: 1rem;
   padding: 0 0 0 1.5rem;
   background: transparent no-repeat left center / 16px;
-  background-image: url("/Images/Theme/print-icon-blue.svg");
+  background-image: url("../Images/Theme/print-icon-blue.svg");
   height: 1.4rem;
   border: 0;
   box-sizing: content-box;
@@ -5565,7 +5565,7 @@ Markup (stuff within [] is optional / state):
   padding-left: 2.2rem;
   min-height: 2rem;
   line-height: 2rem;
-  background: #252525 url("/Images/Theme/Form-elements/checkbox-on-light-unchecked.svg") left top no-repeat;
+  background: #252525 url("../Images/Theme/Form-elements/checkbox-on-light-unchecked.svg") left top no-repeat;
   background-size: 1.8rem;
   width: auto;
   font-size: 1rem;
@@ -5574,25 +5574,25 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_printdialog input[type="checkbox"] + label:hover, .m_printdialog input[type="checkbox"] + label:focus {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-light-unchecked-hover.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-light-unchecked-hover.svg");
 }
 
 .m_printdialog input[type="checkbox"]:checked + label {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-light-checked.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-light-checked.svg");
 }
 
 .m_printdialog input[type="checkbox"]:checked + label:hover, .m_printdialog input[type="checkbox"]:checked + label:focus {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-light-checked-hover.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-light-checked-hover.svg");
 }
 
 .m_printdialog input[type="checkbox"]:disabled + label, .m_printdialog input[type="checkbox"]:disabled + label:hover {
   cursor: default;
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-light-unchecked-disabled.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-light-unchecked-disabled.svg");
   color: #b6aea8;
 }
 
 .m_printdialog input[type="checkbox"]:disabled:checked + label, .m_printdialog input[type="checkbox"]:disabled:checked + label:hover {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-light-checked-disabled.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-light-checked-disabled.svg");
   color: #b6aea8;
 }
 
@@ -5664,39 +5664,39 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_printdialog input[type="checkbox"] + label {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-unchecked.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-unchecked.svg");
 }
 
 .m_printdialog input[type="checkbox"] + label:hover {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-unchecked-hover.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-unchecked-hover.svg");
   color: #78b1e0;
   text-decoration: underline;
   text-decoration-skip: ink;
 }
 
 .m_printdialog input[type="checkbox"]:checked + label {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-checked.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-checked.svg");
 }
 
 .m_printdialog input[type="checkbox"]:checked + label:hover {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-checked-hover.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-checked-hover.svg");
 }
 
 .m_printdialog input[type="checkbox"]:focus + label {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-unchecked-hover.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-unchecked-hover.svg");
   color: #78b1e0;
 }
 
 .m_printdialog input[type="checkbox"]:checked:focus + label {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-checked-hover.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-checked-hover.svg");
 }
 
 .m_printdialog input[type="checkbox"]:disabled + label, .m_printdialog input[type="checkbox"]:disabled + label:hover {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-unchecked-disabled.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-unchecked-disabled.svg");
 }
 
 .m_printdialog input[type="checkbox"]:disabled:checked + label, .m_printdialog input[type="checkbox"]:disabled:checked + label:hover {
-  background-image: url("/Images/Theme/Form-elements/checkbox-on-dark-checked-disabled.svg");
+  background-image: url("../Images/Theme/Form-elements/checkbox-on-dark-checked-disabled.svg");
 }
 
 /**********************************************************************/
@@ -5742,13 +5742,13 @@ Markup (stuff within [] is optional / state):
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-white.svg") center/1em no-repeat;
+  background: url("../Images/Theme/chevron-white.svg") center/1em no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .m_promoted-expander > .expander:hover::before, .m_promoted-expander > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
 }
 
 .m_promoted-expander.collapsed > .expander::before {
@@ -5756,7 +5756,7 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_promoted-expander.focused > .expander::before {
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
 }
 
 .m_promoted-expander > .container > .expander {
@@ -5803,13 +5803,13 @@ Markup (stuff within [] is optional / state):
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-white.svg") center/contain no-repeat;
+  background: url("../Images/Theme/chevron-white.svg") center/contain no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .m_promoted-expander > .container > .expander:hover::before, .m_promoted-expander > .container > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
 }
 
 .m_promoted-expander > .container > .expander .dash, .m_promoted-expander > .container > .expander .subtitle {
@@ -5862,7 +5862,7 @@ Markup (stuff within [] is optional / state):
   font-weight: 300;
   font-size: 1.5rem;
   font-style: italic;
-  background: url("/Images/Theme/quote-grey-md-lt.svg") left top/2rem no-repeat;
+  background: url("../Images/Theme/quote-grey-md-lt.svg") left top/2rem no-repeat;
 }
 
 .m_quote cite {
@@ -5908,12 +5908,12 @@ Markup (stuff within [] is optional / state):
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .m_related-info a.external:hover::after, .m_related-info a.external:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 @media only screen and (min-width: 944px) {
@@ -5962,7 +5962,7 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_search-box input[type="button"] {
-  background: #034584 url("/Images/Theme/search-white.svg") center/1.5em no-repeat;
+  background: #034584 url("../Images/Theme/search-white.svg") center/1.5em no-repeat;
   position: absolute;
   right: 0;
   top: 0;
@@ -6278,13 +6278,13 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
+  background: url("../Images/Theme/chevron-grey-md.svg") center/1em no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .m_subtle-expander > .expander:hover::before, .m_subtle-expander > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_subtle-expander.collapsed > .expander::before {
@@ -6292,7 +6292,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .m_subtle-expander.focused > .expander::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .m_subtle-expander + :not(.m_subtle-expander) {
@@ -6624,11 +6624,11 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .o_framework-header .header-button-container button .button-icon.search {
-  background: #fff url("/Images/Theme/search-blue.svg") center/1.25rem no-repeat;
+  background: #fff url("../Images/Theme/search-blue.svg") center/1.25rem no-repeat;
 }
 
 .o_framework-header .header-button-container button .button-icon.menu {
-  background: #fff url("/Images/Theme/hamburger-blue.svg") center/21px 17px no-repeat;
+  background: #fff url("../Images/Theme/hamburger-blue.svg") center/21px 17px no-repeat;
 }
 
 .o_framework-header .header-button-container button .text {
@@ -6663,11 +6663,11 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .o_framework-header .header-button-container button.expanded.search-toggle-button .button-icon.search {
-  background: url("/Images/Theme/x-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/x-blue.svg") center/1.25rem no-repeat;
 }
 
 .o_framework-header .header-button-container button.expanded.search-toggle-button:hover .button-icon.search {
-  background: url("/Images/Theme/x-white.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/x-white.svg") center/1.25rem no-repeat;
   background-color: #034584;
 }
 
@@ -6680,12 +6680,12 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .o_framework-header .header-button-container button:hover .button-icon.search {
-  background-image: url("/Images/Theme/search-white.svg");
+  background-image: url("../Images/Theme/search-white.svg");
   background-color: #034584;
 }
 
 .o_framework-header .header-button-container button:hover .button-icon.menu {
-  background-image: url("/Images/Theme/hamburger-white.svg");
+  background-image: url("../Images/Theme/hamburger-white.svg");
   background-color: #034584;
 }
 
@@ -6745,7 +6745,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   right: 0;
   cursor: pointer;
   border: 0;
-  background: #034584 url("/Images/Theme/search-white.svg") center/1.25rem no-repeat;
+  background: #034584 url("../Images/Theme/search-white.svg") center/1.25rem no-repeat;
   transition: .1s;
 }
 
@@ -6779,7 +6779,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .o_framework-header .m_search-box input[type="button"] {
-  background: #034584 url("/Images/Theme/search-white.svg") center/1.25rem no-repeat;
+  background: #034584 url("../Images/Theme/search-white.svg") center/1.25rem no-repeat;
   transition: .1s;
 }
 
@@ -6792,11 +6792,11 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .o_framework-header.expanded .header-button-container .menu-toggle-button .button-icon.menu {
-  background: url("/Images/Theme/x-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/x-blue.svg") center/1.25rem no-repeat;
 }
 
 .o_framework-header.expanded .header-button-container .menu-toggle-button:hover .button-icon.menu {
-  background: url("/Images/Theme/x-white.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/x-white.svg") center/1.25rem no-repeat;
   background-color: #034584;
 }
 
@@ -7032,7 +7032,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   }
   .o_framework-header .m_search-box #header-site-search:focus .header-search-icon, .o_framework-header .m_search-box #header-site-search:hover .header-search-icon {
     background-color: #034584;
-    background-image: url("/Images/Theme/search-white.svg");
+    background-image: url("../Images/Theme/search-white.svg");
   }
   .o_framework-header .m_search-box #header-site-search button:focus::after {
     display: none;
@@ -7052,7 +7052,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   }
   .o_framework-header .m_search-box #header-site-search input:hover + .header-search-icon, .o_framework-header .m_search-box #header-site-search input:focus + .header-search-icon {
     background-color: #034584;
-    background-image: url("/Images/Theme/search-white.svg");
+    background-image: url("../Images/Theme/search-white.svg");
   }
   .o_framework-header .m_search-box #header-site-search input:not(:focus) {
     cursor: pointer;
@@ -7062,14 +7062,14 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
     width: 2.5em;
     height: 2.5em;
     padding-top: 2.5em;
-    background: #fff url("/Images/Theme/search-blue.svg") center/1.25rem no-repeat;
+    background: #fff url("../Images/Theme/search-blue.svg") center/1.25rem no-repeat;
     cursor: pointer;
   }
   .o_framework-header .m_search-box #header-site-search button:hover {
-    background: #034584 url("/Images/Theme/search-white.svg") center/1.25rem no-repeat;
+    background: #034584 url("../Images/Theme/search-white.svg") center/1.25rem no-repeat;
   }
   .o_framework-header .m_search-box #header-site-search button:focus {
-    background: #3871ab url("/Images/Theme/search-white.svg") center/1.25rem no-repeat;
+    background: #3871ab url("../Images/Theme/search-white.svg") center/1.25rem no-repeat;
     box-shadow: 0 0 0 3px #b6aea8;
   }
   .o_framework-header .m_search-box input {
@@ -7096,14 +7096,14 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   }
   .o_framework-header .m_search-box input[type="button"] {
     background-color: #fff;
-    background-image: url("/Images/Theme/search-blue.svg"), url("/Images/Theme/search-white.svg");
+    background-image: url("../Images/Theme/search-blue.svg"), url("../Images/Theme/search-white.svg");
     background-size: 1.25rem;
     padding-top: 2.5rem;
     width: 2.5rem;
     z-index: 5;
   }
   .o_framework-header .m_search-box input[type="button"]:hover, .o_framework-header .m_search-box input[type="button"]:focus {
-    background-image: url("/Images/Theme/search-white.svg");
+    background-image: url("../Images/Theme/search-white.svg");
   }
   .o_framework-header .m_search-box input[type="button"]:hover {
     background-color: #034584;
@@ -7114,11 +7114,11 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   }
   .o_framework-header .m_search-box input[type=search]:focus + input[type=button] {
     background-color: #034584;
-    background-image: url("/Images/Theme/search-white.svg");
+    background-image: url("../Images/Theme/search-white.svg");
   }
   .o_framework-header .m_search-box input[type=search]:hover + input[type=button] {
     background-color: #034584;
-    background-image: url("/Images/Theme/search-white.svg");
+    background-image: url("../Images/Theme/search-white.svg");
   }
   .o_framework-header .m_search-box.expanded #header-site-search label {
     opacity: 0;
@@ -7254,14 +7254,14 @@ main > .o_horizontal-section:first-of-type.expand {
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-grey-lt.svg") center/contain no-repeat;
+  background: url("../Images/Theme/chevron-grey-lt.svg") center/contain no-repeat;
   transform: scaleY(-1);
   transition: transform .3s;
   border: 0;
 }
 
 .o_horizontal-section.expand .a_ruled-heading.expander:hover::after, .o_horizontal-section.expand .o_search-block h2.expander:hover::after, .o_search-block .o_horizontal-section.expand h2.expander:hover::after, .o_horizontal-section.expand .o_search-block .o_page-header .m_page-ingress .expander.subtitle:hover::after, .o_search-block .o_page-header .m_page-ingress .o_horizontal-section.expand .expander.subtitle:hover::after, .o_horizontal-section.expand .o_page-header .m_page-ingress .o_search-block .expander.subtitle:hover::after, .o_page-header .m_page-ingress .o_search-block .o_horizontal-section.expand .expander.subtitle:hover::after, .o_horizontal-section.expand .a_ruled-heading.expander:focus::after, .o_horizontal-section.expand .o_search-block h2.expander:focus::after, .o_search-block .o_horizontal-section.expand h2.expander:focus::after, .o_horizontal-section.expand .o_search-block .o_page-header .m_page-ingress .expander.subtitle:focus::after, .o_search-block .o_page-header .m_page-ingress .o_horizontal-section.expand .expander.subtitle:focus::after, .o_horizontal-section.expand .o_page-header .m_page-ingress .o_search-block .expander.subtitle:focus::after, .o_page-header .m_page-ingress .o_search-block .o_horizontal-section.expand .expander.subtitle:focus::after {
-  background-image: url("/Images/Theme/chevron-blue.svg");
+  background-image: url("../Images/Theme/chevron-blue.svg");
 }
 
 .o_horizontal-section.expand > .expandable {
@@ -7462,7 +7462,7 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .image-band .print-icon {
-  background-image: url("/Images/Theme/print-icon-white.svg");
+  background-image: url("../Images/Theme/print-icon-white.svg");
 }
 
 .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .image-band, .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .image-band a, .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .image-band :not(.expanded) .print-icon::after, .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .image-band li.current {
@@ -7475,11 +7475,11 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-  background-image: url("/Images/Theme/chevron-white.svg");
+  background-image: url("../Images/Theme/chevron-white.svg");
 }
 
 .image-fb .o_page-header:not(.with-ingress):not(.invertcolor) .m_printdialog :not(.expanded) .print-icon {
-  background-image: url("/Images/Theme/print-icon-white.svg");
+  background-image: url("../Images/Theme/print-icon-white.svg");
 }
 
 .image-fb .o_page-header:not(.with-ingress).invertcolor .image-band, .image-fb .o_page-header:not(.with-ingress).invertcolor .image-band a, .image-fb .o_page-header:not(.with-ingress).invertcolor .image-band :not(.expanded) .print-icon::after {
@@ -7492,11 +7492,11 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .image-fb .o_page-header:not(.with-ingress).invertcolor .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-  background-image: url("/Images/Theme/chevron-grey-dk.svg");
+  background-image: url("../Images/Theme/chevron-grey-dk.svg");
 }
 
 .image-fb .o_page-header:not(.with-ingress).invertcolor .m_printdialog :not(.expanded) .print-icon {
-  background-image: url("/Images/Theme/print-icon-black.svg");
+  background-image: url("../Images/Theme/print-icon-black.svg");
 }
 
 .WelcomePage .o_page-header .page-header-content {
@@ -7614,10 +7614,10 @@ main > .o_horizontal-section:first-of-type.expand {
     background: linear-gradient(to right, rgba(30, 30, 30, 0.7), transparent), linear-gradient(to bottom, rgba(30, 30, 30, 0.5) 0%, transparent 70%);
   }
   .image-fb .o_page-header.with-ingress:not(.invertcolor) .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-    background-image: url("/Images/Theme/chevron-white.svg");
+    background-image: url("../Images/Theme/chevron-white.svg");
   }
   .image-fb .o_page-header.with-ingress:not(.invertcolor) .m_printdialog:not(.expanded) .print-icon {
-    background-image: url("/Images/Theme/print-icon-white.svg");
+    background-image: url("../Images/Theme/print-icon-white.svg");
   }
   .image-fb .o_page-header.with-ingress:not(.invertcolor) .m_printdialog:not(.expanded) .print-icon::after {
     color: #fff;
@@ -7630,10 +7630,10 @@ main > .o_horizontal-section:first-of-type.expand {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.7), transparent), linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
   }
   .image-fb .o_page-header.with-ingress.invertcolor .m_breadcrumbs ul:not(.expandable) li:not(.current):after {
-    background-image: url("/Images/Theme/chevron-grey-dk.svg");
+    background-image: url("../Images/Theme/chevron-grey-dk.svg");
   }
   .image-fb .o_page-header.with-ingress.invertcolor .m_printdialog:not(.expanded) .print-icon {
-    background-image: url("/Images/Theme/print-icon-black.svg");
+    background-image: url("../Images/Theme/print-icon-black.svg");
   }
   .image-fb .o_page-header.with-ingress.invertcolor .m_printdialog:not(.expanded) .print-icon::after {
     color: #000;
@@ -7937,14 +7937,14 @@ main > .o_horizontal-section:first-of-type.expand {
     background: 1rem top no-repeat;
   }
   .o_promoted-nav.with-icon .tile#finn-frem {
-    background-image: url("/Images/Theme/map-pin-blue.svg");
+    background-image: url("../Images/Theme/map-pin-blue.svg");
     flex-basis: 576px;
   }
   .o_promoted-nav.with-icon .tile#om-oss {
-    background-image: url("/Images/Theme/doctors.svg");
+    background-image: url("../Images/Theme/doctors.svg");
   }
   .o_promoted-nav.with-icon .tile#helsefaglig {
-    background-image: url("/Images/Theme/microscope-blue.svg");
+    background-image: url("../Images/Theme/microscope-blue.svg");
   }
   .o_promoted-nav.with-icon .tile h2, .o_promoted-nav.with-icon .tile .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .o_promoted-nav.with-icon .tile .subtitle {
     padding-top: 8rem;
@@ -7967,10 +7967,10 @@ main > .o_horizontal-section:first-of-type.expand {
     flex-basis: 271px;
   }
   .o_promoted-nav.with-icon .tile#om-oss {
-    background-image: url("/Images/Theme/doctors.svg");
+    background-image: url("../Images/Theme/doctors.svg");
   }
   .o_promoted-nav.with-icon .tile#helsefaglig {
-    background-image: url("/Images/Theme/microscope-blue.svg");
+    background-image: url("../Images/Theme/microscope-blue.svg");
   }
   .o_promoted-nav.with-icon .tile h2, .o_promoted-nav.with-icon .tile .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .o_promoted-nav.with-icon .tile .subtitle {
     padding-top: 7rem;
@@ -8083,7 +8083,7 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .o_pulldown .button-link::after {
-  background-image: url("/Images/Theme/arrow-white.svg");
+  background-image: url("../Images/Theme/arrow-white.svg");
   background-position: center;
   background-size: 1.5rem;
   content: "";
@@ -8135,12 +8135,12 @@ main > .o_horizontal-section:first-of-type.expand {
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .o_pulldown .text-link:hover::after, .o_pulldown .text-link:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .o_pulldown .expandable .o_tile-group {
@@ -8318,7 +8318,7 @@ main > .o_horizontal-section:first-of-type.expand {
     top: 0;
     width: 1em;
     height: 100%;
-    background: url("/Images/Theme/chevron-grey-lt.svg") center/contain no-repeat;
+    background: url("../Images/Theme/chevron-grey-lt.svg") center/contain no-repeat;
     transform: rotate(-90deg);
     transition: transform .3s;
     border: 0;
@@ -8327,7 +8327,7 @@ main > .o_horizontal-section:first-of-type.expand {
     cursor: pointer;
   }
   .o_search-block .o_horizontal-section.mobile-documents h2:hover::after, .o_search-block .o_horizontal-section.mobile-documents .o_page-header .m_page-ingress .subtitle:hover::after, .o_page-header .m_page-ingress .o_search-block .o_horizontal-section.mobile-documents .subtitle:hover::after, .o_search-block .o_horizontal-section.mobile-documents h2:focus::after, .o_search-block .o_horizontal-section.mobile-documents .o_page-header .m_page-ingress .subtitle:focus::after, .o_page-header .m_page-ingress .o_search-block .o_horizontal-section.mobile-documents .subtitle:focus::after {
-    background-image: url("/Images/Theme/chevron-blue.svg");
+    background-image: url("../Images/Theme/chevron-blue.svg");
   }
 }
 
@@ -8621,7 +8621,7 @@ main > .o_horizontal-section:first-of-type.expand {
   top: 0;
   height: 100%;
   width: 4rem;
-  background: url("/Images/Theme/chevron-white.svg") center/1em no-repeat;
+  background: url("../Images/Theme/chevron-white.svg") center/1em no-repeat;
   transform: scaleY(1);
   transition: transform .3s;
 }
@@ -8639,7 +8639,7 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .o_tile-group.navigation.menu .tile:hover.expand .subnav-title::after, .o_tile-group.navigation.menu .tile.focused.expand .subnav-title::after {
-  background-image: url("/Images/Theme/chevron-blue-lt.svg");
+  background-image: url("../Images/Theme/chevron-blue-lt.svg");
 }
 
 .o_tile-group.navigation.menu .tile:hover + .tile, .o_tile-group.navigation.menu .tile:hover:first-child, .o_tile-group.navigation.menu .tile.focused + .tile, .o_tile-group.navigation.menu .tile.focused:first-child {
@@ -8675,20 +8675,20 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .o_tile-group.navigation.promoted .tile .subnav-title.with-icon#finn-frem::before {
-  background-image: url("/Images/Theme/map-pin-blue.svg");
+  background-image: url("../Images/Theme/map-pin-blue.svg");
 }
 
 .o_tile-group.navigation.promoted .tile .subnav-title.with-icon#om-oss::before {
-  background-image: url("/Images/Theme/doctors.svg");
+  background-image: url("../Images/Theme/doctors.svg");
 }
 
 .o_tile-group.navigation.promoted .tile .subnav-title.with-icon#helsefaglig::before {
-  background-image: url("/Images/Theme/microscope-blue.svg");
+  background-image: url("../Images/Theme/microscope-blue.svg");
   width: 2.75rem;
 }
 
 .o_tile-group.navigation.promoted .tile .subnav-title.with-icon#praktisk::before {
-  background-image: url("/Images/Theme/praktisk.svg");
+  background-image: url("../Images/Theme/praktisk.svg");
   width: 2.75rem;
   margin-right: .75rem;
 }
@@ -8982,13 +8982,13 @@ main > .o_horizontal-section:first-of-type.expand {
   top: 0;
   width: 1em;
   height: 100%;
-  background: url("/Images/Theme/chevron-blue.svg") center/0.9em no-repeat;
+  background: url("../Images/Theme/chevron-blue.svg") center/0.9em no-repeat;
   transform: scaleY(-1);
   transition: .3s;
 }
 
 .o_timeline .expand > .expander:hover::before, .o_timeline .expand > .expander:focus::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .o_timeline .expand.collapsed > .expander::before {
@@ -8996,7 +8996,7 @@ main > .o_horizontal-section:first-of-type.expand {
 }
 
 .o_timeline .expand.focused > .expander::before {
-  background-image: url("/Images/Theme/chevron-blue-md.svg");
+  background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
 .o_timeline .expand .expander {

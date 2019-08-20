@@ -63,6 +63,16 @@ function scripts() {
     );
 }
 
+// Copy SVGs
+function svg() {
+    return gulp.src("./src/svg/**/*").pipe(gulp.dest("./dist/assets/Images/Theme/"));
+}
+
+// Copy prototype images
+function protoimg() {
+    return gulp.src("./src/jekyll/_images/**/*").pipe(gulp.dest("./dist/assets/Images/"));
+}
+
 // Jekyll
 function jekyll() {
     return cp.spawn("jekyll.bat", ["build", "-I"], {stdio: "inherit"});
@@ -73,12 +83,13 @@ function jekyll() {
 function watchFiles() {
     gulp.watch("./src/sass/**/*", css);
     gulp.watch("./src/js/**/*", scripts);
+    gulp.watch("./src/svg/**/*", svg);
     gulp.watch("./src/jekyll/**/*", gulp.series(jekyll, browserSyncReload));
 }
 
-const watch = gulp.series(clean, gulp.parallel(css, scripts, jekyll), gulp.parallel(watchFiles, browserSync));
+const watch = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg, gulp.parallel(watchFiles, browserSync));
 
-const build = gulp.series(clean, gulp.parallel(css, scripts, jekyll));
+const build = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg);
 
 // export tasks
 exports.css = css;
@@ -88,3 +99,5 @@ exports.clean = clean;
 exports.watch = watch;
 exports.default = watch;
 exports.build = build;
+exports.svg = svg;
+exports.protoimg = protoimg;

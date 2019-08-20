@@ -5,7 +5,7 @@ customer-list: [HF, RHF, IKT, Felleskomponenter]
 
 source: 'src/jekyll'
 destination: dist/
-keep_files: [assets/js, assets/css, maps]
+keep_files: [assets/js, assets/css, maps, assets/Images]
 exclude:
     - Gemfile
     - Gemfile.lock

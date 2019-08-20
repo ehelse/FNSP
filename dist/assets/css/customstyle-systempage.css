@@ -162,27 +162,27 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .ms-rte-stylePreviewBox main a.external span:not([id*="ms-rterangecursor"]):hover::before, .ms-rte-stylePreviewBox main a.external span:not([id*="ms-rterangecursor"]):focus::before, .ms-rte-stylePreviewBox main a[href*="//"] span:not([id*="ms-rterangecursor"]):hover::before, .ms-rte-stylePreviewBox main a[href*="//"] span:not([id*="ms-rterangecursor"]):focus::before, .ms-rtestate-field main a.external span:not([id*="ms-rterangecursor"]):hover::before, .ms-rtestate-field main a.external span:not([id*="ms-rterangecursor"]):focus::before, .ms-rtestate-field main a[href*="//"] span:not([id*="ms-rterangecursor"]):hover::before, .ms-rtestate-field main a[href*="//"] span:not([id*="ms-rterangecursor"]):focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox main a.external:hover span:not([id*="ms-rterangecursor"])::before, .ms-rte-stylePreviewBox main a.external:focus span:not([id*="ms-rterangecursor"])::before, .ms-rte-stylePreviewBox main a[href*="//"]:hover span:not([id*="ms-rterangecursor"])::before, .ms-rte-stylePreviewBox main a[href*="//"]:focus span:not([id*="ms-rterangecursor"])::before, .ms-rtestate-field main a.external:hover span:not([id*="ms-rterangecursor"])::before, .ms-rtestate-field main a.external:focus span:not([id*="ms-rterangecursor"])::before, .ms-rtestate-field main a[href*="//"]:hover span:not([id*="ms-rterangecursor"])::before, .ms-rtestate-field main a[href*="//"]:focus span:not([id*="ms-rterangecursor"])::before {
-  background: url("/Images/Theme/arrow-blue-md.svg") center/contain no-repeat;
+  background: url("../Images/Theme/arrow-blue-md.svg") center/contain no-repeat;
 }
 
 .ms-rte-stylePreviewBox main a.contact, .ms-rtestate-field main a.contact {
   display: inline-block;
   padding-left: 1.25em;
   background: left center / contain no-repeat;
-  background-image: url("/Images/Theme/map-pin-blue.svg"), url("/Images/Theme/map-pin-blue-md.svg");
+  background-image: url("../Images/Theme/map-pin-blue.svg"), url("../Images/Theme/map-pin-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox main a.contact:hover, .ms-rte-stylePreviewBox main a.contact:focus, .ms-rtestate-field main a.contact:hover, .ms-rtestate-field main a.contact:focus {
-  background-image: url("/Images/Theme/map-pin-blue-md.svg");
+  background-image: url("../Images/Theme/map-pin-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox figure, .ms-rtestate-field figure {
@@ -1525,12 +1525,12 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .ms-rte-stylePreviewBox .a_nav-back-link:hover::before, .ms-rte-stylePreviewBox .a_nav-back-link:focus::before, .ms-rtestate-field .a_nav-back-link:hover::before, .ms-rtestate-field .a_nav-back-link:focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox .a_nav-back-link::before, .ms-rtestate-field .a_nav-back-link::before {
@@ -1589,7 +1589,7 @@
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -1629,7 +1629,7 @@
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -1719,22 +1719,22 @@
 }
 
 .ms-rte-stylePreviewBox .a_social-button.facebook, .ms-rtestate-field .a_social-button.facebook {
-  background-image: url("/Images/Theme/facebook.svg");
+  background-image: url("../Images/Theme/facebook.svg");
 }
 
 .ms-rte-stylePreviewBox .a_social-button.twitter, .ms-rtestate-field .a_social-button.twitter {
-  background-image: url("/Images/Theme/twitter.svg");
+  background-image: url("../Images/Theme/twitter.svg");
   background-size: 1.5rem;
   background-position: .4rem center;
 }
 
 .ms-rte-stylePreviewBox .a_social-button.rss, .ms-rtestate-field .a_social-button.rss {
-  background-image: url("/Images/Theme/rss.svg");
+  background-image: url("../Images/Theme/rss.svg");
   background-size: 1.1rem;
 }
 
 .ms-rte-stylePreviewBox .a_social-button.mail, .ms-rtestate-field .a_social-button.mail {
-  background-image: url("/Images/Theme/envelope-white.svg");
+  background-image: url("../Images/Theme/envelope-white.svg");
   background-size: 1.45rem;
   background-position: .4rem center;
 }
@@ -1848,12 +1848,12 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .ms-rte-stylePreviewBox .m_link-list.simple:not(ul)[href*="//"]:hover::before, .ms-rte-stylePreviewBox .m_link-list.simple:not(ul)[href*="//"]:focus::before, .ms-rte-stylePreviewBox .m_link-list.simple a[href*="//"]:hover::before, .ms-rte-stylePreviewBox .m_link-list.simple a[href*="//"]:focus::before, .ms-rte-stylePreviewBox .a_link-list-item.simple:not(ul)[href*="//"]:hover::before, .ms-rte-stylePreviewBox .a_link-list-item.simple:not(ul)[href*="//"]:focus::before, .ms-rte-stylePreviewBox .a_link-list-item.simple a[href*="//"]:hover::before, .ms-rte-stylePreviewBox .a_link-list-item.simple a[href*="//"]:focus::before, .ms-rtestate-field .m_link-list.simple:not(ul)[href*="//"]:hover::before, .ms-rtestate-field .m_link-list.simple:not(ul)[href*="//"]:focus::before, .ms-rtestate-field .m_link-list.simple a[href*="//"]:hover::before, .ms-rtestate-field .m_link-list.simple a[href*="//"]:focus::before, .ms-rtestate-field .a_link-list-item.simple:not(ul)[href*="//"]:hover::before, .ms-rtestate-field .a_link-list-item.simple:not(ul)[href*="//"]:focus::before, .ms-rtestate-field .a_link-list-item.simple a[href*="//"]:hover::before, .ms-rtestate-field .a_link-list-item.simple a[href*="//"]:focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox .m_link-list.simple:not(ul):not([href*="//"]), .ms-rte-stylePreviewBox .m_link-list.simple a:not([href*="//"]), .ms-rte-stylePreviewBox .a_link-list-item.simple:not(ul):not([href*="//"]), .ms-rte-stylePreviewBox .a_link-list-item.simple a:not([href*="//"]), .ms-rtestate-field .m_link-list.simple:not(ul):not([href*="//"]), .ms-rtestate-field .m_link-list.simple a:not([href*="//"]), .ms-rtestate-field .a_link-list-item.simple:not(ul):not([href*="//"]), .ms-rtestate-field .a_link-list-item.simple a:not([href*="//"]) {
@@ -1868,12 +1868,12 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   left: 0;
 }
 
 .ms-rte-stylePreviewBox .m_link-list.simple:not(ul):not([href*="//"]):hover::before, .ms-rte-stylePreviewBox .m_link-list.simple:not(ul):not([href*="//"]):focus::before, .ms-rte-stylePreviewBox .m_link-list.simple a:not([href*="//"]):hover::before, .ms-rte-stylePreviewBox .m_link-list.simple a:not([href*="//"]):focus::before, .ms-rte-stylePreviewBox .a_link-list-item.simple:not(ul):not([href*="//"]):hover::before, .ms-rte-stylePreviewBox .a_link-list-item.simple:not(ul):not([href*="//"]):focus::before, .ms-rte-stylePreviewBox .a_link-list-item.simple a:not([href*="//"]):hover::before, .ms-rte-stylePreviewBox .a_link-list-item.simple a:not([href*="//"]):focus::before, .ms-rtestate-field .m_link-list.simple:not(ul):not([href*="//"]):hover::before, .ms-rtestate-field .m_link-list.simple:not(ul):not([href*="//"]):focus::before, .ms-rtestate-field .m_link-list.simple a:not([href*="//"]):hover::before, .ms-rtestate-field .m_link-list.simple a:not([href*="//"]):focus::before, .ms-rtestate-field .a_link-list-item.simple:not(ul):not([href*="//"]):hover::before, .ms-rtestate-field .a_link-list-item.simple:not(ul):not([href*="//"]):focus::before, .ms-rtestate-field .a_link-list-item.simple a:not([href*="//"]):hover::before, .ms-rtestate-field .a_link-list-item.simple a:not([href*="//"]):focus::before {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox .m_link-list.locations li, .ms-rte-stylePreviewBox .a_link-list-item.locations li, .ms-rtestate-field .m_link-list.locations li, .ms-rtestate-field .a_link-list-item.locations li {
@@ -1893,12 +1893,12 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .ms-rte-stylePreviewBox .m_link-list.locations a:hover::after, .ms-rte-stylePreviewBox .m_link-list.locations a:focus::after, .ms-rte-stylePreviewBox .a_link-list-item.locations a:hover::after, .ms-rte-stylePreviewBox .a_link-list-item.locations a:focus::after, .ms-rtestate-field .m_link-list.locations a:hover::after, .ms-rtestate-field .m_link-list.locations a:focus::after, .ms-rtestate-field .a_link-list-item.locations a:hover::after, .ms-rtestate-field .a_link-list-item.locations a:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .ms-rte-stylePreviewBox .m_link-list.promoted, .ms-rte-stylePreviewBox .a_link-list-item.promoted, .ms-rtestate-field .m_link-list.promoted, .ms-rtestate-field .a_link-list-item.promoted {
@@ -1925,7 +1925,7 @@
   border: 2px solid #cddbe8;
   border-radius: 2rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1rem;
@@ -1965,7 +1965,7 @@
   border: 2px solid #cddbe8;
   border-radius: 2rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1rem;

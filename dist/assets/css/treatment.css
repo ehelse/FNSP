@@ -91,13 +91,13 @@
   top: .5rem;
   height: 2rem;
   width: 3rem;
-  background: url("/Images/Theme/chevron-blue-grey.svg") center bottom/1.25rem no-repeat;
+  background: url("../Images/Theme/chevron-blue-grey.svg") center bottom/1.25rem no-repeat;
   transform: rotate(-90deg);
   transition: .3s;
 }
 
 .m_page-menu li.main-link:not(:nth-child(4)) a:hover::after {
-  background-image: url("/Images/Theme/chevron-blue.svg");
+  background-image: url("../Images/Theme/chevron-blue.svg");
 }
 
 .m_page-menu li.main-link a {
@@ -138,7 +138,7 @@
 }
 
 .m_page-menu li.main-link a.current:focus::after, .m_page-menu li.main-link a.current:hover::after {
-  background-image: url("/Images/Theme/chevron-blue-grey.svg");
+  background-image: url("../Images/Theme/chevron-blue-grey.svg");
 }
 
 .m_page-menu li.main-link a .section-headline:before {
@@ -181,7 +181,7 @@
   border: 3px solid #cddbe8;
   border-radius: 3rem;
   transition: .1s;
-  background: url("/Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
+  background: url("../Images/Theme/arrow-blue.svg") center/1.25rem no-repeat;
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
@@ -225,11 +225,11 @@
   padding-left: 2.25rem;
   display: inline-block;
   background: left center / 1.75em no-repeat;
-  background-image: url("/Images/Theme/map-pin-blue.svg"), url("/Images/Theme/map-pin-blue-md.svg");
+  background-image: url("../Images/Theme/map-pin-blue.svg"), url("../Images/Theme/map-pin-blue-md.svg");
 }
 
 .m_page-menu .contact a:hover, .m_page-menu .contact a:focus, .m_page-menu .contact a.current {
-  background-image: url("/Images/Theme/map-pin-blue-md.svg"), url("/Images/Theme/map-pin-blue.svg");
+  background-image: url("../Images/Theme/map-pin-blue-md.svg"), url("../Images/Theme/map-pin-blue.svg");
   text-decoration: underline;
   color: #3871ab;
 }
@@ -262,13 +262,13 @@
   transition-duration: .3s;
   z-index: 5;
   position: relative;
-  background: #e6e5e1 url("/Images/Theme/chevron-grey-dk.svg") right 1rem center/1.25rem no-repeat;
+  background: #e6e5e1 url("../Images/Theme/chevron-grey-dk.svg") right 1rem center/1.25rem no-repeat;
   padding: 1rem 4rem 1rem 1rem;
   float: none;
 }
 
 .o_primary-treatment .expander:hover, .o_primary-treatment .expander:focus {
-  background: #f4f4f2 url("/Images/Theme/chevron-grey-dk.svg") right 1rem center/1.25rem no-repeat;
+  background: #f4f4f2 url("../Images/Theme/chevron-grey-dk.svg") right 1rem center/1.25rem no-repeat;
 }
 
 .o_primary-treatment .row:first-child .col-md-8 {
@@ -362,12 +362,12 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .o_primary-treatment .more[href*="//"]:hover::after, .o_primary-treatment .more[href*="//"]:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .o_primary-treatment .more::after {
@@ -377,12 +377,12 @@
   width: 1.25em;
   height: 1.4em;
   background: center/contain no-repeat;
-  background-image: url("/Images/Theme/arrow-blue.svg"), url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue.svg"), url("../Images/Theme/arrow-blue-md.svg");
   right: 0;
 }
 
 .o_primary-treatment .more:hover::after, .o_primary-treatment .more:focus::after {
-  background-image: url("/Images/Theme/arrow-blue-md.svg");
+  background-image: url("../Images/Theme/arrow-blue-md.svg");
 }
 
 .o_primary-treatment .o_timeline > ol::after {
@@ -399,7 +399,7 @@
 
 @media only screen and (min-width: 640px) {
   .o_primary-treatment .m_obs {
-    background: #fdfad3 url("/Images/Theme/obs-black.svg") 2rem 2rem/3rem no-repeat;
+    background: #fdfad3 url("../Images/Theme/obs-black.svg") 2rem 2rem/3rem no-repeat;
     padding: 2rem 2rem 2rem 7rem;
   }
   .o_primary-treatment .m_obs h4 {
