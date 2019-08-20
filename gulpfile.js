@@ -63,25 +63,6 @@ function scripts() {
     );
 }
 
-function copyJquery() {
-    return (
-        gulp
-            .src(["./src/js/jQuery/*"])
-            .pipe(gulp.dest("./dist/assets/js/jquery"))
-    )
-}
-
-function copyStaticJs() {
-    return (
-        gulp
-            .src(["./src/js/editmode", "./src/js/diverse"])
-            .pipe(gulp.dest("./dist/assets/js/"))
-    )
-}
-
-const copyStatic = gulp.series(copyJquery, copyStaticJs);
-
-
 // Jekyll
 function jekyll() {
     return cp.spawn("jekyll.bat", ["build", "-I"], {stdio: "inherit"});
@@ -97,7 +78,7 @@ function watchFiles() {
 
 const watch = gulp.series(clean, gulp.parallel(css, scripts, jekyll), gulp.parallel(watchFiles, browserSync));
 
-const build = gulp.series(clean, gulp.parallel(css, scripts, copyStatic, jekyll));
+const build = gulp.series(clean, gulp.parallel(css, scripts, jekyll));
 
 // export tasks
 exports.css = css;
@@ -106,9 +87,4 @@ exports.jekyll = jekyll;
 exports.clean = clean;
 exports.watch = watch;
 exports.default = watch;
-exports.copyJquery = copyJquery;
-exports.copyStaticJs = copyStaticJs;
-exports.copyStatic = copyStatic
 exports.build = build;
-
-// TODO: copy static files (jquery and diverse)

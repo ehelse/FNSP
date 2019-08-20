@@ -24,5 +24,17 @@ module.exports = {
     devtool: "source-map",
     externals: {
         jquery: 'jQuery'
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin(
+            [
+                { from: './src/js/diverse', to: '../js' },
+                { from: './src/js/jQuery', to: '../js/jquery' },
+                { from: './src/js/editmode', to:'../js'},
+            ],
+            {
+                copyUnmodified: false
+            }
+        ),
+    ], 
 };
