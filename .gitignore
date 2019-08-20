@@ -12,4 +12,7 @@ node_modules/
 *.log
 
 
+# Compiled code
+/dist
+
 /src/jekyll/.jekyll-metadata
