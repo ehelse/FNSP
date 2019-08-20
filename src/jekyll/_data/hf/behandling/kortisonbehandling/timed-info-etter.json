@@ -1,21 +1,6 @@
 [
     {
-        "title": "Hjemreise",
-        "timeSpan": "0 - 6",
-        "timeUnit": "timer",
-        "timeDescription": "Ventetid før hjemreise",
         "content":
-        "<p>Tykktarmskreft er den vanligste betegnelsen på ondartet svulst i tykktarmen (cancer coli). Den primære behandlingen av tarmkreft er kirurgi, enten åpen eller ved kikkehullsteknikk. Cellegift brukes som tilleggsbehandling hvis sykdommen har spredt seg til lokale lymfeknuter.</p>
-        <p>Etter undersøkelsen kan du reise hjem. Hvis det er gitt avslappende kan du ikke kjøre bil før det har gått minst 6 timer.</p>"
-    },
-    {
-        "title": "Resultat av undersøkelse",
-        "timeSpan": "2",
-        "timeUnit": "dager",
-        "timeDescription": "Ventetid før prøvesvar",
-        "expander": "utskrivning",
-        "content":
-        "<p>Du vil rett etter undersøkelsen få beskjed av legen om resultatet.</p>
-        <p>Resultatet fra vevsprøven (biopsien) kommer to arbeidsdager senere.</p>"
+        "<p>Du kan få bivirkninger av å bruke Prednisolon, det avhenger av hvor mye og hvor lenge du bruker medisinen og bivirkningene gir seg når du slutter.  De vanlige bivirkningene er:</p><div><ul><li><p>Økt matlyst<br></p></li><li><p>Vektøkning<br></p></li><li><p>Væskeopphopning i kroppen<br></p></li><li><p>Rundhet i kinn, ansikt og mage<br></p></li><li><p>Hvis man går raskt opp i vekt kan noen få strekkmerker i huden<br></p></li><li><p>I enkelte tilfeller kan man få magebesvær<br></p></li><li><p>Noen opplever humørsvingninger, uro og søvnvansker hvis de trenger høye doser<br></p></li><li><p>Når Prednisolon tas sammen med NSAID-medisiner (for eksempel Ibux® eller Napren®), øker risikoen noe for magekatarr/magesår,&nbsp;spesielt hvis Prednisolondosen er høy.<br></p></li></ul></div><p>Kortisonbehandling fører til at skjelettet mister kalk. Kalk er nødvendig for å ha et sterkt skjelett. Enkelte kan derfor bli beinskjørhet ved store doser over lang tid.</p><p>Veksthemming kan også forekomme ved langvarig behandling med store doser. I enkelte tilfeller kan det være aktuelt å få tilførsel av veksthormon. Legen vurderer dette.</p>"
     }
 ]

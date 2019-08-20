@@ -75,7 +75,7 @@ function protoimg() {
 
 // Jekyll
 function jekyll() {
-    return cp.spawn("jekyll.bat", ["build", "-I"], {stdio: "inherit"});
+    return cp.spawn("jekyll.bat", ["build", "--incremental", "--drafts"], {stdio: "inherit"});
 }
 
 
