@@ -167,6 +167,45 @@ iframe {
     border: 0;
 }
 
+.table-scrollable-wrapper {
+    overflow-x: auto; /* Horizontal */
+    table.ms-rteTable-default {
+        thead {
+            display: table-header-group;
+        }
+
+        tr {
+            border-color: $grey-md;
+            &:first-child {
+                border: 0;
+            }
+        }
+
+        td, th {
+            display: table-cell;
+            padding: .75rem 1rem;
+            &::before {
+                display: none;
+            }
+        }
+
+        th {
+            text-align: left;
+            font-weight: 600;
+            background-color: $grey-md-dk;
+            color: #fff;
+        }
+
+        td {
+            border: 0;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
 table.ms-rteTable-default {
     border-collapse: collapse;
     text-rendering: optimizeLegibility;

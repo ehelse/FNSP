@@ -1,0 +1,95 @@
+---
+resource: true
+category: [Current release]
+toc-title: Enkeltbehandling med scrollbar tabell
+
+layout: master
+sp-layout: TreatmentLayout
+sketch: 50328
+search: behandling
+type: enkelt
+statistics: true
+
+customer: HF
+
+title: Kortisonbehandling med tabletter
+subtitle: Prednisolonbehandling
+ingress-title: Avdeling for revmatologi, hud- og infeksjonssykdommer
+ingress: Prednisolon er et av de mest effektive betennelsesdempende midler vi kjenner, og effekten kommer allerede fra første dag. Prednisolon virker bra på revmatiske betennelsessykdommer. Dessverre påvirker den ikke selve årsaken til sykdommen og mange trenger andre medisiner i tillegg.
+updated: 20.01.2042
+main-class: behandling
+
+highlighted-expander: site.data.hf.behandling.kortisonbehandling.highlighted-expander
+
+---
+
+<!-- Innledning************************************************************* -->
+<section id="innledning" class="o_horizontal-section">
+    {% include behandling/timed-info.html data=site.data.hf.behandling.kortisonbehandling.timed-info-innledning heading-level="h2" %}
+</section>
+
+
+
+<!-- Før ******************************************************************* -->
+<section id="foer" class="o_horizontal-section js-scrollto js-responsive-expand">
+    {% include generic/ruled-heading.html text="1. Før" %}
+
+    <div class="js-responsive-expandable">
+
+        {% include behandling/timed-info.html data=site.data.hf.behandling.kortisonbehandling.timed-info-foer %}
+
+    </div>
+
+</section>
+
+
+
+<!-- Under ***************************************************************** -->
+<section id="under" class="o_horizontal-section js-responsive-expand  js-scrollto">
+    {% include generic/ruled-heading.html text="2. Under" %}
+
+    <div class="js-responsive-expandable">
+
+        {% include behandling/timed-info.html data=site.data.hf.behandling.kortisonbehandling.timed-info-under %}
+
+    </div>
+
+</section>
+
+
+
+<!-- Etter ***************************************************************** -->
+<section id="etter" class="o_horizontal-section js-scrollto js-responsive-expand">
+    {% include generic/ruled-heading.html text="3. Etter" %}
+
+    <div class="js-responsive-expandable">
+
+        {% assign data-src=site.data.hf.behandling.kortisonbehandling.timed-info-etter %}
+        {% include behandling/timed-info.html data=data-src %}
+
+        {% assign data-src=site.data.hf.behandling.kortisonbehandling.obs %}
+        {%  include behandling/obs.html data=data-src %}
+
+    </div>
+
+</section>
+
+
+
+
+<!-- Kontakt *************************************************************** -->
+{% comment %}
+<section id="kontakt" class="o_horizontal-section js-scrollto js-responsive-expand">
+    {% include generic/ruled-heading.html text="Kontakt" %}
+
+    <div class="js-responsive-expandable">
+
+        {% include generic/contacts/enkeltbehandling-valgt-sted.html %}
+
+        <!-- Transport ----------------------------- -->
+        {% include generic/TransportTilStedetAvd.html %}
+
+    </div>
+</section>
+
+{% endcomment %}

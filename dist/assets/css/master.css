@@ -260,6 +260,47 @@ iframe {
   border: 0;
 }
 
+.table-scrollable-wrapper {
+  overflow-x: auto;
+  /* Horizontal */
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default thead {
+  display: table-header-group;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default tr {
+  border-color: #b6aea8;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default tr:first-child {
+  border: 0;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default td, .table-scrollable-wrapper table.ms-rteTable-default th {
+  display: table-cell;
+  padding: .75rem 1rem;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default td::before, .table-scrollable-wrapper table.ms-rteTable-default th::before {
+  display: none;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default th {
+  text-align: left;
+  font-weight: 600;
+  background-color: #6e6e6e;
+  color: #fff;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default td {
+  border: 0;
+}
+
+.table-scrollable-wrapper table.ms-rteTable-default td::before {
+  display: none;
+}
+
 table.ms-rteTable-default {
   border-collapse: collapse;
   text-rendering: optimizeLegibility;

@@ -266,6 +266,47 @@
   border: 0;
 }
 
+.ms-rte-stylePreviewBox .table-scrollable-wrapper, .ms-rtestate-field .table-scrollable-wrapper {
+  overflow-x: auto;
+  /* Horizontal */
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default thead, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default thead {
+  display: table-header-group;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default tr, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default tr {
+  border-color: #b6aea8;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default tr:first-child, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default tr:first-child {
+  border: 0;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default td, .ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default th, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default td, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default th {
+  display: table-cell;
+  padding: .75rem 1rem;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default td::before, .ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default th::before, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default td::before, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default th::before {
+  display: none;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default th, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default th {
+  text-align: left;
+  font-weight: 600;
+  background-color: #6e6e6e;
+  color: #fff;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default td, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default td {
+  border: 0;
+}
+
+.ms-rte-stylePreviewBox .table-scrollable-wrapper table.ms-rteTable-default td::before, .ms-rtestate-field .table-scrollable-wrapper table.ms-rteTable-default td::before {
+  display: none;
+}
+
 .ms-rte-stylePreviewBox table.ms-rteTable-default, .ms-rtestate-field table.ms-rteTable-default {
   border-collapse: collapse;
   text-rendering: optimizeLegibility;

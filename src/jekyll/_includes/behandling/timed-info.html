@@ -37,6 +37,14 @@
     <div class="row">
         <div class="col-md-8 col-lg-9">
             {{ item.content }}
+
+            {% if item.table == "true" %}
+                {% if item.scrollabletable == "true" %}
+                    {% include generic/scrollable-table.html %}
+                {% else %}
+                    {% include generic/ms-rteTable.html %}
+                {% endif %}
+            {% endif %}
         </div>
     </div>
     {% endif %}

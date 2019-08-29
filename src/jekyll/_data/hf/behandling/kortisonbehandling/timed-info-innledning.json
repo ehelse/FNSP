@@ -2,6 +2,8 @@
     {
         "title": "Henvisning og vurdering",
         "expander": "henvisning",
+        "table": "true",
+        "scrollabletable": "true",
         "content":
         "<p>Det er fastlegen som henviser til behandling. Henvisningen vurderes av ansvarlig overlege ved avdelingen. Når henvisningen er vurdert får pasienten innkalling.</p>"
     }
