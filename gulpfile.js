@@ -75,7 +75,8 @@ function protoimg() {
 
 // Jekyll
 function jekyll() {
-    return cp.spawn("jekyll.bat", ["build", "--incremental", "--drafts"], {stdio: "inherit"});
+    var jekyllSpawn = process.platform === "win32" ? "jekyll.bat" : "jekyll";
+    return cp.spawn(jekyllSpawn, ["build", "--incremental", "--drafts"], {stdio: "inherit"});
 }
 
 
@@ -86,7 +87,6 @@ function watchFiles() {
     gulp.watch("./src/svg/**/*", svg);
     gulp.watch("./src/jekyll/**/*", gulp.series(jekyll, browserSyncReload));
 }
-
 const watch = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg, gulp.parallel(watchFiles, browserSync));
 
 const build = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg);
