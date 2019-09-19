@@ -5161,24 +5161,36 @@ Markup (stuff within [] is optional / state):
 }
 
 .m_page-list .links {
-  display: flex;
-  flex-flow: column nowrap;
-  margin: 0 -1rem 0;
-  align-items: stretch;
+  column-count: 2;
+  margin-top: 1rem;
 }
 
 .m_page-list .links > li {
-  padding: 0 1rem;
-  margin-bottom: 0;
-  position: relative;
+  margin-bottom: 1rem;
+}
+
+.m_page-list .links > li a {
+  text-decoration: none;
+  display: inline;
+  padding: .25rem 0 .1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-bottom: 1px solid #034584;
+  font-weight: 400;
+  color: #034584;
+}
+
+.m_page-list .links > li a:hover, .m_page-list .links > li a:focus {
+  outline: 0;
+  background-color: rgba(3, 69, 132, 0.2);
 }
 
 .m_page-list .links .link, .m_page-list .links .expand {
-  height: 100%;
-  padding: .125rem 0;
-  position: relative;
   overflow: hidden;
   transition: .2s;
+  display: inline-block;
+  min-height: 75px;
+  width: 90%;
   position: relative;
   margin: 0;
 }
@@ -5228,6 +5240,9 @@ Markup (stuff within [] is optional / state):
   text-decoration: none;
   display: block;
   padding: .75rem 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .m_page-list .links .link .expander:hover, .m_page-list .links .link .expander:focus, .m_page-list .links .link a:hover, .m_page-list .links .link a:focus, .m_page-list .links .expand .expander:hover, .m_page-list .links .expand .expander:focus, .m_page-list .links .expand a:hover, .m_page-list .links .expand a:focus {
@@ -5359,13 +5374,6 @@ Markup (stuff within [] is optional / state):
 }
 
 @media only screen and (min-width: 640px) {
-  .m_page-list .links {
-    flex-flow: row wrap;
-  }
-  .m_page-list .links > li {
-    margin-top: 1.5rem;
-    width: 304px;
-  }
   .m_page-list .links-column {
     flex-flow: column wrap;
   }

@@ -1,0 +1,18 @@
+{% include generic/page-header/simple.html %}
+
+{% if page.highlighted-expander %}
+<!-- Expanding info in header -->
+{% include generic/expander-sections/highlighted.html data=page.highlighted-expander %}
+
+{% endif %}
+
+
+
+
+
+<!-- Content -->
+{{ content }}
+
+
+<!-- Metadata in footer -->
+{% include generic/page-footer.html %}

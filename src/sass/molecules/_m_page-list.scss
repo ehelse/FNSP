@@ -165,24 +165,52 @@
 
     // The ul of links for each letter
     .links {
-        display: flex;
-        flex-flow: column nowrap; // for column view
-        margin: 0 -1rem 0;
-        align-items: stretch;
+        // display: flex;
+        // flex-flow: column nowrap; // for column view
+        // margin: 0 -1rem 0;
+        // align-items: stretch;
+        // column-count: 4;
+        // column-width: 225px;
+        // column-gap: 85px;
+
+        column-count: 2;
+        margin-top: 1rem;
+        // column-width: 225px;
+        // column-gap: 85px;
 
         & > li {
-            padding: 0 1rem;
-            margin-bottom: 0;
-            position: relative;
-
+            // padding: 0 1rem;
+            // padding-right: 4rem;
+            // margin-bottom: 0;
+            // position: relative;
+            margin-bottom: 1rem;
+            a {
+                text-decoration: none;
+                display: inline;
+                padding: .25rem 0 .1rem 0;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-bottom: 1px solid $blue;
+                font-weight: 400;
+                color: $blue;
+    
+                &:hover, &:focus {
+                    outline: 0;
+                    background-color: rgba($blue, 0.2);
+                }
+            }
         }
+        
 
         .link, .expand {
-            height: 100%;
-            padding: .125rem 0;
-            position: relative;
+            // height: 100%;
+            // padding: .125rem 0;
+            // position: relative;
             overflow: hidden;
             transition: .2s;
+            display: inline-block;
+            min-height: 75px;
+            width: 90%;
             @include thickening-underline();
             
             &:hover, &:focus {
@@ -193,6 +221,9 @@
                 text-decoration: none;
                 display: block;
                 padding: .75rem 0;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
 
                 &:hover, &:focus {
                     outline: 0;
@@ -313,10 +344,10 @@
 @media only screen and (min-width: $one-to-two-col) {
     .m_page-list {
         .links {
-            flex-flow: row wrap;
+            // flex-flow: row wrap;
             & > li {
-                margin-top: 1.5rem;
-                width: $one-col;
+                // margin-top: 1.5rem;
+                // width: $one-col;
             }
         }
         .links-column {

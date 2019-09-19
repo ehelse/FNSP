@@ -1,0 +1,31 @@
+---
+resource: true
+category: [Current release, Seksjonsside, HF]
+toc-title: Oversiktsside avdelinger
+sketch: 15
+layout: master
+sp-layout: DepartmentsOverviewLayout
+
+customer: HF
+
+title: Avdelinger - nytt design
+ingress-title: Oversikt over enheter
+ingress: Her tester vi et nytt design av utlisting av avdelinger. Det samme designet vil være på utlistinger av behandlinger også
+---
+<section class="o_horizontal-section js-responsive-expand">
+    {% include generic/ruled-heading.html text="Finn avdeling" %}
+
+    <div class="js-responsive-expandable">
+        <div class="o_search-block container">
+            <div class="row">
+                <div class="col-lg-9">
+                    {% include search/search-box.html search-text="Søk etter avdeling eller behandlingssted" %}
+                    {% include search/filter-letters.html %}
+                </div>
+            </div>
+            {% include search/page-list.html search="avdeling" %}
+            {% include search/pagination.html %}
+
+        </div>
+    </div>
+</section>
