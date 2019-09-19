@@ -93,10 +93,6 @@
   padding: 0;
 }
 
-.ms-rte-stylePreviewBox .focus-test-case, .ms-rtestate-field .focus-test-case {
-  border: solid 1px red;
-}
-
 .ms-rte-stylePreviewBox .overlay-background, .ms-rtestate-field .overlay-background {
   position: fixed;
   overflow: hidden;
