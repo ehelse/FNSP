@@ -887,19 +887,6 @@ $(window).on('load', function() {
     removeZeroHeightSections();
     resizeIframe();
     pseudoLinkBoxes();
-
-    $(document).on('keyup', function(e) {
-        var code = e.keyCode || e.which;
-        var currentFocus = $(document.activeElement)
-        if (code === 9) {
-            if (currentFocus.hasClass('focus-test-case')) {
-                currentFocus.removeClass('focus-test-case')
-            }
-            else {
-                currentFocus.addClass('focus-test-case');
-            }
-        }
-    })
 });
 
 // "layoutchange" triggers only when the layout changes, as opposed to
