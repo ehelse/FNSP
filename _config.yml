@@ -1,6 +1,6 @@
 name: "[Helseforetakets navn]"
 encoding: UTF-8
-category-list: [Previous releases, Current release]
+category-list: [Utlistinger behandlinger/avdelinger/kliniske studier, Annet, Tidligere releaser]
 customer-list: [HF, RHF, IKT, Felleskomponenter]
 
 source: 'src/jekyll'

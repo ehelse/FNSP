@@ -1,24 +1,22 @@
 ---
 resource: true
 layout: meta
+template: meta
 title: FNSP-prototype
 ---
-<nav class="container">
-
-    <p style="font-size: 1.25rem;font-weight: bold; max-width: 576px ">Nye ideer eller nytt design for FNSP</p>
-
-    <!-- <p><em>Sist oppdatert Fri, 10 Aug 2018 14:24.</em></p> -->
-
+<nav id="toc" class="container">
     {% for category in site.category-list %}
-    {% if category != "Tidligere releaser" %}
+    {% if category == "Current release"%}
+
     <h2>{{category}}</h2>
 
-    <ul>
-        {% for page in site.pages %}
+    <ol>
+        {% assign sketches = site.pages | sort: 'toc-title' %}
+        {% for page in sketches %}
         {% if page.resource == true %}
         {% for pc in page.category %}
         {% if pc == category %}
-        <li class="current">
+        <li data-customer="{{customer}}" class="current">
             <a href="{{ page.url }}">{{ page.toc-title }}</a>
             <br>
             {% if page.toc-title %}<em>{{ page.title }}</em>{% endif %}
@@ -27,9 +25,9 @@ title: FNSP-prototype
         {% endfor %}
         {% endif %}
         {% endfor %}
-    </ul>
+    </ol>
 
-    {% elsif category == "Tidligere releaser"%}
+    {% elsif category == "Previous releases"%}
 
     <section class="m_subtle-expander js-expand">
         <h2 class="js-expander">{{category}}</h2>
