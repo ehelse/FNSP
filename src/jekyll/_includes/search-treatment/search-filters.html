@@ -1,0 +1,25 @@
+<div class="search-treatment-wrapper ">
+    <div class="filter-wrapper">
+        <div class="mol_dropdown">
+            <button type="button" class="atom_dropdown-button arrow-down" aria-expanded="false" aria-controls="Kategori">Filtrer på kategori</button>
+            <div class="container" id="Kategori">
+                <div class="content">
+                </div>
+            </div>
+        </div>
+        <div class="mol_dropdown">
+            <button type="button" class="atom_dropdown-button arrow-down" aria-expanded="false" aria-controls="ansvarlig-avdeling">Filtrer på avdeling</button>
+            <div class="container" id="ansvarlig-avdeling">
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="heading">Bruk søkeboks eller bokstaver for å filtrere eller søke etter behandling</div> -->
+    <div class="searchbox">
+        {% include search-treatment/search-box.html search-text="Søk etter behandling på St. Olav" %}
+    </div>
+    <!-- <div class="filter-letters">
+        {% include search-treatment/filter-letters.html %}
+    </div> -->
+</div>

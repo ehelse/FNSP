@@ -221,3 +221,46 @@
     display: none;
     margin: 1rem;
 }
+
+
+.o_search-block {
+        .search-treatment-wrapper {
+
+            .filter-wrapper {
+                .mol_dropdown {
+                    width: 100%;
+                    padding: 0 2rem;
+                    
+                    &:not(:last-child) {
+                        padding: 1.5rem 2rem;
+                    }
+                }
+            }
+            background: #f4f4f4;
+            border: 2px solid #e1e1e1;
+            margin-bottom: 2rem;
+    
+            .heading {
+                margin-bottom: 1.85rem;
+                font-weight: 600;
+                padding: 1rem 1rem 0;
+            }
+
+            .searchbox {
+                padding: 2rem;
+                margin-top: 1.5rem;
+                border-top: 2px solid #e1e1e1;
+
+                .m_search-box {
+                    margin-bottom: 0;
+
+                }
+            }
+    
+            .filter-letters {
+                padding: 1.85rem 1rem 0;
+                width: 100%;
+                border-top: 2px solid #e1e1e1;
+            }
+        }
+}

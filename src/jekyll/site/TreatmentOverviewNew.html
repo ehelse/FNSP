@@ -1,0 +1,25 @@
+---
+resource: true
+category: [Nytt søk/filter for behandling]
+toc-title: Oversiktsside Behandlinger
+sketch: 15
+layout: master
+sp-layout: DepartmentsOverviewLayout
+
+customer: HF
+
+title: Behandlinger - nytt design - uten ekspander
+ingress: Her brukes fast kolonnebredde - som tilpasser antall kolonner etter skjermstørrelse
+---
+
+
+<div class="o_search-block container">
+        <div class="row">
+            <div class="col-lg-9">
+                {% include search-treatment/search-filters.html %}
+            </div>
+        </div>
+        {% include search-treatment/page-list.html search="behandling" %}
+        {% include search-treatment/pagination.html %}
+    
+    </div>
