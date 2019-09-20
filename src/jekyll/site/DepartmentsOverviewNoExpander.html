@@ -1,0 +1,25 @@
+---
+resource: true
+category: [Current release, Seksjonsside, HF]
+toc-title: Oversiktsside avdelinger
+sketch: 15
+layout: master
+sp-layout: DepartmentsOverviewLayout
+
+customer: HF
+
+title: Avdelinger - nytt design - uten ekspander
+ingress: Her brukes fast kolonnebredde - som tilpasser antall kolonner etter skjermstørrelse
+---
+
+<div class="o_search-block container">
+    <div class="row">
+        <div class="col-lg-9">
+            {% include search/search-box.html search-text="Søk etter avdeling eller behandlingssted" %}
+            {% include search/filter-letters.html %}
+        </div>
+    </div>
+    {% include search/page-list.html search="avdeling" %}
+    {% include search/pagination.html %}
+
+</div>
