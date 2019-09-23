@@ -1,4 +1,612 @@
-{% if include.type == "handleddsbrudd1" %}
+<!DOCTYPE html>
+<html lang="nb-no">
+<head>
+    <title>Håndleddsbrudd - [Helseforetakets navn]</title>
+    
+
+
+<script class="js-hide-menu" type="text/javascript">
+    document.write('<style type="text/css" class="js-hide-menu">.js-expandable {display:none!important;}</style>');
+</script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700&amp;subset=latin-ext" rel="stylesheet" type="text/css">
+
+<link href="../assets/css/master.css" rel="stylesheet" type="text/css"/>
+<link href="../assets/css/ms-override.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/png" href="../assets/Images/favicon.ico">
+
+<!--<script src="//code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>-->
+<!--<script>window.jQuery || document.write('<script src="../assets/js/jquery/jquery-2.1.4.min.js">\x3C/script>')</script>-->
+<script src="../assets/js/jquery/jquery-2.1.4.min.js"></script>
+
+
+<script src="../assets/js/master.js"></script>
+
+
+<script src="../assets/js/jquery/jquery.stickyNavbar.js"></script>
+<script src="../assets/js/treatment.js"></script>
+<link href="../assets/css/treatment.css" rel="stylesheet" type="text/css"/>
+
+
+
+<!-- Not for implementation in SP! -->
+<style>
+    .int-link, .toc, .tfs-link {
+        position: fixed;
+        z-index: 9999999;
+        bottom: 0;
+        right: 0;
+        padding: 8px;
+        height: 36px;
+        line-height: 20px;
+        background: rgba(0, 0, 0, .65);
+        color: white;
+        font-size: 16px;
+        display: block;
+        box-sizing: border-box;
+        margin-bottom: 0;
+    }
+
+    .int-link {
+        bottom: 36px;
+    }
+
+    .tfs-link {
+        bottom: 72px;
+    }
+
+    .int-link a, .tfs-link a, .toc {
+        color: #fff!important;
+    }
+
+    .int-link::after, .tfs-link::after {
+        content: " >>";
+    }
+
+</style>
+
+</head>
+<body class="nojs">
+<a tabindex="1" class="a_skip-to-content" href="#page-title">Hopp til innholdet</a>
+<header class="o_framework-header js-expand">
+
+    <div class="container">
+
+        <div class="logo">
+            <a href="/site/hf/index.html">
+                <img src="../assets/Images/logo.svg" alt="Foretakets navn">
+                <!--<img src="http://stolav.hn1-02.int-hn.nhn.no/Style%20Library/Images/logo.svg" alt="Foretakets navn">-->
+                <!--<img src="https://haraldsplass.hn.test.nhn.no/Style%20Library/Images/logo.svg" alt="Foretakets navn">-->
+                <!--<img src="http://unn.hn1-02.int-hn.nhn.no/Style%20Library/Images/logo.svg" alt="Foretakets navn">-->
+            </a>
+        </div>
+
+        <div class="header-button-container">
+    <button type="button" id="header-search-toggle" class="search-toggle-button collapsed" aria-label="Søk" aria-owns="header-site-search" aria-expanded="false">
+        <span class="button-icon search"></span>
+        <span class="text open-text">Søk</span>
+        <span class="text closed-text">Lukk</span>
+    </button>
+    <div id="site-search" class="m_search-box js-site-search" role="search">
+        <div id="header-site-search">
+            <label for="header-search-input">Søk</label>
+            <input id="header-search-input" name="search" type="search" placeholder="Søk i alt innhold" aria-label="Søk i alt innhold">
+            <button id="header-search-button" class="header-search-icon" type="button" aria-label="Søk"></button>
+        </div>
+    </div>
+    <button type="button" id="menuButton" class="menu-toggle-button js-menu-button js-expander expander" aria-owns="header-site-menu" aria-expanded="false">
+        <span class="button-icon menu"></span>
+        <span class="text open-text">Meny</span>
+        <span class="text closed-text">Lukk</span>
+    </button>
+</div>
+    </div>
+
+    <div class="main-menu js-expandable">
+        <div class="site-functions">
+            <div class="container">
+                <div class="js-site-settings m_site-settings">
+                    <div class="text-size js-expand submenu">
+                        <button type="button" class="js-expander">Skriftstørrelse</button>
+                        <div class="js-expandable instructions">Hold inn Ctrl-tasten (Cmd-tasten på Mac). Trykk samtidig på + for å
+                            forstørre eller forminske teksten.
+                        </div>
+                    </div>
+                    <fieldset class="js-language language submenu">
+                        <legend class="visuallyhidden">Velg språk</legend>
+                        <ul>
+                            <li>
+                                <input type="submit" disabled value="Bokmål"/>
+                            </li>
+                            <li>
+                                <input type="submit" value="Nynorsk"/>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <nav class="container">
+            <ul class="o_tile-group menu navigation">
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title"
+                    href="/site/hf/behandling/index.html">Behandling</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/behandling/index.html" class="category-index">Alle behandlinger</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/behandling/opplaering.html">Opplæring</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/rettigheter/index.html">Rettigheter</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title"
+                    href="/site/hf/avdelinger/index.html">Avdeling</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/avdeling/index.html">Alle sykehus og avdelinger</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title"
+                    href="/site/hf/helsefaglig/index.html">Helsefaglig</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/helsefaglig/samarbeid.html">Samarbeid</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig/tjenester.html">Tjenester</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig/forskning.html">Forskning</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig/utdanning.html">Utdanning</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/helsefaglig" class="category-index">Alt helsefaglig</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="tile js-responsive-expand">
+
+                    <a class="js-responsive-expander subnav-title" href="/site/hf/om-oss/index.html">Om oss</a>
+
+                    <ul class="subnav js-responsive-expandable">
+                        <li>
+                            <a href="/site/hf/om-oss/jobb/index.html">Ledige stillinger</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/om-oss/pressesenter.html">Pressesenter</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/om-oss/nyheter/index.html">Nyheter</a>
+                        </li>
+                        <li>
+                            <a href="/site/hf/om-oss/index.html">Alt om oss</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+            <div class="buttons">
+
+                <div>
+                    <a class="button" href="/site/rhf/category-index.html">
+                        Alt innhold A-Å
+                    </a>
+
+                    <div class="button-label">Logg inn på helsenorge.no</div>
+                </div>
+
+                <div>
+                    <a class="button external" href="">
+                        English
+                    </a>
+
+                    <div class="button-label">About the hospital</div>
+                </div>
+            </div>
+            <nav class="m_breadcrumbs">
+
+    <h2>Du står her:</h2>
+    <ul class="path">
+        <li><a href="">Forside</a></li>
+        <li><a href="">Om oss</a></li>
+        <li><a href="">Nyheter</a></li>
+        <li class="current">Håndleddsbrudd</li>
+    </ul>
+
+    
+
+    
+
+    
+
+</nav>
+        </nav>
+    </div>
+</header>
+<main id="main" class='
+    HF
+    
+    
+    CourseOfTreatmentLayout
+    treatment
+
+    '>
+
+    
+    <article>
+
+
+    <!-- Page header -->
+    <header id="innledning" class="o_page-header js-scrollto">
+
+    <div class="container">
+        <nav class="m_breadcrumbs">
+
+    <h2>Du står her:</h2>
+    <ul class="path">
+        <li><a href="">Forside</a></li>
+        <li><a href="">Om oss</a></li>
+        <li><a href="">Nyheter</a></li>
+        <li class="current">Håndleddsbrudd</li>
+    </ul>
+
+    
+
+    
+
+    
+
+</nav>
+        <div>
+    <div id="ctl00_PlaceHolderMain_ctl00_PrintPanelWithExpand">
+
+        <div class="noindex js-expand m_printdialog" id="print-dialog">
+
+            <button class="js-expander print-icon" data-close-text="Lukk vindu" data-print-text="Utskrift">
+            </button>
+
+            <div class="js-expandable print-panel js-expand-to-full-width">
+
+                <div class="print-heading">
+                    <div class="container print-title">
+                        Skriv ut
+                        ADHD hos barn og unge
+                    </div>
+                </div>
+
+                <div class="container">
+                    <h3>
+                        Velg utskrift fra denne siden
+                    </h3>
+
+                    <ul class="print-list">
+                        <li>
+                            <input type="checkbox" id="choseall" class="rootelement" name="chooseall" value="Velg alt">
+                            <label for="choseall">Velg alt</label>
+                        </li>
+                    </ul>
+
+                    <div class="print-footer">
+                        <div class="ms-rtePosition-1">
+                            Utskriftsdato
+                            <span id="ctl00_PlaceHolderMain_ctl00_PrintDateLabel">20.07.2017</span>
+                        </div>
+                        <div class="ms-rtePosition-2 print-button">
+                            <button onclick="window.print();">
+                                Skriv ut
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+        
+
+        <h1 id="page-title" tabindex="-1">Håndleddsbrudd</h1>
+        <p id="page-subtitle"></p>
+        <!-- Ingress -->
+        
+<div class="m_page-ingress">
+
+    <h2>Behandlingsprogram, Ortopedisk avdeling</h2>
+
+    
+    <p>Håndleddsbrudd er en av de vanligste bruddtypene, og er brudd like ved eller i håndleddet.</p>
+    
+
+</div>
+
+
+        
+    </div>
+
+</header>
+
+    <!-- Informasjon fra Helsenorge.no -->
+    <section class="m_highlighted-expander js-expand expand collapsed">
+    <div class="container">
+        <div class="js-expander expander" aria-expanded="false" data-title="les-mer-om-brudd-i-handleddet-informasjon-fra-helsenorgeno" role="button" tabindex="0">
+            <div class="title">
+                <div id="ctl00_PlaceHolderMain_ctl06_diseasetitle2" class="expander-title" data-gtm-vis-recent-on-screen-7501771_47="247" data-gtm-vis-first-on-screen-7501771_47="247" data-gtm-vis-total-visible-time-7501771_47="100" data-gtm-vis-has-fired-7501771_47="1">Les mer om Brudd i håndleddet</div>
+                <div class="subtitle">
+                    <span>Informasjon fra helsenorge.no</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="js-expandable highlighted expandable">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 id="ctl00_PlaceHolderMain_ctl06_diseasetitle">Brudd i håndleddet</h1>
+<p id="ctl00_PlaceHolderMain_ctl06_ingress">Håndleddsbrudd er en av de vanligste bruddtypene, og er brudd like ved eller i håndleddet. Det er mange faktorer som spiller en rolle for hvilken behandling du får.</p>
+<p>​​​​​​​​​​​De fleste bruddene kan og bør behandles med gips. Det er likevel en del brudd som er så kompliserte at operasjon anses som den beste behandlingen. Det gjelder cirka 30 prosent av alle håndleddsbrudd.</p>
+<h3 id="ctl00_PlaceHolderMain_ctl06_sectionTitle">Gips som behandling av håndleddsbrudd</h3>
+<p>Dersom&nbsp;legen velger gipsbehandling vil&nbsp;du få lokalbedøvelse. Bruddet vil deretter bli satt på plass, og til slutt vil man legge på en gips.</p>
+<p>Det er viktig at du beveger fingrene hele tiden etter at du har fått gips, enten dette er endelig behandling eller du bare har gipsen midlertidig frem til operasjon. </p>
+<p>De første dagene etter bruddet bør du også holde armen høyt, slik at hånden ikke blir for hoven.</p>
+<p>I noen få tilfeller klarer man ikke å holde bruddet i akseptabel stilling. I slike tilfeller får&nbsp;du&nbsp;satt inn noen tynne pinner gjennom huden sammen med gips. Normal tid til gips og eventuelle pinner fjernes er 3-4 uker.</p>
+<h3>Barn</h3>
+<p>Brudd i håndledd hos barn kan som oftest behandles med lukket reposisjon, det vil si at bruddet settes på plass uten at man må operere, og gips. Dersom bruddet må manipuleres, får barnet oftest narkose.</p>
+<a id="ctl00_PlaceHolderMain_ctl06_diseaselink" class="external" href="https://helsenorge.no/forstehjelp-og-skader/brudd-i-handledd">Les mer om Brudd i håndleddet<span class="link-location"> (helsenorge.no)</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Expanding info in header -->
+    
+
+    <!-- Statistics at top of page -->
+    
+        <aside class="o_treatment-statistics container">
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="col-lg-9">
+            <p>Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. Her er litt tekst som skal se ut som vanlig brødtekst. </p>
+
+            <a class="external" href="http://helsenorge.no/velg-behandlingssted">Se ventetider på Velg behandlingssted <span class="">helsenorge.no</span></a>
+        </div>
+    </div>
+</aside>
+    
+
+    <!-- Scrolling page menu -->
+
+        <nav class="js-header-sticky m_page-menu">
+    <div class="container">
+        <ul>
+            <li class="to-top-button">
+                <a href="#">Til toppen</a>
+            </li>
+
+            
+
+            <li class="main-link">
+                <a href="#utredning" class="nav-item">
+                    <span class="section-headline">Utredning</span>
+                </a>
+            </li>
+
+            <li class="main-link">
+                <a href="#behandling" class="nav-item">
+                    <span class="section-headline">Behandling</span>
+                </a>
+            </li>
+
+            <li class="main-link">
+                <a href="#oppføelging" class="nav-item">
+                    <span class="section-headline">Oppfølging</span>
+                </a>
+            </li>
+
+            
+
+            <li class="contact">
+                <a href="#kontakt" class="contact-link">
+                    <span class="section-headline">Kontakt</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- Content -->
+    <!--<p class="int-link">-->
+    <!--<a href="http://hnt.hn1-02.int-hn.nhn.no/Sider/Behandling-med-Levemir-hos-gravide-diabetikere.aspx">"Behandling med Levemir hos gravide diabetikere" fra HNT</a>-->
+<!--</p>-->
+
+
+<!-- Innledning************************************************************* -->
+<section id="innledning" class="o_horizontal-section" data-printsection="Innledning">
+    
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h2 class="a_subtle-heading subhead">Innledning</h2>
+    
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>De fleste håndleddsbrudd kan og bør behandles med gips. Det er likevel en del brudd som er så feilstilte eller kompliserte at operasjon blir vurdert som den beste behandlingen.</p>
+
+            
+        </div>
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+
+
+<div class="subsection">
+
+    <div class="container">
+        
+        
+
+        <h2 class="a_subtle-heading ">Henvisning og vurdering</h2>
+    
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>Håndleddsbrudd er en akutt skade og diagnosen blir vanligvis stilt ved røntgenundersøkelse på legevakt. Lege henviser til eventuell videre behandling på sykehus.</p>
+
+            
+        </div>
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+
+</section>
+
+
+<!-- Utredning ************************************************************* -->
+<section id="utredning" class="o_horizontal-section js-scrollto js-responsive-expand">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">1. Utredning</h2>
+</div>
+
+    <div class="js-responsive-expandable">
+        
+
+<div class="subsection">
+
+    <div class="container">
+        
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>Det er ikke nødvendig med noen forberedelse til denne behandlingen.</p>
+
+            
+        </div>
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+    </div>
+</section>
+
+
+<!-- Behandling ************************************************************ -->
+<section id="behandling" class="o_horizontal-section js-responsive-expand js-scrollto">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">2. Behandling</h2>
+</div>
+    <div class="js-responsive-expandable">
+        
+
+<div class="subsection">
+
+    <div class="container">
+        
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>Det er tre mulige behandlingsmetoder ved håndleddsbrudd.</p>
+
+            
+        </div>
+    </div>
+    
+    
+    
+    
+    
 <section class="o_primary-treatment js-expand expand collapsed" style="left: -359.5px; width: 1903px; position: relative;">
     <div class="container">
         <div class="row">
@@ -330,7 +938,11 @@
     </div>
 </section>
 
-{% elsif include.type == "handleddsbrudd2" %}
+
+    
+
+    
+    
 <section class="o_primary-treatment js-expand expand collapsed" style="left: -359.5px; width: 1903px; position: relative;">
         <div class="container">
             <div class="row">
@@ -651,7 +1263,11 @@
         </div>
     </section>
 
-{% elsif include.type == "handleddsbrudd3" %}
+
+    
+
+    
+    
 <section class="o_primary-treatment js-expand initial expand collapsed" style="left: -359.5px; width: 1903px; position: relative;">
         <div class="container">
             <div class="row">
@@ -997,196 +1613,424 @@
         </div>
     </section>
 
-{% elsif include.type == "handleddsbrud4" %}
-<section class="o_primary-treatment js-expand initial expand collapsed" style="left: -359.5px; width: 1903px; position: relative;">
+
+    
+
+    
+
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+    </div> 
+
+</section>
+
+
+<!-- Oppfølging ************************************************************ -->
+<section id="oppfoelging" class="o_horizontal-section js-responsive-expand js-scrollto">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">3. Oppfølging</h2>
+</div>
+    <div class="js-responsive-expandable">
+      
+        
+
+<div class="subsection">
+
+    <div class="container">
+        
+
+    
+
+    
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <p>Etter behandlingen av bruddet vil det være ulik oppfølging avhengig av hva slags behandling du har vært gjennom.</p><p>I tillegg til øvelsene vist over, kan følgende øvinger anbefales:</p>
+
+            
+        </div>
+    </div>
+    
+    
+    
+    
+
+    
+
+    
+
+    
+    
+    
+
+</div>
+
+<!-- Promoted expanders as a part of a section -->
+
+
+
+
+        <!-- Faresignaler-->
+        
+
+
+    </div>
+</section>
+
+
+<!-- Kontakt *************************************************************** -->
+<section id="kontakt" class="o_horizontal-section js-scrollto js-responsive-expand">
+    <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">Kontakt</h2>
+</div>
+    <div class="js-responsive-expandable">
+
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="js-expander js-overlap-button expander" aria-expanded="false" data-title="les-mer-om-handleddsbrudd-og-ovelser-etter-behandling" role="button" tabindex="0">
-                        <div class="title">
-                            Les mer om Håndleddsbrudd og øvelser etter behandling
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <div class="js-expandable expandable">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h3>Håndleddsbrudd og øvelser etter behandling</h3>
-                    </div>
-                </div>
-    
-                <div class="row">
-                    <div class="col-md-8 col-lg-6">
-                        <div class="ingress">
-    
-                            <p>Dette øvelsesprogrammet er&nbsp;utarbeidet for deg som er operert med innvendig plate etter håndleddsbrudd (volar plate på distal radiusfraktur), men kan også brukes&nbsp;ved andre håndskader. </p>
-                            <p>Øvelsene passer fra første dag etter operasjonen. For personene på illustrasjonsbildene i dette&nbsp;øvelsesprogrammet har det gått 2-3 uker etter operasjon med innvendig plate. </p>
-                            <p><em><span aria-hidden="true"></span></em>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>Andre håndskader hvor øvelsesprogrammet kan være aktuelt:</p>
-                            <ul>
-                                <li>
-                                    <strong>Håndleddsbrudd behandlet med gips eller utvendig ramme</strong>, når gipsen eller rammen er fjernet. Bruddet har da grodd, og hånden tåler mer enn det som vises i øvelsesprogrammet her.Du kan tøye hånden medkraft. For eksempel kan du støtte håndflaten på et bord og legge vekt på den, for å tøye håndleddet bakover.</li>
-                                <li>
-                                    <strong>Underarmsbrudd (antebrachifraktur)operert med innvendig plate og skruer på begge underarmsbena.</strong> Dette øvelsesprogrammet passer fra første dag etter operasjonen.</li>
-                                <li>
-                                    <strong>Underarmsbrudd (antebrachifraktur) behandlet med gips, når gipsen er fjernet.</strong> Bruddet har da grodd, og hånden tåler mer enn det som vises i øvelsesprogrammet her. Du kantøye hånden medkraft. For eksempel kan du støtte håndflaten på et bord og legge vekt på den, for å tøye håndleddet bakover. </li>
-                            </ul>
-                            <p>Øvelsesprogrammet er veiledende. Du velger selv de øvelsene som du kjenner er mest nyttige for deg. Det viktigste er at du tar hånden i bruk i daglige aktiviteter.</p>
-                        </div>
-    
-                        <div class="o_timeline">
-                            <ol>
-                                <li>
-                                    <h4 class="step-title">Før</h4>
-    
-                                </li>
-                                <li>
-                                    <h4 class="step-title">Under</h4>
-                                    <p></p>
-                                    <h5>Beveg albuen og skulderen</h5>
-                                    <p>Beveg albuen og skulderen normalt for at disse uskadde leddene ikke skal stivne til. Strekk armene opp mot taket:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/hendene-i-luften.jpg?RenditionID=6"></figure>
-                                    <h5>Beveg fingrene</h5>
-                                    <p>Når du vekselsvis knytter hånden og spriker fingrene, aktiverer du vene-muskelpumpen. På denne måten pumper du hevelsen ut av hånden. Når hevelsen går ned, blir det lettere å bevege og da skaper du en god sirkel. </p>
-                                    <p> Strekk alle fingrene samtidig:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Strekke-fingrene-3.jpg?RenditionID=6"></figure>
-    
-                                    <p>Hjelp med frisk hånd for å sprike med fingrene på den opererte hånden:</p>
-                                    <figure><strong><font><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handflater-samla.jpg?RenditionID=6"></font></strong></figure>
-                                    <p>
-                                        <strong><font><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-tommel-samla.jpg?RenditionID=6"></font></strong></p>
-                                    <p>Få med tommelen når du spriker med fingrene, eller så langt rammen tillater om du er operert med utvendig ramme:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handflate-ned.jpg?RenditionID=6"></figure>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Strekke-tomler.jpg?RenditionID=6"></figure>
-                                    <p> Plasser en flasketut mellomto fingre og skyv hånden frem mot tuten. Slik fårfingrene hjelp til å sprike. Bytt flaskens plassering, så alle fingrene får hjelp til å sprike etter tur:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Flaske-tommel-pekefinger.jpg?RenditionID=6"></figure>
-                                    <p> Knytt hånden. Prøv å få fingertuppene helt inn i håndflaten, eller så langt rammen tillater om du er operert med utvendig ramme:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Knyte-handen.jpg?RenditionID=6"></figure>
-                                    <p> Hjelp denskadde hånden med den friskefor å få fingrene helt inn i håndflaten:</p>
-                                    <figure><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Knytte-handen-horisontalt.jpg?RenditionID=6"></figure>
-                                    <p> For å klare å knytte hånden, må du bøye de store knokene (metacarpophalangialleddene). Hold tommelen på den friske hånden inni den skadde, og hjelp med den friske hånden for bøye i de store knokene:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Tommel-mot-fingertupp.jpg?RenditionID=6"></figure>
-                                    <p> Grip rundt en flasketut, og prøv å bøye fingrene helt rundt den:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Grip-rundt-flasketut.jpg?RenditionID=6"></figure>
-                                    <p> Beveg tommelen én og én fingertupp etter tur: </p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio%20tommel%20fingertupp.jpg?RenditionID=6"></figure>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-fingertupper-2.jpg?RenditionID=6"></figure>
-                                    <h5>Beveg det opererte håndleddet</h5>
-                                    <p>Bruk frisk hånd som modell, og beveg gjerne begge hendene samtidig.</p>
-                                    <p> Stryk hånden på låret ditt:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Stryke-handen-paa-laaret.jpg?RenditionID=6"></figure>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Stryke-i-sirkel-1.jpg?RenditionID=6"></figure>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Stryk-utside-laar.jpg?RenditionID=6"></figure>
-                                    <p>Stryk hånden bak på leggen din:</p>
-                                    <p>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-hender-bakside-legg.jpg?RenditionID=6">
-                                    </p>
-                                    <p>Stryk hånden på forsiden av leggen din:</p>
-                                    <figure><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Stryk-forside-legg-2.jpg?RenditionID=6"> </figure>
-                                    <p>Grip rundt kneet:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Grip-forside-kne.jpg?RenditionID=6"></figure>
-                                    <p>Stryk hånden på motsatt overarm. Stryk på både det ene og det andre kinnet. Stryk på alle steder på din egen kropp der det er naturlig å bevege armen: </p>
-                                    <figure><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Stryk-motsatt-overarm.jpg?RenditionID=6"> </figure>
-                                    <p>Snu håndflaten opp - rotér underarmen:</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handflate-opp.jpg?RenditionID=6"></figure>
-                                    <figure>
-    
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Handflate-snudd-opp.jpg?RenditionID=6"></figure>
-                                    <p>Hjelp med frisk hånd for å snu den opererte:</p>
-                                    <p>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handflate-snudd.jpg?RenditionID=6">
-                                    </p>
-                                    <p>Beveg håndleddet framover og bakover. Bevegelsen er lettere å få til hvis du holder rundt en halvlitersflaske, som du ruller på bordet:</p>
-                                    <figure><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Handledd-bakover-flaske.jpg?RenditionID=6"> </figure>
-    
-                                    <figure><img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handledd-fram-tilbake-1.jpg?RenditionID=6"></figure>
-                                    <p>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handledd-fram-tilbake-2.jpg?RenditionID=6">
-                                    </p>
-                                    <p>Fold hendene og bruk frisk hånd til å hjelpe operert håndledd den veien det er stivest:</p>
-                                    <p>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-foldede-hender.jpg?RenditionID=6">
-                                    </p>
-                                    <p>Hvil underarmen på bordet eller låret, og plasser hånden utenfor bordkanten. Løft og senk halvlitersflasken med håndleddet. Gjør samme øvelse både med håndflaten ned og med håndflaten opp (begge posisjonene av underarmsrotasjon):</p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Handledd-flaske-bordkant.jpg?RenditionID=6"></figure>
-    
-                                    <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Handledd-flaske-bordkant-avspent.jpg?RenditionID=6">
-                                    <p>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handledd-bøy-med-flaske.jpg?RenditionID=6">
-                                    </p>
-                                    <p>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/fysio-handledd-bøy-med-flaske-2.jpg?RenditionID=6">
-                                    </p>
-                                    <p>Rotér underarmen, slik at du vekselvis får håndflaten opp og ned. Hold rundt tuten på en halvlitersflaske. Flaskens lette vekt hjelper deg litt i bevegelsen, og i tillegg er det lettere for deg å se bevegelsesutslaget: </p>
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Handflate-ned-rotere-underarm-2.jpg?RenditionID=6"></figure>
-    
-                                    <figure>
-                                        <img src="https://fellesinnhold.hn.nhn.no//seksjon-behandling/PublishingImages/behandlinger/brudd%20i%20handledd/Handflate-ned-rotere-underarm-3.jpg?RenditionID=6"></figure>
-                                    <p></p>
-    
-                                </li>
-                                <li>
-                                    <h4 class="step-title">Etter</h4>
-    
-                                </li>
-                            </ol>
-                        </div>
-    
-                        <p>
-                            <a class="more" href="/behandlinger/handleddsbrudd-og-ovelser-etter-behandling?language=1044&amp;behandling=Håndleddsbrudd">
-                                Gå til
-                                Håndleddsbrudd og øvelser etter behandling 
-    
-                            </a>
-                        </p>
-                    </div>
-                    <div class="col-md-4 col-md-pull-right">
-                        <dl>
-    
-                            <dt>
-                Avdeling 
-            </dt>
-                            <dd>
-                                <a class="more" href="/avdelinger/ortopedisk-klinikk/ortopedisk-avdeling-ulleval/seksjon-for-ortopedisk-rehabilitering-ulleval">
-                    Seksjon for ortopedisk rehabilitering - Ullevål
-                                    </a>
-                            </dd>
-    
-                            <dt>
-                Sted
-            </dt>
-                            <dd>
-                                <a class="more" href="/steder/ulleval-sykehus">
-                    Ullevål sykehus
-                                    </a>
-                            </dd>
-    
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="js-contact-card m_contact-card row">
+        <dl class="col-md-6">
+            <dt>Kontaktinformasjon</dt>
+<dd>Expedisjon i andre etage</dd>
+            <dt><a class="location " href="">Sted- eller avdelingsnavn</a></dt>
+            <dt>Telefon:</dt>
+<dd><a href="tel:">555-0888-666</a></dd>
+            <dt>Telefontider</dt>
+<dd>
+    <table class="hours">
+        <!-- Use the following when you change the js to match the markup. -->
+        <!--<table class="hours js-opening-hours">-->
+        <thead>
+            <tr>
+                <th>Dag</th>
+                <th>Telefontid</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>mandag</td>
+                <td>10 - 11</td>
+            </tr>
+            <tr>
+                <td>tirsdag</td>
+                <td>10 - 11</td>
+            </tr>
+
+            <tr>
+                <td>onsdag</td>
+                <td>10 - 11 og 12 - 14:30</td>
+            </tr>
+
+            <tr>
+                <td>torsdag</td>
+                <td>10 - 11 og 12 - 14:30</td>
+            </tr>
+
+            <tr>
+                <td>fredag</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>lørdag</td>
+                <td>10-14</td>
+            </tr>
+
+            <tr>
+                <td>søndag</td>
+                <td>10-11</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <p>Kommentarer til telefontider.</p>
+</dd>
+
+
+
+            <dt>E-postadresse:</dt>
+<dd><a href="#"><strong>department@email.no</strong></a></dd>
+            <dt>Postadresse</dt>
+<dd><a class="external" href="https://www.google.no/maps/place/Sykehusveien+25,+1474+Nordbyhagen/@59.9309331,10.9902213,17z/data=!3m1!4b1!4m5!3m4!1s0x464164ca1ea47201:0x28dfdadf5218b7f9!8m2!3d59.9309331!4d10.99241?hl=en">Sykehusveien 25</a> <br>0000 Posted</dd>
+        </dl>
+        <dl class="col-md-6">
+            <dt>Programansvarlig</dt>
+<dd>Kniv Finn Odd Ivarsen</dd>
+            <dt><a class="location " href="">Sted- eller avdelingsnavn</a></dt>
+            
+        <dt>Besøksadresse</dt>
+        <dd><a class="external" href="https://www.google.no/maps/place/Sykehusveien+25,+1474+Nordbyhagen/@59.9309331,10.9902213,17z/data=!3m1!4b1!4m5!3m4!1s0x464164ca1ea47201:0x28dfdadf5218b7f9!8m2!3d59.9309331!4d10.99241?hl=en">Sykehusveien 25 <span>Google maps</span></a><p>0000 Posted</p></dd>
+
+
+
+            <dt>Besøkstider</dt>
+<dd>
+    <table class="hours">
+        <!-- Use the following when you change the js to match the markup. -->
+        <!--<table class="hours js-opening-hours">-->
+        <thead>
+        <tr>
+            <th>Dag</th>
+            <th>Besøkstid</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>mandag</td>
+            <td>10 - 11</td>
+        </tr>
+        <tr>
+            <td>tirsdag</td>
+            <td>10 - 11</td>
+        </tr>
+
+        <tr>
+            <td>onsdag</td>
+            <td>10 - 11 og 12 - 14:30</td>
+        </tr>
+
+        <tr>
+            <td>torsdag</td>
+            <td>10 - 11 og 12 - 14:30</td>
+        </tr>
+
+        <tr>
+            <td>fredag</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>lørdag</td>
+            <td>10-14</td>
+        </tr>
+
+        <tr>
+            <td>søndag</td>
+            <td>10-11</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <p>Kommentarer til Besøkstider.</p>
+</dd>
+
+
+
+        </dl>
     </section>
-{% endif %}
+</div>
+
+        <!-- Praktisk Informasjon ********************************************************************* -->
+        <section class="o_horizontal-section js-responsive-expand">
+
+    
+        <div class="container">
+    <h2 class="a_ruled-heading js-responsive-expander">Praktisk informasjon</h2>
+</div>
+    
+    <div class="js-responsive-expandable">
+        <div class="container">
+
+            
+
+    
+
+    <!-- Accordion items -->
+    
+    <!-- End accordion items -->
+
+
+
+
+        </div>
+    </div>
+
+</section>
+
+    </div>
+</section>
+
+
+    <!-- Metadata in footer -->
+    <footer class="o_page-footer container">
+    <div class="m_page-metadata">
+
+    
+        <span class="updated">Sist oppdatert 12.2.2011</span>
+    
+
+    
+</div>
+</footer>
+
+
+</article>
+
+    
+
+    <div>
+    <div>
+        <a name="takk-for-tilbakemelding"></a>
+        <div class="m_feedback noindex">
+            <div class="container">
+                <div id="ctl00_PlaceHolderMain_ctl12_ctl00_FeedbackPanel">
+                    <fieldset>
+                        <legend>
+                            Fant du det du lette etter?
+                        </legend>
+                        <div class="ingress" id="feedback-disclaimer">Vi kan ikke svare deg på tilbakemeldingen. Ikke send oss personlig informasjon, for eksempel navn, e-post, telefonnummer eller fødselsnummer.
+                            <style>
+                            .m_feedback {
+                            margin-top:6.5rem;
+                            }
+                            </style>
+                        </div>
+                        <label for="FeedbackIsPositiveChoice" id="ctl00_PlaceHolderMain_ctl12_ctl00_PositiveChoiceLabel" class="visuallyhidden">Ja</label>
+                        <input value="Ja" name="ctl00$PlaceHolderMain$ctl12$ctl00$feedback" type="radio" id="FeedbackIsPositiveChoice">
+                        <button title="Ja" type="button" id="FeedbackIsPositive">Ja</button>
+                        <label for="FeedbackIsNegativeChoice" id="ctl00_PlaceHolderMain_ctl12_ctl00_NegativeChoiceLabel" class="visuallyhidden">Nei</label>
+                        <input value="Nei" name="ctl00$PlaceHolderMain$ctl12$ctl00$feedback" type="radio" id="FeedbackIsNegativeChoice">
+                        <button title="Nei" type="button" id="FeedbackIsNegative">Nei</button>
+                        <div class="feedbackformcontrols hidden visuallyhidden">
+                            <span id="error-message" class="hidden">Vennligst skriv en tilbakemelding.</span>
+                            <p class="error" aria-live="polite"></p>
+                                <label id="FeedbackLabel" for="FeedbackMessage"></label>
+                                <textarea maxlength="255" name="FeedbackMessage" id="FeedbackMessage" aria-describedby="feedback-disclaimer"></textarea>
+                                <p>Gjenstående tegn: <span id="feedbackcounter">255</span></p>
+                                <label class="skjultfelt" for="FirstToPhoneyField">Skal ikke fylles ut</label>
+                                <input class="skjultfelt" id="FirstToPhoneyField" title="Skal ikke fylles ut" name="FirstToPhoneyField" type="text" autocomplete="off">
+                                <button type="button" id="SubmitFeedbackButton" title="Send" onclick="FNSP.SubmitFeedBack();">Send</button>
+                            
+                        </div>
+                        <div class="visuallyhidden hidden">
+                            <span class="feedback-module-options" id="feedback_IsPositive">Så bra. Fortell oss gjerne hva du var fornøyd med.</span>
+                            <span class="feedback-module-options" id="feedback_IsNegative">Hva kan vi gjøre for å bli bedre?</span>
+                        </div>
+                    </fieldset>
+                    <p aria-live="polite" class="feedbackresponse hidden"></p>
+                    <input type="hidden" name="ctl00$PlaceHolderMain$ctl12$ctl00$NumberOfCols" id="NumberOfCols">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+
+<footer class="o_framework-footer">
+
+    <nav class="o_tile-group container menu navigation">
+
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Rettigheter
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="/site/hf/rettigheter/egenandel-og-frikort.html">Egenandel og frikort</a></li>
+                <li><a href="/site/hf/rettigheter/fritt-sykehusvalg.html">Fritt sykehusvalg</a></li>
+                <li><a href="/site/hf/rettigheter/behandlingsfrister.html">Behandlingsfrister</a></li>
+                <li><a href="/site/hf/rettigheter/klage-og-erstatning.html">Klage og erstatning</a></li>
+                <li><a href="/site/hf/rettigheter/index.html">Mer om rettigheter</a></li>
+            </ul>
+        </div>
+
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Sikkerhet og personvern
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="">Pasientsikkerhet</a></li>
+                <li><a href="">Taushetsplikt</a></li>
+                <li><a href="">Bruk av e-post</a></li>
+                <li><a href="">Om nettstedet</a></li>
+            </ul>
+        </div>
+
+        
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Kontaktinformasjon
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="">Øyeblikkelig hjelp</a></li>
+                <li><a href="">Pressekontakt</a></li>
+                <li><a href="">Nettredaksjon</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="tile js-responsive-expand">
+            <div class="subnav-title js-responsive-expander">
+                Last tile
+            </div>
+            <ul class="subnav js-responsive-expandable">
+                <li><a href="">Øyeblikkelig hjelp</a></li>
+                <li><a href="">Pressekontakt</a></li>
+                <li><a href="">Nettredaksjon</a></li>
+            </ul>
+        </div>
+
+        <!--<div class="tile social">-->
+
+            <!--<div class="social-box">-->
+                <!--<div class="social-text">Nyhetsbrev</div>-->
+
+                <!--<div class="social-box-buttons">-->
+                    <!--<a href="https://twitter.com/" class="rss a_social-button">RSS</a>-->
+                    <!--<a href="https://www.facebook.com/" class="mail a_social-button">Mail</a>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<a href="">-->
+                <!--<div class="social-box">-->
+
+                    <!--<div class="social-text">Følg oss på</div>-->
+
+                    <!--<div class="social-box-buttons">-->
+                        <!--<div class="twitter a_social-button">Twitter</div>-->
+                        <!--<div class="facebook a_social-button">Facebook</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+
+    </nav>
+
+    <div class="ansvarlig">
+        <div class="container">
+            <img src="../assets/Images/hf/st-olavs/logo-negativ.png" class="logo" alt="St. Olavs Hospital" width="300"/>
+
+            <div>Organisasjonsnummer 997 005 562</div>
+
+            <div class="footer-contact-info">
+                <div class="phone">
+                    <span>Telefon 06800</span>
+                    <span class="center">Fra utlandet: +47 815 55 850</span>
+                    <span>Faks: 73 50 70 93</span>
+                </div>
+                <div class="mail">
+                    <span><a class="js-feedback" href="mailto:post.adm.dir@stolav.no">post.adm.dir@stolav.no</a></span>
+                    <span class="center">St. Olavs Hospital, Postboks 3250 Sluppen, 7006 Trondheim</span>
+                </div>
+            </div>
+            <div class="university">
+                I samarbeid med
+                <img src="../assets/Images/hf/st-olavs/logo_NTNU.png" class="logo" alt="NTNU"/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Not for implementation in SP! -->
+<a class="toc" href="/index.html">&lt;&lt;&nbsp;&nbsp;Tilbake
+    til innholdsfortegnelse</a>
+</body>
+</html>

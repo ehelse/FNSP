@@ -68,6 +68,22 @@
     {% include generic/expander-sections/subtle.html data=site.data.hf.behandling.generic.accordion-psykisk-helsevern %}
 
     {% endif %}
+    {% if item.accordion1 %}
+    {% include behandling/primary-treatment.html type="handleddsbrudd1" %}
+    {% endif %}
+
+    {% if item.accordion2 %}
+    {% include behandling/primary-treatment.html type="handleddsbrudd2" %}
+    {% endif %}
+
+    {% if item.accordion3 %}
+    {% include behandling/primary-treatment.html type="handleddsbrudd3" %}
+    {% endif %}
+
+    {% if item.accordion4 %}
+    {% include behandling/primary-treatment.html type="handleddsbrudd4" %}
+    {% endif %}
+
 </div>
 
 <!-- Promoted expanders as a part of a section -->

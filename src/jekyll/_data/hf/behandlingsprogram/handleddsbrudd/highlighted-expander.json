@@ -1,0 +1,19 @@
+[
+  {
+    "header": true,
+    "title": "koloskopi",
+    "subtitle": "Informasjon fra helsenorge.no",
+    "content": '
+    <h2>Behandlingstilbud og kvalitet</h2>
+    <p>Her vil vi skrive en tekst om kvalitet og hva vi jobber med, og lenker til en visning av alle grafene vår</p>
+
+    <figure>
+      <img src="/site/images/rhf/graph.jpg" alt="Gjennomsnittlige ventetider pr. måned for somatikkpasienter i Midt-Norge." />
+      <figcaption>
+        <span class="caption">Gjennomsnittlige ventetider pr. måned for somatikkpasienter i Midt-Norge.</span>
+        <span class="attribution">Kilde: Helsedirektoratet.no</span>
+      </figcaption>
+    </figure>
+    '
+  }
+]

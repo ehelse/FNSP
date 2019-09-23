@@ -1,0 +1,30 @@
+<article>
+
+
+    <!-- Page header -->
+    {% include generic/page-header/simple.html %}
+
+    <!-- Informasjon fra Helsenorge.no -->
+    {% include generic/helsenorge-diseaseinfo.html %}
+
+    <!-- Expanding info in header -->
+    {% include generic/expander-sections/highlighted.html data=site.data.hf.behandling.tykktarmskreft.highlighted-expander %}
+
+    <!-- Statistics at top of page -->
+    {% if page.statistics %}
+        {% include behandling/treatment-statistics.html data=site.data.hf.behandling.tykktarmskreft.header-statistics %}
+    {% endif %}
+
+    <!-- Scrolling page menu -->
+
+        {% include generic/page-menu.html items=site.data.page-menu-sammensatt-behandling %}
+
+    <!-- Content -->
+    {{ content }}
+
+
+    <!-- Metadata in footer -->
+    {% include generic/page-footer.html %}
+
+
+</article>

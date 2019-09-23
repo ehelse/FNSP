@@ -1,0 +1,83 @@
+---
+resource: true
+category: [Tidligere releaser]
+toc-title: Behandlingsprogram
+layout: master
+sp-layout: CourseOfTreatmentLayout
+
+search: behandling
+type: sammensatt
+statistics: true
+main-class: treatment
+
+customer: HF
+
+title: Håndleddsbrudd
+ingress-title: Behandlingsprogram, Ortopedisk avdeling
+ingress: Håndleddsbrudd er en av de vanligste bruddtypene, og er brudd like ved eller i håndleddet.
+
+highlighted-expander: site.data.hf.behandlingsprogram.handleddsbrudd.highlighted-expander
+
+updated: 12.2.2011
+---
+
+
+<!--<p class="int-link">-->
+    <!--<a href="http://hnt.hn1-02.int-hn.nhn.no/Sider/Behandling-med-Levemir-hos-gravide-diabetikere.aspx">"Behandling med Levemir hos gravide diabetikere" fra HNT</a>-->
+<!--</p>-->
+
+
+<!-- Innledning************************************************************* -->
+<section id="innledning" class="o_horizontal-section" data-printsection="Innledning">
+    {% include behandling/timed-info.html data=site.data.hf.behandlingsprogram.handleddsbrudd.timed-info-innledning heading-level="h2" %}
+</section>
+
+
+<!-- Utredning ************************************************************* -->
+<section id="utredning" class="o_horizontal-section js-scrollto js-responsive-expand">
+    {% include generic/ruled-heading.html text="1. Utredning" %}
+
+    <div class="js-responsive-expandable">
+        {% include behandling/timed-info.html data=site.data.hf.behandlingsprogram.handleddsbrudd.timed-info-utredning %}
+    </div>
+</section>
+
+
+<!-- Behandling ************************************************************ -->
+<section id="behandling" class="o_horizontal-section js-responsive-expand js-scrollto">
+    {% include generic/ruled-heading.html text="2. Behandling" %}
+    <div class="js-responsive-expandable">
+        {% include behandling/timed-info.html data=site.data.hf.behandlingsprogram.handleddsbrudd.timed-info-behandling %}
+
+    </div> 
+
+</section>
+
+
+<!-- Oppfølging ************************************************************ -->
+<section id="oppfoelging" class="o_horizontal-section js-responsive-expand js-scrollto">
+    {% include generic/ruled-heading.html text="3. Oppfølging" %}
+    <div class="js-responsive-expandable">
+      
+        {% include behandling/timed-info.html data=site.data.hf.behandlingsprogram.handleddsbrudd.timed-info-oppfolgning %}
+
+        <!-- Faresignaler-->
+        {% include behandling/obs.html data=site.data.hf.behandling.tykktarmskreft.obs %}
+
+
+    </div>
+</section>
+
+
+<!-- Kontakt *************************************************************** -->
+<section id="kontakt" class="o_horizontal-section js-scrollto js-responsive-expand">
+    {% include generic/ruled-heading.html text="Kontakt" %}
+    <div class="js-responsive-expandable">
+
+        {% include generic/contacts/behandlingsprogram.html %}
+
+        <!-- Praktisk Informasjon ********************************************************************* -->
+        {% include generic/PracticalInformation.html title="Praktisk informasjon" %}
+
+    </div>
+</section>
