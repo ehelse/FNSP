@@ -184,10 +184,11 @@
         margin: 2.5rem 0 1.5rem;
         padding: 0;
         border: 0;
+        display: none;
 
-        legend {
-            @extend %visuallyhidden;
-        }
+        // legend {
+        //     @extend %visuallyhidden;
+        // }
         #header-site-search {
             right: 1rem;
             button {
@@ -219,8 +220,13 @@
             clip: auto;
 
             label {
-                @extend %unset-visuallyhidden;
-                display: none;
+                overflow: visible;
+                height: auto;
+                width: auto;
+                margin: 0;
+                clip: auto;
+                position: absolute;
+                // display: none;
             }
         }
 
@@ -493,6 +499,7 @@
             width: 14.5rem;
             text-align: right;
             right: 5rem;
+            display: block;
 
             #header-site-search {
                 // position: relative;

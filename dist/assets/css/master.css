@@ -18,16 +18,7 @@
   clear: both;
 }
 
-.o_framework-header .m_search-box #header-site-search label {
-  position: static;
-  overflow: visible;
-  height: auto;
-  width: auto;
-  margin: 0;
-  clip: auto;
-}
-
-.a_skip-to-content, .m_breadcrumbs h2, .m_breadcrumbs .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .m_breadcrumbs .subtitle, .m_search-box label, .o_framework-header .m_search-box legend, .visuallyhidden, .atom_checkbox input[type='checkbox'], .m_contact-card .hours thead, .WelcomePage:not(.nasjonal) .o_page-header h1 {
+.a_skip-to-content, .m_breadcrumbs h2, .m_breadcrumbs .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .m_breadcrumbs .subtitle, .m_search-box label, .visuallyhidden, .atom_checkbox input[type='checkbox'], .m_contact-card .hours thead, .WelcomePage:not(.nasjonal) .o_page-header h1 {
   position: absolute;
   overflow: hidden;
   border: 0;
@@ -4571,16 +4562,7 @@ Markup (stuff within [] is optional / state):
   clear: both;
 }
 
-.o_framework-header .m_search-box #header-site-search label {
-  position: static;
-  overflow: visible;
-  height: auto;
-  width: auto;
-  margin: 0;
-  clip: auto;
-}
-
-.a_skip-to-content, .m_breadcrumbs h2, .m_breadcrumbs .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .m_breadcrumbs .subtitle, .m_search-box label, .o_framework-header .m_search-box legend, .visuallyhidden, .atom_checkbox input[type='checkbox'], .m_contact-card .hours thead, .WelcomePage:not(.nasjonal) .o_page-header h1 {
+.a_skip-to-content, .m_breadcrumbs h2, .m_breadcrumbs .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .m_breadcrumbs .subtitle, .m_search-box label, .visuallyhidden, .atom_checkbox input[type='checkbox'], .m_contact-card .hours thead, .WelcomePage:not(.nasjonal) .o_page-header h1 {
   position: absolute;
   overflow: hidden;
   border: 0;
@@ -6781,6 +6763,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
   margin: 2.5rem 0 1.5rem;
   padding: 0;
   border: 0;
+  display: none;
 }
 
 .o_framework-header .m_search-box #header-site-search {
@@ -6816,7 +6799,12 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
 }
 
 .o_framework-header .m_search-box #header-site-search label {
-  display: none;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  margin: 0;
+  clip: auto;
+  position: absolute;
 }
 
 .o_framework-header .m_search-box input {
@@ -7059,6 +7047,7 @@ h2 + .m_subtle-expander, .o_page-header .m_page-ingress .subtitle + .m_subtle-ex
     width: 14.5rem;
     text-align: right;
     right: 5rem;
+    display: block;
   }
   .o_framework-header .m_search-box #header-site-search {
     float: right;
@@ -9893,16 +9882,7 @@ section[id*='Practical_Section'] img[src$='?RenditionID=7'] {
   clear: both;
 }
 
-.o_framework-header .m_search-box #header-site-search label {
-  position: static;
-  overflow: visible;
-  height: auto;
-  width: auto;
-  margin: 0;
-  clip: auto;
-}
-
-.a_skip-to-content, .m_breadcrumbs h2, .m_breadcrumbs .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .m_breadcrumbs .subtitle, .m_search-box label, .o_framework-header .m_search-box legend, .visuallyhidden, .atom_checkbox input[type='checkbox'], .m_contact-card .hours thead, .WelcomePage:not(.nasjonal) .o_page-header h1 {
+.a_skip-to-content, .m_breadcrumbs h2, .m_breadcrumbs .o_page-header .m_page-ingress .subtitle, .o_page-header .m_page-ingress .m_breadcrumbs .subtitle, .m_search-box label, .visuallyhidden, .atom_checkbox input[type='checkbox'], .m_contact-card .hours thead, .WelcomePage:not(.nasjonal) .o_page-header h1 {
   position: absolute;
   overflow: hidden;
   border: 0;
