@@ -1,6 +1,6 @@
 name: "[Helseforetakets navn]"
 encoding: UTF-8
-category-list: [Nytt søk/filter for behandling, Utlistinger behandlinger/avdelinger/kliniske studier, Annet, Tidligere releaser]
+category-list: [202197-Lukke-knapp som følger behandlingsprogrammet, Nytt søk/filter for behandling, Utlistinger behandlinger/avdelinger/kliniske studier, Annet, Tidligere releaser, ]
 customer-list: [HF, RHF, IKT, Felleskomponenter]
 
 source: 'src/jekyll'

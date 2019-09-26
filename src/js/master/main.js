@@ -13,6 +13,7 @@ $(function() {
     printButtons();
     entrancePopup();
     stickyNavbar();
+    stickyNavbarPrimaryTreatment();
 });
 
 // "load" triggers when all the content on the page has finished loading.
@@ -23,12 +24,12 @@ $(window).on('load', function() {
     feedbackModule();
     unhideMenu();
     expandToFullWidthElements();
-
+    
     // These exist to deal with SP generating markup
     // that messes up the collapsing sections in 1-col layout.
     //    moveExpandableClassUp();
     //     sortExpandableSections();
-
+    
     editorControlledExpandingSections();
     responsiveExpandableBlocks();
     expandableBlocks();

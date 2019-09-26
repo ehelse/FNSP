@@ -141,6 +141,76 @@
         }
     }
 
+    .js-sticky-expander-nav {
+        a {
+            position: relative;
+
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     $background-size: contain;
+            //     transition: .3s;
+            //     left: 0;
+            //     top: 10px;
+            //     width: 1.25em;
+            //     height: 1.4em;
+            //     background: center / $background-size no-repeat;
+            //     background-image: url($arrow-blue), url($arrow-blue-md);
+            //     transform: rotate(-90deg);
+            // }
+    
+            // &:hover, &:focus {
+            //     &::before {
+            //         background-image: url($arrow-blue-md);
+            //     }
+            // }
+            &::after {
+                content: "";
+                position: absolute;
+                border-radius: 3.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                bottom: 0;
+                left: 5px;
+                background-color: #034584;
+                background-repeat: no-repeat;
+                background-image: url($chevron-white);
+                background-position: center 1rem;
+                background-size: 1.25rem;
+                transform: rotate(180deg);
+            }
+        }
+        padding: 0;
+        // background-color: $blue-md;
+        &.placedtop {
+            position: fixed;
+            bottom: 0;
+            left: 5px;
+            
+            span {
+                display: none;
+            }
+        }
+
+        &.placedbottom {
+            position: relative;
+            padding: 0;
+            a {
+                span {
+                    position: relative;
+                    left: 3rem;
+                    display: inline-block;
+                }
+                &::after {
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
 }
 
 @media only screen and (min-width: $one-to-two-col) {

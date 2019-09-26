@@ -397,6 +397,58 @@
   border-color: #f4f4f2;
 }
 
+.o_primary-treatment .js-sticky-expander-nav {
+  padding: 0;
+}
+
+.o_primary-treatment .js-sticky-expander-nav a {
+  position: relative;
+}
+
+.o_primary-treatment .js-sticky-expander-nav a::after {
+  content: "";
+  position: absolute;
+  border-radius: 3.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  bottom: 0;
+  left: 5px;
+  background-color: #034584;
+  background-repeat: no-repeat;
+  background-image: url("../Images/Theme/chevron-white.svg");
+  background-position: center 1rem;
+  background-size: 1.25rem;
+  transform: rotate(180deg);
+}
+
+.o_primary-treatment .js-sticky-expander-nav.placedtop {
+  position: fixed;
+  bottom: 0;
+  left: 5px;
+}
+
+.o_primary-treatment .js-sticky-expander-nav.placedtop span {
+  display: none;
+}
+
+.o_primary-treatment .js-sticky-expander-nav.placedbottom {
+  position: relative;
+  padding: 0;
+}
+
+.o_primary-treatment .js-sticky-expander-nav.placedbottom a span {
+  position: relative;
+  left: 3rem;
+  display: inline-block;
+}
+
+.o_primary-treatment .js-sticky-expander-nav.placedbottom a::after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
 @media only screen and (min-width: 640px) {
   .o_primary-treatment .m_obs {
     background: #fdfad3 url("../Images/Theme/obs-black.svg") 2rem 2rem/3rem no-repeat;
