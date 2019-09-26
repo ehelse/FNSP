@@ -13,7 +13,6 @@ $(function() {
     printButtons();
     entrancePopup();
     stickyNavbar();
-    stickyNavbarPrimaryTreatment();
 });
 
 // "load" triggers when all the content on the page has finished loading.
