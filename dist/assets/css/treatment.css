@@ -398,7 +398,6 @@
 }
 
 .o_primary-treatment .js-sticky-expander-nav {
-  margin: 2rem 0;
   padding: 0;
 }
 
@@ -406,11 +405,13 @@
   list-style-type: none;
 }
 
-.o_primary-treatment .js-sticky-expander-nav a {
+.o_primary-treatment .js-sticky-expander-nav button {
   position: relative;
+  background: none;
+  border: 0;
 }
 
-.o_primary-treatment .js-sticky-expander-nav a::after {
+.o_primary-treatment .js-sticky-expander-nav button::after {
   content: "";
   position: absolute;
   border-radius: 3.5rem;
@@ -429,7 +430,7 @@
 .o_primary-treatment .js-sticky-expander-nav.placedtop {
   position: fixed;
   bottom: 0;
-  left: 310px;
+  right: 45px;
 }
 
 .o_primary-treatment .js-sticky-expander-nav.placedtop span {
@@ -438,16 +439,17 @@
 
 .o_primary-treatment .js-sticky-expander-nav.placedbottom {
   position: relative;
+  margin: 2rem 0;
   padding: 0;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedbottom a span {
+.o_primary-treatment .js-sticky-expander-nav.placedbottom button span {
   position: relative;
   left: 3rem;
   display: inline-block;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedbottom a::after {
+.o_primary-treatment .js-sticky-expander-nav.placedbottom button::after {
   top: 0;
   bottom: 0;
   left: 0;
@@ -468,7 +470,7 @@
     left: 20px;
     bottom: 25px;
   }
-  .o_primary-treatment .js-sticky-expander-nav a::after {
+  .o_primary-treatment .js-sticky-expander-nav button::after {
     bottom: auto;
     left: auto;
   }

@@ -142,33 +142,14 @@
     }
 
     .js-sticky-expander-nav {
-        margin: 2rem 0;
-
         li {
             list-style-type: none;
         }
-        a {
+        button {
             position: relative;
+            background: none;
+            border: 0;
 
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     $background-size: contain;
-            //     transition: .3s;
-            //     left: 0;
-            //     top: 10px;
-            //     width: 1.25em;
-            //     height: 1.4em;
-            //     background: center / $background-size no-repeat;
-            //     background-image: url($arrow-blue), url($arrow-blue-md);
-            //     transform: rotate(-90deg);
-            // }
-    
-            // &:hover, &:focus {
-            //     &::before {
-            //         background-image: url($arrow-blue-md);
-            //     }
-            // }
             &::after {
                 content: "";
                 position: absolute;
@@ -190,7 +171,7 @@
         &.placedtop {
             position: fixed;
             bottom: 0;
-            left: 310px;
+            right: 45px;
             
             span {
                 display: none;
@@ -199,8 +180,9 @@
 
         &.placedbottom {
             position: relative;
+            margin: 2rem 0;
             padding: 0;
-            a {
+            button {
                 span {
                     position: relative;
                     left: 3rem;
@@ -243,7 +225,7 @@
                 left: 20px;
                 bottom: 25px;
             }
-            a {
+            button {
                 &::after {
                     bottom: auto;
                     left: auto;
