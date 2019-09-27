@@ -398,7 +398,12 @@
 }
 
 .o_primary-treatment .js-sticky-expander-nav {
+  margin: 2rem 0;
   padding: 0;
+}
+
+.o_primary-treatment .js-sticky-expander-nav li {
+  list-style-type: none;
 }
 
 .o_primary-treatment .js-sticky-expander-nav a {
@@ -415,16 +420,16 @@
   left: 5px;
   background-color: #034584;
   background-repeat: no-repeat;
-  background-image: url("../Images/Theme/chevron-white.svg");
-  background-position: center 1rem;
+  background-image: url("../Images/Theme/arrow-white.svg");
+  background-position: center;
   background-size: 1.25rem;
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
 }
 
 .o_primary-treatment .js-sticky-expander-nav.placedtop {
   position: fixed;
   bottom: 0;
-  left: 5px;
+  left: 310px;
 }
 
 .o_primary-treatment .js-sticky-expander-nav.placedtop span {
@@ -457,6 +462,15 @@
   .o_primary-treatment .m_obs h4 {
     font-size: 1.25rem;
     margin-top: .25rem;
+  }
+  .o_primary-treatment .js-sticky-expander-nav.placedtop {
+    right: auto;
+    left: 20px;
+    bottom: 25px;
+  }
+  .o_primary-treatment .js-sticky-expander-nav a::after {
+    bottom: auto;
+    left: auto;
   }
 }
 

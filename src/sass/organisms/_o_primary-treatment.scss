@@ -142,6 +142,11 @@
     }
 
     .js-sticky-expander-nav {
+        margin: 2rem 0;
+
+        li {
+            list-style-type: none;
+        }
         a {
             position: relative;
 
@@ -174,10 +179,10 @@
                 left: 5px;
                 background-color: #034584;
                 background-repeat: no-repeat;
-                background-image: url($chevron-white);
-                background-position: center 1rem;
+                background-image: url($arrow-white);
+                background-position: center;
                 background-size: 1.25rem;
-                transform: rotate(180deg);
+                transform: rotate(-90deg);
             }
         }
         padding: 0;
@@ -185,7 +190,7 @@
         &.placedtop {
             position: fixed;
             bottom: 0;
-            left: 5px;
+            left: 310px;
             
             span {
                 display: none;
@@ -223,6 +228,26 @@
             h4 {
                 font-size: $font-l;
                 margin-top: .25rem;
+            }
+        }
+
+        .js-sticky-expander-nav {
+            // a {
+            //     &::after {
+            //         bottom: -20px;
+            //         left: 270px;
+            //     }
+            // }
+            &.placedtop {
+                right: auto;
+                left: 20px;
+                bottom: 25px;
+            }
+            a {
+                &::after {
+                    bottom: auto;
+                    left: auto;
+                }
             }
         }
     }
