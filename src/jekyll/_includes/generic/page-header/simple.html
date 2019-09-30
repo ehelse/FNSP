@@ -1,5 +1,8 @@
+{% if include.type == "search" %}
+<header id="innledning" class="o_page-header js-scrollto" style="background-color: #f4f4f2;">
+{% else %}
 <header id="innledning" class="o_page-header js-scrollto">
-
+{% endif %}
     <div class="container">
         {% include generic/page-header/breadcrumbs.html %}
         {% include generic/page-header/printdialog.html %}

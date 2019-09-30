@@ -8312,6 +8312,12 @@ main > .o_horizontal-section:first-of-type.expand {
   text-transform: none;
 }
 
+.o_search-block .a_read-more-link {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
 /**********************************************************************/
 /* Mobile only to fix document search.                                */
 @media only screen and (max-width: 640px) {
@@ -8398,6 +8404,9 @@ main > .o_horizontal-section:first-of-type.expand {
   .o_search-block .querygroup-shortcuts button {
     width: 204px;
     padding: 0;
+  }
+  .o_search-block .a_read-more-link {
+    display: none;
   }
   .o_search-block #queryGroup-Treatments, .o_search-block #queryGroup-AllContent, .o_search-block #queryGroup-Departments {
     margin-right: 1rem;

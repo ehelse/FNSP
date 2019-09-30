@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nb-no">
 <head>
-    <title>Kognitiv terapi - [Helseforetakets navn]</title>
+    <title>Søkeresultat - [Helseforetakets navn]</title>
     
 
 
@@ -25,10 +25,6 @@
 
 <script src="../assets/js/master.js"></script>
 
-
-<script src="../assets/js/jquery/jquery.stickyNavbar.js"></script>
-<script src="../assets/js/treatment.js"></script>
-<link href="../assets/css/treatment.css" rel="stylesheet" type="text/css"/>
 
 
 
@@ -233,7 +229,7 @@
         <li><a href="">Forside</a></li>
         <li><a href="">Om oss</a></li>
         <li><a href="">Nyheter</a></li>
-        <li class="current">Kognitiv terapi</li>
+        <li class="current">Søkeresultat</li>
     </ul>
 
     
@@ -247,20 +243,17 @@
     </div>
 </header>
 <main id="main" class='
-    HF
     
     
-    TreatmentLayout
-    behandling
+    
+    FNSPSearch
+    
 
     '>
 
     
-    <article>
-
-    <!-- Page header -->
     
-<header id="innledning" class="o_page-header js-scrollto">
+<header id="innledning" class="o_page-header js-scrollto" style="background-color: #f4f4f2;">
 
     <div class="container">
         <nav class="m_breadcrumbs">
@@ -270,7 +263,7 @@
         <li><a href="">Forside</a></li>
         <li><a href="">Om oss</a></li>
         <li><a href="">Nyheter</a></li>
-        <li class="current">Kognitiv terapi</li>
+        <li class="current">Søkeresultat</li>
     </ul>
 
     
@@ -331,14 +324,16 @@
 
         
 
-        <h1 id="page-title" tabindex="-1">Kognitiv terapi</h1>
+        <h1 id="page-title" tabindex="-1">Søkeresultat</h1>
         <p id="page-subtitle"></p>
         <!-- Ingress -->
         
 <div class="m_page-ingress">
 
-    <h2>Koloskopi, Gastroenterologisk kirurgi</h2>
+    <h2></h2>
 
+    
+    <p>Du søker nå KUN i dokumenter</p>
     
 
 </div>
@@ -349,78 +344,120 @@
 
 </header>
 
-    <!-- Expanding info in header -->
-    
 
-    <!-- Location picker -->
-    
-    <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <nav class="m_location-picker">
-                <div>Hvor skal du behandles?</div>
-                <ul class="m_link-list locations">
-                        <li><a href="?sted=klinikk-psykisk-helsevern-voksne-">Klinikk psykisk helsevern voksne </a></li>
-                        <li><a href="?sted=sola-poliklinikk-sola-dps-">Sola poliklinikk, Sola DPS</a></li>
-                        <li><a href="?sted=randaberg-poliklinikk-sola-dps">Randaberg poliklinikk, Sola DPS </a></li>
-                    </ul>
-            </nav>
+<div class="o_search-block js-expand-to-full-width grey" style="left: 0px; width: 1903px; position: relative;">
+    <div style="display: none;"></div>
+    <div componentid="ctl00_ctl47_searchBoxSearchCenter_csr" id="ctl00_ctl47_searchBoxSearchCenter_csr">
+    <div id="SearchBox" name="Control">
+        <div class="container">
+            <div class="m_search-box" id="ctl00_ctl47_searchBoxSearchCenter_csr_sboxdiv" role="search">
+                
+                <input type="search" value="" maxlength="2048" accesskey="S" placeholder="Søk i dokumenter" id="current_searchbox" autocomplete="off" autocorrect="off" onkeypress="if (event.keyCode === 13) { $getClientControl(this).search(this.value); Srch.FNSP.SearchExecuted(); return Srch.U.cancelEvent(event); }" class="" aria-label="Søk i dokumenter">
+                
+                
+                <input type="button" class="searchbutton" value="Søk" onclick="$getClientControl(this).search($get('current_searchbox').value);Srch.FNSP.SearchExecuted();"> </div>
+            <div class="resultCountQuery temporary">
+                <div>
+                    <div id="count"></div>
+                    <div id="searchtips">
+                        <button id="featherlight">Søketips</button>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="/site/Search.html" class="a_nav-back-link">Tilbake til hovesøk</a>
+            
+            <div id="didYouMeanSuggestion" class="didyoumean" style="display:none;"></div>
         </div>
     </div>
 </div>
+    <noscript>
+        <div id="ctl00_ctl47_searchBoxSearchCenter_noscript">Det ser ut som om JavaScript ikke er aktivert i nettleseren din. Vennligst aktiver JavaScript, og prøv på nytt.</div>
+    </noscript>
+
+    
+    
+    <div componentid="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr" id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr">
+    <section class="o_horizontal-section searchblock white" id="SearchResults" aria-live="polite">
+        <div class="container">
+            <h2>                    Dokumenter                </h2>
+            <div>
+                <div id="GroupDocuments">
+                    <div id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr1_group" name="Group" class="ms-srch-group " data-queryruleid="00000000-0000-0000-0000-000000000000">
+                        <div id="GroupBorderTop"></div>
+                        <ul id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr1_groupContent" class="ms-srch-group-content o_search-results">
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr2_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Sepsis UV mars 2018 (1).pdf"> Sepsis UV 1 </a>                <span class="fileInfo">                     (PDF 1.21 MB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr3_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Sepsis UV mars 2018(2).pdf"> Sepsis UV 2 </a>                <span class="fileInfo">                     (PDF 1.62 MB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr4_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Årsrapport_2017_KVI-180515_total.pdf"> Årsrapport forskning 2017 Kvinneklinikken </a>                <span class="fileInfo">                     (PDF 1.59 MB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr5_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Forskningsstøtte/2016-03 Hvordan registrere studie i ClinicalTrials_veileding.pdf"> 2016-03 Hvordan registrere studie i ClinicalTrials_veileding </a>                <span class="fileInfo">                     (PDF 937 KB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr6_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Avdeling for immunologi og transfusjonsmedisin/Rapport_fra_kunnskapssensteret.pdf"> Rapport_fra_kunnskapssensteret </a>                <span class="fileInfo">                     (PDF 691 KB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr7_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Avdeling for immunologi og transfusjonsmedisin/metodevurdering.pdf"> metodevurdering </a>                <span class="fileInfo">                     (PDF 691 KB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr8_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Kvinneklinikken/Årsrapport_2017.pdf"> Årsrapport_2017 </a>                <span class="fileInfo">                     (PDF 1.58 MB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr9_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/seksjon/Documents/Regional seksjon for spiseforstyrrelser 2018.pdf"> Årsmelding RASP 2018 </a>                <span class="fileInfo">                     (PDF 569 KB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr10_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/seksjon/nasjonal-kompetansetjeneste-for-dekontaminering/Documents/Hvordan finner vi ut at instrumentene er rene_L. Ashurst.pdf"> Hvordan finner vi ut at instrumentene er rene_L. Ashurst </a>                <span class="fileInfo">                     (PDF 1.68 MB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                            <li id="ctl00_ctl47_g_cab6e439_e7d3_4eac_b4dd_987410820acc_csr11_item" name="Item" data-displaytemplate="DefaultItem" class="search-result">
+                                <h3 class="result-header">                <a href="https://oslo-universitetssykehus.no/Documents/Behandlingsreiser/Forskning/Leddsykdommer hos barn ungdom og voksne/REVMA7_kunnskap og mestring_2010.pdf"> REVMA7_kunnskap og mestring_2010 </a>                <span class="fileInfo">                     (PDF 639 KB)                </span>            </h3>
+                                <p class="search-result-snippet"> </p>
+                            </li>
+                        </ul>
+                        <div id="GroupBorderBottom"></div>
+                    </div>
+                </div>
+                <ul id="Paging" class="m_pagination">
+                    <li id="PagingSelf" class="active">
+                        <button type="button" class="pagination-button search-results-pagination" id="SelfLink_1">1</button>
+                    </li>
+                    <li id="PagingLink">
+                        <button type="button" class="pagination-button search-results-pagination" id="PageLink_2" onclick="$getClientControl(this).page(11);return Srch.U.cancelEvent(event);">2</button>
+                    </li>
+                    <li id="PagingImageLink">
+                        <button id="PageLinkNext" type="button" class="next-result-page search-results-pagination" onclick="$getClientControl(this).page(11);return Srch.U.cancelEvent(event);" aria-label="Neste resultater"> </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+    
+</div>
+
+
+<footer class="o_page-footer container">
+    <div class="m_page-metadata">
+
     
 
-    <!-- Statistics at top of page -->
     
-    <aside class="o_treatment-statistics container"></aside>
-    
-
-    <!-- Scrolling page menu -->
-
-    <nav class="js-header-sticky m_page-menu">
-    <div class="container">
-        <ul>
-            <li class="to-top-button">
-                <a href="#">Til toppen</a>
-            </li>
-
-            
-
-            <li class="main-link">
-                <a href="#foer" class="nav-item">
-                    <span class="section-headline">Før</span>
-                </a>
-            </li>
-            <li class="main-link">
-                <a href="#under" class="nav-item">
-                    <span class="section-headline">Under</span>
-                </a>
-            </li>
-            <li class="main-link">
-                <a href="#etter" class="nav-item">
-                    <span class="section-headline">Etter</span>
-                </a>
-            </li>
-
-            
-
-            <li class="contact">
-                <a href="#kontakt" class="contact-link">
-                    <span class="section-headline">Kontakt</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-    <!-- Content -->
-    
-
-    <!-- Metadata in footer -->
-    
-
-
-</article>
+</div>
+</footer>
 
     
 

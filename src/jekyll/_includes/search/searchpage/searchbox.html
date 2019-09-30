@@ -1,0 +1,28 @@
+<div componentid="ctl00_ctl47_searchBoxSearchCenter_csr" id="ctl00_ctl47_searchBoxSearchCenter_csr">
+    <div id="SearchBox" name="Control">
+        <div class="container">
+            <div class="m_search-box" id="ctl00_ctl47_searchBoxSearchCenter_csr_sboxdiv" role="search">
+                {% if include.type == "documents" %}
+                <input type="search" value="" maxlength="2048" accesskey="S" placeholder="Søk i dokumenter" id="current_searchbox" autocomplete="off" autocorrect="off" onkeypress="if (event.keyCode === 13) { $getClientControl(this).search(this.value); Srch.FNSP.SearchExecuted(); return Srch.U.cancelEvent(event); }" class="" aria-label="Søk i dokumenter">
+                
+                {% else %}
+                <input type="search" value="" maxlength="2048" accesskey="S" placeholder="Søk i alt innhold" id="current_searchbox" autocomplete="off" autocorrect="off" onkeypress="if (event.keyCode === 13) { $getClientControl(this).search(this.value); Srch.FNSP.SearchExecuted(); return Srch.U.cancelEvent(event); }" class="" aria-label="Søk i alt innhold">
+                {% endif %}
+                <input type="button" class="searchbutton" value="Søk" onclick="$getClientControl(this).search($get('current_searchbox').value);Srch.FNSP.SearchExecuted();"> </div>
+            <div class="resultCountQuery temporary">
+                <div>
+                    <div id="count"></div>
+                    <div id="searchtips">
+                        <button id="featherlight">Søketips</button>
+                    </div>
+                </div>
+            </div>
+            {% if include.type == "documents" %}
+            <a href="/site/Search.html" class="a_nav-back-link">Tilbake til hovesøk</a>
+            {% else %}
+            <div class="querygroup-shortcuts"> <span class="hidden-xs">                        <button id="queryGroup-Treatments" name="treatmentsshortcut-button" style="">Behandlinger (635)</button>                        <button id="queryGroup-Departments" name="departmentsshortcut-button" style="">Avdelinger (633)</button>                        <button id="queryGroup-AllContent" name="othercontentshortcut-button" style="">Annet (2556)</button>                        <button id="queryGroup-Documents" onclick="window.location='/site/SearchDocuments.html'" style="">Dokumenter (5448)</button>                    </span> </div>
+            {% endif %}
+            <div id="didYouMeanSuggestion" class="didyoumean" style="display:none;"></div>
+        </div>
+    </div>
+</div>

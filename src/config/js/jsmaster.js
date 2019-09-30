@@ -26,6 +26,7 @@ require('../../js/master/responsiveExpandableBlocks.js');
 require('../../js/master/sortExpandableSections.js');
 require('../../js/master/searchExpander.js');
 require('../../js/master/stickyNavbar');
+require('../../js/treatment/primaryTreatmentStickyButton');
 require('../../js/master/textSizeExpander.js');
 require('../../js/master/triggerGAEvent.js');
 require('../../js/master/unhideMenu.js');

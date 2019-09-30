@@ -1,0 +1,16 @@
+<div class="o_search-block js-expand-to-full-width grey" style="left: 0px; width: 1903px; position: relative;">
+    <div style="display: none;"></div>
+    {% include search/searchpage/searchbox.html %}
+    <noscript>
+        <div id="ctl00_ctl47_searchBoxSearchCenter_noscript">Det ser ut som om JavaScript ikke er aktivert i nettleseren din. Vennligst aktiver JavaScript, og prøv på nytt.</div>
+    </noscript>
+
+    {% if include.type == "documents" %}
+    
+    {% include search/searchpage/documents.html %}
+
+    {% else %}
+    {% include search/searchpage/results.html %}
+
+    {% endif %}
+</div>
