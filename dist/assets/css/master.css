@@ -5154,21 +5154,20 @@ Markup (stuff within [] is optional / state):
   display: inline;
   padding: .25rem 0 .1rem 0;
   font-size: 1rem;
-  border-bottom: 1px solid #b6aea8;
+  border-bottom: 1px solid #034584;
   font-weight: 400;
   color: #034584;
 }
 
 .m_page-list .links > li a:hover {
-  border-bottom-color: #01315e;
   color: #01315e;
-  font-weight: 500;
+  border-bottom: 2px solid #01315e;
 }
 
 .m_page-list .links > li a:focus {
   outline: 0;
   background-color: rgba(3, 69, 132, 0.2);
-  border-bottom-color: #01315e;
+  border-bottom: 2px solid #01315e;
 }
 
 .m_page-list .links .link, .m_page-list .links .expand {

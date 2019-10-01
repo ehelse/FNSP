@@ -191,20 +191,19 @@
                 display: inline;
                 padding: .25rem 0 .1rem 0;
                 font-size: 1rem;
-                border-bottom: 1px solid $grey-md;
+                border-bottom: 1px solid $blue;
                 font-weight: 400;
                 color: $blue;
                 
                 &:hover {
-                    border-bottom-color: $blue-dk;
                     color: $blue-dk;
-                    font-weight: 500;
+                    border-bottom: 2px solid $blue-dk;
                 }
 
                 &:focus {
                     outline: 0;
                     background-color: rgba($blue, 0.2);
-                    border-bottom-color: $blue-dk;
+                    border-bottom: 2px solid $blue-dk;
                 }
             }
         }
