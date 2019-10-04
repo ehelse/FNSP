@@ -149,8 +149,9 @@
             position: relative;
             background: none;
             border: 0;
+            cursor: pointer;
 
-            &::after {
+            &::before {
                 content: "";
                 position: absolute;
                 border-radius: 3.5rem;
@@ -158,12 +159,19 @@
                 height: 2.5rem;
                 bottom: 0;
                 left: 5px;
-                background-color: #034584;
+                border: 3px solid $blue-grey;
+                background-color: #fff;
                 background-repeat: no-repeat;
-                background-image: url($arrow-white);
+                background-image: url($arrow-blue);
                 background-position: center;
                 background-size: 1.25rem;
                 transform: rotate(-90deg);
+            }
+
+            &:hover, &:focus {
+                &::before {
+                    border-color: $blue;
+                }
             }
         }
         padding: 0;
@@ -188,7 +196,7 @@
                     left: 3rem;
                     display: inline-block;
                 }
-                &::after {
+                &::before {
                     top: 0;
                     bottom: 0;
                     left: 0;
@@ -226,7 +234,7 @@
                 bottom: 25px;
             }
             button {
-                &::after {
+                &::before {
                     bottom: auto;
                     left: auto;
                 }
