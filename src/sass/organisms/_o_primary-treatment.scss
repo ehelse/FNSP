@@ -168,7 +168,7 @@
         }
         padding: 0;
         // background-color: $blue-md;
-        &.placedtop {
+        &.sticky {
             position: fixed;
             bottom: 0;
             right: 45px;
@@ -178,7 +178,7 @@
             }
         }
 
-        &.placedbottom {
+        &.relative {
             position: relative;
             margin: 2rem 0;
             padding: 0;
@@ -220,7 +220,7 @@
             //         left: 270px;
             //     }
             // }
-            &.placedtop {
+            &.sticky {
                 right: auto;
                 left: 20px;
                 bottom: 25px;

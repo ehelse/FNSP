@@ -427,29 +427,29 @@
   transform: rotate(-90deg);
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedtop {
+.o_primary-treatment .js-sticky-expander-nav.sticky {
   position: fixed;
   bottom: 0;
   right: 45px;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedtop span {
+.o_primary-treatment .js-sticky-expander-nav.sticky span {
   display: none;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedbottom {
+.o_primary-treatment .js-sticky-expander-nav.relative {
   position: relative;
   margin: 2rem 0;
   padding: 0;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedbottom button span {
+.o_primary-treatment .js-sticky-expander-nav.relative button span {
   position: relative;
   left: 3rem;
   display: inline-block;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.placedbottom button::after {
+.o_primary-treatment .js-sticky-expander-nav.relative button::after {
   top: 0;
   bottom: 0;
   left: 0;
@@ -465,7 +465,7 @@
     font-size: 1.25rem;
     margin-top: .25rem;
   }
-  .o_primary-treatment .js-sticky-expander-nav.placedtop {
+  .o_primary-treatment .js-sticky-expander-nav.sticky {
     right: auto;
     left: 20px;
     bottom: 25px;
