@@ -1981,6 +1981,19 @@ table.ms-rteTable-4 td:before, table.ms-rteTable-4 th:before {
   background-position: .4rem center;
 }
 
+.a_standard-heading {
+  position: relative;
+  text-transform: uppercase;
+  line-height: 1.25;
+  font-size: 1.5rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-align: center;
+  margin: 2.5rem 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid;
+}
+
 .a_subtle-title {
   font-weight: 600;
   letter-spacing: normal;

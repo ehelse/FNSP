@@ -332,14 +332,14 @@ window.primaryTreatment = primaryTreatment;
 
 function primaryTreatmentStickyButton() {
     var debouncedEventHandler = debounce(function() {
-        var pt = $('.o_primary-treatment.expanded');
+        var treatmentExpander = $('.o_primary-treatment.expanded');
         
-        if (pt && pt.length !== 0) {
+        if (treatmentExpander && treatmentExpander.length !== 0) {
             var scrollBottom = $(window).scrollTop() + $(window).height();
             var currentDistance = $(document).scrollTop();
-            pt.each(function() {
+            treatmentExpander.each(function() {
                 var currentElement = $(this);
-                var stickyNav = currentElement.find('.js-sticky-expander-nav');
+                var stickyNav = currentElement.find('.js-sticky-treatment-nav');
 
                 if (!currentElement.isInViewPort() && stickyNav.hasClass('relative')) {
                     return;
@@ -349,28 +349,31 @@ function primaryTreatmentStickyButton() {
                     var elementTop = currentElement.offset().top;
                     var containerHeight = parseInt(expandable.height())+parseInt(elementTop);
 
-                    var toTopButton = stickyNav.find('.scroll-exp');
+                    var toTopButton = stickyNav.find('.scroll-expander-top');
                     toTopButton.off('click.primaryTreatmentStickyButton');
                     toTopButton.on('click.primaryTreatmentStickyButton', function() {
                         $('html, body').animate({
-                            scrollTop: currentElement.find('.js-scrolltoexp').offset().top - 80
+                            scrollTop: currentElement.find('.js-scrolltoexp').offset().top - 100
                         });
                     });
 
                     
-
-                    if (currentDistance > elementTop+20 && scrollBottom < containerHeight) {
+                    if (currentDistance > elementTop+20 && scrollBottom < containerHeight-100) {
+                        if (currentElement.find('.js-sb-filler').length === 0) {
+                            stickyNav.before('<div class="js-sb-filler" style="height: ' + stickyNav.height() + 'px; margin: 2rem 0;" ></div>').prev();
+                        }
                         stickyNav.addClass('sticky').removeClass('relative');
                     }
                     else  {
+                        $('.js-sb-filler').remove();
                         stickyNav.addClass('relative').removeClass('sticky')
                     }
                 }
             });
         }
-    }, 50);
+    }, 0);
 
-    var navbar = $('.js-sticky-expander-nav');
+    var navbar = $('.js-sticky-treatment-nav');
     if (navbar.length !== 0) {
         $(document).on('scroll.primaryTreatmentStickyButton', debouncedEventHandler);
     } else {

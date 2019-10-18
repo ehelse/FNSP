@@ -397,22 +397,22 @@
   border-color: #f4f4f2;
 }
 
-.o_primary-treatment .js-sticky-expander-nav {
+.o_primary-treatment .js-sticky-treatment-nav {
   padding: 0;
 }
 
-.o_primary-treatment .js-sticky-expander-nav li {
+.o_primary-treatment .js-sticky-treatment-nav li {
   list-style-type: none;
 }
 
-.o_primary-treatment .js-sticky-expander-nav button {
+.o_primary-treatment .js-sticky-treatment-nav button {
   position: relative;
   background: none;
   border: 0;
   cursor: pointer;
 }
 
-.o_primary-treatment .js-sticky-expander-nav button::before {
+.o_primary-treatment .js-sticky-treatment-nav button::before {
   content: "";
   position: absolute;
   border-radius: 3.5rem;
@@ -429,33 +429,33 @@
   transform: rotate(-90deg);
 }
 
-.o_primary-treatment .js-sticky-expander-nav button:hover::before, .o_primary-treatment .js-sticky-expander-nav button:focus::before {
+.o_primary-treatment .js-sticky-treatment-nav button:hover::before, .o_primary-treatment .js-sticky-treatment-nav button:focus::before {
   border-color: #034584;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.sticky {
+.o_primary-treatment .js-sticky-treatment-nav.sticky {
   position: fixed;
   bottom: 0;
   right: 45px;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.sticky span {
+.o_primary-treatment .js-sticky-treatment-nav.sticky span {
   display: none;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.relative {
+.o_primary-treatment .js-sticky-treatment-nav.relative {
   position: relative;
   margin: 2rem 0;
   padding: 0;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.relative button span {
+.o_primary-treatment .js-sticky-treatment-nav.relative button span {
   position: relative;
   left: 3rem;
   display: inline-block;
 }
 
-.o_primary-treatment .js-sticky-expander-nav.relative button::before {
+.o_primary-treatment .js-sticky-treatment-nav.relative button::before {
   top: 0;
   bottom: 0;
   left: 0;
