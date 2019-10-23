@@ -471,12 +471,12 @@
     font-size: 1.25rem;
     margin-top: .25rem;
   }
-  .o_primary-treatment .js-sticky-expander-nav.sticky {
+  .o_primary-treatment .js-sticky-treatment-nav.sticky {
     right: auto;
     left: 20px;
     bottom: 25px;
   }
-  .o_primary-treatment .js-sticky-expander-nav button::before {
+  .o_primary-treatment .js-sticky-treatment-nav button::before {
     bottom: auto;
     left: auto;
   }

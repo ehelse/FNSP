@@ -5181,83 +5181,46 @@ Markup (stuff within [] is optional / state):
   background-color: rgba(3, 69, 132, 0.1);
 }
 
-.m_page-list .links .link, .m_page-list .links .expand {
+.m_page-list .links .expand {
   overflow: hidden;
   transition: .2s;
   display: inline-block;
-  min-height: 75px;
-  width: 90%;
-  position: relative;
-  margin: 0;
+  width: 50%;
+  padding-bottom: .5rem;
 }
 
-.m_page-list .links .link input[type=checkbox]:focus + label::after, .m_page-list .links .expand input[type=checkbox]:focus + label::after {
-  z-index: 101;
-  height: 2px;
-  background-color: #3871ab;
-}
-
-.m_page-list .links .link > a, .m_page-list .links .link > span, .m_page-list .links .link > label, .m_page-list .links .expand > a, .m_page-list .links .expand > span, .m_page-list .links .expand > label {
-  border-bottom: 0;
-  color: #252525;
-  text-decoration: none;
-  display: inline-block;
-  transition: .1s;
-}
-
-.m_page-list .links .link > a::after, .m_page-list .links .link > span::after, .m_page-list .links .link > label::after, .m_page-list .links .expand > a::after, .m_page-list .links .expand > span::after, .m_page-list .links .expand > label::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  width: 100%;
-  transition: .1s;
-  background-color: #e6e5e1;
-}
-
-.m_page-list .links .link > a:hover, .m_page-list .links .link > a:focus, .m_page-list .links .link > span:hover, .m_page-list .links .link > span:focus, .m_page-list .links .link > label:hover, .m_page-list .links .link > label:focus, .m_page-list .links .expand > a:hover, .m_page-list .links .expand > a:focus, .m_page-list .links .expand > span:hover, .m_page-list .links .expand > span:focus, .m_page-list .links .expand > label:hover, .m_page-list .links .expand > label:focus {
-  color: #3871ab;
-  transition: .1s;
-}
-
-.m_page-list .links .link > a:hover::after, .m_page-list .links .link > a:focus::after, .m_page-list .links .link > span:hover::after, .m_page-list .links .link > span:focus::after, .m_page-list .links .link > label:hover::after, .m_page-list .links .link > label:focus::after, .m_page-list .links .expand > a:hover::after, .m_page-list .links .expand > a:focus::after, .m_page-list .links .expand > span:hover::after, .m_page-list .links .expand > span:focus::after, .m_page-list .links .expand > label:hover::after, .m_page-list .links .expand > label:focus::after {
-  z-index: 101;
-  height: 2px;
-  background-color: #3871ab;
-}
-
-.m_page-list .links .link:hover, .m_page-list .links .link:focus, .m_page-list .links .expand:hover, .m_page-list .links .expand:focus {
+.m_page-list .links .expand:hover, .m_page-list .links .expand:focus {
   color: #3871ab;
 }
 
-.m_page-list .links .link .expander, .m_page-list .links .link a, .m_page-list .links .expand .expander, .m_page-list .links .expand a {
+.m_page-list .links .expand .expander {
+  color: #034584;
+}
+
+.m_page-list .links .expand .expander, .m_page-list .links .expand a {
   text-decoration: none;
-  display: block;
-  padding: .75rem 0;
-  position: absolute;
   bottom: 0;
+  padding-left: 0;
   width: 100%;
 }
 
-.m_page-list .links .link .expander:hover, .m_page-list .links .link .expander:focus, .m_page-list .links .link a:hover, .m_page-list .links .link a:focus, .m_page-list .links .expand .expander:hover, .m_page-list .links .expand .expander:focus, .m_page-list .links .expand a:hover, .m_page-list .links .expand a:focus {
+.m_page-list .links .expand .expander:hover, .m_page-list .links .expand .expander:focus, .m_page-list .links .expand a:hover, .m_page-list .links .expand a:focus {
   outline: 0;
   background-color: transparent;
 }
 
-.m_page-list .links .link.expand, .m_page-list .links .expand.expand {
+.m_page-list .links .expand.expand {
   padding: 0;
   margin-bottom: 0;
-  border-bottom: 1px solid #e6e5e1;
+  border-bottom: 1px solid #034584;
 }
 
-.m_page-list .links .link.expand > .expander, .m_page-list .links .expand.expand > .expander {
+.m_page-list .links .expand.expand > .expander {
   position: relative;
   padding-right: 1.5em;
 }
 
-.m_page-list .links .link.expand > .expander::before, .m_page-list .links .expand.expand > .expander::before {
+.m_page-list .links .expand.expand > .expander::before {
   content: "";
   position: absolute;
   right: 0;
@@ -5269,73 +5232,57 @@ Markup (stuff within [] is optional / state):
   transition: .3s;
 }
 
-.m_page-list .links .link.expand > .expander:hover::before, .m_page-list .links .link.expand > .expander:focus::before, .m_page-list .links .expand.expand > .expander:hover::before, .m_page-list .links .expand.expand > .expander:focus::before {
+.m_page-list .links .expand.expand > .expander:hover::before, .m_page-list .links .expand.expand > .expander:focus::before {
   background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
-.m_page-list .links .link.expand.collapsed > .expander::before, .m_page-list .links .expand.expand.collapsed > .expander::before {
+.m_page-list .links .expand.expand.collapsed > .expander::before {
   transform: scaleY(1);
 }
 
-.m_page-list .links .link.expand.focused > .expander::before, .m_page-list .links .expand.expand.focused > .expander::before {
+.m_page-list .links .expand.expand.focused > .expander::before {
   background-image: url("../Images/Theme/chevron-blue-md.svg");
 }
 
-.m_page-list .links .link.expand::after, .m_page-list .links .expand.expand::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 0;
-  border-bottom: 1px solid transparent;
-  z-index: -1;
+.m_page-list .links .expand.expand:hover, .m_page-list .links .expand.expand:hover::after {
+  border-bottom: 2px solid #034584;
 }
 
-.m_page-list .links .link.expand:hover, .m_page-list .links .link.expand:hover::after, .m_page-list .links .expand.expand:hover, .m_page-list .links .expand.expand:hover::after {
-  border-bottom-color: #3871ab;
-}
-
-.m_page-list .links .link.expand .link, .m_page-list .links .expand.expand .link {
+.m_page-list .links .expand.expand .link {
   margin-left: 1rem;
 }
 
-.m_page-list .links .link.expand .link:first-child, .m_page-list .links .expand.expand .link:first-child {
+.m_page-list .links .expand.expand .link:first-child {
   padding-top: 0;
 }
 
-.m_page-list .links .link.expand ul li:last-child, .m_page-list .links .expand.expand ul li:last-child {
+.m_page-list .links .expand.expand ul li:last-child {
   margin-bottom: 0;
 }
 
-.m_page-list .links .link.expand ul li:last-child .link, .m_page-list .links .expand.expand ul li:last-child .link {
+.m_page-list .links .expand.expand ul li:last-child .link {
   padding-bottom: 0;
-  margin-left: 0;
 }
 
-.m_page-list .links .link.expand ul li:last-child a, .m_page-list .links .expand.expand ul li:last-child a {
-  padding-left: 1rem;
-}
-
-.m_page-list .links .link.expand, .m_page-list .links .link.expand::after, .m_page-list .links .expand.expand, .m_page-list .links .expand.expand::after {
+.m_page-list .links .expand.expand, .m_page-list .links .expand.expand::after {
   border-bottom-color: transparent;
   background-color: transparent;
 }
 
-.m_page-list .links .link.expanded, .m_page-list .links .link.expanded::after, .m_page-list .links .link.expanded:hover, .m_page-list .links .link.expanded:hover::after, .m_page-list .links .expand.expanded, .m_page-list .links .expand.expanded::after, .m_page-list .links .expand.expanded:hover, .m_page-list .links .expand.expanded:hover::after {
+.m_page-list .links .expand.expanded, .m_page-list .links .expand.expanded::after, .m_page-list .links .expand.expanded:hover, .m_page-list .links .expand.expanded:hover::after {
   border-bottom-color: transparent;
   background-color: transparent;
 }
 
-.m_page-list .links .link.expanded .expander, .m_page-list .links .expand.expanded .expander {
+.m_page-list .links .expand.expanded .expander {
   font-weight: 600;
 }
 
-.m_page-list .links .link.collapsed, .m_page-list .links .expand.collapsed {
-  border-bottom: 1px solid #e6e5e1;
+.m_page-list .links .expand.collapsed {
+  border-bottom: 1px solid #034584;
 }
 
-.m_page-list .links .link.collapsed:hover, .m_page-list .links .link.collapsed:hover::after, .m_page-list .links .link.collapsed.focused, .m_page-list .links .link.collapsed.focused::after, .m_page-list .links .expand.collapsed:hover, .m_page-list .links .expand.collapsed:hover::after, .m_page-list .links .expand.collapsed.focused, .m_page-list .links .expand.collapsed.focused::after {
+.m_page-list .links .expand.collapsed:hover, .m_page-list .links .expand.collapsed:hover::after, .m_page-list .links .expand.collapsed.focused, .m_page-list .links .expand.collapsed.focused::after {
   border-bottom-color: #3871ab;
 }
 

@@ -207,27 +207,31 @@
         }
         
 
-        .link, .expand {
+        .expand {
             // height: 100%;
             // padding: .125rem 0;
             // position: relative;
             overflow: hidden;
             transition: .2s;
             display: inline-block;
-            min-height: 75px;
-            width: 90%;
-            @include thickening-underline();
+            // min-height: 75px;
+            width: 50%;
+            padding-bottom: .5rem;
+            // @include thickening-underline();
             
             &:hover, &:focus {
                 color: $blue-md;
             }
-
+            .expander {
+                color: $blue;
+            }
             .expander, a {
                 text-decoration: none;
-                display: block;
-                padding: .75rem 0;
-                position: absolute;
+                // display: block;
+                // padding: .75rem 0;
+                // position: absolute;
                 bottom: 0;
+                padding-left: 0;
                 width: 100%;
 
                 &:hover, &:focus {
@@ -241,22 +245,22 @@
                 @include expander-arrow();
                 padding: 0;
                 margin-bottom: 0;
-                border-bottom: 1px solid $grey-md-lt;
+                border-bottom: 1px solid $blue;
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    height: 0;
-                    border-bottom: 1px solid transparent;
-                    z-index: -1;
-                }
+                // &::after {
+                //     content: "";
+                //     position: absolute;
+                //     left: 0;
+                //     right: 0;
+                //     bottom: 0;
+                //     height: 0;
+                //     border-bottom: 1px solid transparent;
+                //     z-index: -1;
+                // }
 
                 &:hover {
                     &, &::after {
-                        border-bottom-color: $blue-md;
+                    border-bottom: 2px solid $blue;
                     }
                 }
 
@@ -273,11 +277,11 @@
 
                         .link {
                             padding-bottom: 0;
-                            margin-left: 0;
+                            // margin-left: 0;
                         }
 
                         a {
-                            padding-left: 1rem;
+                            // padding-left: 1rem;
                         }
                     }
                 }
@@ -306,7 +310,7 @@
             }
 
             &.collapsed {
-                border-bottom: 1px solid $grey-md-lt;
+                border-bottom: 1px solid $blue;
 
                 &:hover, &.focused {
                     &, &::after {
