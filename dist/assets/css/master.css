@@ -5195,18 +5195,37 @@ Markup (stuff within [] is optional / state):
 
 .m_page-list .links .expand .expander {
   color: #034584;
-}
-
-.m_page-list .links .expand .expander, .m_page-list .links .expand a {
   text-decoration: none;
   bottom: 0;
   padding-left: 0;
   width: 100%;
 }
 
-.m_page-list .links .expand .expander:hover, .m_page-list .links .expand .expander:focus, .m_page-list .links .expand a:hover, .m_page-list .links .expand a:focus {
+.m_page-list .links .expand .expander:hover {
   outline: 0;
   background-color: transparent;
+}
+
+.m_page-list .links .expand .expander:focus {
+  color: #01315e;
+  border-bottom: 2px solid #034584;
+}
+
+.m_page-list .links .expand a {
+  text-decoration: none;
+  bottom: 0;
+  padding-left: 0;
+  width: 100%;
+}
+
+.m_page-list .links .expand a:hover, .m_page-list .links .expand a:focus {
+  color: #01315e;
+  border-bottom: 2px solid #034584;
+}
+
+.m_page-list .links .expand a:focus {
+  outline: 0;
+  background-color: rgba(3, 69, 132, 0.1);
 }
 
 .m_page-list .links .expand.expand {

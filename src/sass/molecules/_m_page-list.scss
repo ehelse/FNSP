@@ -224,20 +224,35 @@
             }
             .expander {
                 color: $blue;
-            }
-            .expander, a {
                 text-decoration: none;
-                // display: block;
-                // padding: .75rem 0;
-                // position: absolute;
+                bottom: 0;
+                padding-left: 0;
+                width: 100%;
+
+                &:hover {
+                    outline: 0;
+                    // Eventually remove this when the new design is approved
+                    background-color: transparent;
+                }
+                &:focus {
+                    color: $blue-dk;
+                    border-bottom: 2px solid $blue;
+                }
+            }
+            a {
+                text-decoration: none;
                 bottom: 0;
                 padding-left: 0;
                 width: 100%;
 
                 &:hover, &:focus {
+                    color: $blue-dk;
+                    border-bottom: 2px solid $blue;
+                }
+
+                &:focus {
                     outline: 0;
-                    // Eventually remove this when the new design is approved
-                    background-color: transparent;
+                    background-color: rgba($blue, .1);
                 }
             }
 
