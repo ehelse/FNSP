@@ -2236,7 +2236,7 @@ function primaryTreatmentStickyButton() {
                     toTopButton.off('click.primaryTreatmentStickyButton');
                     toTopButton.on('click.primaryTreatmentStickyButton', function() {
                         $('html, body').animate({
-                            scrollTop: currentElement.find('.js-scrolltoexp').offset().top - 100
+                            scrollTop: currentElement.find('.js-scrolltoexp').offset().top - 175
                         });
                     });
 
