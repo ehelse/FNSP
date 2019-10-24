@@ -14,16 +14,16 @@
     {% endif %}
 
     <!-- Statistics at top of page -->
-    {% if page.statistics %}
+    {% if page.statistics && !page.location-picker %}
     {% include behandling/treatment-statistics.html data=site.data.hf.behandling.generic.header-statistics %}
     {% else %}
-    <aside class="o_treatment-statistics container"></aside>
     {% endif %}
 
     <!-- Scrolling page menu -->
-
+    {% if page.location-picker %}
+    {% else %}
     {% include generic/page-menu.html %}
-
+    {% endif %}
     <!-- Content -->
     {{ content }}
 

@@ -4835,6 +4835,46 @@ Markup (stuff within [] is optional / state):
   font-size: 1.25rem;
 }
 
+.m_location-picker ul.m_link-list.locations {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.m_location-picker ul.m_link-list.locations li {
+  border-bottom: 1px solid #b6aea8;
+  margin: 0;
+}
+
+.m_location-picker ul.m_link-list.locations li:first-child {
+  margin-top: 0;
+  border-top: 1px solid #b6aea8;
+}
+
+.m_location-picker ul.m_link-list.locations li a {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.m_location-picker ul.m_link-list.locations li a::after {
+  content: "";
+  height: 2rem;
+  width: 3rem;
+  background: url("../Images/Theme/chevron-blue-grey.svg") center bottom/1.25rem no-repeat;
+  transform: rotate(-90deg);
+  transition: .3s;
+}
+
+.m_location-picker ul.m_link-list.locations li a:hover {
+  background-color: rgba(3, 69, 132, 0.1);
+}
+
+.m_location-picker ul.m_link-list.locations li a:hover::after {
+  background-image: url("../Images/Theme/chevron-blue.svg");
+}
+
 .m_obs {
   margin-bottom: 3.5rem;
   background-color: #fdfad3;
