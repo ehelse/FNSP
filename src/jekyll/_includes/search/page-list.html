@@ -273,7 +273,7 @@
         </li>
     </ul>
 
-{% else %}
+{% elsif include.search == "behandling" %}
 
 <ul class="m_page-list" aria-live="polite" tabindex="-1">
         <li class="letter-category">
@@ -912,5 +912,11 @@
             </ul>
         </li>
     </ul>
+
+{% elsif include.search == "behandling2" %}
+
+
+{% else %}
+
 
 {% endif %}
