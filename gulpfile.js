@@ -78,7 +78,10 @@ function jekyll() {
     var jekyllSpawn = process.platform === "win32" ? "jekyll.bat" : "jekyll";
     return cp.spawn(jekyllSpawn, ["build", "--incremental", "--drafts"], {stdio: "inherit"});
 }
-
+// Copy netlify toml file
+function netlify() {
+    return gulp.src("./netlify.toml").pipe(gulp.dest("./dist/"));
+}
 
 // Watch files
 function watchFiles() {
@@ -89,7 +92,7 @@ function watchFiles() {
 }
 const watch = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg, gulp.parallel(watchFiles, browserSync));
 
-const build = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg);
+const build = gulp.series(clean, gulp.parallel(css, scripts, jekyll), protoimg, svg, netlify);
 
 // export tasks
 exports.css = css;
@@ -101,3 +104,4 @@ exports.default = watch;
 exports.build = build;
 exports.svg = svg;
 exports.protoimg = protoimg;
+exports.netlify = netlify;

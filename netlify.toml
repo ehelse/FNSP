@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/"
+  to = "dev.fnsp.no"
+  status = 301
+  force = false
