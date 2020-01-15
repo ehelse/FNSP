@@ -67,21 +67,28 @@ export class Map extends Component {
     }
 
     render() {
-        const features = this.state.features
+        const features = this.state.features?.sort((a, b) => a.properties?.name.localeCompare(b.properties.name))
+        console.log(features)
         return (
             <div className="App">
                 <div
                     ref={el => this.mapContainer = el}
                     className="mapContainer" />
                 <div className='liste-wrapper'>
-                    {features ? features.map((feature, key) => {
-                        return <button
-                            key={key}
-                            className='featurebox'
-                            onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
-                            {feature.properties.name}
-                        </button>
-                    }) : null}
+                    <h1>Velg sted og finn fram </h1>
+                    {features?.map((feature, key) => {
+                        if (feature.properties.skalVises !== false) {
+                            return <button
+                                key={key}
+                                className='featurebox'
+                                onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
+                                {feature.properties.name}
+                            </button>
+                        }
+                        else {
+                            return null;
+                        }
+                    })}
                 </div>
             </div>
         );

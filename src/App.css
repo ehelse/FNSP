@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 .App {
   text-align: center;
 }
@@ -8,22 +9,28 @@
   padding:10px;
   margin-left:50px;
   opacity: 0.9;
+  font-family: 'Open Sans', sans-serif;
+
 }
 .featurebox {
   display: flex;
   margin:5px;
   border-bottom:1px solid black;
   padding:6px;
-  font-size: 15px;
-  
+  font-size: 17px;
+  font-family: 'Open Sans', sans-serif;
 }
 .featurebox:hover {
-  font-size: 22px;
+  background-color:#024584;
+  color:white;
   cursor: pointer;
+  font-weight: 600;
 }
 .featurebox:focus{
-  font-size: 30px;
+  font-size: 17px;
   background: rgb(17, 150, 190);
+  color:white;
+
 }
 .mapContainer {
   position: absolute;
