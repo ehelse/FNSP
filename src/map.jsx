@@ -68,7 +68,6 @@ export class Map extends Component {
 
     render() {
         const features = this.state.features?.sort((a, b) => a.properties?.name.localeCompare(b.properties.name))
-        console.log(features)
         return (
             <div className="App">
                 <div
