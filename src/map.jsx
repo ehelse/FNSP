@@ -75,7 +75,7 @@ export class Map extends Component {
                     ref={el => this.mapContainer = el}
                     className="mapContainer" />
                 <div className='liste-wrapper'>
-                    <h1>Velg sted og finn fram </h1>
+                    <h1 style={{borderBottom:'2px solid black', textAlign:'left'}}>Veibeskrivelse </h1>
                     {features?.map((feature, key) => {
                         if (feature.properties.skalVises !== false) {
                             return <button
