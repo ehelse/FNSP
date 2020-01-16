@@ -58,7 +58,7 @@ export const tegnRute = (map, e, data) => {
                 type: 'Feature',
                 geometry: {
                     type: 'Point',
-                    coordinates: e.geometry.coordinates[0][0]
+                    coordinates: e.geometry.coordinates
                 }
             }]
         };
