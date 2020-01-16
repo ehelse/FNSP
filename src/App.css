@@ -9,7 +9,14 @@
   padding:10px;
   margin-left:50px;
   opacity: 0.9;
+  border-radius: 10px;
   font-family: 'Open Sans', sans-serif;
+
+}
+.headerTekstVei{
+  font-family: 'Open Sans', sans-serif;
+  border-bottom:2px solid black;
+  text-align:left;
 
 }
 .featurebox {

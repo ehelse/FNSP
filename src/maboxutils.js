@@ -80,7 +80,7 @@ export const tegnRute = (map, e, data) => {
             },
             paint: {
                 'circle-radius': 10,
-                'circle-color': '#f30'
+                'circle-color': '#f06960'
             }
         });
 
@@ -93,11 +93,11 @@ export const tegnRute = (map, e, data) => {
             },
             'layout': {
                 'line-join': 'round',
-                'line-cap': 'round'
+                'line-cap': 'round',
             },
             'paint': {
                 'line-color': '#3887be',
-                'line-width': 6
+                'line-width': 3,
             }
         });
     }
