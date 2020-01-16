@@ -18,13 +18,15 @@
   border-bottom:1px solid black;
   padding:6px;
   font-size: 17px;
+  background-color: unset;
+  border: none;
   font-family: 'Open Sans', sans-serif;
 }
 .featurebox:hover {
   background-color:#024584;
   color:white;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
 }
 .featurebox:focus{
   font-size: 17px;
