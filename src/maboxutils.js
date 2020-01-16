@@ -70,9 +70,6 @@ export const tegnRute = (map, e, data) => {
                 'coordinates': data.routes[0].geometry.coordinates
             }
         };
-    
-        const start = [[10.995503, 59.933354]]
-        start.push(data.waypoints)
         
         map.addLayer({
             id: 'end',
