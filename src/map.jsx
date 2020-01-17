@@ -82,7 +82,7 @@ export class Map extends Component {
                                 if (feature.properties.skalVises !== false) return <option
                                     key={key}
                                     className='featurebox-mobil'
-                                    onTouchStart={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
+                                    onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
                                     {feature.properties.name}
                                 </option>
                             })}
