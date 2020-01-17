@@ -43,6 +43,7 @@ export class Map extends Component {
 
     }
     navigasjon = (start, slutt, feature) => {
+        console.log('dette funker: ', slutt)
         this.slettGammelData();
         fetch(
             `https://api.mapbox.com/directions/v5/mapbox/walking/${start};${slutt}?geometries=geojson&access_token=pk.eyJ1IjoiYW5kcmVhc2U4OWRldiIsImEiOiJjazUzbmN4bHYwOHkzM2VxdGFkamVicHh4In0.DdGmpKQ-GPNoi-yVBTOXNw`)
@@ -80,9 +81,9 @@ export class Map extends Component {
                             <option>Vis veibeskrivelser</option>
                             {features?.map((feature, key) => {
                                 if (feature.properties.skalVises !== false) return <option
-                                    key={key}
+                                    key={feature.properties.name+key}
                                     className='featurebox-mobil'
-                                    onSelect={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
+                                    onChange={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
                                     {feature.properties.name}
                                 </option>
                             })}
