@@ -80,7 +80,7 @@ export class Map extends Component {
                     ref={el => this.mapContainer = el}
                     className="mapContainer" />
                 <div className='liste-wrapper'>
-                    <h1 className='headerTekstVei'>Ahus </h1>
+                    <h1 className='headerTekstVei'>AHUS </h1>
                     <div>
                         <select className='drop-down-vis-mobil' onChange={(e) => this.settMobilNavigasjon(e.target.value)}>
                             <option>Velg gangvei</option>
