@@ -85,6 +85,21 @@
 }
 @media only screen 
   and (min-device-width: 360px) 
+  and (max-device-height: 929px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .featurebox {
+      display: flex;
+      margin:5px;
+      border-bottom:1px solid black;
+      padding:4px;
+      font-size: 11px;
+      background-color: unset;
+      border: none;
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+@media only screen 
+  and (min-device-width: 360px) 
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .featurebox{
