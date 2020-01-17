@@ -18,9 +18,11 @@ export class Map extends Component {
             style: 'mapbox://styles/andrease89dev/ck53v83xd08a31cs5klh6150t',
             center: [this.state.lng, this.state.lat],
             zoom: this.state.zoom,
+            maxZoom: this.state.zoom,
+            minZoom: this.state.zoom,
             pitch: 45,
             bearing: 20,
-            antialias: true
+            antialias: true,
         });
 
         this.setState({ kart: map }, () => this.initialiserKart())
@@ -81,7 +83,7 @@ export class Map extends Component {
                             <option>Vis veibeskrivelser</option>
                             {features?.map((feature, key) => {
                                 if (feature.properties.skalVises !== false) return <option
-                                    key={feature.properties.name+key}
+                                    key={key}
                                     className='featurebox-mobil'
                                     onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
                                     {feature.properties.name}
