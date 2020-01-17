@@ -1,7 +1,6 @@
 
 export const ekstruderBygninger = (map) => {
     map.on('load', function () {
-        // Insert the layer beneath any symbol layer.
         var layers = map.getStyle().layers;
 
         var labelLayerId;
@@ -53,55 +52,54 @@ export const ekstruderBygninger = (map) => {
 
 export const tegnRute = (map, e, data) => {
     let end = {
-            type: 'FeatureCollection',
-            features: [{
-                type: 'Feature',
-                geometry: {
-                    type: 'Point',
-                    coordinates: e.geometry.coordinates
-                }
-            }]
-        };
-        let route = {
-            'type': 'Feature',
-            "properties": {},
-            'geometry': {
-                'type': 'LineString',
-                'coordinates': data.routes[0].geometry.coordinates
+        type: 'FeatureCollection',
+        features: [{
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: e.geometry.coordinates
             }
-        };
-        
-        map.addLayer({
-            id: 'end',
-            type: 'circle',
-            source: {
-                type: 'geojson',
-                data: end
-            },
-            paint: {
-                'circle-radius': 10,
-                'circle-color': '#f06960'
-            }
-        });
+        }]
+    };
+    let route = {
+        'type': 'Feature',
+        "properties": {},
+        'geometry': {
+            'type': 'LineString',
+            'coordinates': data.routes[0].geometry.coordinates
+        }
+    };
 
-        map.addLayer({
-            'id': 'route',
-            'type': 'line',
-            'source': {
-                'type': 'geojson',
-                'data': route
-            },
-            'layout': {
-                'line-join': 'round',
-                'line-cap': 'round',
-            },
-            'paint': {
-                'line-color': '#3887be',
-                'line-width': 3,
-            }
-        });
-    }
+    map.addLayer({
+        id: 'end',
+        type: 'circle',
+        source: {
+            type: 'geojson',
+            data: end
+        },
+        paint: {
+            'circle-radius': 10,
+            'circle-color': '#f06960'
+        }
+    });
 
+    map.addLayer({
+        'id': 'route',
+        'type': 'line',
+        'source': {
+            'type': 'geojson',
+            'data': route
+        },
+        'layout': {
+            'line-join': 'round',
+            'line-cap': 'round',
+        },
+        'paint': {
+            'line-color': '#3887be',
+            'line-width': 3,
+        }
+    });
+}
 
 export const addStart = (map, start) => {
     map.on('load', function () {
@@ -119,8 +117,7 @@ export const addStart = (map, start) => {
                             type: 'Point',
                             coordinates: start
                         }
-                    }
-                    ]
+                    }]
                 }
             },
             paint: {

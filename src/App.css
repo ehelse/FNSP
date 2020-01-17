@@ -39,7 +39,9 @@
   font-size: 17px;
   background: rgb(17, 150, 190);
   color:white;
-
+}
+.drop-down-vis-mobil{
+  display:none;
 }
 .mapContainer {
   position: absolute;
@@ -56,6 +58,7 @@
   max-width: 400px;
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   }
+  
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -76,6 +79,41 @@
 
 .App-link {
   color: #61dafb;
+}
+@media only screen 
+  and (min-device-width: 360px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .featurebox{
+      font-size:15px;
+      display:none;
+    }
+    .drop-down-vis-mobil{
+      display:inline;
+      padding:5px;
+      font-size:1rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .headerTekstVei{
+      font-family: 'Open Sans', sans-serif;
+      border-bottom:2px solid black;
+      font-size: 1.5rem;      
+      text-align:left;
+      color:#034584;
+    }
+    .liste-wrapper{
+      width:100;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: white;
+      margin-top: 0px;
+      padding:10px;
+      margin-left:25px;
+      opacity: 0.9;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
 }
 
 @keyframes App-logo-spin {

@@ -75,14 +75,30 @@ export class Map extends Component {
                     className="mapContainer" />
                 <div className='liste-wrapper'>
                     <h1 className='headerTekstVei'>Veibeskrivelse </h1>
+                    <div>
+                        <select className='drop-down-vis-mobil'>
+                            <option>Vis veibeskrivelser</option>
+                            {features?.map((feature, key) => {
+                                if (feature.properties.skalVises !== false) return <option
+                                    key={key}
+                                    className='featurebox-mobil'
+                                    onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
+                                    {feature.properties.name}
+                                </option>
+                            })}
+                        </select>
+                    </div>
                     {features?.map((feature, key) => {
                         if (feature.properties.skalVises !== false) {
-                            return <button
-                                key={key}
-                                className='featurebox'
-                                onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
-                                {feature.properties.name}
-                            </button>
+                            return <div>
+                                <button
+                                    key={key}
+                                    className='featurebox'
+                                    onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
+                                    {feature.properties.name}
+                                </button>
+
+                            </div>
                         }
                         else {
                             return null;
