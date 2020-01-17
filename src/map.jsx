@@ -19,7 +19,7 @@ export class Map extends Component {
             center: [this.state.lng, this.state.lat],
             zoom: this.state.zoom,
             maxZoom: this.state.zoom,
-            minZoom: this.state.zoom,
+            minZoom: 16,
             pitch: 45,
             bearing: 20,
             antialias: true,
