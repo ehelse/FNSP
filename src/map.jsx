@@ -9,7 +9,7 @@ export class Map extends Component {
     state = {
         lat: 59.931899,
         lng: 10.995412,
-        zoom: 17,
+        zoom: 16,
         features: null,
     };
     componentDidMount() {
