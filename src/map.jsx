@@ -68,7 +68,10 @@ export class Map extends Component {
             })
         );
     }
-
+    settMobilNavigasjon = (e) => {
+        const parsetVerdi = JSON.parse(e);
+        this.navigasjon([10.995503, 59.933354], parsetVerdi.geometry.coordinates, parsetVerdi)
+    }
     render() {
         const features = this.state.features?.sort((a, b) => a.properties?.name.localeCompare(b.properties.name))
         return (
@@ -79,13 +82,13 @@ export class Map extends Component {
                 <div className='liste-wrapper'>
                     <h1 className='headerTekstVei'>Veibeskrivelse </h1>
                     <div>
-                        <select className='drop-down-vis-mobil'>
+                        <select className='drop-down-vis-mobil' onChange={(e) => this.settMobilNavigasjon(e.target.value)}>
                             <option>Vis veibeskrivelser</option>
                             {features?.map((feature, key) => {
                                 if (feature.properties.skalVises !== false) return <option
                                     key={key}
                                     className='featurebox-mobil'
-                                    onClick={() => this.navigasjon([10.995503, 59.933354], feature.geometry.coordinates, feature)}>
+                                    value={JSON.stringify(feature)}>
                                     {feature.properties.name}
                                 </option>
                             })}
