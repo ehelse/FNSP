@@ -35,6 +35,9 @@
   cursor: pointer;
   font-weight: 500;
 }
+.headerTekstVei{
+  margin-left:14px;
+}
 .featurebox:focus{
   font-size: 17px;
   background: rgb(17, 150, 190);
@@ -94,13 +97,10 @@
       font-size:1rem;
       font-family: 'Open Sans', sans-serif;
     }
-    .featurebox-mobil{
-      
-    }
     .headerTekstVei{
       font-family: 'Open Sans', sans-serif;
       border-bottom:2px solid black;
-      font-size: 1.5rem;      
+      font-size: 1.5rem;
       text-align:left;
       color:#034584;
     }
