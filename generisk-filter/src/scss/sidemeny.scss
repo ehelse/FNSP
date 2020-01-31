@@ -1,0 +1,22 @@
+.sidemenywrapper{
+    display: flex;
+    flex-direction: column;
+    width:400px;
+    padding:10px;
+}
+.sidemenyheader{
+    display: inline-flex;
+    justify-content: space-between;
+    border-bottom:1px solid black;
+}
+.meny-header-tekst{
+    display: block;
+}
+.sidemeny-knapp{
+    background-color: #fff;
+    color:#007ec1;
+    border:none;
+    text-align: start;
+    font-size: 15pt;
+    padding:0;
+}
