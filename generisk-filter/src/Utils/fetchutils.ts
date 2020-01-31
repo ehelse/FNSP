@@ -8,6 +8,7 @@ export const renameKeys = (list: any[], newKeys: any) => {
             const newKey = newKeys[key] || key;
             return {[newKey]: listItem[key]}
         })
+        console.log(keyValues)
         return [...list, keyValues];
     })
 }
