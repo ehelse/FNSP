@@ -3,17 +3,23 @@ import '../scss/sidemenyknapp.scss';
 
 export type SidemenyKnappProps = {
     title: string;
-    goToFilter: (filterName: any) => string[]
+    subMenuResultLength?: number;
+    isSubMenu?: boolean;
+    goToFilter?: (filterName: any) => string[]
 }
-export const SidemenyKnapp = ({ title, goToFilter }: SidemenyKnappProps): JSX.Element => {
+export const SidemenyKnapp = ({ title, goToFilter, isSubMenu, subMenuResultLength }: SidemenyKnappProps): JSX.Element => {
     return (
         <span className='knapp-wrapper'>
-            <button
-                className='sidemeny-knapp'
-                onClick={goToFilter}>
-                {title}
-            </button>
-            <img src='test' />
+            <span className='button-title'>
+                {isSubMenu ? <input type='checkbox' className='checkbox-input' /> : null}
+                <button
+                    className='sidemeny-knapp'
+                    onClick={goToFilter}>
+                    {title}
+                </button>
+            </span>
+            {isSubMenu ? null : <img src='test' />}
+            {isSubMenu ? <span>{subMenuResultLength}</span> : null}
         </span>
     )
 }

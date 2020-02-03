@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../scss/sidemeny.scss'
 import { dummyFetch } from '../dummydata/dummydata';
 import { SidemenyKnapp } from './sidemenyknapp';
-import { renameKeys } from '../Utils/fetchutils';
+import { combineFilterResults, removeDuplicateFilters, getLengthOfArraylist } from '../Utils/fetchutils';
 
 export type SidemenyProps = {
     children?: any;
@@ -10,17 +10,14 @@ export type SidemenyProps = {
 }
 
 export const Sidemeny = ({ children, tittelListe }: SidemenyProps): JSX.Element => {
-    const [kategorier, setkategorier] = useState<string[]>([]);
-    const [status, setStatus] = useState<string[]>([]);
-    const [behandlling, setBehanding] = useState<string[]>([]);
-    const [studieforegar, setforegar] = useState<string[]>([]);
-    const [ansvarlig, setansvarlig] = useState<string[]>([]);
-    const [valgFilter, setValgtFilter] = useState<any[]>([])
+    const [filtre, setfiltre] = useState<string[]>([]);
+    const [valgtFilter, setValgtFilter] = useState<any[]>([])
+    const [visValgtefiltre, setVisValgteFiltre] = useState(false)
 
     const listData = () => {
         dummyFetch.map(item => {
             return item?.kategorier.map((kategori) => {
-                setkategorier(kategorier => [...kategorier, kategori])
+                setfiltre(filtre => [...filtre, kategori])
             })
         })
     }
@@ -29,22 +26,37 @@ export const Sidemeny = ({ children, tittelListe }: SidemenyProps): JSX.Element 
     }, [])
 
     const openFilter = (filter: string): any => {
-        dummyFetch.filter(liste => {
-            const keys = Object.keys(liste);
-            const rename = renameKeys(dummyFetch, {kategorier: 'Kategori'})
-            const findValue = keys.some((value) => value === filter)
-            setValgtFilter((valgFilter) => [...valgFilter, rename])
+        dummyFetch.filter((listeobj: any) => {
+            const setCorrectFilters = combineFilterResults(listeobj, filter)
+
+            setValgtFilter(valgtFilter => [...valgtFilter, setCorrectFilters])
+            setVisValgteFiltre(true);
         })
     }
-    console.log(valgFilter)
+    const emptyFilter = () => {
+        setValgtFilter([])
+        setVisValgteFiltre(false);
+    }
     return (
         <div className='sidemenywrapper'>
             <section className='sidemenyheader'>
+                {visValgtefiltre ? <button onClick={() => emptyFilter()} className='meny-header-tekst'> Tilbake </button> : null}
                 <span className='meny-header-tekst'>Filtrer liste</span>
                 <span>X</span>
             </section>
-            {tittelListe?.map((tittel: string): JSX.Element | null => {
-                return <SidemenyKnapp title={tittel} goToFilter={() => openFilter(tittel)} />
+            {!visValgtefiltre && tittelListe?.map((tittel: string, i: number): JSX.Element | null => {
+                return <SidemenyKnapp
+                    title={tittel}
+                    goToFilter={() => openFilter('kategorier')}
+                    key={tittel + i} />
+            })}
+            {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((tittel: string, i: number): JSX.Element | null => {
+                return <SidemenyKnapp
+                    isSubMenu
+                    title={tittel}
+                    key={tittel + i}
+                    subMenuResultLength={getLengthOfArraylist(valgtFilter, tittel)}
+                />
             })}
 
         </div>

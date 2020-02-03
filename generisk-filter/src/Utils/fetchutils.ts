@@ -2,15 +2,26 @@ export const fetcher = () => {
 
 }
 
-export const renameKeys = (list: any[], newKeys: any) => {
-    list.map((listItem: any) => {
-        const keyValues = Object.keys(listItem).map(key => {
-            const newKey = newKeys[key] || key;
-            return {[newKey]: listItem[key]}
-        })
-        console.log(keyValues)
-        return [...list, keyValues];
-    })
+export const combineFilterResults = (listeobj: any, filter: string) => {
+    const combinedListe = listeobj[filter]
+        .flat()
+        .reduce(((unique: any, item: string) => item && !unique.includes(item) ? [...unique, item] : unique), [])
+    return combinedListe
+
+}
+
+export const removeDuplicateFilters = (list: any) => {
+    const flatList = list
+        .flatMap((x: any) => x)
+        .reduce(((unique: any, item: string) => item && !unique.includes(item) ? [...unique, item] : unique), [])
+        .sort()
+    return flatList;
+}
+
+export const getLengthOfArraylist = (list: any[], tittel: string) => {
+    return list.flatMap((x: any) => x).reduce((n, val) => {
+        return n + (val === tittel);
+    }, 0)
 }
 
 export const knappeListe = [
