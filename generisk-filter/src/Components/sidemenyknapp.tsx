@@ -18,7 +18,7 @@ export const SidemenyKnapp = ({ title, goToFilter, isSubMenu, subMenuResultLengt
                     {title}
                 </button>
             </span>
-            {isSubMenu ? null : <img src='test' />}
+            {isSubMenu ? null : <img src='test' alt='Pil'/>}
             {isSubMenu ? <span>{subMenuResultLength}</span> : null}
         </span>
     )
