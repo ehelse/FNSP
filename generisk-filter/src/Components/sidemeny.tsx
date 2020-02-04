@@ -8,17 +8,19 @@ import { kliniskestudierDictionary } from '../Utils/kliniskestudierdictionary';
 
 export type SidemenyProps = {
     tittelListe?: string[]
-    dictionary?:{ [key: string]: string };
+    dictionary?: { [key: string]: string };
 }
 
 export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     const [filtre, setfiltre] = useState<any>(null);
     const [valgtFilter, setValgtFilter] = useState<any[]>([])
+    const [valgtUnderFilter, setValgtUnderFilter] = useState<any[]>([])
     const [visValgtefiltre, setVisValgteFiltre] = useState(false)
 
     const listData = () => {
         getClinicalTrials().then((response: any) => setfiltre(response))
     }
+
     useEffect(() => {
         listData()
     }, [])
@@ -30,13 +32,24 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             setVisValgteFiltre(true);
         })
     }
+
     const emptyFilter = () => {
         setValgtFilter([])
         setVisValgteFiltre(false);
     }
+
+    const velgUnderFiltre = (e: any) => {
+        const valg = e.target.value;
+        if (valgtUnderFilter.includes(valg)) {
+            const filtrertListe = valgtUnderFilter.filter(value => value !== valg);
+            setValgtUnderFilter(filtrertListe)
+        } else {
+            setValgtUnderFilter([...valgtUnderFilter, valg])
+        }
+    }
     return (
         <div className='sidemenywrapper'>
-            <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => emptyFilter()}/>
+            <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => emptyFilter()} />
             {!visValgtefiltre && tittelListe?.map((tittel: string, i: number): JSX.Element | null => {
                 return <SidemenyKnapp
                     title={tittel}
@@ -46,13 +59,15 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((tittel: string, i: number): JSX.Element | null => {
                 return <SidemenyKnapp
                     isSubMenu
+                    erValgt={valgtUnderFilter.includes(tittel)}
+                    velgFilter={(e): any => velgUnderFiltre(e)}
                     title={tittel}
                     key={tittel + i}
                     subMenuResultLength={getLengthOfArraylist(valgtFilter, tittel)}
                 />
             })}
-            <span>vis {filtre?.length} treff</span>
-            <BunnKnapper fjernFiltre={() => console.log('filtre fjernet')} trykkFerdig={() => console.log('ferdig med valg')} />
+            <span>vis {valgtUnderFilter?.length} treff</span>
+            <BunnKnapper fjernFiltre={() => setValgtUnderFilter([])} trykkFerdig={() => console.log('ferdig med valg')} />
         </div>
     )
 }
