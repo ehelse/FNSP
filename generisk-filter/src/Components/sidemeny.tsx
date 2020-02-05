@@ -39,7 +39,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     }
 
     const velgUnderFiltre = (e: any, title: string) => {
-        const valg = {[title]: e.target.value};
+        const valg =  e.target.value;
         if (valgtUnderFilter.includes(valg)) {
             const filtrertListe = valgtUnderFilter.filter(value => value !== valg);
             setValgtUnderFilter(filtrertListe)
