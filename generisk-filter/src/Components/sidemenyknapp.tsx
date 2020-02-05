@@ -1,5 +1,6 @@
 import React from 'react';
 import '../scss/sidemenyknapp.scss';
+import pil from '../svg/arrow-blue.svg'
 
 export type SidemenyKnappProps = {
     title: string;
@@ -20,7 +21,7 @@ export const SidemenyKnapp = ({erValgt, title, goToFilter, isSubMenu, subMenuRes
                     {title}
                 </button>
             </span>
-            {isSubMenu ? null : <img src='test' alt='Pil'/>}
+            {isSubMenu ? null : <img src={pil} className='valg-pil' alt='Pil'/>}
             {isSubMenu ? <span>{subMenuResultLength}</span> : null}
         </span>
     )

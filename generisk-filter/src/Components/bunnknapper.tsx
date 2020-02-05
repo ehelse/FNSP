@@ -1,15 +1,20 @@
 import React from 'react';
+import '../scss/sidemenyknapp.scss';
 
 export type BunnKnapperProps = {
     fjernFiltre: () => void;
     trykkFerdig: () => void;
     treff?: number;
+    valgtUnderFilter?: string[];
 }
-export const BunnKnapper = ({fjernFiltre, trykkFerdig, treff}: BunnKnapperProps) => {
+export const BunnKnapper = ({ fjernFiltre, trykkFerdig, valgtUnderFilter }: BunnKnapperProps) => {
     return (
         <div className='bunnknapperwrapper'>
-            <button onClick={fjernFiltre}>Fjern filtre</button>
-            <button onClick={trykkFerdig}>Ferdig</button>
+            <span className='valg-lengde'>vis {valgtUnderFilter?.length} treff</span>
+            <div className='bunnknapper'>
+                <button className='button-bottom' onClick={fjernFiltre}>FJERN ALLE</button>
+                <button className='button-bottom' onClick={trykkFerdig}>FERDIG</button>
+            </div>
         </div>
     )
 }

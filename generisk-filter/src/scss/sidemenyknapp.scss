@@ -1,16 +1,56 @@
-.knapp-wrapper{
+.knapp-wrapper {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
-.sidemeny-knapp{
-    cursor: pointer;
-}
-.checkbox-input{
-    transform: scale(1.5);
+
+.bunnknapperwrapper {
+    border-top: 2px solid rgba(0, 0, 0, .2);
 }
 
-.bunnknapperwrapper{
+.sidemeny-knapp {
+    cursor: pointer;
+
+    &:hover {
+        color: #034584;
+    }
+}
+
+.checkbox-input {
+    transform: scale(1.7);
+    margin-right: 10px;
+}
+
+.bunnknapper {
     display: flex;
     justify-content: space-evenly;
+}
+
+.valg-lengde {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.valg-pil {
+    height: 15px;
+}
+
+.button-bottom {
+    display: flex;
+    justify-self: center;
+    background: white;
+    border: 1px solid #034584;
+    cursor: pointer;
+    width: 180px;
+    color: #034584;
+    justify-content: center;
+    padding: 10px 20px 10px 20px;
+    font-size: 10pt;
+
+    &:hover {
+        background-color: #034584;
+        color: white;
+    }
 }
