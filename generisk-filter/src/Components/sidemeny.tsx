@@ -16,6 +16,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     const [valgtFilter, setValgtFilter] = useState<any[]>([])
     const [valgtHovedFilter, setValgtHovedFilter] = useState('')
     const [valgtUnderFilter, setValgtUnderFilter] = useState<any[]>([])
+    const [valgtUnderFilterResultat, setvalgtUnderFilterResultat] = useState<any[]>([])
     const [visValgtefiltre, setVisValgteFiltre] = useState(false)
 
     const listData = () => {
@@ -41,7 +42,12 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
         setVisValgteFiltre(false);
     }
 
-    const velgUnderFiltre = (e: any, title: string) => {
+    const chooseSubFilter = (e: any, title: string) => {
+        setvalgtUnderFilterResultat([...valgtUnderFilterResultat,
+        {
+            name: title,
+            results: getLengthOfArraylist(valgtFilter, title)
+        }])
         const valg = e.target.value;
         if (valgtUnderFilter.includes(valg)) {
             const filtrertListe = valgtUnderFilter.filter(value => value !== valg);
@@ -50,6 +56,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             setValgtUnderFilter([...valgtUnderFilter, valg])
         }
     }
+    console.log(valgtUnderFilterResultat)
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
@@ -64,14 +71,17 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                     return <SidemenyKnapp
                         isSubMenu
                         erValgt={valgtUnderFilter.includes(tittel)}
-                        velgFilter={(e): any => velgUnderFiltre(e, tittel)}
+                        velgFilter={(e): any => chooseSubFilter(e, tittel)}
                         title={tittel}
                         key={tittel + i}
                         subMenuResultLength={getLengthOfArraylist(valgtFilter, tittel)}
                     />
                 })}
             </div>
-            <BunnKnapper valgtUnderFilter={valgtUnderFilter} fjernFiltre={() => setValgtUnderFilter([])} trykkFerdig={() => console.log('ferdig med valg')} />
+            <BunnKnapper 
+            valgtUnderFilter={valgtUnderFilterResultat?.map(value => value.results).reduce((a: any, b: any) => a + b, 0)} 
+            fjernFiltre={() => setValgtUnderFilter([])} 
+            trykkFerdig={() => console.log('click')} />
         </div>
     )
 }
