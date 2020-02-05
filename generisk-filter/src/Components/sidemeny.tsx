@@ -26,7 +26,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     }, [])
 
     const openFilter = (filter: string): any => {
-        filtre.filter((listeobj: any) => {
+        filtre.filter((listeobj: any): any => {
             const setCorrectFilters = combineFilterResults(listeobj, filter)
             setValgtFilter(valgtFilter => [...valgtFilter, setCorrectFilters])
             setVisValgteFiltre(true);
@@ -38,8 +38,8 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
         setVisValgteFiltre(false);
     }
 
-    const velgUnderFiltre = (e: any) => {
-        const valg = e.target.value;
+    const velgUnderFiltre = (e: any, title: string) => {
+        const valg = {[title]: e.target.value};
         if (valgtUnderFilter.includes(valg)) {
             const filtrertListe = valgtUnderFilter.filter(value => value !== valg);
             setValgtUnderFilter(filtrertListe)
@@ -47,6 +47,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             setValgtUnderFilter([...valgtUnderFilter, valg])
         }
     }
+    console.log(valgtUnderFilter)
     return (
         <div className='sidemenywrapper'>
             <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => emptyFilter()} />
@@ -60,7 +61,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                 return <SidemenyKnapp
                     isSubMenu
                     erValgt={valgtUnderFilter.includes(tittel)}
-                    velgFilter={(e): any => velgUnderFiltre(e)}
+                    velgFilter={(e): any => velgUnderFiltre(e, tittel)}
                     title={tittel}
                     key={tittel + i}
                     subMenuResultLength={getLengthOfArraylist(valgtFilter, tittel)}

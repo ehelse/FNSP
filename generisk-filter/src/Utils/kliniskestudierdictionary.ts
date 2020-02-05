@@ -1,13 +1,5 @@
 import { Dictionary } from "./dictionary";
 
-export interface kliniskestudier {
-    kategorier: string;
-    status: string;
-    relevant_behandling: string;
-    studien_foregår_ved: string;
-    ansvarlig_helseforetak: string;
-}
-
 export function kliniskestudierDictionary(query: any) {
     let ordbok = new Dictionary<any>()
     ordbok.Add('Kategori', { norsk: 'Kategori', searchQuery: 'kategorier' })
