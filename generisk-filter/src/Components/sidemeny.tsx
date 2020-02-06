@@ -15,12 +15,14 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     const [filtre, setfiltre] = useState<any>(null);
     const [valgtFilter, setValgtFilter] = useState<any[]>([])
     const [valgtHovedFilter, setValgtHovedFilter] = useState('')
-    const [valgtUnderFilter, setValgtUnderFilter] = useState<any[]>([])
+    const [valgtUnderFilter, setValgtUnderFilter] = useState<any>(null)
     const [valgtUnderFilterResultat, setvalgtUnderFilterResultat] = useState<any[]>([])
     const [visValgtefiltre, setVisValgteFiltre] = useState(false)
 
     const listData = () => {
         getClinicalTrials().then((response: any) => setfiltre(response))
+        const makeKeys = tittelListe?.map((listeObj: string) => ({ [listeObj]: [] }))
+        setValgtUnderFilter(makeKeys)
     }
 
     useEffect(() => {
@@ -43,20 +45,26 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     }
 
     const chooseSubFilter = (e: any, title: string) => {
-        setvalgtUnderFilterResultat([...valgtUnderFilterResultat,
-        {
-            name: title,
-            results: getLengthOfArraylist(valgtFilter, title)
-        }])
+        setvalgtUnderFilterResultat([...valgtUnderFilterResultat, { name: title, results: getLengthOfArraylist(valgtFilter, title) }])
+
         const valg = e.target.value;
         if (valgtUnderFilter.includes(valg)) {
-            const filtrertListe = valgtUnderFilter.filter(value => value !== valg);
+            const filtrertListe = valgtUnderFilter.filter((value: any) => value !== valg);
             setValgtUnderFilter(filtrertListe)
         } else {
-            setValgtUnderFilter([...valgtUnderFilter, valg])
+            const addToFilter = valgtUnderFilter
+                .map((filter: any) => Object.keys(filter))
+                .flat()
+                .find((filter: string) => filter === valgtHovedFilter)
+                console.log(addToFilter)
+                valgtUnderFilter.map((f : any) => {
+                    if(addToFilter in f){
+                        return setValgtUnderFilter([...valgtUnderFilter, {[addToFilter]: [...[addToFilter], valg]}])
+                    }
+                })
         }
     }
-    console.log(valgtUnderFilterResultat)
+    console.log(valgtUnderFilter)
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
@@ -78,10 +86,10 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                     />
                 })}
             </div>
-            <BunnKnapper 
-            valgtUnderFilter={valgtUnderFilterResultat?.map(value => value.results).reduce((a: any, b: any) => a + b, 0)} 
-            fjernFiltre={() => setValgtUnderFilter([])} 
-            trykkFerdig={() => console.log('click')} />
+            <BunnKnapper
+                valgtUnderFilter={valgtUnderFilterResultat?.map(value => value.results).reduce((a: any, b: any) => a + b, 0)}
+                fjernFiltre={() => setValgtUnderFilter([])}
+                trykkFerdig={() => console.log('click')} />
         </div>
     )
 }
