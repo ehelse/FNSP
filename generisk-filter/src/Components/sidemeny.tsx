@@ -28,6 +28,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     useEffect(() => {
         listData()
     }, [])
+    const addToFilter = valgtUnderFilter?.find((obj: any) => Object.keys(obj).includes(valgtHovedFilter));
 
     const openFilter = (filter: string, title: string): any => {
         setValgtHovedFilter(title)
@@ -48,23 +49,16 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
         setvalgtUnderFilterResultat([...valgtUnderFilterResultat, { name: title, results: getLengthOfArraylist(valgtFilter, title) }])
 
         const valg = e.target.value;
-        if (valgtUnderFilter.includes(valg)) {
-            const filtrertListe = valgtUnderFilter.filter((value: any) => value !== valg);
-            setValgtUnderFilter(filtrertListe)
+        if (addToFilter[valgtHovedFilter].includes(valg)) {
+            const filtrertListe = addToFilter[valgtHovedFilter].filter((value: any) => value !== valg)
+            setvalgtUnderFilterResultat(valgtUnderFilterResultat.filter(r => r.name !== valg))
+            return addToFilter[valgtHovedFilter] = filtrertListe;
+
         } else {
-            const addToFilter = valgtUnderFilter
-                .map((filter: any) => Object.keys(filter))
-                .flat()
-                .find((filter: string) => filter === valgtHovedFilter)
-                console.log(addToFilter)
-                valgtUnderFilter.map((f : any) => {
-                    if(addToFilter in f){
-                        return setValgtUnderFilter([...valgtUnderFilter, {[addToFilter]: [...[addToFilter], valg]}])
-                    }
-                })
+            if (addToFilter) addToFilter[valgtHovedFilter].push(valg);
         }
     }
-    console.log(valgtUnderFilter)
+    console.log(valgtUnderFilterResultat)
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
@@ -78,7 +72,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                 {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((tittel: string, i: number): JSX.Element | null => {
                     return <SidemenyKnapp
                         isSubMenu
-                        erValgt={valgtUnderFilter.includes(tittel)}
+                        erValgt={addToFilter[valgtHovedFilter].includes(tittel)}
                         velgFilter={(e): any => chooseSubFilter(e, tittel)}
                         title={tittel}
                         key={tittel + i}
