@@ -48,9 +48,10 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     const chooseSubFilter = (e: any, title: string) => {
         setvalgtUnderFilterResultat([...valgtUnderFilterResultat, { name: title, results: getLengthOfArraylist(valgtFilter, title) }])
 
-        const valg = e.target.value;
-        if (addToFilter[valgtHovedFilter].includes(valg)) {
-            const filtrertListe = addToFilter[valgtHovedFilter].filter((value: any) => value !== valg)
+        const valg = { name: e.target.value, results: getLengthOfArraylist(valgtFilter, title) };
+
+        if (addToFilter[valgtHovedFilter].some((v: any) => v.name === valg.name)) {
+            const filtrertListe = addToFilter[valgtHovedFilter].filter((value: any) => value.name !== valg.name)
             setvalgtUnderFilterResultat(valgtUnderFilterResultat.filter(r => r.name !== valg))
             return addToFilter[valgtHovedFilter] = filtrertListe;
 
@@ -58,7 +59,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             if (addToFilter) addToFilter[valgtHovedFilter].push(valg);
         }
     }
-    console.log(valgtUnderFilterResultat)
+    console.log(addToFilter)
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
@@ -72,7 +73,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                 {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((tittel: string, i: number): JSX.Element | null => {
                     return <SidemenyKnapp
                         isSubMenu
-                        erValgt={addToFilter[valgtHovedFilter].includes(tittel)}
+                        erValgt={addToFilter[valgtHovedFilter].some((value: any) => value.name === tittel)}
                         velgFilter={(e): any => chooseSubFilter(e, tittel)}
                         title={tittel}
                         key={tittel + i}
@@ -81,8 +82,8 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                 })}
             </div>
             <BunnKnapper
-                valgtUnderFilter={valgtUnderFilterResultat?.map(value => value.results).reduce((a: any, b: any) => a + b, 0)}
-                fjernFiltre={() => setValgtUnderFilter([])}
+                valgtUnderFilter={valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0}
+                fjernFiltre={() => setvalgtUnderFilterResultat([])}
                 trykkFerdig={() => console.log('click')} />
         </div>
     )
