@@ -50,7 +50,6 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
         setValgtFilter([])
         setValgtHovedFilter('')
         setVisValgteFiltre(false);
-
     }
 
     const chooseSubFilter = (e: any, title: string) => {
