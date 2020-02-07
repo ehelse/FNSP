@@ -18,10 +18,10 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     const [valgtUnderFilter, setValgtUnderFilter] = useState<any>(null)
     const [valgtUnderFilterResultat, setvalgtUnderFilterResultat] = useState<any[]>([])
     const [visValgtefiltre, setVisValgteFiltre] = useState(false)
+    const makeKeys = tittelListe?.map((listeObj: string) => ({ [listeObj]: [] }))
 
     const listData = () => {
         getClinicalTrials().then((response: any) => setfiltre(response))
-        const makeKeys = tittelListe?.map((listeObj: string) => ({ [listeObj]: [] }))
         setValgtUnderFilter(makeKeys)
     }
 
@@ -41,7 +41,9 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
 
     const emptyFilter = () => {
         setValgtFilter([])
+        setvalgtUnderFilterResultat([])
         setValgtHovedFilter('')
+        setValgtUnderFilter(makeKeys)
         setVisValgteFiltre(false);
     }
 
@@ -59,7 +61,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             if (addToFilter) addToFilter[valgtHovedFilter].push(valg);
         }
     }
-    console.log(addToFilter)
+    console.log(valgtUnderFilter)
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
@@ -83,7 +85,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             </div>
             <BunnKnapper
                 valgtUnderFilter={valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0}
-                fjernFiltre={() => setvalgtUnderFilterResultat([])}
+                fjernFiltre={() => emptyFilter()}
                 trykkFerdig={() => console.log('click')} />
         </div>
     )
