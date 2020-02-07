@@ -40,11 +40,17 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     }
 
     const emptyFilter = () => {
-        setValgtHovedFilter('')
         setValgtFilter([])
+        setValgtHovedFilter('')
         setvalgtUnderFilterResultat([])
         setValgtUnderFilter(makeKeys)
         setVisValgteFiltre(false);
+    }
+    const goBack = () => {
+        setValgtFilter([])
+        setValgtHovedFilter('')
+        setVisValgteFiltre(false);
+
     }
 
     const chooseSubFilter = (e: any, title: string) => {
@@ -65,7 +71,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
-                <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => emptyFilter()} underfilter={valgtHovedFilter} />
+                <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => goBack()} underfilter={valgtHovedFilter} />
                 {!visValgtefiltre && tittelListe?.map((tittel: string, i: number): JSX.Element | null => {
                     return <SidemenyKnapp
                         title={tittel}
