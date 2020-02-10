@@ -40,10 +40,34 @@ export const getLengthOfArraylist = (list: any[], tittel: string) => {
   }, 0)
 }
 
+export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[]) => {
+  const filterArr: any[] = []
+
+  return filterListe.map((filter: any) => {
+    valgteFiltre?.map((underFiltre: any) => {
+      underFiltre.selectedFilters.map((u: any) => {
+        const chosenFilters = filter[underFiltre.queryTag];
+        const checkTag = typeof (chosenFilters);
+
+        if (checkTag === 'object') {
+          chosenFilters && chosenFilters.map((f: any) => {
+            console.log(f, u.name)
+            if (f === u.name) {
+              filterArr.push({ id: filter.id, tittel: filter.tittel })
+            }
+          })
+        } else if (checkTag === 'string' && u.name === chosenFilters) {
+          filterArr.push({ id: filter.id, tittel: filter.tittel })
+        }
+        console.log(removeDuplicateFilters(filterArr))
+      })
+    })
+  });
+}
 export const knappeListeClinicalTrials = [
-  {name: 'Kategori', qName:'kategorier'},
-  {name: 'Status', qName: 'status'},
-  {name: 'Relevant behandling', qName: 'relaterte_behandlinger'},
-  {name: 'Studien foregår ved', qName: 'deltakende_foretak'},
-  {name: 'Ansvarlig helseforetak', qName: 'utfort_av'}
+  { name: 'Kategori', qName: 'kategorier' },
+  { name: 'Status', qName: 'status' },
+  { name: 'Relevant behandling', qName: 'relaterte_behandlinger' },
+  { name: 'Studien foregår ved', qName: 'deltakende_foretak' },
+  { name: 'Ansvarlig helseforetak', qName: 'utfort_av' }
 ]

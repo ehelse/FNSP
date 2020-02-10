@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../scss/sidemeny.scss'
 import { SidemenyKnapp } from './sidemenyknapp';
-import { combineFilterResults, removeDuplicateFilters, getLengthOfArraylist, getClinicalTrials } from '../Utils/fetchutils';
+import { combineFilterResults, removeDuplicateFilters, getLengthOfArraylist, getClinicalTrials, getIdFromFilter } from '../Utils/fetchutils';
 import { BunnKnapper } from './bunnknapper';
 import { Sidemenyheader } from './sidemenyheader';
 import { kliniskestudierDictionary } from '../Utils/kliniskestudierdictionary';
@@ -75,12 +75,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
         }
     }
 
-    const getIdFromFilter = () => {
-        filtre?.filter((e: any) => {
 
-        });
-    }
-    console.log(addToFilter)
     return (
         <div className='sidemenywrapper'>
             <div className='menyknapper'>
@@ -105,7 +100,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             <BunnKnapper
                 valgtUnderFilter={valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0}
                 fjernFiltre={() => emptyFilter()}
-                trykkFerdig={() => getIdFromFilter()} />
+                trykkFerdig={() => getIdFromFilter(filtre, valgtUnderFilter)} />
         </div>
     )
 }
