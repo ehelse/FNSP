@@ -40,10 +40,10 @@ export const getLengthOfArraylist = (list: any[], tittel: string) => {
   }, 0)
 }
 
-export const knappeListe = [
-  'Kategori',
-  'Status',
-  'Relevant behandling',
-  'Studien foregår ved',
-  'Ansvarlig helseforetak'
+export const knappeListeClinicalTrials = [
+  {name: 'Kategori', qName:'kategorier'},
+  {name: 'Status', qName: 'status'},
+  {name: 'Relevant behandling', qName: 'relaterte_behandlinger'},
+  {name: 'Studien foregår ved', qName: 'deltakende_foretak'},
+  {name: 'Ansvarlig helseforetak', qName: 'utfort_av'}
 ]
