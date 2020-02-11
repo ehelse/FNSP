@@ -26,10 +26,10 @@ export const combineFilterResults = (listeobj: any, filter: string) => {
   }
 }
 
-export const removeDuplicateFilters = (list: any) => {
+export const removeDuplicateFilters = (list: any, optionalKey?: string) => {
   const flatList = list
     .flatMap((x: any) => x)
-    .reduce(((unique: any, item: string) => item && !unique.includes(item) ? [...unique, item] : unique), [])
+    .reduce(((unique: any, item: any) => item && !unique.includes(optionalKey ? item[optionalKey]: item) ? [...unique, item] : unique), [])
     .sort()
   return flatList;
 }
@@ -51,7 +51,6 @@ export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[]) => {
 
         if (checkTag === 'object') {
           chosenFilters && chosenFilters.map((f: any) => {
-            console.log(f, u.name)
             if (f === u.name) {
               filterArr.push({ id: filter.id, tittel: filter.tittel })
             }
@@ -59,7 +58,7 @@ export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[]) => {
         } else if (checkTag === 'string' && u.name === chosenFilters) {
           filterArr.push({ id: filter.id, tittel: filter.tittel })
         }
-        console.log(removeDuplicateFilters(filterArr))
+        console.log(removeDuplicateFilters(filterArr, 'id'))
       })
     })
   });
