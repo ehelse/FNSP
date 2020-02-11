@@ -1,5 +1,7 @@
+const apiUrl = 'https://functions-hnf2-1-02.int-hn.nhn.no/api/v1/kliniskestudier';
+
 export const getClinicalTrials = () =>
-  fetchUtility<any[]>('https://functions-hnf2-1-02.int-hn.nhn.no/api/v1/kliniskestudier', {
+  fetchUtility<any[]>(apiUrl, {
     method: 'GET'
   });
 
@@ -40,7 +42,7 @@ export const getLengthOfArraylist = (list: any[], tittel: string) => {
   }, 0)
 }
 
-export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[]) => {
+export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStateCallback:(list: any[]) => any) => {
   const filterArr: any[] = []
 
   return filterListe.map((filter: any) => {
@@ -52,13 +54,13 @@ export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[]) => {
         if (checkTag === 'object') {
           chosenFilters && chosenFilters.map((f: any) => {
             if (f === u.name) {
-              filterArr.push({ id: filter.id, tittel: filter.tittel })
+              filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke  })
             }
           })
         } else if (checkTag === 'string' && u.name === chosenFilters) {
-          filterArr.push({ id: filter.id, tittel: filter.tittel })
+          filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke })
         }
-        console.log(removeDuplicateFilters(filterArr, 'id'))
+        setStateCallback(removeDuplicateFilters(filterArr, 'id'))
       })
     })
   });

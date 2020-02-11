@@ -17,14 +17,15 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     const [valgtHovedFilter, setValgtHovedFilter] = useState('')
     const [valgtUnderFilter, setValgtUnderFilter] = useState<any>(null)
     const [valgtUnderFilterResultat, setvalgtUnderFilterResultat] = useState<any[]>([])
+    const [resultat, setResultat] = useState<any[]>([])
     const [visValgtefiltre, setVisValgteFiltre] = useState(false)
 
     const makeKeys = tittelListe?.map((listeObj: any) => (
-        { 
-        name:listeObj.name,
-        selectedFilters: [],
-        queryTag: listeObj.qName
-    }))
+        {
+            name: listeObj.name,
+            selectedFilters: [],
+            queryTag: listeObj.qName
+        }))
 
     const addToFilter = valgtUnderFilter?.find((obj: any) => obj.name.includes(valgtHovedFilter));
 
@@ -39,7 +40,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
 
     const openFilter = (filter: string, title: string): any => {
         setValgtHovedFilter(title)
-        filtre.filter((listeobj: any):void => {
+        filtre.filter((listeobj: any): void => {
             const setCorrectFilters = combineFilterResults(listeobj, filter)
             setValgtFilter(valgtFilter => [...valgtFilter, setCorrectFilters])
             setVisValgteFiltre(true);
@@ -67,40 +68,47 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
 
         if (addToFilter.selectedFilters.some((v: any) => v.name === valg.name)) {
             const filtrertListe = addToFilter.selectedFilters.filter((value: any) => value.name !== valg.name)
-            setvalgtUnderFilterResultat(valgtUnderFilterResultat.filter(r => r.name !== valg))
+            setvalgtUnderFilterResultat(valgtUnderFilterResultat.filter(r => r.name !== valg.name))
             return addToFilter.selectedFilters = filtrertListe;
 
         } else {
             if (addToFilter) addToFilter.selectedFilters.push(valg);
         }
     }
-
-
+  
+    console.log(resultat)
     return (
-        <div className='sidemenywrapper'>
-            <div className='menyknapper'>
-                <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => goBack()} underfilter={valgtHovedFilter} />
-                {!visValgtefiltre && tittelListe?.map((obj: any, i: number): JSX.Element | null => {
-                    return <SidemenyKnapp
-                        title={obj.name}
-                        goToFilter={() => openFilter(kliniskestudierDictionary(obj.name), obj.name)}
-                        key={obj.name + i} />
-                })}
-                {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((obj: any, i: number): JSX.Element | null => {
-                    return <SidemenyKnapp
-                        isSubMenu
-                        erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
-                        velgFilter={(e): any => chooseSubFilter(e, obj)}
-                        title={obj}
-                        key={obj + i}
-                        subMenuResultLength={getLengthOfArraylist(valgtFilter, obj)}
-                    />
+        <div className='komponentwrapper'>
+            <div className='sidemenywrapper'>
+                <div className='menyknapper'>
+                    <Sidemenyheader visValgtefiltre={visValgtefiltre} emptyFilter={() => goBack()} underfilter={valgtHovedFilter} />
+                    {!visValgtefiltre && tittelListe?.map((obj: any, i: number): JSX.Element | null => {
+                        return <SidemenyKnapp
+                            title={obj.name}
+                            goToFilter={() => openFilter(kliniskestudierDictionary(obj.name), obj.name)}
+                            key={obj.name + i} />
+                    })}
+                    {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((obj: any, i: number): JSX.Element | null => {
+                        return <SidemenyKnapp
+                            isSubMenu
+                            erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
+                            velgFilter={(e): any => chooseSubFilter(e, obj)}
+                            title={obj}
+                            key={obj + i}
+                            subMenuResultLength={getLengthOfArraylist(valgtFilter, obj)}
+                        />
+                    })}
+                </div>
+                <BunnKnapper
+                    valgtUnderFilter={valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0}
+                    fjernFiltre={() => emptyFilter()}
+                    trykkFerdig={() => getIdFromFilter(filtre, valgtUnderFilter, setResultat)} />
+            </div>
+            <div className={resultat.length > 0 ? 'resultatwrapper' : ''}>
+                {resultat?.map((res: any, i: number) => {
+                    return <a href={res.goesTo} target='_blank' className='resultat' key={i}>{res.tittel}</a>
                 })}
             </div>
-            <BunnKnapper
-                valgtUnderFilter={valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0}
-                fjernFiltre={() => emptyFilter()}
-                trykkFerdig={() => getIdFromFilter(filtre, valgtUnderFilter)} />
         </div>
     )
 }

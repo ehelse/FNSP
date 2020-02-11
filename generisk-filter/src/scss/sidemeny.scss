@@ -9,6 +9,34 @@
     border: 2px solid rgba(0, 0, 0, .2);
 }
 
+.komponentwrapper {
+    display: inline-flex;
+}
+
+.resultatwrapper {
+    margin: 5em 0 0 2em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultat {
+    color: #034584;
+    border: none;
+    text-align: start;
+    font-size: 12pt;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #034584;
+        color: white;
+    }
+}
+
 .sidemenyheader {
     display: inline-flex;
     justify-content: space-between;
@@ -35,7 +63,8 @@
     margin-left: 15px;
     margin-bottom: 15px;
 }
-.tilbakeknapp{
+
+.tilbakeknapp {
     display: block;
     font-weight: 500;
     font-size: 10pt;
