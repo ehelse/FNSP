@@ -1,6 +1,7 @@
 import React from 'react';
 import '../scss/sidemenyknapp.scss';
 import pil from '../svg/arrow-blue.svg'
+import { FakeRadioKnapp } from './fakeradioknapp';
 
 export type SidemenyKnappProps = {
     title: string;
@@ -10,18 +11,21 @@ export type SidemenyKnappProps = {
     goToFilter?: (filterName: any) => string[];
     velgFilter?: (filterName: any) => string[];
 }
-export const SidemenyKnapp = ({erValgt, title, goToFilter, isSubMenu, subMenuResultLength, velgFilter }: SidemenyKnappProps): JSX.Element => {
+export const SidemenyKnapp = ({ erValgt, title, goToFilter, isSubMenu, subMenuResultLength, velgFilter }: SidemenyKnappProps): JSX.Element => {
     return (
         <span className='knapp-wrapper'>
             <span className='button-title'>
-                {isSubMenu ? <input type='checkbox' checked={erValgt} value={title} onChange={velgFilter} className='checkbox-input' /> : null}
+                {isSubMenu ? <div>
+                    <FakeRadioKnapp check={erValgt} />
+                    <input type='checkbox' checked={erValgt} value={title} onChange={velgFilter} className='checkbox-input' />
+                </div> : null}
                 <button
                     className='sidemeny-knapp'
                     onClick={goToFilter}>
                     {title}
                 </button>
             </span>
-            {isSubMenu ? null : <img src={pil} className='valg-pil' alt='Pil'/>}
+            {isSubMenu ? null : <img src={pil} className='valg-pil' alt='Pil' />}
             {isSubMenu ? <span>{subMenuResultLength}</span> : null}
         </span>
     )

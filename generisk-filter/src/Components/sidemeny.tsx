@@ -5,6 +5,7 @@ import { combineFilterResults, removeDuplicateFilters, getLengthOfArraylist, get
 import { BunnKnapper } from './bunnknapper';
 import { Sidemenyheader } from './sidemenyheader';
 import { kliniskestudierDictionary } from '../Utils/kliniskestudierdictionary';
+import { FakeRadioKnapp } from './fakeradioknapp';
 
 export type SidemenyProps = {
     tittelListe?: any[]
@@ -76,7 +77,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             if (addToFilter) addToFilter.selectedFilters.push(valg);
         }
     }
-  
+
     console.log(resultat)
     return (
         <div className='komponentwrapper'>
@@ -90,14 +91,16 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                             key={obj.name + i} />
                     })}
                     {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((obj: any, i: number): JSX.Element | null => {
-                        return <SidemenyKnapp
-                            isSubMenu
-                            erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
-                            velgFilter={(e): any => chooseSubFilter(e, obj)}
-                            title={obj}
-                            key={obj + i}
-                            subMenuResultLength={getLengthOfArraylist(valgtFilter, obj)}
-                        />
+                        return <div>
+                            
+                            <SidemenyKnapp
+                                isSubMenu
+                                erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
+                                velgFilter={(e): any => chooseSubFilter(e, obj)}
+                                title={obj}
+                                key={obj + i}
+                                subMenuResultLength={getLengthOfArraylist(valgtFilter, obj)}
+                            /></div>
                     })}
                 </div>
                 <BunnKnapper

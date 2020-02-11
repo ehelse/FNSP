@@ -28,10 +28,10 @@ export const combineFilterResults = (listeobj: any, filter: string) => {
   }
 }
 
-export const removeDuplicateFilters = (list: any, optionalKey?: string) => {
+export const removeDuplicateFilters = (list: any) => {
   const flatList = list
     .flatMap((x: any) => x)
-    .reduce(((unique: any, item: any) => item && !unique.includes(optionalKey ? item[optionalKey]: item) ? [...unique, item] : unique), [])
+    .reduce(((unique: any, item: any) => item && !unique.includes(item) ? [...unique, item] : unique), [])
     .sort()
   return flatList;
 }
@@ -60,7 +60,11 @@ export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStat
         } else if (checkTag === 'string' && u.name === chosenFilters) {
           filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke })
         }
-        setStateCallback(removeDuplicateFilters(filterArr, 'id'))
+        const filtrertListe = filterArr.filter((a: any, b: any) => {
+          console.log(a, b)
+          return filterArr.indexOf(a.id) !== b.id
+          })
+        setStateCallback(filtrertListe)
       })
     })
   });

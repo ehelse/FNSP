@@ -6,7 +6,7 @@ import { knappeListeClinicalTrials } from './Utils/fetchutils';
 const App: FC = () => {
   return (
     <div className="filtrerings-wrapper">
-      <Sidemeny tittelListe={knappeListeClinicalTrials} />
+      <Sidemeny  tittelListe={knappeListeClinicalTrials} />
     </div>
   );
 }
