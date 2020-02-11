@@ -15,12 +15,22 @@
         color: #034584;
     }
 }
-
+.button-title{
+    display:flex;
+    align-self: center;
+}
+.side-meny-input-wrapper{
+    position: relative;
+    display: inline-flex;
+    margin-right: 20px;
+}
 .checkbox-input {
     transform: scale(2.5);
     margin-left: 15px;
     margin-top: 15px;
     opacity:0;
+    cursor: pointer;
+
 }
 
 
