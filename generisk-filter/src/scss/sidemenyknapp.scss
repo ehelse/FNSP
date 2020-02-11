@@ -37,6 +37,16 @@
     height: 15px;
 }
 
+.valg-pil-tilbake {
+    display: flex;
+    align-self: center;
+    height: 15px;
+    margin: 0 0 15px 15px;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    cursor: pointer;
+}
+
 .button-bottom {
     display: flex;
     justify-self: center;

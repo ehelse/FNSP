@@ -44,7 +44,7 @@ export const getLengthOfArraylist = (list: any[], tittel: string) => {
 
 export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStateCallback:(list: any[]) => any) => {
   const filterArr: any[] = []
-
+  
   return filterListe.map((filter: any) => {
     valgteFiltre?.map((underFiltre: any) => {
       underFiltre.selectedFilters.map((u: any) => {

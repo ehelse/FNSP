@@ -49,6 +49,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
 
     const emptyFilter = () => {
         setValgtFilter([])
+        setResultat([])
         setValgtHovedFilter('')
         setvalgtUnderFilterResultat([])
         setValgtUnderFilter(makeKeys)
