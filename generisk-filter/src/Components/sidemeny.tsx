@@ -79,6 +79,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
     }
 
     console.log(resultat)
+    const numberOfResults = valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0
     return (
         <div className='komponentwrapper'>
             <div className='sidemenywrapper'>
@@ -92,7 +93,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                     })}
                     {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((obj: any, i: number): JSX.Element | null => {
                         return <div>
-                            
+
                             <SidemenyKnapp
                                 isSubMenu
                                 erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
@@ -104,9 +105,9 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                     })}
                 </div>
                 <BunnKnapper
-                    valgtUnderFilter={valgtUnderFilterResultat?.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0}
+                    valgtUnderFilter={numberOfResults}
                     fjernFiltre={() => emptyFilter()}
-                    trykkFerdig={() => getIdFromFilter(filtre, valgtUnderFilter, setResultat)} />
+                    trykkFerdig={() => numberOfResults === 0 ? emptyFilter() : getIdFromFilter(filtre, valgtUnderFilter, setResultat)} />
             </div>
             <div className={resultat.length > 0 ? 'resultatwrapper' : ''}>
                 {resultat?.map((res: any, i: number) => {
