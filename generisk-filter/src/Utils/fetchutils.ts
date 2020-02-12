@@ -42,9 +42,9 @@ export const getLengthOfArraylist = (list: any[], tittel: string) => {
   }, 0)
 }
 
-export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStateCallback:(list: any[]) => any) => {
+export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStateCallback: (list: any[]) => any) => {
   const filterArr: any[] = []
-  
+
   return filterListe.map((filter: any) => {
     valgteFiltre?.map((underFiltre: any) => {
       underFiltre.selectedFilters.map((u: any) => {
@@ -54,16 +54,17 @@ export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStat
         if (checkTag === 'object') {
           chosenFilters && chosenFilters.map((f: any) => {
             if (f === u.name) {
-              filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke  })
+              filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke })
             }
           })
         } else if (checkTag === 'string' && u.name === chosenFilters) {
           filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke })
         }
-        const filtrertListe = filterArr.filter((a: any, b: any) => {
-          console.log(a, b)
-          return filterArr.indexOf(a.id) !== b.id
+        const filtrertListe = filterArr
+          .sort((a: any, b: any): any => {
+            return a.tittel < b.tittel ? -1 : 0
           })
+          .filter((v, i, a) => a.findIndex(t => (t.id === v.id)) === i)
         setStateCallback(filtrertListe)
       })
     })
