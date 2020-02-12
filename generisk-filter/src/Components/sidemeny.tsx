@@ -5,7 +5,6 @@ import { combineFilterResults, removeDuplicateFilters, getLengthOfArraylist, get
 import { BunnKnapper } from './bunnknapper';
 import { Sidemenyheader } from './sidemenyheader';
 import { kliniskestudierDictionary } from '../Utils/kliniskestudierdictionary';
-import { FakeRadioKnapp } from './fakeradioknapp';
 
 export type SidemenyProps = {
     tittelListe?: any[]
@@ -111,7 +110,7 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
             </div>
             <div className={resultat.length > 0 ? 'resultatwrapper' : ''}>
                 {resultat?.map((res: any, i: number) => {
-                    return <a href={res.goesTo} target='_blank' className='resultat' key={i}>{res.tittel}</a>
+                    return <a href={res.goesTo} rel="noopener noreferrer" target='_blank' className='resultat' key={i}>{res.tittel}</a>
                 })}
             </div>
         </div>
