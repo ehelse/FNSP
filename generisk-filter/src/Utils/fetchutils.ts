@@ -1,8 +1,8 @@
-const apiUrl = 'https://functions-fnsp.hn.test.nhn.no/api/v1/kliniskestudier';
+const apiUrl = 'https://functions-hnf2-1-02.int-hn.nhn.no/api/v1/kliniskestudier';
 
 export const getClinicalTrials = () =>
   fetchUtility<any[]>(apiUrl, {
-    method: 'GET',
+    method: 'GET'
   });
 
 export const fetchUtility = <T>(
