@@ -3,25 +3,31 @@ import './App.scss';
 import {CalendarEntry} from "./components/calendarentry";
 import {dummydata} from "./dummydata";
 import {CalendarHeader} from "./components/calendarheader";
-import moment from 'moment'
+import moment, {monthsShort} from 'moment'
 import 'moment/locale/nb'
 
 moment.locale('nb');
 
-const newDate = moment();
-console.log(newDate.format('LLLL'));
-
 function App() {
-
+    const [currentMonth, setCurrentMonth] = React.useState('');
+    React.useEffect(() => {
+        setCurrentMonth(moment().format("MMMM"));
+    }, []);
     const dateFilter = (entry: any) => {
-        if (moment(entry.datoer.map((d: any) => d.start)).format("MMMM") === moment().format("MMMM")) {
+        if (entry.datoer.map((d: any) => moment(d.start).format("MMMM"))[0] === currentMonth) {
             return entry.datoer
         }
-        return entry.datoer
+        return null
     };
+    const prevMonth = moment().month(currentMonth).subtract(1,'months').endOf('month').format('MMMM');
+    const nextMonth = moment().month(currentMonth).add(1,'months').endOf('month').format('MMMM');
+
     return (
         <div className='main-wrapper'>
-            <CalendarHeader currentMonth={moment().format('MMMM YYYY')}/>
+            <CalendarHeader
+                goToNextMonth={() => setCurrentMonth(nextMonth)}
+                goToPrevMonth={() => setCurrentMonth(prevMonth)}
+                currentMonth={currentMonth}/>
             <div className="calendar-wrapper">
                 {dummydata.map((entry, i) => {
                     return <CalendarEntry

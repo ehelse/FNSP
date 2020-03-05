@@ -6,8 +6,7 @@ export type CalendarentryProps = {
     date: any;
     targetGroup: any;
 }
-export const CalendarEntry = ({title, date, targetGroup}: CalendarentryProps): JSX.Element => {
-    console.log(date)
+export const CalendarEntry = ({title, date, targetGroup}: CalendarentryProps): any => {
     const dateFormatter = () => {
         const erSammeDato = moment(date?.start).format('D') === moment(date?.slutt).format('D');
         if (erSammeDato) {
@@ -24,11 +23,15 @@ export const CalendarEntry = ({title, date, targetGroup}: CalendarentryProps): J
 
         }
     };
-    return (
-        <div className='entry-wrapper'>
-            {dateFormatter()}
-            <h1>{title}</h1>
-            <h3>{targetGroup}</h3>
-        </div>
-    )
+    if (!date) {
+        return null
+    } else {
+        return (
+            <div className='entry-wrapper'>
+                {dateFormatter()}
+                <h1>{title}</h1>
+                <h3>{targetGroup}</h3>
+            </div>
+        )
+    }
 };
