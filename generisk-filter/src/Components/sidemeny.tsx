@@ -91,16 +91,14 @@ export const Sidemeny = ({ tittelListe }: SidemenyProps): JSX.Element => {
                             key={obj.name + i} />
                     })}
                     {visValgtefiltre && removeDuplicateFilters(valgtFilter)?.map((obj: any, i: number): JSX.Element | null => {
-                        return <div>
-
-                            <SidemenyKnapp
-                                isSubMenu
-                                erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
-                                velgFilter={(e): any => chooseSubFilter(e, obj)}
-                                title={obj}
-                                key={obj + i}
-                                subMenuResultLength={getLengthOfArraylist(valgtFilter, obj)}
-                            /></div>
+                        return <SidemenyKnapp
+                            isSubMenu
+                            erValgt={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
+                            velgFilter={(e): any => chooseSubFilter(e, obj)}
+                            title={obj}
+                            key={obj + i}
+                            subMenuResultLength={getLengthOfArraylist(valgtFilter, obj)}
+                        />
                     })}
                 </div>
                 <BunnKnapper

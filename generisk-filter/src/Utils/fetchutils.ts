@@ -36,23 +36,23 @@ export const removeDuplicateFilters = (list: any) => {
   return flatList;
 }
 
-export const getLengthOfArraylist = (list: any[], tittel: string) => {
-  return list.flatMap((x: any) => x).reduce((n, val) => {
+export const getLengthOfArraylist = (list: any[], tittel: string): any => {
+  return list.flatMap((x: any) => x).reduce((n, val): any => {
     return n + (val === tittel);
   }, 0)
 }
 
-export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStateCallback: (list: any[]) => any) => {
+export const getIdFromFilter = (filterListe: any[], valgteFiltre: any[], setStateCallback: (list: any[]) => any): any => {
   const filterArr: any[] = []
 
-  return filterListe.map((filter: any) => {
-    valgteFiltre?.map((underFiltre: any) => {
-      underFiltre.selectedFilters.map((u: any) => {
+  return filterListe.map((filter: any): any => {
+    valgteFiltre?.map((underFiltre: any): any => {
+      underFiltre.selectedFilters.map((u: any): any => {
         const chosenFilters = filter[underFiltre.queryTag];
         const checkTag = typeof (chosenFilters);
 
         if (checkTag === 'object') {
-          chosenFilters && chosenFilters.map((f: any) => {
+          chosenFilters && chosenFilters.map((f: any): any => {
             if (f === u.name) {
               filterArr.push({ id: filter.id, tittel: filter.tittel, goesTo: filter.lenke })
             }

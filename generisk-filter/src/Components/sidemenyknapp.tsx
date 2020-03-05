@@ -17,7 +17,7 @@ export const SidemenyKnapp = ({ erValgt, title, goToFilter, isSubMenu, subMenuRe
             <span className='button-title'>
                 {isSubMenu ? <div className='side-meny-input-wrapper'>
                     <FakeRadioKnapp check={erValgt} />
-                    <input type='checkbox' checked={erValgt} value={title} onChange={velgFilter} className='checkbox-input' />
+                    <input type='checkbox' checked={erValgt} value={title} onChange={velgFilter} className='checkbox-input' aria-label={'checkbox ' + title} />
                 </div> : null}
                 <button
                     className='sidemeny-knapp'
