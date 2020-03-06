@@ -1,0 +1,130 @@
+@import './_variables.scss';
+@import './_svgdata.scss';
+
+.knapp-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bunnknapperwrapper {
+  border-top: 2px solid rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.previewtekst {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.sidemeny-knapp {
+  cursor: pointer;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+.button-title {
+  display: flex;
+  align-self: center;
+}
+
+.side-meny-input-wrapper {
+  position: relative;
+  display: inline-flex;
+  margin-right: 20px;
+}
+
+.checkbox-input {
+  transform: scale(2.5);
+  margin-left: 15px;
+  margin-top: 15px;
+  opacity: 0;
+  cursor: pointer;
+
+}
+
+.bunnknapper {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-self: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .bunnknapper {
+    width: 90%;
+  }
+}
+
+.valg-lengde {
+  display: block;
+  margin: 20px 0 20px 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+.valg-pil {
+  display: flex;
+  align-self: center;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+
+  &:after {
+    margin-left: 0;
+    content: '';
+    display: block;
+    background: url('../svg/pil-outline.svg') no-repeat center;
+    background-size: contain;
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+}
+
+.valg-pil-tilbake {
+  display: flex;
+  align-self: center;
+  border: none;
+  background-color: white;
+  margin: 0 0 15px 15px;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  cursor: pointer;
+
+  &:after {
+    margin-left: 0;
+    content: '';
+    display: block;
+    background: url('../svg/pil-outline.svg') no-repeat center;
+    background-size: contain;
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+}
+
+.button-bottom {
+  display: flex;
+  justify-self: center;
+  background: white;
+  border: 1px solid $blue;
+  cursor: pointer;
+  width: 150px;
+  color: $blue;
+  justify-content: center;
+  padding: 10px 20px 10px 20px;
+  font-size: 10pt;
+
+  &:hover, &:focus {
+    background-color: $blue;
+    color: white;
+  }
+}

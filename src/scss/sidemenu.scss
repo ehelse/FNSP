@@ -1,0 +1,236 @@
+@import './_variables.scss';
+
+/*.dekstopwrapper {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation-name: blurin;
+    background-color: rgba(255, 255, 255, 0.8);
+    animation-duration: 0.3s;
+}*/
+
+.komponentbakgrunn {
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    overflow: scroll;
+    background-color: rgba(255, 255, 255, 1);
+    animation-name: open;
+    box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.15);
+    animation-duration: 0.3s;
+}
+
+.isOpen {
+    display: none;
+}
+
+@keyframes blurin {
+    from{
+        background-color: rgba(255, 255, 255, 0);
+
+    }
+
+    to {
+        background-color: rgba(255, 255, 255, 0.8);
+
+    }
+}
+
+@keyframes open {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 40%
+    }
+}
+
+.isClosed {
+    animation-name: changedisplay;
+    animation-duration: 0.2s;
+    animation-direction: reverse;
+}
+
+@keyframes changedisplay {
+    from {
+        opacity: 1;
+        display: flex;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .komponentbakgrunn {
+        position: fixed;
+        z-index: 9999;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        background-color: white;
+        animation-name: open;
+        animation-duration: 0.3s;
+    }
+
+    @keyframes open {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%
+        }
+    }
+
+    .isOpen {
+        display: none;
+    }
+
+    .isClosed {
+        animation-name: changedisplay;
+        animation-duration: 0.2s;
+        animation-direction: reverse;
+    }
+
+    @keyframes changedisplay {
+        from {
+            opacity: 1;
+            display: flex;
+        }
+
+        to {
+            opacity: 0;
+            display: none;
+        }
+    }
+}
+
+/*.komponentwrapper {
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}*/
+
+.knapp-wrapper {
+    margin: 0 20px 0 20px;
+}
+
+.sidemenywrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9999;
+    background-color: white;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.resultatwrapper {
+    margin: 5em 0 0 2em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.resultat {
+    color: $blue;
+    text-align: start;
+    font-size: 12pt;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $blue;
+        color: white;
+    }
+}
+
+.sidemenyheader {
+    display: inline-flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0, 0, 0, .2);
+    margin-bottom: 2rem;
+    font-size: 15pt;
+    padding-top: 2em;
+    width: 100%;
+}
+
+.lukk-kryss {
+    display: flex;
+    align-self: flex-start;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    color: $blue;
+    bottom: 1em;
+    margin-right: 20px;
+    font-size: 18pt;
+
+    &:focus, &:hover{
+        border-bottom:1px solid $blue;
+    }
+    &:after {
+        margin-left: 0;
+        content: '';
+        display: block;
+        background: url('../svg/x-outline.svg') no-repeat center;
+        background-size: contain;
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+}
+
+.meny-header-tekst {
+    display: block;
+    font-weight: 600;
+    font-size: 18pt;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.tilbakeknapp {
+    display: block;
+    font-weight: 500;
+    font-size: 10pt;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.sidemeny-knapp {
+    background-color: white;
+    color: $blue;
+    border: none;
+    align-self: center;
+    text-align: start;
+    font-size: 12pt;
+    z-index: 999;
+    padding: 0;
+    &:focus, &:hover{
+        border-bottom:1px solid $blue;
+    }
+
+    &.disabled {
+        color: grey;
+        cursor: not-allowed;
+
+        &:focus, &:hover {
+            border-bottom: none;
+        }
+    }
+}
