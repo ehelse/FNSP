@@ -9,7 +9,7 @@ export const dummydata = [
         avdeling: '',
         datoer: [
             {
-                start: '2020-03-03T12:00:00Z',
+                start: '2020-05-04T12:00:00Z',
                 slutt: '2020-03-03T16:00:00Z'
             }
         ],
@@ -27,7 +27,7 @@ export const dummydata = [
         avdeling: '',
         datoer: [
             {
-                start: '2020-03-03T12:00:00Z',
+                start: '2020-03-07T12:00:00Z',
                 slutt: '2020-03-05T16:00:00Z'
             }
         ],
@@ -89,6 +89,27 @@ export const dummydata = [
             },
             {
                 start: '2020-04-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'Kurs for deg med tvangslidelser',
+        malgruppe: [
+            'pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
                 slutt: '2020-04-07T15:00:00Z'
             }
         ],

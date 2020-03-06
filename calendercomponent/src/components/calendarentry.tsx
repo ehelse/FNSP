@@ -7,6 +7,8 @@ export type CalendarentryProps = {
     targetGroup: any;
 }
 export const CalendarEntry = ({title, date, targetGroup}: CalendarentryProps): any => {
+        console.log(date)
+
     const dateFormatter = () => {
         const erSammeDato = moment(date?.start).format('D') === moment(date?.slutt).format('D');
         if (erSammeDato) {
