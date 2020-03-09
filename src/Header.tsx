@@ -8,6 +8,7 @@ import { makeDictionary } from './utils/makedictionary';
 import Sidemenuheader from './Sidemenuheader';
 import { BottomButtons } from './bottombuttons';
 import { Sidemenubutton } from './sidemenubutton';
+import SearchBox from './SearchBox';
 import Paginator from './paginator';
 const AriaModal = require('react-aria-modal');
 
@@ -60,6 +61,8 @@ const Header = (props: any) => {
     };
     const emptyFilter = () => {
         setChooseFilter([]);
+        setResultSetState({});
+        setFinalFilters([])
         resetFilters();
         setResult([]);
         setChosenMainFilter('');
@@ -202,10 +205,11 @@ const Header = (props: any) => {
                     <input type='text' placeholder='Skriv for å filtrere...' onChange={(e) => props.setSearchValue(e)} />
                     <button type='button' value="søk" onClick={() => props.filterBySearch()}>Søk</button>
                 </div> */}
+                <SearchBox />
                 <div className='filterbutton'>
                     <button type="button" onClick={(e) => setFilterOpen(true)} className="menu-button"><span className="filtericon"></span>Filtrer visningen</button>
                 </div>
-                <div className='komponentwrapper'>
+                <div className=''>
                     {filterOpen ? <AriaModal
                         titleText="FilterModal"
                         dialogClass='komponentbakgrunn'

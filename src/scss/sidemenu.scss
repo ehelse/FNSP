@@ -13,12 +13,10 @@
 
 .komponentbakgrunn {
     position: fixed;
-    z-index: 9999;
     right: 0;
     top: 0;
     width: 40%;
     height: 100%;
-    overflow: scroll;
     background-color: rgba(255, 255, 255, 1);
     animation-name: open;
     box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.15);
@@ -215,10 +213,10 @@
     cursor: pointer;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-transform: uppercase;
     text-align: center;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1rem;
     z-index: 999;
     padding: 0;
     display: flex;
@@ -232,8 +230,8 @@
     .filtericon {
         background: url('../svg/filter-outline.svg') no-repeat;
         background-size: contain;
-        height: 1rem;
-        width: 1rem;
+        height: 1.25rem;
+        width: 1.25rem;
         margin-right: 5px;
         float: left;
     }
