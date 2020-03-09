@@ -193,7 +193,7 @@ const Header = (props: any) => {
     // const numberOfResults = chosenSubFilterResult && chosenSubFilterResult.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0;
     const numberOfResults = finalFilters.length;
     return (
-        <div className='header'>
+        <div className='header container'>
             <h1>Kurskatalog</h1>
             <div className='ingress'>Her finner du oversikt over våre kurs og aktiviteter knyttet til våre behandlinger. <p>Kursene er tilrettelagt for deg som er pasient eller pårørende</p></div>
 
