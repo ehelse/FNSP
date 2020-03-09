@@ -198,12 +198,12 @@ const Header = (props: any) => {
             <div className='ingress'>Her finner du oversikt over våre kurs og aktiviteter knyttet til våre behandlinger. <p>Kursene er tilrettelagt for deg som er pasient eller pårørende</p></div>
 
             <div className='filer'>
-                <div className='searchfield'>
+                {/* <div className='searchfield'>
                     <input type='text' placeholder='Skriv for å filtrere...' onChange={(e) => props.setSearchValue(e)} />
                     <button type='button' value="søk" onClick={() => props.filterBySearch()}>Søk</button>
-                </div>
+                </div> */}
                 <div className='filterbutton'>
-                    <button type='button' onClick={(e) => setFilterOpen(true)}>Filter</button>
+                    <button type="button" onClick={(e) => setFilterOpen(true)} className="menu-button"><span className="filtericon"></span>Filtrer visningen</button>
                 </div>
                 <div className='komponentwrapper'>
                     {filterOpen ? <AriaModal

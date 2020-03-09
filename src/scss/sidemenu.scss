@@ -211,6 +211,33 @@
     margin-left: 15px;
     margin-bottom: 15px;
 }
+.menu-button {
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 999;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: border .2s, background-color .2s, color .2s;
+    color: #034584;
+    background-color: transparent;
+    border: transparent;
+    min-width: 6rem;
+
+    .filtericon {
+        background: url('../svg/filter-outline.svg') no-repeat;
+        background-size: contain;
+        height: 1rem;
+        width: 1rem;
+        margin-right: 5px;
+        float: left;
+    }
+}
 
 .sidemeny-knapp {
     background-color: white;
