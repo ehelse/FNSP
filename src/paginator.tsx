@@ -41,7 +41,7 @@ const Paginator = ({list, resultsPerPage}: PaginatorProps): any => {
     }
     return <div>
         <Catalog events={currentTodos}/>
-        <ul className='m_pagination_clean' id='pager'>
+        {/* <ul className='m_pagination_clean' id='pager'>
             <li>
                 <button type='button' onClick={() => setActivePage(activePage === 1 ? pageList.length : activePage - 1)}
                         className='search-results-pagination pagination-button left' aria-label='paginering pil venstre'/>
@@ -73,7 +73,7 @@ const Paginator = ({list, resultsPerPage}: PaginatorProps): any => {
                     onClick={() => setActivePage(activePage === pageList.length ? 1 : activePage + 1)}
                     className='search-results-pagination pagination-button right'/>
             </li>
-        </ul>
+        </ul> */}
     </div>
 };
 export default Paginator;

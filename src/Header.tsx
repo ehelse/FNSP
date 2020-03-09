@@ -133,6 +133,14 @@ const Header = (props: any) => {
 
     };
 
+    const completeFilterClick = () => {
+        if (numberOfResults === 0) {
+            emptyFilter();
+        } else {
+            setResult(finalFilters)
+            searchComplete(false)
+        }
+    }
 
     const disableSubFilters = (filterName: string) => {
         let found = false;
@@ -262,7 +270,9 @@ const Header = (props: any) => {
                             <BottomButtons
                                 chosenSubFilter={numberOfResults}
                                 removeFilters={() => emptyFilter()}
-                                clickComplete={() => numberOfResults === 0 ? emptyFilter() : getIdFromFilter(events, chosenSubFilter, setResult, searchComplete)} />
+                                clickComplete={completeFilterClick}
+                                // clickComplete={() => numberOfResults === 0 ? emptyFilter() : getIdFromFilter(events, chosenSubFilter, setResult, searchComplete)} 
+                                />
                         </div>
                     </AriaModal> : null}
 
