@@ -57,7 +57,7 @@ const events: Event[] =  [{
     },
     {
     tittel: 'Kurs for deg med tvangslidelser',
-    malgruppe: ['pasient og pårørende'],
+    malgruppe: ['leger'],
     type: 'kurs',
     sted: 'Gaustad sykehus',
     avdeling: '',

@@ -28,7 +28,7 @@ export const Sidemenubutton = ({ index, isSelected, title, goToFilter, isSubMenu
                 {selectedPreview && selectedPreview.selectedFilters.map((valg: any) => selectedPreview && selectedPreview.selectedFilters.length > 1 ? valg.name + ' , ' : valg.name)}
             </span>
             {isSubMenu ? null : <label className='valg-pil' tabIndex={-1} />}
-            {isSubMenu ? <span>{subMenuResultLength}</span> : null}
+            {isSubMenu && isActive ? <span>{subMenuResultLength}</span> : null}
         </span>
     )
 };

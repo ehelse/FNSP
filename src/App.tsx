@@ -5,6 +5,7 @@ import dummydata from './dummydata';
 import Catalog, { Event } from './Catalog';
 import Header from './Header';
 import Paginator from './paginator';
+import { getClinicalTrials } from './utils/fetchutils';
 
 const App = () => {
   const [filteredEvents, setFilteredEvents] = useState<Event[] | null>(null);
@@ -24,11 +25,9 @@ const App = () => {
   const resetFilters = () => {
     setFilteredEvents(dummydata);
   }
-  const createExtendedArray = () => {
-    const filterArr: any[] = [];
+  const createExtendedArray = (data: any[]) => {
   const searchKeyProperties = ['malgruppe', 'type', 'sted', 'avdeling', 'behandling', 'behandlingsprogram'];
-  const extended =  dummydata.map((filter: any) => {
-    // console.log('filter: ', filter)
+  const extended =  data?.map((filter: any) => {
       let filterProperties: any[] = [];
       Object.keys(filter).map(k => {
         if (searchKeyProperties.includes(k)) {
@@ -40,9 +39,16 @@ const App = () => {
   });
   return extended;
   }
+
   useEffect(() => {
-    // mergeArrays();
-    setFilteredEvents(createExtendedArray());
+
+  }, [])
+
+  useEffect(() => {
+  //   getClinicalTrials().then((response: any) => setFilteredEvents(createExtendedArray(response.sort((a: any, b: any): any => {
+  //     return a.tittel < b.tittel ? -1 : 0
+  // }))));
+  setFilteredEvents(createExtendedArray(dummydata));
   }, [])
   const filterBySearch = () => {
     if (searchValue === '') resetFilters()

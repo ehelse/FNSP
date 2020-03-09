@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './scss/main.scss';
 import './scss/sidemenu.scss';
 import { Event } from './Catalog';
-import { combineFilterResults, getLengthOfArraylist, removeDuplicateFilters, knappeListeClinicalTrials, getIdFromFilter } from './utils/fetchutils';
+import { combineFilterResults, getLengthOfArraylist, removeDuplicateFilters, knappeListeClinicalTrials, getIdFromFilter, getClinicalTrials } from './utils/fetchutils';
 import { makeDictionary } from './utils/makedictionary';
 import Sidemenuheader from './Sidemenuheader';
 import { BottomButtons } from './bottombuttons';
@@ -42,9 +42,6 @@ const Header = (props: any) => {
         const sortedClinical = filersToUse.sort((a: any, b: any): any => {
             return a.tittel < b.tittel ? -1 : 0
         });
-        /*getClinicalTrials().then((response: any) => setfilter(response.sort((a: any, b: any): any => {
-            return a.tittel < b.tittel ? -1 : 0
-        })));*/
         setFilteredEvents(sortedClinical);
         setChosenSubFilter(makeKeys)
     };
@@ -53,13 +50,8 @@ const Header = (props: any) => {
         listData()
     }, []);
 
-    React.useEffect(() => {
-        console.log('events: ', events);
-    }, [events])
-
     const openFilter = (filterList: any, title: string): any => {
         setChosenMainFilter(title);
-        // console.log('chosenSubFilter: ', chosenSubFilter)
         events.filter((listeobj: any): void => {
             const setCorrectFilters = combineFilterResults(listeobj, filterList);
             setChooseFilter((valgtFilter) => [...valgtFilter, setCorrectFilters]);
@@ -82,7 +74,20 @@ const Header = (props: any) => {
         setChosenMainFilter('');
         setShowChosenFilter(false);
     };
-
+    const findDuplicatesInSubObject = (resultSet: any) => {
+        const finalArray: any[] = [];
+        const keys = Object.keys(resultSet);
+        if (keys.length === 0) return finalArray;
+        else if (keys.length === 1) return resultSet[keys[0]];
+        const reducedValues = keys.reduce((acc, mainFilter) => {
+            let resultObject = resultSet[mainFilter];
+            if (acc && acc.length) {
+                return acc.filter((accResult: any) => resultObject.find((result: any) => accResult.id === result.id));
+            }
+            return resultObject;
+        }, []);
+        return reducedValues;
+    }
     const chooseSubFilter = (e: any, title: string) => {
         const selectedSubFilter = { name: e.target.value, results: getLengthOfArraylist(chooseFilter, title) };
         setChosenSubFilterResult([...chosenSubFilterResult, selectedSubFilter]);
@@ -90,102 +95,91 @@ const Header = (props: any) => {
             const filtrertListe = addToFilter.selectedFilters.filter((value: any) => value.name !== selectedSubFilter.name);
             setChosenSubFilterResult(chosenSubFilterResult.filter(r => r.name !== selectedSubFilter.name));
             if (filtrertListe.length === 0) setFiltersToUse(props.events);
-            return addToFilter.selectedFilters = filtrertListe;
+            addToFilter.selectedFilters = filtrertListe;
 
         } else {
             if (addToFilter) addToFilter.selectedFilters.push(selectedSubFilter);
         }
-        let filterPropsArray: any[] = [...usableFilters];
-        let count = chosenSubFilter.reduce((prev: any, cur: any) => {
-            if (prev.selectedFilters) {
-                return prev.selectedFilters.length;
-            } else {
-                return prev + cur.selectedFilters.length;
-            }
-        })
-        const selectedFiltersCounter = chosenSubFilter.reduce((prev: any, cur: any) => {
-            if (prev && prev.selectedFilters) {
-                return prev.selectedFilters.length + cur.selectedFilters.length;
-            } else {
-                return prev + cur.selectedFilters.length;
-            }
-        });
-        const counterList = chosenSubFilter.map((m: any) => m.selectedFilters.length);
 
-        let resultSet: any = {...resultSetState};
+        let resultSet: any = {};
         
         const flatMapAndRemoveDuplicates = (array: any[]) => {
             return array && array.length && array.flatMap(v => v).filter((value, index, self) => index === self.findIndex((t) => (t.id === value.id)));
         }
 
-        const findDuplicatesInSubObject = (resultSet: any) => {
-            const finalArray: any[] = [];
-            const keys = Object.keys(resultSet);
-            if (keys.length === 1) return resultSet[keys[0]];
-            keys.reduce((prev, cur) => {
-                const valPrev = resultSet[prev];
-                const valCur = resultSet[cur];
-                if (valPrev && valPrev.length) {
-                    valPrev.map((pval: any) => {
-                        const includes = valCur.filter((cval: any) => cval.id === pval.id).length;
-                        if (includes) {
-                            if (!finalArray.includes((fval: any) => fval.id === pval.id)) {
-                                finalArray.push(pval);
-                            }
-                        }
-                    })
-                }
-                return cur;
-            })
-            return finalArray;
-        }
-        addToFilter.selectedFilters.map((currentSubFilter: any) => {
-            if (resultSet[addToFilter.queryTag]) {
-                const eventsFilter = events.filter((res: any) => res.filterProperties.includes(currentSubFilter.name));
-                const flatMapped = flatMapAndRemoveDuplicates(eventsFilter)
-                resultSet[addToFilter.queryTag].push(flatMapped !== 0 ? flatMapped : eventsFilter);
+        chosenSubFilter.map((sub: any) => {
+            // console.log('sub: ', sub)
+            if (sub.selectedFilters.length) {
+                sub.selectedFilters.map((subSel: any) => {
+                    // console.log('subsel: ', subSel)
+                    if(resultSet[sub.queryTag]) {
+                        const eventsFilter = events.filter((res: any) => res.filterProperties.includes(subSel.name));
+                        const flatMapped = flatMapAndRemoveDuplicates(eventsFilter)
+                        resultSet[sub.queryTag].push(flatMapped !== 0 ? flatMapped : eventsFilter);
+                    } else {
+                        resultSet[sub.queryTag] = [events.filter((res: any) => res.filterProperties.includes(subSel.name))];
+                    }
+                    const flatMapped = flatMapAndRemoveDuplicates(resultSet[sub.queryTag]);
+                    resultSet[sub.queryTag] = flatMapped !== 0 ? flatMapped : resultSet[sub.queryTag];
+                })
             }
-            else {
-                resultSet[addToFilter.queryTag] = [events.filter((res: any) => res.filterProperties.includes(currentSubFilter.name))];
-            }
-
-            const flatMapped = flatMapAndRemoveDuplicates(resultSet[addToFilter.queryTag]);
-            resultSet[addToFilter.queryTag] = flatMapped !== 0 ? flatMapped : resultSet[addToFilter.queryTag];
-        })
-        console.log('res set: ', resultSet)
+        });
+        // console.log('res set: ', resultSet)
         setResultSetState(resultSet);
 
         const duplicateValues = findDuplicatesInSubObject(resultSet);
-        console.log('diplicate: ', duplicateValues)
+        console.log('duplicate: ', duplicateValues)
         setFinalFilters(duplicateValues);
-
-        const dupProp = filterPropsArray
-
-        setUsableFilters(dupProp);
 
     };
 
+
     const disableSubFilters = (filterName: string) => {
         let found = false;
+        // console.log('fitlername: ', filterName);
+        // console.log('resulstate: ', resultSetState)
         const currentMainFilterList = resultSetState[addToFilter.queryTag];
-        if (finalFilters.length === 0) return true;
-        if (Object.keys(resultSetState).length === 1 && currentMainFilterList && currentMainFilterList.length) return true;
-        if (currentMainFilterList && currentMainFilterList.length) {
-            currentMainFilterList.map((val: any) => {
-                if (val.filterProperties.includes(filterName)) {
-                    found = true;
-                }
-            })
-        } else {
-            finalFilters.map((val: any) => {
-                if (val.filterProperties.includes(filterName)) {
-                    found = true;
-                }
-            })
+        // console.log('addtofilter: ', addToFilter);
+        // console.log('addtpf: ', resultSetState[addToFilter.queryTag]);
+        const resultStateKeys = Object.keys(resultSetState);
+        // console.log('keys: ', resultStateKeys)
+        if (finalFilters.length === 0) {
+            // console.log('zero len');
+            return true;
+        }
+        if (Object.keys(resultSetState).length === 1 && resultSetState[addToFilter.queryTag] && resultSetState[addToFilter.queryTag].map((v: any) => v.filterProperties.includes(filterName))) {
+            // console.log('current filter 1');
+            return true;
         }
         
+        return finalFilters.some((filterVal: any) => {
+            return filterVal[addToFilter.queryTag].includes(filterName);
+        })
+        // return resultStateKeys.some((resultObject: any) => {
+        //     // console.log('obj:; ', resultObject);
+        //     const val = resultSetState[resultObject];
+        //     return val.some((state: any) => {
+        //         // console.log('state: ', state)
+        //         const includes = state[addToFilter.queryTag].includes(filterName);
+        //         // console.log('includes: ', includes);
+        //         return includes;
+        //     })
+        // })
+        // if (currentMainFilterList && currentMainFilterList.length) {
+        //     currentMainFilterList.map((val: any) => {
+        //         if (val.filterProperties.includes(filterName)) {
+        //             found = true;
+        //         }
+        //     })
+        // } else {
+        //     finalFilters.map((val: any) => {
+        //         if (val.filterProperties.includes(filterName)) {
+        //             found = true;
+        //         }
+        //     })
+        // }
+        // return found;
 
-        return found;
     }
 
     // const numberOfResults = chosenSubFilterResult && chosenSubFilterResult.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0;

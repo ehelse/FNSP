@@ -1,3 +1,21 @@
+const rootUrl = 'https://functions-fnsp.hn.test.nhn.no'; //API TEST
+
+export const getClinicalTrials = () =>
+  fetchUtility<any[]>(rootUrl, {
+    method: 'GET'
+  });
+
+export const fetchUtility = <T>(
+  url: string,
+  options?: RequestInit
+): Promise<T | null> => {
+  return fetch(url, options).then((response: Response) => {
+    if (!response.ok) throw new Error(response.statusText);
+    if (response.status === 204) return null;
+
+    return response.json() as Promise<T>;
+  });
+};
 
 export const combineFilterResults = (listeobj: any, filter: string) => {
   if (typeof (listeobj[filter]) === 'string') {
