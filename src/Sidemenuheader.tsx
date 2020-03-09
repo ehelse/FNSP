@@ -7,7 +7,6 @@ export type SidemenuheaderProps = {
     hideMenu: () => void;
 }
 const Sidemenuheader = ({ showChosenFilters, emptyFilter, subfilter, hideMenu }: SidemenuheaderProps) => {
-    document.body.style.overflow ='hidden';
 
     return (
         <section className='sidemenyheader'>

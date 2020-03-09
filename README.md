@@ -10,6 +10,7 @@
 2. Søkefelt + knapp
 3. Paginering
 4. Ferdig resultatliste
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
