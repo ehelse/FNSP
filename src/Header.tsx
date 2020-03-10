@@ -9,6 +9,7 @@ import Sidemenuheader from './Sidemenuheader';
 import { BottomButtons } from './bottombuttons';
 import { Sidemenubutton } from './sidemenubutton';
 import SearchBox from './SearchBox';
+import FilteredValues from './FilteredValues';
 import Paginator from './paginator';
 const AriaModal = require('react-aria-modal');
 
@@ -21,9 +22,9 @@ const Header = (props: any) => {
     const [chosenSubFilterResult, setChosenSubFilterResult] = React.useState<any[]>([]);
     const [showChosenFilter, setShowChosenFilter] = React.useState(false);
     const [filersToUse, setFiltersToUse] = useState<any[]>(props.events)
-    const [usableFilters, setUsableFilters] = useState<string[]>([]);
-    const [resultSetState, setResultSetState] = useState<any>({});
+    const [groupedResults, setGroupedResults] = useState<any>({});
     const [finalFilters, setFinalFilters] = useState<any[]>([]);
+    const [searchResult, setSearchResult] = useState<any[] | null>(null);
     const { setFilterOpen, filterOpen, setFilteredEvents, events, resetFilters, setResult, result } = props;
     const searchComplete = (bol: boolean) => {
         setFilterOpen(bol)
@@ -61,7 +62,7 @@ const Header = (props: any) => {
     };
     const emptyFilter = () => {
         setChooseFilter([]);
-        setResultSetState({});
+        setGroupedResults({});
         setFinalFilters([])
         resetFilters();
         setResult([]);
@@ -92,7 +93,7 @@ const Header = (props: any) => {
         return reducedValues;
     }
     const chooseSubFilter = (e: any, title: string) => {
-        const selectedSubFilter = { name: e.target.value, results: getLengthOfArraylist(chooseFilter, title) };
+        const selectedSubFilter = { name: title, results: getLengthOfArraylist(chooseFilter, title) };
         setChosenSubFilterResult([...chosenSubFilterResult, selectedSubFilter]);
         if (addToFilter.selectedFilters.some((v: any) => v.name === selectedSubFilter.name)) {
             const filtrertListe = addToFilter.selectedFilters.filter((value: any) => value.name !== selectedSubFilter.name);
@@ -103,112 +104,84 @@ const Header = (props: any) => {
         } else {
             if (addToFilter) addToFilter.selectedFilters.push(selectedSubFilter);
         }
+        groupResultsByMainFilter();
+    };
 
+    const flatMapAndRemoveDuplicates = (array: any[]) => {
+        return array && array.length && array.flatMap(v => v).filter((value, index, self) => index === self.findIndex((t) => (t.id === value.id)));
+    }
+
+    const groupResultsByMainFilter = () => {
         let resultSet: any = {};
-        
-        const flatMapAndRemoveDuplicates = (array: any[]) => {
-            return array && array.length && array.flatMap(v => v).filter((value, index, self) => index === self.findIndex((t) => (t.id === value.id)));
-        }
-
-        chosenSubFilter.map((sub: any) => {
-            // console.log('sub: ', sub)
+        chosenSubFilter && chosenSubFilter.map((sub: any) => {
             if (sub.selectedFilters.length) {
                 sub.selectedFilters.map((subSel: any) => {
-                    // console.log('subsel: ', subSel)
                     if(resultSet[sub.queryTag]) {
-                        const eventsFilter = events.filter((res: any) => res.filterProperties.includes(subSel.name));
+                        const eventsFilter = events.filter((res: any) => res.filterProperties && res.filterProperties.includes(subSel.name));
                         const flatMapped = flatMapAndRemoveDuplicates(eventsFilter)
                         resultSet[sub.queryTag].push(flatMapped !== 0 ? flatMapped : eventsFilter);
                     } else {
-                        resultSet[sub.queryTag] = [events.filter((res: any) => res.filterProperties.includes(subSel.name))];
+                        resultSet[sub.queryTag] = [events.filter((res: any) => res.filterProperties && res.filterProperties.includes(subSel.name))];
                     }
                     const flatMapped = flatMapAndRemoveDuplicates(resultSet[sub.queryTag]);
                     resultSet[sub.queryTag] = flatMapped !== 0 ? flatMapped : resultSet[sub.queryTag];
                 })
             }
         });
-        // console.log('res set: ', resultSet)
-        setResultSetState(resultSet);
-
+        if (searchResult !==  null) {
+            resultSet['search'] = searchResult;
+        }
+        setGroupedResults(resultSet);
         const duplicateValues = findDuplicatesInSubObject(resultSet);
-        console.log('duplicate: ', duplicateValues)
         setFinalFilters(duplicateValues);
-
-    };
+    }
 
     const completeFilterClick = () => {
+        console.log('complete filter click')
         if (numberOfResults === 0) {
             emptyFilter();
         } else {
-            setResult(finalFilters)
             searchComplete(false)
         }
     }
+    React.useEffect(() => {
+        groupResultsByMainFilter();
+    }, [searchResult])
+    React.useEffect(() => {
+        setResult(finalFilters);
+    }, [finalFilters])
 
     const disableSubFilters = (filterName: string) => {
-        let found = false;
-        // console.log('fitlername: ', filterName);
-        // console.log('resulstate: ', resultSetState)
-        const currentMainFilterList = resultSetState[addToFilter.queryTag];
-        // console.log('addtofilter: ', addToFilter);
-        // console.log('addtpf: ', resultSetState[addToFilter.queryTag]);
-        const resultStateKeys = Object.keys(resultSetState);
-        // console.log('keys: ', resultStateKeys)
         if (finalFilters.length === 0) {
-            // console.log('zero len');
             return true;
         }
-        if (Object.keys(resultSetState).length === 1 && resultSetState[addToFilter.queryTag] && resultSetState[addToFilter.queryTag].map((v: any) => v.filterProperties.includes(filterName))) {
-            // console.log('current filter 1');
+        if (Object.keys(groupedResults).length === 1 && groupedResults[addToFilter.queryTag] && groupedResults[addToFilter.queryTag].map((v: any) => v.filterProperties.includes(filterName))) {
             return true;
         }
-        
         return finalFilters.some((filterVal: any) => {
             return filterVal[addToFilter.queryTag].includes(filterName);
         })
-        // return resultStateKeys.some((resultObject: any) => {
-        //     // console.log('obj:; ', resultObject);
-        //     const val = resultSetState[resultObject];
-        //     return val.some((state: any) => {
-        //         // console.log('state: ', state)
-        //         const includes = state[addToFilter.queryTag].includes(filterName);
-        //         // console.log('includes: ', includes);
-        //         return includes;
-        //     })
-        // })
-        // if (currentMainFilterList && currentMainFilterList.length) {
-        //     currentMainFilterList.map((val: any) => {
-        //         if (val.filterProperties.includes(filterName)) {
-        //             found = true;
-        //         }
-        //     })
-        // } else {
-        //     finalFilters.map((val: any) => {
-        //         if (val.filterProperties.includes(filterName)) {
-        //             found = true;
-        //         }
-        //     })
-        // }
-        // return found;
-
     }
-
-    // const numberOfResults = chosenSubFilterResult && chosenSubFilterResult.map((value: any) => value.results).reduce((a: any, b: any) => a + b, 0) || 0;
+    const handleSearchSubmit = (value: string) => {
+        const filteredResult = events.filter((res: any) => res.tittel.toLocaleLowerCase().includes(value.toLocaleLowerCase()))
+        setSearchResult(filteredResult);
+    }
+    const handleRemoveFilter = (title: string) => {
+        console.log('remove filter')
+        chooseSubFilter(null, title);
+    } 
     const numberOfResults = finalFilters.length;
     return (
         <div className='header container'>
             <h1>Kurskatalog</h1>
             <div className='ingress'>Her finner du oversikt over våre kurs og aktiviteter knyttet til våre behandlinger. <p>Kursene er tilrettelagt for deg som er pasient eller pårørende</p></div>
 
-            <div className='filer'>
-                {/* <div className='searchfield'>
-                    <input type='text' placeholder='Skriv for å filtrere...' onChange={(e) => props.setSearchValue(e)} />
-                    <button type='button' value="søk" onClick={() => props.filterBySearch()}>Søk</button>
-                </div> */}
-                <SearchBox />
+            <div className='filter'>
+                <SearchBox placeholder='Søk etter kurs' onSearch={handleSearchSubmit}/>
                 <div className='filterbutton'>
                     <button type="button" onClick={(e) => setFilterOpen(true)} className="menu-button"><span className="filtericon"></span>Filtrer visningen</button>
                 </div>
+                {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={handleRemoveFilter} /> : null}
                 <div className=''>
                     {filterOpen ? <AriaModal
                         titleText="FilterModal"
@@ -235,31 +208,6 @@ const Header = (props: any) => {
                                     isActive={true} />
                             })}
                             {showChosenFilter && removeDuplicateFilters(chooseFilter) && removeDuplicateFilters(chooseFilter).map((obj: any, i: number): JSX.Element | null => {
-                                // if (usableFilters.length === 0) {
-                                //     return <Sidemenubutton
-                                //         isSubMenu
-                                //         isSelected={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
-                                //         selectFilter={(e: any): any => chooseSubFilter(e, obj)}
-                                //         title={obj}
-                                //         key={obj + i}
-                                //         subMenuResultLength={getLengthOfArraylist(chooseFilter, obj)}
-                                //         isDisabled={existsinfilteredresultsokburdevaerestori()}
-                                //     />
-                                // } else {
-                                //     if (usableFilters.includes(obj)) {
-                                //         return <Sidemenubutton
-                                //             isSubMenu
-                                //             isSelected={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
-                                //             selectFilter={(e: any): any => chooseSubFilter(e, obj)}
-                                //             title={obj}
-                                //             key={obj + i}
-                                //             subMenuResultLength={getLengthOfArraylist(chooseFilter, obj)}
-                                //             isDisabled={existsinfilteredresultsokburdevaerestori()}
-                                //         />
-                                //     } else {
-                                //         return null;
-                                //     }
-                                // }
                                 return <Sidemenubutton
                                             isSubMenu
                                             isSelected={addToFilter.selectedFilters.some((value: any) => value.name === obj)}

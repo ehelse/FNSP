@@ -39,7 +39,10 @@ const Paginator = ({list, resultsPerPage}: PaginatorProps): any => {
         setActivePage(page);
         setOpenMobileMenu(false);
     }
-    return <div>
+    const getResultHitsMarkup = list.length === 0 ? <p>Fant ingen resultater</p> : list.length === 1 ? <p>Viser 1 resultat</p> : <p>Viser {list.length} resultater</p>
+
+    return <div className='col-md-8'>
+        {getResultHitsMarkup}
         <Catalog events={currentTodos}/>
         {/* <ul className='m_pagination_clean' id='pager'>
             <li>
