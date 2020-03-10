@@ -10,10 +10,8 @@ import { BottomButtons } from './bottombuttons';
 import { Sidemenubutton } from './sidemenubutton';
 import SearchBox from './SearchBox';
 import FilteredValues from './FilteredValues';
-import Paginator from './paginator';
+import { flatMapAndRemoveDuplicates, findDuplicatesInSubObject } from './utils/dataTransformation';
 const AriaModal = require('react-aria-modal');
-
-
 
 const Header = (props: any) => {
     const [chooseFilter, setChooseFilter] = React.useState<any[]>([]);
@@ -78,20 +76,6 @@ const Header = (props: any) => {
         setChosenMainFilter('');
         setShowChosenFilter(false);
     };
-    const findDuplicatesInSubObject = (resultSet: any) => {
-        const finalArray: any[] = [];
-        const keys = Object.keys(resultSet);
-        if (keys.length === 0) return finalArray;
-        else if (keys.length === 1) return resultSet[keys[0]];
-        const reducedValues = keys.reduce((acc, mainFilter) => {
-            let resultObject = resultSet[mainFilter];
-            if (acc && acc.length) {
-                return acc.filter((accResult: any) => resultObject.find((result: any) => accResult.id === result.id));
-            }
-            return resultObject;
-        }, []);
-        return reducedValues;
-    }
     const chooseSubFilter = (e: any, title: string) => {
         const selectedSubFilter = { name: title, results: getLengthOfArraylist(chooseFilter, title) };
         setChosenSubFilterResult([...chosenSubFilterResult, selectedSubFilter]);
@@ -106,10 +90,6 @@ const Header = (props: any) => {
         }
         groupResultsByMainFilter();
     };
-
-    const flatMapAndRemoveDuplicates = (array: any[]) => {
-        return array && array.length && array.flatMap(v => v).filter((value, index, self) => index === self.findIndex((t) => (t.id === value.id)));
-    }
 
     const groupResultsByMainFilter = () => {
         let resultSet: any = {};
@@ -137,7 +117,6 @@ const Header = (props: any) => {
     }
 
     const completeFilterClick = () => {
-        console.log('complete filter click')
         if (numberOfResults === 0) {
             emptyFilter();
         } else {
@@ -167,7 +146,6 @@ const Header = (props: any) => {
         setSearchResult(filteredResult);
     }
     const handleRemoveFilter = (title: string) => {
-        console.log('remove filter')
         chooseSubFilter(null, title);
     } 
     const numberOfResults = finalFilters.length;
@@ -181,7 +159,7 @@ const Header = (props: any) => {
                 <div className='filterbutton'>
                     <button type="button" onClick={(e) => setFilterOpen(true)} className="menu-button"><span className="filtericon"></span>Filtrer visningen</button>
                 </div>
-                {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={handleRemoveFilter} /> : null}
+                {/* {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={handleRemoveFilter} /> : null} */}
                 <div className=''>
                     {filterOpen ? <AriaModal
                         titleText="FilterModal"
@@ -223,7 +201,6 @@ const Header = (props: any) => {
                                 chosenSubFilter={numberOfResults}
                                 removeFilters={() => emptyFilter()}
                                 clickComplete={completeFilterClick}
-                                // clickComplete={() => numberOfResults === 0 ? emptyFilter() : getIdFromFilter(events, chosenSubFilter, setResult, searchComplete)} 
                                 />
                         </div>
                     </AriaModal> : null}

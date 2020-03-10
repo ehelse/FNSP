@@ -3,6 +3,8 @@
 ## Funksjonalitet
 1. Tall på underfiltre må oppdateres riktig når man filterer
 2. ~~Kombinasjon av søk og filtrering~~
+3. Fiks funksjonalitet på "fjern alle"-knapp
+4. Fiks funksjonalitet for å fjerne enkelte filtre
 
 
 ## Styling

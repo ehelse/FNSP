@@ -10,19 +10,9 @@ import SearchBox from './SearchBox';
 
 const App = () => {
   const [filteredEvents, setFilteredEvents] = useState<Event[]>([]);
-  const [typedFilter, setTypeFilter] = useState<Event[]>(dummydata);
-  const [mergedEvents, setMergedEvents] = useState<Event[] | null>(null);
   const [filterOpen, setFilterOpen] = useState<boolean>(false);
-  const [searchValue, setSearchValue] = useState<string>('');
   const [result, setResult] = React.useState<any[]>([]);
 
-  // const filterEvents = (e: any) => {
-  //   // console.log('change: ', e.target.value)
-  //   let filtered = typedFilter && typedFilter.filter(d => d.tittel.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()));
-  //   console.log(filtered)
-  //   setTypeFilter(filtered)
-  //   mergeArrays();
-  // }
   const resetFilters = () => {
     setFilteredEvents(dummydata);
   }
@@ -46,23 +36,8 @@ const App = () => {
   }, [])
 
   useEffect(() => {
-  //   getClinicalTrials().then((response: any) => setFilteredEvents(createExtendedArray(response.sort((a: any, b: any): any => {
-  //     return a.tittel < b.tittel ? -1 : 0
-  // }))));
-  setFilteredEvents(createExtendedArray(dummydata));
+    setFilteredEvents(createExtendedArray(dummydata));
   }, [])
-  // const filterBySearch = () => {
-  //   if (searchValue === '') resetFilters()
-  //   else {
-  //     let filtered = dummydata && dummydata.filter(d => d.tittel.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
-  //     setFilteredEvents(filtered)
-  //   }
-    
-  // }
-  // const mergeArrays = () => {
-  //   const reduced = filteredEvents?.filter(a => !typedFilter.find(f => a.id === f.id)).concat(typedFilter);
-  //   // setMergedEvents(reduced);
-  // }
   return (
     <div className='app'>
       {filteredEvents ? <Header setResult={setResult} result={result} events={filteredEvents} filterOpen={filterOpen} setFilterOpen={setFilterOpen} setFilteredEvents={setFilteredEvents} resetFilters={resetFilters} />: null}
