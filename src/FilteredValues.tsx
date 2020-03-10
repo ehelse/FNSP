@@ -27,7 +27,7 @@ const FilteredValues = ({values, onRemoveFilterClick}: FilteredValuesProps): any
             </li> : null
         )} */}
         {values.map((value: any, index: number) => 
-            <li className='item' key={index}><span>{value.name}</span><button type="button" onClick={() => removeFilter(value.name)}>X</button></li>
+            <li className='item' key={index}><span>{value.name}</span><button type="button" onClick={() => removeFilter(value.name)} aria-label='Fjern filter'></button></li>
         )}
     </ul></div> : null}</>
 };
