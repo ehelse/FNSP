@@ -3,24 +3,23 @@ import moment from "moment";
 
 export type CalendarentryProps = {
     title: string;
+    allEntries: any;
     date: any;
     targetGroup: any;
 }
-export const CalendarEntry = ({title, date, targetGroup}: CalendarentryProps): any => {
-        console.log(date)
-
+export const CalendarEntry = ({title, date, targetGroup, allEntries}: CalendarentryProps): any => {
     const dateFormatter = () => {
-        const erSammeDato = moment(date?.start).format('D') === moment(date?.slutt).format('D');
+        const erSammeDato = moment(date?.datoer[0].start).format('D') === moment(date?.datoer[0].slutt).format('D');
         if (erSammeDato) {
-            return <div>{moment(date?.start).format("D")}.
-                <div>{moment(date?.start).format("dd")}</div>
+            return <div>{moment(date?.datoer[0].start).format("D")}.
+                <h1>{moment(date?.datoer[0].start).format("dd")}</h1>
             </div>
         } else {
-            const startDato = date.map((d: any) => moment(d.start).format("D dd "));
-            const sluttDag = date.map((d: any) => moment(d.slutt).format("D dd "));
+            const startDato = date?.datoer.map((d: any) => moment(d.start).format("D"));
+            const sluttDag = moment(date?.datoer[0].slutt).format("dd");
             return <div>
-                {startDato}.
-                <div>{sluttDag}</div>
+                <span className='datoTekst'>{startDato}.</span>
+                <span className='datodagTekst'>{sluttDag}</span>
             </div>
 
         }
