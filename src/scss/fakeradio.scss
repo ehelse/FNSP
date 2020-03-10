@@ -13,6 +13,9 @@
     &.disabled {
         border-color: grey;
         opacity: .4;
+        &:hover {
+            cursor: default;
+        }
     }
 }
 

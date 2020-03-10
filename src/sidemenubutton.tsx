@@ -18,11 +18,12 @@ export const Sidemenubutton = ({ index, isSelected, title, goToFilter, isSubMenu
     return (
         <span className='knapp-wrapper'  onClick={goToFilter}>
             <span className='button-title'>
-                {isSubMenu ? <div className='side-meny-input-wrapper'>
+                {isSubMenu ? <div className={`side-meny-input-wrapper${!isActive ? ' disabled' : ''}`}>
                     <FakeRadioButton check={isSelected} disabled={!isActive}/>
                     <input type='checkbox' id={title} checked={isSelected} value={title} onChange={selectFilter} className='checkbox-input' disabled={!isActive}/>
+                    <label id={`side-menu-${index}`} className='sidemeny-label' htmlFor={title}>{title}</label>
                 </div> : null}
-                <button id={`side-menu${index}`} className={`sidemeny-knapp${isSubMenu && !isActive ? ' disabled' : ''} `}>{title}</button>
+                {isSubMenu ? null : <button id={`side-menu${index}`} className='sidemeny-knapp'>{title}</button>}
             </span>
             <span className='previewtekst' key={title}>
                 {selectedPreview && selectedPreview.selectedFilters.map((valg: any) => selectedPreview && selectedPreview.selectedFilters.length > 1 ? valg.name + ' , ' : valg.name)}

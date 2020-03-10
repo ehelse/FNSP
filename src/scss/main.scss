@@ -1,3 +1,4 @@
+@import './variables.scss';
 .container {
     margin-right: auto;
     margin-left: auto;
@@ -19,7 +20,7 @@
 }
 
 .searchbox {
-    height: 2rem;
+    height: 3rem;
     margin: 1rem 0;
     display: flex;
     flex-direction: row;
@@ -30,9 +31,28 @@
         padding: 0 .5rem;
         height: 100%;
         min-width: 50%;
+        position: relative;
+
+        &::before {
+            content: "asd";
+            position: absolute;
+            display: block;
+            top: 5px;
+            bottom: 5px;
+            left: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border: 5px solid $blue;
+        }
+        &::placeholder {
+            color: #000;
+        }
         &:focus {
             outline: 0;
-            box-shadow: 0px 0px 2px 0px #034584;
+
+            
+            // box-shadow: 0px 0px 2px 0px #034584;
         }
     }
 
@@ -52,36 +72,6 @@
         list-style-type: none;
         padding: 0;
 
-        .event {
-            max-width: 500px;
-            display: flex;
-            padding: 1rem 0;
-            &:not(:last-child) {
-                border-bottom: 2px solid #e6e5e1;
-            }
-            .date {
-                margin-right: 1rem
-            }
-            .title {
-                font-size: 1rem;
-                color: #034584;
-                font-weight: 600;
-            }
-            .tags {
-                font-size: .75rem;
-                text-transform: uppercase;
-                .tag {
-                    margin-right: 1rem;
-
-                    &:not(:last-child) {
-                        &::after {
-                            content: "|";
-                            margin-left: 1rem
-                        }
-                    }
-                    
-                }
-            }
-        }
+        
     }
 }

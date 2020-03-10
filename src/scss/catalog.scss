@@ -1,0 +1,65 @@
+@import './variables.scss';
+
+@mixin resetlist {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.m_event-catalog {
+    
+    .catalog-list {
+        list-style-type: none;
+    padding-left: 0;
+        li {
+            margin-bottom: 4rem;
+
+            .catalog-header {
+                font-size: 1.25rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: .5rem;
+                padding-bottom: .75rem;
+                border-bottom: 1px solid $grey-md;
+            }
+        }
+    }
+
+    .event-group {
+        list-style-type: none;
+        padding-left: 0;
+        .event {
+            max-width: 500px;
+            display: flex;
+            padding: 1rem 0;
+
+            .date {
+                width: 25%;
+            }
+            .item {
+                width: 75%;
+            }
+            .title {
+                font-size: 1rem;
+                color: #034584;
+                font-weight: 600;
+            }
+            .tags {
+                font-size: .75rem;
+                text-transform: uppercase;
+                .tag {
+                    margin-right: 1rem;
+
+                    &:not(:last-child) {
+                        &::after {
+                            content: "|";
+                            margin-left: 1rem
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
+}

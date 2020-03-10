@@ -41,6 +41,26 @@
   position: relative;
   display: inline-flex;
   margin-right: 20px;
+
+  &.disabled {
+    .sidemeny-knapp {
+        
+      color: grey;
+      cursor: not-allowed;
+
+      &:focus, &:hover {
+          border-bottom: none;
+      }
+    } 
+    .sidemeny-label {
+        color: grey;
+        cursor: default;
+
+        &:focus, &:hover {
+            border-bottom: none;
+        }
+    }
+  }
 }
 
 .checkbox-input {

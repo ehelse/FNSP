@@ -249,13 +249,15 @@
     &:focus, &:hover{
         border-bottom:1px solid $blue;
     }
-
-    &.disabled {
-        color: grey;
-        cursor: not-allowed;
-
-        &:focus, &:hover {
-            border-bottom: none;
-        }
-    }
+}
+.sidemeny-label {
+    background-color: white;
+    color: $blue;
+    border: none;
+    align-self: center;
+    text-align: start;
+    z-index: 999;
+    padding: 0;
+    margin-left: 1rem;
+    cursor: pointer;
 }

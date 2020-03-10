@@ -69,11 +69,11 @@ const App = () => {
       <div className="container">
         <div className='row'>
           <h2>Prototypeapplikasjon for arrangementer - kurskatalog</h2>
-          {filteredEvents ? <ul className={filterOpen ? 'm_page-list isOpen' : 'm_page-list isClosed'}>
+          {filteredEvents ? <div className={filterOpen ? 'isOpen' : 'isClosed'}>
             <Paginator
               list={result.length > 0 ? result : filteredEvents}
               resultsPerPage={50} />
-          </ul>: null}
+          </div>: null}
         </div> 
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './scss/main.scss';
+import './scss/catalog.scss';
 
 export interface Dato {
     start: string;
@@ -53,22 +54,12 @@ const Catalog = (props: CatalogProps) => {
     }, [events])
 
     return (
-        <div className='catalog'>
-            {/* <ul>
-            {events.map((event, index) => (
-                <li key={index} className='event'>
-                    <div className='title'>{event.tittel}</div>
-                    <div className='tags'>
-                        {getCreateTags(event).map(tag => tag? (<span className="tag" key={tag}>{tag}</span>) : null)}
-                    </div>
-                </li>
-            ))}
-            </ul> */}
-            <ul>
+        <div className='m_event-catalog'>
+            <ul className='catalog-list'>
             {Object.keys(groupedEvents).length ? Object.keys(groupedEvents).map((k, index) => {
-                return <div key={index} style={{marginBottom: '4rem'}}>
-                        <div style={{fontSize: '1.25rem', textTransform: 'uppercase', marginBottom: '.5rem'}}>{k}</div>
-                            <ul>{groupedEvents[k].map((ev: any, i: number) => 
+                return <li key={index} style={{marginBottom: '4rem'}}>
+                        <div className='catalog-header' style={{fontSize: '1.25rem', textTransform: 'uppercase', marginBottom: '.5rem'}}>{k}</div>
+                            <ul className='event-group'>{groupedEvents[k].map((ev: any, i: number) => 
                                 (<li key={i} className='event'>
                                     <div className='date'>{ev.datoer.length === 0 ? 'Nettkurs' :  new Date(ev.datoer[0].start).toLocaleDateString()}</div>
                                     <div className='item'><div className='title'>{ev.tittel}</div>
@@ -79,7 +70,7 @@ const Catalog = (props: CatalogProps) => {
                             </li>)
                                 )}
                             </ul>
-                        </div>}) : null}
+                        </li>}) : null}
             </ul>
         </div>
     )
