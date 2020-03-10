@@ -159,7 +159,7 @@ const Header = (props: any) => {
                 <div className='filterbutton'>
                     <button type="button" onClick={(e) => setFilterOpen(true)} className="menu-button"><span className="filtericon"></span>Filtrer visningen</button>
                 </div>
-                {/* {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={handleRemoveFilter} /> : null} */}
+                {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={() => {}} /> : null}
                 <div className=''>
                     {filterOpen ? <AriaModal
                         titleText="FilterModal"
