@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import './scss/main.scss';
 import './scss/sidemenu.scss';
-import { Event } from './Catalog';
 import { combineFilterResults, getLengthOfArraylist, removeDuplicateFilters, knappeListeClinicalTrials, getIdFromFilter, getClinicalTrials } from './utils/fetchutils';
 import { makeDictionary } from './utils/makedictionary';
 import Sidemenuheader from './Sidemenuheader';
@@ -14,20 +13,18 @@ import { flatMapAndRemoveDuplicates, findDuplicatesInSubObject } from './utils/d
 const AriaModal = require('react-aria-modal');
 
 const Header = (props: any) => {
-    const [chooseFilter, setChooseFilter] = React.useState<any[]>([]);
+    const [allSubFilters, setAllSubFilters] = React.useState<any[]>([]);
     const [chosenMainFilter, setChosenMainFilter] = React.useState('');
     const [chosenSubFilter, setChosenSubFilter] = React.useState<any>(null);
     const [chosenSubFilterResult, setChosenSubFilterResult] = React.useState<any[]>([]);
     const [showChosenFilter, setShowChosenFilter] = React.useState(false);
-    const [filersToUse, setFiltersToUse] = useState<any[]>(props.events)
     const [groupedResults, setGroupedResults] = useState<any>({});
     const [finalFilters, setFinalFilters] = useState<any[]>([]);
     const [searchResult, setSearchResult] = useState<any[] | null>(null);
-    const { setFilterOpen, filterOpen, setFilteredEvents, events, resetFilters, setResult, result } = props;
-    const searchComplete = (bol: boolean) => {
-        setFilterOpen(bol)
+    const { setFilterOpen, filterOpen, setFilteredEvents, events, resetFilters, setResult } = props;
+    const searchComplete = (isOpen: boolean) => {
+        setFilterOpen(isOpen)
     }
-
 
     const makeKeys = knappeListeClinicalTrials && knappeListeClinicalTrials.map((listeObj: any) => (
         {
@@ -39,27 +36,23 @@ const Header = (props: any) => {
     const addToFilter = chosenSubFilter && chosenSubFilter.find((obj: any) => obj.name.includes(chosenMainFilter));
 
     const listData = () => {
-        const sortedClinical = filersToUse.sort((a: any, b: any): any => {
+        const sortedClinical = events.sort((a: any, b: any): any => {
             return a.tittel < b.tittel ? -1 : 0
         });
         setFilteredEvents(sortedClinical);
         setChosenSubFilter(makeKeys)
     };
 
-    React.useEffect(() => {
-        listData()
-    }, []);
-
     const openFilter = (filterList: any, title: string): any => {
         setChosenMainFilter(title);
         events.filter((listeobj: any): void => {
-            const setCorrectFilters = combineFilterResults(listeobj, filterList);
-            setChooseFilter((valgtFilter) => [...valgtFilter, setCorrectFilters]);
+            const correctFilters = combineFilterResults(listeobj, filterList);
+            setAllSubFilters((prevState) => [...prevState, correctFilters]);
             setShowChosenFilter(true);
         })
     };
     const emptyFilter = () => {
-        setChooseFilter([]);
+        setAllSubFilters([]);
         setGroupedResults({});
         setFinalFilters([])
         resetFilters();
@@ -72,17 +65,16 @@ const Header = (props: any) => {
     };
 
     const goBack = () => {
-        setChooseFilter([]);
+        setAllSubFilters([]);
         setChosenMainFilter('');
         setShowChosenFilter(false);
     };
-    const chooseSubFilter = (e: any, title: string) => {
-        const selectedSubFilter = { name: title, results: getLengthOfArraylist(chooseFilter, title) };
+    const chooseSubFilter = (title: string) => {
+        const selectedSubFilter = { name: title, results: getLengthOfArraylist(allSubFilters, title) };
         setChosenSubFilterResult([...chosenSubFilterResult, selectedSubFilter]);
         if (addToFilter.selectedFilters.some((v: any) => v.name === selectedSubFilter.name)) {
             const filtrertListe = addToFilter.selectedFilters.filter((value: any) => value.name !== selectedSubFilter.name);
             setChosenSubFilterResult(chosenSubFilterResult.filter(r => r.name !== selectedSubFilter.name));
-            if (filtrertListe.length === 0) setFiltersToUse(props.events);
             addToFilter.selectedFilters = filtrertListe;
 
         } else {
@@ -123,13 +115,7 @@ const Header = (props: any) => {
             searchComplete(false)
         }
     }
-    React.useEffect(() => {
-        groupResultsByMainFilter();
-    }, [searchResult])
-    React.useEffect(() => {
-        setResult(finalFilters);
-    }, [finalFilters])
-
+    
     const disableSubFilters = (filterName: string) => {
         if (finalFilters.length === 0) {
             return true;
@@ -146,8 +132,26 @@ const Header = (props: any) => {
         setSearchResult(filteredResult);
     }
     const handleRemoveFilter = (title: string) => {
-        chooseSubFilter(null, title);
-    } 
+        const subFilterCopy = JSON.parse(JSON.stringify(chosenSubFilter));
+        subFilterCopy.map((sub: any) => {
+            if (sub.selectedFilters.length) {
+                sub.selectedFilters = sub.selectedFilters.filter((selSub: any) => selSub.name !== title);
+            }
+        })
+        const filteredChosenRes = chosenSubFilterResult.filter((res: any) => res.name !== title);
+        setChosenSubFilterResult(filteredChosenRes);
+        setChosenSubFilter(subFilterCopy);
+    }
+
+    React.useEffect(() => {
+        groupResultsByMainFilter();
+    }, [searchResult, chosenSubFilter])
+    React.useEffect(() => {
+        setResult(finalFilters);
+    }, [finalFilters])
+    React.useEffect(() => {
+        listData()
+    }, []);
     const numberOfResults = finalFilters.length;
     return (
         <div className='header container'>
@@ -159,7 +163,7 @@ const Header = (props: any) => {
                 <div className='filterbutton'>
                     <button type="button" onClick={(e) => setFilterOpen(true)} className="menu-button"><span className="filtericon"></span>Filtrer visningen</button>
                 </div>
-                {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={() => {}} /> : null}
+                {chosenSubFilter && chooseSubFilter.length ? <FilteredValues values={chosenSubFilterResult} onRemoveFilterClick={(title) => handleRemoveFilter(title)} /> : null}
                 <div className=''>
                     {filterOpen ? <AriaModal
                         titleText="FilterModal"
@@ -185,14 +189,14 @@ const Header = (props: any) => {
                                     selectedPreview={chosenSubFilter.find((o: any) => o.name === obj.name)}
                                     isActive={true} />
                             })}
-                            {showChosenFilter && removeDuplicateFilters(chooseFilter) && removeDuplicateFilters(chooseFilter).map((obj: any, i: number): JSX.Element | null => {
+                            {showChosenFilter && removeDuplicateFilters(allSubFilters) && removeDuplicateFilters(allSubFilters).map((obj: any, i: number): JSX.Element | null => {
                                 return <Sidemenubutton
                                             isSubMenu
                                             isSelected={addToFilter.selectedFilters.some((value: any) => value.name === obj)}
-                                            selectFilter={(e: any): any => chooseSubFilter(e, obj)}
+                                            selectFilter={() => chooseSubFilter(obj)}
                                             title={obj}
                                             key={obj + i}
-                                            subMenuResultLength={getLengthOfArraylist(chooseFilter, obj)}
+                                            subMenuResultLength={getLengthOfArraylist(allSubFilters, obj)}
                                             isActive={disableSubFilters(obj)}
                                         />
 

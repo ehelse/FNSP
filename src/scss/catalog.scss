@@ -1,15 +1,10 @@
 @import './variables.scss';
 
-@mixin resetlist {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 .m_event-catalog {
     
     .catalog-list {
         list-style-type: none;
-    padding-left: 0;
+        padding-left: 0;
         li {
             margin-bottom: 4rem;
 

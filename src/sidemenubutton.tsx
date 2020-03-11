@@ -10,7 +10,7 @@ export type SidemenuButtonProps = {
     isSubMenu?: boolean;
     isSelected?: any;
     goToFilter?: (filterName: any) => string[];
-    selectFilter?: (filterName: any) => string[];
+    selectFilter?: (filterName: any) => void;
     isActive: boolean;
 }
 export const Sidemenubutton = ({ index, isSelected, title, goToFilter, isSubMenu, subMenuResultLength, selectFilter, selectedPreview, isActive }: SidemenuButtonProps): JSX.Element => {

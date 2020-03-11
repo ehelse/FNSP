@@ -6,7 +6,7 @@ interface FilteredValuesProps {
 }
 const FilteredValues = ({values, onRemoveFilterClick}: FilteredValuesProps): any => {
     const [filterValues, setFilterValues] = React.useState<any[]>([]);
-    console.log('v: ', values)
+    // console.log('v: ', values)
     // const reduced = values.reduce((acc, cur) => {
     //     if (cur.selectedFilters) {
     //         cur.selectedFilters.map((f: any) => acc.push(f.name))

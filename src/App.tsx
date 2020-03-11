@@ -12,13 +12,14 @@ const App = () => {
   const [filteredEvents, setFilteredEvents] = useState<Event[]>([]);
   const [filterOpen, setFilterOpen] = useState<boolean>(false);
   const [result, setResult] = React.useState<any[]>([]);
+  const [extendedData, setExtendedData] = React.useState<any[]>([])
 
   const resetFilters = () => {
-    setFilteredEvents(dummydata);
+    setFilteredEvents(extendedData);
   }
   const createExtendedArray = (data: any[]) => {
-  const searchKeyProperties = ['malgruppe', 'type', 'sted', 'avdeling', 'behandling', 'behandlingsprogram'];
-  const extended =  data?.map((filter: any) => {
+    const searchKeyProperties = ['malgruppe', 'type', 'sted', 'avdeling', 'behandling', 'behandlingsprogram'];
+    const extended = data?.map((filter: any) => {
       let filterProperties: any[] = [];
       Object.keys(filter).map(k => {
         if (searchKeyProperties.includes(k)) {
@@ -26,9 +27,9 @@ const App = () => {
           filterProperties.push(valueByKey);
         }
       })
-      return {...filter, filterProperties: filterProperties.flatMap(v => v).filter(v => v.length !== 0), lastOrigin: null};
-  });
-  return extended;
+      return { ...filter, filterProperties: filterProperties.flatMap(v => v).filter(v => v.length !== 0), lastOrigin: null };
+    });
+    return extended;
   }
 
   useEffect(() => {
@@ -36,19 +37,20 @@ const App = () => {
   }, [])
 
   useEffect(() => {
+    setExtendedData(createExtendedArray(dummydata));
     setFilteredEvents(createExtendedArray(dummydata));
   }, [])
   return (
     <div className='app'>
-      {filteredEvents ? <Header setResult={setResult} result={result} events={filteredEvents} filterOpen={filterOpen} setFilterOpen={setFilterOpen} setFilteredEvents={setFilteredEvents} resetFilters={resetFilters} />: null}
+      {filteredEvents ? <Header setResult={setResult} result={result} events={filteredEvents} filterOpen={filterOpen} setFilterOpen={setFilterOpen} setFilteredEvents={setFilteredEvents} resetFilters={resetFilters} /> : null}
       <div className="container">
         <div className='row'>
           {filteredEvents ? <div className={filterOpen ? 'isOpen' : 'isClosed'}>
             <Paginator
               list={result.length > 0 ? result : filteredEvents}
               resultsPerPage={50} />
-          </div>: null}
-        </div> 
+          </div> : null}
+        </div>
       </div>
     </div>
   );
