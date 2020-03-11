@@ -50,7 +50,6 @@ function App() {
 
     const prevMonth = moment().month(currentMonth).subtract(1, 'months').endOf('month').format('MMMM');
     const nextMonth = moment().month(currentMonth).add(1, 'months').endOf('month').format('MMMM');
-    console.log(selectedMonth)
     return (
         <div className='main-wrapper'>
             <CalendarHeader
@@ -63,8 +62,7 @@ function App() {
                         allEntries={selectedMonth}
                         key={i}
                         date={dateFilter(entry)}
-                        targetGroup={entry.malgruppe.map((group, i) => <span key={i}
-                                                                             className='target-group'>{group}</span>)}
+                        targetGroup={entry.malgruppe.map((group, i) => <span key={i} className='target-group'>{group}</span>)}
                         title={entry.tittel}/>
 
                 })}

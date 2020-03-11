@@ -46,7 +46,7 @@ export const dummydata = [
         avdeling: '',
         datoer: [
             {
-                start: '2020-04-01T09:00:00Z',
+                start: '2020-04-04T09:00:00Z',
                 slutt: '2020-04-07T15:00:00Z'
             }
         ],

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import moment from "moment";
 
 export type CalendarentryProps = {
@@ -8,6 +8,7 @@ export type CalendarentryProps = {
     targetGroup: any;
 }
 export const CalendarEntry = ({title, date, targetGroup, allEntries}: CalendarentryProps): any => {
+    const [dates, setDates] = React.useState<any[]>([]);
     const dateFormatter = () => {
         const erSammeDato = moment(date?.datoer[0].start).format('D') === moment(date?.datoer[0].slutt).format('D');
         if (erSammeDato) {
@@ -24,13 +25,47 @@ export const CalendarEntry = ({title, date, targetGroup, allEntries}: Calendaren
 
         }
     };
+
+    const checkIfSameDates = () => {
+        let dateList = {} as any;
+        allEntries.length > 1 && allEntries.reduce((acc: any, cur: any) => {
+            if (!Object.keys(acc).length) {
+                dateList[moment(cur?.datoer[0].start).date()] = [cur];
+                return cur;
+            }
+            const accDato = acc?.datoer[0].start;
+            const curDato = cur?.datoer[0].start;
+            const isSame = moment(accDato).isSame(moment(curDato));
+            if (isSame) {
+                if (dateList[moment(curDato).date()]) {
+                    dateList[moment(curDato).date()].push(cur)
+                } else {
+                    dateList[moment(curDato).date()] = [cur];
+                }
+            } else {
+                dateList[moment(curDato).date()] = [cur];
+            }
+            return cur;
+        }, {});
+        setDates(dateList);
+    };
+    const mapOutDates = (): any => {
+        Object.keys(dates).map((date: any, i:number): any => {
+            console.log(dates[date])
+         })
+    };
+
+    useEffect(() => {
+        checkIfSameDates()
+    }, [allEntries]);
+
     if (!date) {
         return null
     } else {
         return (
             <div className='entry-wrapper'>
                 {dateFormatter()}
-                <h1>{title}</h1>
+                {mapOutDates()}
                 <h3>{targetGroup}</h3>
             </div>
         )
