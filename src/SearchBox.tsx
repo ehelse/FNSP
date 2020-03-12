@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import './scss/searchbox.scss';
 interface SearchBoxProps {
     placeholder?: string;
     onSearch: (value: string) => void;

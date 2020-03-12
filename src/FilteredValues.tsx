@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import './scss/selectedfilters.scss';
 interface FilteredValuesProps {
     values: any[];
     onRemoveFilterClick: (title: string) => void;

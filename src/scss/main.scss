@@ -28,50 +28,7 @@
     width: 1216px;
 }
 
-.searchbox {
-    height: 3rem;
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .search-field {
-        border: none;
-        font-size: 1.25rem;
-        padding: 0 .5rem;
-        height: 100%;
-        min-width: 50%;
-        position: relative;
 
-        &::before {
-            content: "asd";
-            position: absolute;
-            display: block;
-            top: 5px;
-            bottom: 5px;
-            left: 5px;
-            right: 5px;
-            width: 20px;
-            height: 20px;
-            border: 5px solid $blue;
-        }
-        &::placeholder {
-            color: #000;
-        }
-        &:focus {
-            outline: 0;
-        }
-    }
-
-    .search-button {
-        height: 100%;
-        background: #034584;
-        border: none;
-        min-width: 8rem;
-         cursor: pointer;
-        color: #fff;
-        text-transform: uppercase;
-    }
-}
 
 .catalog {
     ul {
@@ -82,50 +39,7 @@
     }
 }
 
-.selected-filters {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1.5rem;
-    & > span {
-        margin-top: .25rem;
-    }
-    .filtered-items {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0;
-        min-height: 2.25rem;
-        align-items: center;
-        span:not(.item) {
-            margin-right: 1.5rem;
-        }
-        .item {
-            display: flex;
-            justify-content: space-between;
-            margin: .5rem 1.5rem .5rem 0;
-            background-color: #fff;
-            span {
-                display: flex;
-                align-items: center;
-                margin: .25rem 1rem;
-                cursor: default;
-            }
-            button {
-                border: none;
-                cursor: pointer;
-                min-width: 2.25rem;
-                min-height: 2.25rem;
-                background: rgba($blue, .3) url('../svg/x-thicker-blue.svg') center/1rem no-repeat;
 
-                &:hover, &:focus {
-                    background-color: rgba($blue, .6);
-                }
-            }
-        }
-    }
-}
 
 @media (min-width: 944px) {
     .col-md-8 {
