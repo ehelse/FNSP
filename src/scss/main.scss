@@ -59,9 +59,6 @@
         }
         &:focus {
             outline: 0;
-
-            
-            // box-shadow: 0px 0px 2px 0px #034584;
         }
     }
 
@@ -88,20 +85,26 @@
 .selected-filters {
     display: flex;
     flex-direction: row;
-    align-items: center;
     margin-top: 1.5rem;
+    & > span {
+        margin-top: .25rem;
+    }
     .filtered-items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         list-style-type: none;
         padding-left: 0;
         margin: 0;
-        display: flex;
-        flex-direction: row;
         min-height: 2.25rem;
         align-items: center;
+        span:not(.item) {
+            margin-right: 1.5rem;
+        }
         .item {
             display: flex;
             justify-content: space-between;
-            margin: 0 1rem;
+            margin: .5rem 1.5rem .5rem 0;
             background-color: #fff;
             span {
                 display: flex;
@@ -114,7 +117,6 @@
                 cursor: pointer;
                 min-width: 2.25rem;
                 min-height: 2.25rem;
-                // background-color: rgba($blue, .3);
                 background: rgba($blue, .3) url('../svg/x-thicker-blue.svg') center/1rem no-repeat;
 
                 &:hover, &:focus {

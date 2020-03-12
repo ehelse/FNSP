@@ -152,6 +152,9 @@ const Header = (props: any) => {
     React.useEffect(() => {
         listData()
     }, []);
+    React.useEffect(() => {
+        console.log('chosenSubFilter: ', chosenSubFilter)
+    }, [chosenSubFilter])
     const numberOfResults = finalFilters.length;
     return (
         <div className='header container'>
@@ -197,7 +200,8 @@ const Header = (props: any) => {
                                             title={obj}
                                             key={obj + i}
                                             subMenuResultLength={getLengthOfArraylist(allSubFilters, obj)}
-                                            isActive={disableSubFilters(obj)}
+                                            // isActive={disableSubFilters(obj)}
+                                            isActive={true}
                                         />
 
                             })}

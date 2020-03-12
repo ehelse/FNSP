@@ -17,8 +17,8 @@ const FilteredValues = ({values, onRemoveFilterClick}: FilteredValuesProps): any
         onRemoveFilterClick(title);
     }
     return <>{values && values.length ? <div className='selected-filters'>
-        <span>Valgte filtre: </span>
-        <ul className='filtered-items'>
+        
+        <div className='filtered-items'>
         {/* {values.map((value: any, index: number) => 
             value.selectedFilters && value.selectedFilters.length ? <li key={index} style={{maxWidth: '250px', display: 'flex', flexDirection: 'row', margin: '0 1rem'}}>
                 {value.selectedFilters.map((f: any, i: number) => 
@@ -26,9 +26,10 @@ const FilteredValues = ({values, onRemoveFilterClick}: FilteredValuesProps): any
                 )}
             </li> : null
         )} */}
+        <span>Valgte filtre: </span>
         {values.map((value: any, index: number) => 
-            <li className='item' key={index}><span>{value.name}</span><button type="button" onClick={() => removeFilter(value.name)} aria-label='Fjern filter'></button></li>
+            <span className='item' key={index}><span>{value.name}</span><button type="button" onClick={() => removeFilter(value.name)} aria-label='Fjern filter'></button></span>
         )}
-    </ul></div> : null}</>
+    </div></div> : null}</>
 };
 export default FilteredValues;
