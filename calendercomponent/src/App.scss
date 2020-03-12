@@ -8,8 +8,7 @@
 .calendar-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 80%;
+  width: 57%;
 }
 
 .entry-wrapper {
@@ -25,6 +24,7 @@
 
 .target-group {
   margin-right: 1rem;
+  font-size: 12pt;
 }
 
 .currentmonth {
@@ -38,12 +38,35 @@
   align-self: center;
   width: 57%;
   height: 3rem;
+  align-items: center;
+  border-bottom: 1px solid black;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.calendar-footer-wrapper {
+  display: flex;
+  align-self: center;
+  width: 57%;
+  height: 3rem;
   justify-content: space-between;
-  border-bottom:1px solid black;
   margin: 3rem;
 }
 
 .calendar-header-button {
+  border: none;
+  background-color: transparent;
+  color: #034584;
+  cursor: pointer;
+  font-size: 30pt;
+  margin: 0 5rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.calendar-footer-button {
   border: none;
   background-color: transparent;
   color: #034584;
@@ -54,17 +77,23 @@
   &:hover {
     text-decoration: underline;
   }
+  &:focus{
+    border:none;
+  }
 }
-.datoTekst{
+
+.datoTekst {
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
 }
-.datodagTekst{
+
+.datodagTekst {
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
 }
+
 h1 {
   font-size: 16pt;
   color: #034584;
@@ -74,6 +103,7 @@ h2 {
   font-size: 14pt;
   font-weight: normal;
 }
+
 h3 {
   font-size: 12pt;
   font-weight: normal;

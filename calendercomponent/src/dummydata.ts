@@ -2,7 +2,7 @@ export const dummydata = [
     {
         tittel: 'CFS/ME Gruppetilbud for deg mellom 16-18 år og dine foresatte',
         malgruppe: [
-            'pasient og pårørende'
+            'Pasient og pårørende'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',
@@ -19,8 +19,8 @@ export const dummydata = [
     {
         tittel: 'Kurset for bronkitt',
         malgruppe: [
-            'helsepersonell',
-            'leger i spesialisering'
+            'Helsepersonell',
+            'Leger i spesialisering'
         ],
         type: 'kurs',
         sted: 'Ullevål sykehus',
@@ -37,9 +37,9 @@ export const dummydata = [
     {
         tittel: 'Strålekurs',
         malgruppe: [
-            'pasient og pårørende',
-            'helsepersonell',
-            'leger'
+            'Pasient og pårørende',
+            'Helsepersonell',
+            'Leger'
         ],
         type: 'kurs',
         sted: 'Radiumhospitalet',
@@ -56,7 +56,7 @@ export const dummydata = [
     {
         tittel: 'Smoothiekurs',
         malgruppe: [
-            'pasient og pårørende'
+            'Pasient og pårørende'
         ],
         type: 'kurs',
         sted: 'Ahus',
@@ -77,7 +77,7 @@ export const dummydata = [
     {
         tittel: 'Kurs for deg med tvangslidelser',
         malgruppe: [
-            'pasient og pårørende'
+            'Pasient og pårørende'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',
@@ -98,7 +98,7 @@ export const dummydata = [
     {
         tittel: 'Kurs for deg med tvang',
         malgruppe: [
-            'pasient og pårørende'
+            'Pasient og pårørende'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',
@@ -117,9 +117,9 @@ export const dummydata = [
         behandlingsprogram: 'Psykologiske lidelser'
     },
     {
-        tittel: 'Kurs for deg med tvang',
+        tittel: 'Smoothiekurs',
         malgruppe: [
-            'pasient og pårørende'
+            'Pasient og pårørende'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',

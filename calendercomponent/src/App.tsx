@@ -2,9 +2,10 @@ import React from 'react';
 import './App.scss';
 import {CalendarEntry} from "./components/calendarentry";
 import {dummydata} from "./dummydata";
-import {CalendarHeader} from "./components/calendarheader";
+import {CalendarFooter} from "./components/calendarFooter";
 import moment from 'moment'
 import 'moment/locale/nb'
+import {CalendarHeader} from "./components/CalendarHeader";
 
 moment.locale('nb');
 
@@ -16,7 +17,7 @@ function App() {
     React.useEffect(() => {
         setCurrentMonth(moment().format("MMMM"));
 
-    }, [])
+    }, []);
     React.useEffect(() => {
         dummydata.map((dateObj: any) => {
             const currentDate = moment(dateObj.datoer[0].start).format("MMMM");
@@ -52,10 +53,11 @@ function App() {
     const nextMonth = moment().month(currentMonth).add(1, 'months').endOf('month').format('MMMM');
     return (
         <div className='main-wrapper'>
+
             <CalendarHeader
+                currentMonth={currentMonth}
                 goToNextMonth={() => setCurrentMonth(nextMonth)}
-                goToPrevMonth={() => setCurrentMonth(prevMonth)}
-                currentMonth={currentMonth}/>
+                goToPrevMonth={() => setCurrentMonth(prevMonth)}/>
             <div className="calendar-wrapper">
                 {dummydata.map((entry, i) => {
                     return <CalendarEntry
@@ -67,6 +69,9 @@ function App() {
 
                 })}
             </div>
+            <CalendarFooter
+                goToNextMonth={() => setCurrentMonth(nextMonth)}
+                goToPrevMonth={() => setCurrentMonth(prevMonth)}/>
         </div>
     );
 }

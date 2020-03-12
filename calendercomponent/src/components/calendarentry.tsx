@@ -9,6 +9,7 @@ export type CalendarentryProps = {
 }
 export const CalendarEntry = ({title, date, targetGroup, allEntries}: CalendarentryProps): any => {
     const [dates, setDates] = React.useState<any[]>([]);
+    //console.log(date)
     const dateFormatter = () => {
         const erSammeDato = moment(date?.datoer[0].start).format('D') === moment(date?.datoer[0].slutt).format('D');
         if (erSammeDato) {
@@ -20,14 +21,14 @@ export const CalendarEntry = ({title, date, targetGroup, allEntries}: Calendaren
             const sluttDag = moment(date?.datoer[0].slutt).format("dd");
             return <div>
                 <span className='datoTekst'>{startDato}.</span>
-                <span className='datodagTekst'>{sluttDag}</span>
+                <span className='datodagTekst'>{sluttDag.toUpperCase()}</span>
             </div>
 
         }
     };
 
     const checkIfSameDates = () => {
-        let dateList = {} as any;
+        let dateList = [] as any;
         allEntries.length > 1 && allEntries.reduce((acc: any, cur: any) => {
             if (!Object.keys(acc).length) {
                 dateList[moment(cur?.datoer[0].start).date()] = [cur];
@@ -49,12 +50,16 @@ export const CalendarEntry = ({title, date, targetGroup, allEntries}: Calendaren
         }, {});
         setDates(dateList);
     };
-    const mapOutDates = (): any => {
-        Object.keys(dates).map((date: any, i:number): any => {
-            console.log(dates[date])
-         })
-    };
 
+    const mapOutDates = (): any => {
+        console.log(dates)
+        dates.length > 0 && dates.reduce((prev: any, cur: any) => {
+            return <React.Fragment>
+                <h1>{prev.tittel}</h1>
+                <h1>{cur.tittel}</h1>
+            </React.Fragment>
+        });
+    };
     useEffect(() => {
         checkIfSameDates()
     }, [allEntries]);
