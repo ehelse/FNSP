@@ -34,7 +34,7 @@ function App() {
     }, [list]);
 
     React.useEffect(() => {
-        dummydata.map((entry:any) => {
+        dummydata.map((entry: any) => {
             if (entry.datoer.map((d: any) => moment(d.start).format("MMMM"))[0] === currentMonth) {
                 combineSameDays(currentMonth)
             }
@@ -74,6 +74,11 @@ function App() {
 
     return (
         <div className='main-wrapper'>
+            <div className='headertext'>
+                <div className='calendertitle'>Kalender</div>
+                <span className='descriptiontext'>Dette er en oversikt over alle hendelser med dato.
+                Ønsker du å se alle kurs og nettkurs? Gå til kurskatalogen for pasienter og pårørende eller kurskatalogen for helsepersonell</span>
+            </div>
             <CalendarHeader
                 currentMonth={currentMonth}
                 goToNextMonth={() => setCurrentMonth(nextMonth(currentMonth))}
@@ -81,12 +86,13 @@ function App() {
             <div className="calendar-wrapper">
                 {Object.keys(dates).length > 0 ? Object.keys(dates).map((key: any, i: number) => {
                     return <CalendarEntry
-                        allEntries={selectedMonth}
                         key={i}
                         date={dateFormatter(dates[key])}
-                        targetGroup={dates[key].map((k: any) => k.malgruppe.map((group: any, i: number) => <span key={i} className='target-group'>{group}</span>))}
-                        title={dates[key].map((k: any) => <h1 className='calendar-title' key={k.tittel}>{k.tittel}</h1>)}/>
-                }): <h1>Helt tomt her</h1>}
+                        title={dates[key].map((k: any) => <div className='titletarget'>
+                            <h1 className='calendar-title' key={k.tittel}>{k.tittel}</h1>
+                            {k.malgruppe.map((group: any, i: number) => <span key={i} className='target-group'>{group}</span>)}
+                        </div>)}/>
+                }) : <h1>Helt tomt her</h1>}
             </div>
             <CalendarFooter
                 goToNextMonth={() => setCurrentMonth(nextMonth)}

@@ -10,7 +10,22 @@
   flex-wrap: wrap;
   width: 57%;
 }
-
+.headertext{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:30%;
+  font-family: 'Open Sans', sans-serif;
+}
+.calendertitle{
+  font-size: 20pt;
+  margin-bottom:10px;
+}
+.descriptiontext{
+  font-size: 15pt;
+  margin-bottom:10px;
+}
 .entry-wrapper {
   display: flex;
   flex-direction: column;
@@ -95,9 +110,11 @@
   flex-direction: column;
   font-size: 1.2rem;
 }
-
+.titletarget{
+  margin-bottom:10px;
+}
 h1 {
-  font-size: 16pt;
+  font-size: 13pt;
   color: #034584;
 }
 

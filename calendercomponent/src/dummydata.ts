@@ -98,7 +98,7 @@ export const dummydata = [
     {
         tittel: 'Kurs for deg med tvang',
         malgruppe: [
-            'Pasient og pårørende'
+            'Pasient'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',
@@ -119,7 +119,7 @@ export const dummydata = [
     {
         tittel: 'Smoothiekurs',
         malgruppe: [
-            'Pasient og pårørende'
+            'Pårørende'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',
