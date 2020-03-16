@@ -6,6 +6,7 @@ import {CalendarFooter} from "./components/calendarFooter";
 import moment from 'moment'
 import 'moment/locale/nb'
 import {CalendarHeader} from "./components/CalendarHeader";
+import {dateFormatter, nextMonth, prevMonth} from "./utils/dateutils";
 
 moment.locale('nb');
 
@@ -14,7 +15,7 @@ function App() {
     const [selectedMonth, setSelectedMonth] = React.useState<any[]>([]);
     const [dates, setDates] = React.useState<any[]>([]);
 
-    let list = {} as any;
+    const list = {} as any;
 
     React.useEffect(() => {
         setCurrentMonth(moment().format("MMMM"));
@@ -33,23 +34,14 @@ function App() {
     }, [list]);
 
     React.useEffect(() => {
-        dummydata.map((entry, i) => {
+        dummydata.map((entry:any) => {
             if (entry.datoer.map((d: any) => moment(d.start).format("MMMM"))[0] === currentMonth) {
                 combineSameDays(currentMonth)
             }
-        })
+        });
+        checkIfSameDates();
+        combineSameDays(currentMonth)
     }, [currentMonth]);
-
-    useEffect(() => {
-        checkIfSameDates()
-    }, [selectedMonth]);
-
-    const dateFilter = (entry: any) => {
-        if (entry.datoer.map((d: any) => moment(d.start).format("MMMM"))[0] === currentMonth) {
-            return entry;
-        }
-        return null;
-    };
 
     const combineSameDays = (currentMonth: any) => {
         setSelectedMonth(list[currentMonth])
@@ -57,7 +49,7 @@ function App() {
 
     const checkIfSameDates = () => {
         let dateList = {} as any;
-        dummydata.reduce((acc: any, cur: any) => {
+        list[currentMonth] && list[currentMonth].reduce((acc: any, cur: any) => {
             if (!Object.keys(acc).length) {
                 dateList[moment(cur?.datoer[0].start).date()] = [cur];
                 return cur;
@@ -79,29 +71,23 @@ function App() {
         }, {});
         setDates(dateList);
     };
-    console.log(dates)
-    const dateFormatter = (date: any) => {
-                return <div>
-                    <span className='datoTekst'>{moment(date[0].datoer[0].start).format("D")}.</span>
-                    <span className='datodagTekst'>{moment(date[0].datoer[0].slutt).format("dd").toUpperCase()}</span>
-                </div>
- };
-    const prevMonth = moment().month(currentMonth).subtract(1, 'months').endOf('month').format('MMMM');
-    const nextMonth = moment().month(currentMonth).add(1, 'months').endOf('month').format('MMMM');
+
     return (
         <div className='main-wrapper'>
             <CalendarHeader
                 currentMonth={currentMonth}
-                goToNextMonth={() => setCurrentMonth(nextMonth)}
-                goToPrevMonth={() => setCurrentMonth(prevMonth)}/>
+                goToNextMonth={() => setCurrentMonth(nextMonth(currentMonth))}
+                goToPrevMonth={() => setCurrentMonth(prevMonth(currentMonth))}/>
             <div className="calendar-wrapper">
                 {Object.keys(dates).map((key: any, i: number) => {
                     return <CalendarEntry
                         allEntries={selectedMonth}
                         key={i}
                         date={dateFormatter(dates[key])}
-                        targetGroup={dates[key].map((k: any) => k.malgruppe.map((group: any, i: number) => <span key={i} className='target-group'>{group}</span>))}
-                        title={dates[key].map((k: any) => <h1 className='calendar-title' key={k.tittel}>{k.tittel}</h1>)}/>
+                        targetGroup={dates[key].map((k: any) => k.malgruppe.map((group: any, i: number) => <span key={i}
+                                                                                                                 className='target-group'>{group}</span>))}
+                        title={dates[key].map((k: any) => <h1 className='calendar-title'
+                                                              key={k.tittel}>{k.tittel}</h1>)}/>
                 })}
             </div>
             <CalendarFooter
