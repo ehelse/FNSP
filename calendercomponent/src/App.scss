@@ -37,7 +37,7 @@
   cursor: pointer;
   margin: 20px;
   padding: 20px;
-  border-left: 1px solid black;
+  border-left: 1px solid rgba(0,0,0,0.3);
 }
 
 .target-group {
@@ -57,7 +57,7 @@
   width:  55.3%;
   height: 3rem;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
   justify-content: center;
   margin: 3rem;
 }
