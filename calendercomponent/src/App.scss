@@ -10,6 +10,11 @@
   flex-wrap: wrap;
   width: 57%;
 }
+.headerwrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .headertext{
   display:flex;
   flex-direction: column;
@@ -29,11 +34,9 @@
 .entry-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   cursor: pointer;
   margin: 20px;
   padding: 20px;
-  width: 300px;
   border-left: 1px solid black;
 }
 
@@ -51,7 +54,7 @@
 .calendar-header-wrapper {
   display: flex;
   align-self: center;
-  width: 57%;
+  width:  55.3%;
   height: 3rem;
   align-items: center;
   border-bottom: 1px solid black;
