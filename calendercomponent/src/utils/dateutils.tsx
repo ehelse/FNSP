@@ -4,7 +4,7 @@ import React from "react";
 export const dateFormatter = (date: any) => {
     return <div>
         <span className='datoTekst'>{moment(date[0].datoer[0].start).format("D")}.</span>
-        <span className='datodagTekst'>{moment(date[0].datoer[0].slutt).format("dd").toUpperCase()}</span>
+        <span className='datodagTekst'>{moment(date[0].datoer[0].start).format("dd").toUpperCase()}</span>
     </div>
 };
 

@@ -75,16 +75,16 @@ export const dummydata = [
         behandlingsprogram: ''
     },
     {
-        tittel: 'Kurs for deg med tvangslidelser',
+        tittel: 'Kurs delser',
         malgruppe: [
-            'Pasient og pårørende'
+            'Pasient og pårørende', 'Alle andre'
         ],
         type: 'kurs',
         sted: 'Gaustad sykehus',
         avdeling: '',
         datoer: [
             {
-                start: '2020-04-01T09:00:00Z',
+                start: '2020-04-02T09:00:00Z',
                 slutt: '2020-04-07T15:00:00Z'
             },
             {
@@ -105,7 +105,7 @@ export const dummydata = [
         avdeling: '',
         datoer: [
             {
-                start: '2020-11-01T09:00:00Z',
+                start: '2020-11-03T09:00:00Z',
                 slutt: '2020-04-07T15:00:00Z'
             },
             {
@@ -126,7 +126,7 @@ export const dummydata = [
         avdeling: '',
         datoer: [
             {
-                start: '2020-04-01T09:00:00Z',
+                start: '2020-04-05T09:00:00Z',
                 slutt: '2020-04-07T15:00:00Z'
             },
             {
@@ -147,7 +147,259 @@ export const dummydata = [
         avdeling: '',
         datoer: [
             {
-                start: '2020-04-01T09:00:00Z',
+                start: '2020-04-06T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurset',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-07T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs2',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-07T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs3',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-07T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs4',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-07T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-08T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-09T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-10T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-11T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-12T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-13T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-14T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            },
+            {
+                start: '2020-11-01T09:00:00Z',
+                slutt: '2020-04-07T15:00:00Z'
+            }
+        ],
+        behandling: '',
+        behandlingsprogram: 'Psykologiske lidelser'
+    },
+    {
+        tittel: 'kurs',
+        malgruppe: [
+            'Pasient og pårørende'
+        ],
+        type: 'kurs',
+        sted: 'Gaustad sykehus',
+        avdeling: '',
+        datoer: [
+            {
+                start: '2020-04-15T09:00:00Z',
                 slutt: '2020-04-07T15:00:00Z'
             },
             {
