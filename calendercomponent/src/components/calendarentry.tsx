@@ -7,9 +7,11 @@ export type CalendarentryProps = {
 export const CalendarEntry = ({title, date}: CalendarentryProps): any => {
 
     return (
-        <div className='entry-wrapper'>
-            {date}
-            {title}
+        <div>
+            <div className='entry-wrapper'>
+                {date}
+                {title}
+            </div>
         </div>
     )
 };

@@ -51,7 +51,7 @@
 }
 
 .currentmonth {
-  font-size: 20pt;
+  font-size: 1.5rem;
   text-transform: capitalize;
   user-select: none;
 }
@@ -140,7 +140,7 @@
 }
 
 h1 {
-  font-size: 13pt;
+  font-size: 1rem;
   color: #3871ab;
 }
 
@@ -152,4 +152,13 @@ h2 {
 h3 {
   font-size: 12pt;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 1024px) {
+  .calendar-header-wrapper {
+    width: 100%;
+  }
+  .currentmonth{
+    width: max-content;
+  }
 }
