@@ -9,9 +9,9 @@ export type CalendarHeaderProps = {
 export const CalendarHeader = ({goToPrevMonth, goToNextMonth, currentMonth}: CalendarHeaderProps): JSX.Element => {
     return <span className='calendar-header-wrapper'>
         <div className='headerwrapper'>
-            <button type='button' onClick={goToPrevMonth} className='calendar-header-button'>{'<'}</button>
+            <button type='button' onClick={goToPrevMonth} className='calendar-header-button left'/>
             <span className='currentmonth'>{currentMonth + ' ' + moment().year()}</span>
-            <button type='button' onClick={goToNextMonth} className='calendar-header-button'>{'>'}</button>
+            <button type='button' onClick={goToNextMonth} className='calendar-header-button right'/>
         </div>
     </span>
 };
