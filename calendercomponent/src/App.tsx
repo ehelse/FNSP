@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.scss';
 import {CalendarEntry} from "./components/calendarentry";
 import {dummydata} from "./dummydata";
@@ -12,7 +12,6 @@ moment.locale('nb');
 
 function App() {
     const [currentMonth, setCurrentMonth] = React.useState('');
-    const [selectedMonth, setSelectedMonth] = React.useState<any[]>([]);
     const [dates, setDates] = React.useState<any[]>([]);
 
     const list = {} as any;
@@ -34,18 +33,9 @@ function App() {
     }, [list]);
 
     React.useEffect(() => {
-        dummydata.map((entry: any) => {
-            if (entry.datoer.map((d: any) => moment(d.start).format("MMMM"))[0] === currentMonth) {
-                combineSameDays(currentMonth)
-            }
-        });
         checkIfSameDates();
-        combineSameDays(currentMonth)
     }, [currentMonth]);
 
-    const combineSameDays = (currentMonth: any) => {
-        setSelectedMonth(list[currentMonth])
-    };
 
     const checkIfSameDates = () => {
         let dateList = {} as any;
@@ -88,9 +78,10 @@ function App() {
                     return <CalendarEntry
                         key={i}
                         date={dateFormatter(dates[key])}
-                        title={dates[key].map((k: any) => <div className='titletarget'>
+                        title={dates[key].map((k: any, i: number) => <div key={i} className='titletarget'>
                             <h1 className='calendar-title' key={k.tittel}>{k.tittel}</h1>
-                            {k.malgruppe.map((group: any, i: number) => <span key={i} className='target-group'>{group}</span>)}
+                            {k.malgruppe.map((group: any, i: number) => <span key={i}
+                                                                              className='target-group'>{group}</span>)}
                         </div>)}/>
                 }) : <h1>Helt tomt her</h1>}
             </div>
