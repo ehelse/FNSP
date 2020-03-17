@@ -3,7 +3,7 @@ import React from "react";
 
 export const dateFormatter = (date: any) => {
     return <div>
-        <span className='datoTekst'>{moment(date[0].datoer[0].start).format("D")}.</span>
+        <span className='datoTekst'>{moment(date[0].datoer[0].start).format("DD")}.</span>
         <span className='datodagTekst'>{moment(date[0].datoer[0].start).format("dddd").toUpperCase().slice(0, 3)}</span>
     </div>
 };
